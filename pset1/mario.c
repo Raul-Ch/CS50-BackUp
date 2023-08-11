@@ -1,9 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int get_size(void);
-int print_grid(void);
-
 int main (void)
 {
     //Example of a constant: const int n = 3;
