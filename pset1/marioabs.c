@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int get_size(void);
-int print_grid(int n);
+void print_grid(int n);
 
 int main (void)
 {
@@ -27,8 +27,8 @@ void print_grid(int n)
     {
         for (int j=0; j < n; j++)
         {
-            printf('#');
+            printf("#");
         }
-        printf('#');
+        printf("#");
     }
 }
