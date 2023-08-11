@@ -10,7 +10,8 @@ int main(void)
     double y = get_double("y: ");
 
     //Perfom division
-    float z = (float) x / (float) y;
+    //float z = (float) x / (float) y;
+    double z = (float) x / (float) y;
     //Truncate float value
-    printf("%0.4f\n",z);
+    printf("%0.20f\n",z);
 }
