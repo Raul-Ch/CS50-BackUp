@@ -18,12 +18,19 @@ int main(void)
 // TODO: Complete the function
 float half(float bill, float tax, int tip)
 {
+    //We make a variable by dividing the amount of tax given by 100 to represent %
     float half_tax = tax / 100;
+    //Then we multiply the % by the amount of the bill
     half_tax *= bill;
+    //Finally we get the total of the bill with the tax
     half_tax += bill;
 
-    float half_tip = tip / 100;
+    //we make a variable of type float, with the int tip, to have a %
+    printf("%i\n",tip);
+    float half_tip = (tip / 100) * 100;
+printf("%f\n",half_tip);
     half_tip *= half_tax;
+    printf("%f\n",half_tip);
 
     float total = (half_tip + half_tax) / 2;
 
