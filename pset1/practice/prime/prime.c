@@ -31,17 +31,9 @@ int main(void)
 bool prime(int number)
 {
     // We check if the number is greater than 1 an if it is a prime number
-    if (number != 1 || number%2 != 0)
+    for (number )
     {
-        return true;
+
     }
-    // 2 being an even number can divide
-    else if (number == 2)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+
 }
