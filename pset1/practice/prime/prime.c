@@ -35,7 +35,7 @@ bool prime(int number)
     {
         return true;
     }
-    // 2 is the only 
+    // 2 being an even number can divide
     else if (number == 2)
     {
         return true;
