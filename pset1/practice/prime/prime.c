@@ -30,10 +30,13 @@ int main(void)
 
 bool prime(int number)
 {
-    // We check if the number is greater than 1 an if it is a prime number
-    for (number )
+    // There is only one even prime number, 2.
+    if (number == 2 || number%2 != 0)
     {
-
+        return true;
     }
-
+    else
+    {
+        return false;
+    }
 }
