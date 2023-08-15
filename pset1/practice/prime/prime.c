@@ -30,11 +30,12 @@ int main(void)
 
 bool prime(int number)
 {
-    // TODO
-    if (number%number == 0 && number%2 != 0)
+    // We check if the number is greater than 1 an if it is a prime number
+    if (number != 1 || number%2 != 0)
     {
-        return false;
+        return true;
     }
+    // 2 is the only 
     else if (number == 2)
     {
         return true;
