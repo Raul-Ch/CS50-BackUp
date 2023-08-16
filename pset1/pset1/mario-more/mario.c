@@ -36,7 +36,9 @@ void print_pyramids(int size)
         {
              printf("#");
         }
+        // The space between pyramids
         printf ("  ");
+        // 
         for(int k = 0; k <= i; k++)
         {
              printf("#");
