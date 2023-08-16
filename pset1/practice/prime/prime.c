@@ -31,14 +31,19 @@ int main(void)
 bool prime(int number)
 {
     // There is only one even prime number, 2.
+    // And 3 it's an odd but "base" number
+    // Both 2 and 3 can be used to divide multiples
     if (number == 2 || number == 3)
     {
         return true;
     }
+    // Zero and One are not a prime numbers
+    // If the number can be divided by 2 or by 3 then it is not a prime number since it has more than two divisors.
     else if (number == 1 || number % 2 == 0 || number % 3 == 0)
     {
         return false;
     }
+    // If it does not divide by 2 or 3 then it can't be divided b
     else
     {
         return true;
