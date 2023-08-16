@@ -19,7 +19,7 @@ int main(void)
 void checksum (long credit)
 {
     int check;
-    int module = 10;
+    int module = 100;
     int sum = 0;
 
         do
