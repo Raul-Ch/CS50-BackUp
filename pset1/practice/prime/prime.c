@@ -33,8 +33,9 @@ bool prime(int number)
     // 1.- Zero and One are not a prime numbers
     // 2.- Any number greater than 2 that is a multiple of 2 is not a prime, since it has at least three divisors:
     // 3.- Any number greater than 3 that is a multiple of 3 is not a prime, since it has 1, 3, and the number itself as divisors.
-    // 4.- Any number greater than 5 that is a multiple of 5 is not a prime. (So ​​the only prime number that ends with a 0 or 5 is 5.)
-    if (number == 1 || (number > 2 && number % 2 == 0) || (number > 3 && number % 3 == 0) || (number > 5 && number % 5 == 0) )
+    // 4.- Any number greater than 5 that is a multiple of 5 is not a prime. (So ​​the only prime number that ends with a 0 or 5
+    // is 5.)
+    if (number == 1 || (number > 2 && number % 2 == 0) || (number > 3 && number % 3 == 0) || (number > 5 && number % 5 == 0))
     {
         return false;
     }
