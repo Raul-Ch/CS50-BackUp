@@ -73,11 +73,14 @@ int checksum (long credit)
 int credit_type (long credit, int length)
 {
     length -= 2;
-    int type = 1;
+    long type = 1;
     for (int i = 0; i < length; i++)
     {
         type *= 10;
     }
-    printf("pot: %i\n",type);
-    return 0;
+    credit /= type;
+    if ()
+    {
+        
+    }
 }
