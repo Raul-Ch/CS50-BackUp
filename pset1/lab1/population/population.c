@@ -25,8 +25,6 @@ int main(void)
 
     // TODO: Calculate number of years until we reach threshold
     // TODO: Print number of years
-    // cs50/labs/2023/x/population not admitted output:
-    // printf("Years to achive de desired population: %i\n",calculate_years(start, end));
     // Here, we print an integer, result of the function calculate_years, passing the start and end variables.
     printf("Years: %i\n", calculate_years(start, end));
 }
@@ -40,7 +38,7 @@ int calculate_years(int start, int end)
     {
         // "Each year, n / 3 new llamas are born, and n / 4 llamas pass away."
         //  "Start is an int variable, but born and pass are floats, so we can divide with out problems"
-        start += born - pass;
+        start += (start / 3) - (start / 4);
         years++;
     }
     // We return the variable int years obtained
