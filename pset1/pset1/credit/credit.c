@@ -19,7 +19,7 @@ int main(void)
 void checksum (long credit)
 {
     int check;
-    int module = 9;
+    int module = 10;
     int sum = 0;
 
         do
@@ -27,7 +27,7 @@ void checksum (long credit)
         check = credit % module;
         printf("%i\n",check);
         sum += check;
-        module -= 2;
+        module --;
         }
         while (module > 0);
 }
