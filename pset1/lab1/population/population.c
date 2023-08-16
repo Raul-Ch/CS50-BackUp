@@ -37,8 +37,9 @@ int calculate_years(int start, int end)
     while (start < end)
     {
         // "Each year, n / 3 new llamas are born, and n / 4 llamas pass away."
-        //  "Start is an int variable, but born and pass are floats, so we can divide with out problems"
+        // "Int division will truncate the decimals"
         start += (start / 3) - (start / 4);
+        // Each loop we increment the count of the years
         years++;
     }
     // We return the variable int years obtained
