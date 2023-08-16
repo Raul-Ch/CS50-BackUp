@@ -19,18 +19,9 @@ void print_pyramids(int size)
 {
     for(int i = 0; i < size; i++)
     {
-        for(int j = 0; j <= i; j++)
+        for(int j = i; j < size; j++)
         {
-            int space = 0;
-            if (space < size)
-            {
-                printf(" ");
-                space++;
-            }
-            else
-            {
-                printf("#");
-            }
+            printf(".");
         }
         printf("\n");
     }
