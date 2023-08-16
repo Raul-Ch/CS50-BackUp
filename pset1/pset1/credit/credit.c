@@ -1,9 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
-bool checksum (long credit);
+int checksum (long credit);
 int card_type (int length);
-int lenght = 0;
 
 int main(void)
 {
@@ -15,11 +14,12 @@ int main(void)
     }
     while (credit_number < 1000000000000 || credit_number > 9999999999999999);
     // "13 to 16 digit numbers"
-    if (checksum (credit_number) == true)
+    int length = checksum (credit_number);
+    if (length == true)
     {
-        card_type (length);
+        printf("%i",lenght);
     }
-    else if ((checksum (credit_number) == false))
+    else if (length == false)
     {
         printf("INVALID\n");
     }
@@ -30,6 +30,7 @@ bool checksum (long credit)
     bool multiply = false;
     long check;
     int sum = 0;
+    int lenght;
 
     do
     {
@@ -58,7 +59,7 @@ bool checksum (long credit)
                     credit /= 10;
                     multiply = true;
         }
-        length ++;
+        lenght ++;
     }
     while (credit > 0);
 
