@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int calculate_years(int start, int end);
+
 int main(void)
 {
     // TODO: Prompt for start size
@@ -18,6 +20,11 @@ int main(void)
     }
     while (end < start);
     // TODO: Calculate number of years until we reach threshold
-
+   calculate_years(start, end);
     // TODO: Print number of years
+}
+
+int calculate_years(int start, int end)
+{
+
 }
