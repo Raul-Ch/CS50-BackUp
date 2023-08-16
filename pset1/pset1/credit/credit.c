@@ -72,5 +72,6 @@ int checksum (long credit)
 
 int credit_type (int length)
 {
+    int type = length - 2;
     
 }
