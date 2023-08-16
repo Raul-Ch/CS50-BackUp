@@ -26,8 +26,13 @@ void checksum (long credit)
         {
         credit /= 10;
         check = credit % module;
+        check *= 2;
         // Print to check the numbers
         printf("Last: %li\n",check*2);
+        if (check > 9)
+        {
+            sum += (check/10);
+        }
         sum += (check*2);
         printf("Sum: %i\n",sum);
         credit /= 10;
