@@ -3,6 +3,7 @@
 
 bool checksum (long credit);
 int card_type (int length);
+int lenght = 0;
 
 int main(void)
 {
@@ -16,7 +17,7 @@ int main(void)
     // "13 to 16 digit numbers"
     if (checksum (credit_number) == true)
     {
-        printf("%li",credit_number);
+        card_type (length);
     }
     else if ((checksum (credit_number) == false))
     {
@@ -57,15 +58,16 @@ bool checksum (long credit)
                     credit /= 10;
                     multiply = true;
         }
+        length ++;
     }
     while (credit > 0);
 
     if (sum % 10 == 0)
     {
-        return true;
+        return length;
     }
     else
     {
-        return false;
+        return 0;
     }
 }
