@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int checksum (long credit);
-int credit_type (int length);
+int credit_type (long credit, int length);
 
 int main(void)
 {
@@ -17,7 +17,7 @@ int main(void)
     int credit_length = checksum (credit_number);
     if (credit_length != false)
     {
-        credit_type (credit_length);
+        credit_type (credit_number, credit_length);
     }
 }
 
@@ -70,8 +70,8 @@ int checksum (long credit)
     }
 }
 
-int credit_type (int length)
+int credit_type (long credit, int length)
 {
     int type = length - 2;
-    
+    long credit /= 
 }
