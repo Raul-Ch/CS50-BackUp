@@ -17,7 +17,7 @@ int main(void)
     int credit_length = checksum (credit_number);
     if (credit_length != false)
     {
-        credit_type (credit_number, credit_length);
+        printf()credit_type (credit_number, credit_length);
     }
 }
 
@@ -93,6 +93,8 @@ string credit_type (long credit, int length)
         case 4 :
         return "VISA\n";
         break;
+        default :
+        return "Error\n";
     }
     return 0;
 }
