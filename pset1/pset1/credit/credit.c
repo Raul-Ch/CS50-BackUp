@@ -83,6 +83,7 @@ string credit_type(long credit, int length)
     {
         credit = 4;
     }
+    printf ("%li",credit);
     switch (credit)
     {
         // American Express Numbers
