@@ -30,7 +30,7 @@ void checksum (long credit)
         printf("Last: %li\n",check*2);
         if (check > 9)
         {
-            sum += 10;
+            sum += 1;
             sum += (check-10)*2;
         }
         else{
