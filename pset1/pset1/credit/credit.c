@@ -18,5 +18,11 @@ int main(void)
 
 void checksum (int credit)
 {
-    
+    int check;
+    do
+    {
+        check = credit % 10;
+        printf("%i",check);
+    }
+    while ();
 }
