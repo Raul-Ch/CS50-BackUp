@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int checksum (long credit);
-int credit_type (long credit, int length);
+string credit_type (long credit, int length);
 
 int main(void)
 {
@@ -70,7 +70,7 @@ int checksum (long credit)
     }
 }
 
-int credit_type (long credit, int length)
+string credit_type (long credit, int length)
 {
     length -= 2;
     long type = 1;
@@ -79,8 +79,19 @@ int credit_type (long credit, int length)
         type *= 10;
     }
     credit /= type;
-    if ()
+    switch (credit)
     {
-        
+        // American Express Numbers
+        case 34 || 37 :
+        return "AMEX\n";
+        break;
+        // Master Card Numbers
+        case 51 || 52 :
+        return "MASTERCARD\n";
+        break;
+        // Visa Numbers
+        case 4 :
+        return "VISA\n";
+        break;
     }
 }
