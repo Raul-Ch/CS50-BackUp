@@ -1,12 +1,12 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int checksum (long credit);
-string credit_type (long credit, int length);
+int checksum(long credit);
+string credit_type(long credit, int length);
 
 int main(void)
 {
-     // TODO: Prompt for credit card number: "program that prompts the user for a credit card number"
+    // TODO: Prompt for credit card number: "program that prompts the user for a credit card number"
     long credit_number;
     do
     {
@@ -14,14 +14,14 @@ int main(void)
     }
     while (credit_number < 1000000000000 || credit_number > 9999999999999999);
     // "13 to 16 digit numbers"
-    int credit_length = checksum (credit_number);
+    int credit_length = checksum(credit_number);
     if (credit_length != false)
     {
-        printf("%s",credit_type (credit_number, credit_length));
+        printf("%s", credit_type(credit_number, credit_length));
     }
 }
 
-int checksum (long credit)
+int checksum(long credit)
 {
     bool multiply = false;
     long check;
@@ -32,30 +32,30 @@ int checksum (long credit)
     {
         if (multiply == true)
         {
-                //credit /= 10;
-                    check = credit % 10;
-                    // Print to check the second to last numbers: printf("Last: %li\n",check*2);
-                    if (check*2 > 9)
-                    {
-                        sum += 1;
-                        sum += (check*2-10);
-                    }
-                    else
-                    {
-                    sum += (check*2);
-                    }
-                    // Print to check proper sum: printf("Sum: %i\n",sum);
-                    credit /= 10;
-                    multiply = false;
+            // credit /= 10;
+            check = credit % 10;
+            // Print to check the second to last numbers: printf("Last: %li\n",check*2);
+            if (check * 2 > 9)
+            {
+                sum += 1;
+                sum += (check * 2 - 10);
+            }
+            else
+            {
+                sum += (check * 2);
+            }
+            // Print to check proper sum: printf("Sum: %i\n",sum);
+            credit /= 10;
+            multiply = false;
         }
         else if (multiply == false)
         {
-                    check = credit % 10;
-                    sum += check;
-                    credit /= 10;
-                    multiply = true;
+            check = credit % 10;
+            sum += check;
+            credit /= 10;
+            multiply = true;
         }
-        length ++;
+        length++;
     }
     while (credit > 0);
 
@@ -70,7 +70,7 @@ int checksum (long credit)
     }
 }
 
-string credit_type (long credit, int length)
+string credit_type(long credit, int length)
 {
     length -= 2;
     long type = 1;
@@ -79,25 +79,24 @@ string credit_type (long credit, int length)
         type *= 10;
     }
     credit /= type;
-    if(credit > 39 || credit < 50)
+    if (credit > 39 && credit < 50)
     {
         credit = 4;
     }
-    printf("%li",credit);
     switch (credit)
     {
         // American Express Numbers
-        case (34 | 37) :
-        return "AMEX\n";
-        break;
+        case (34 | 37):
+            return "AMEX\n";
+            break;
         // Master Card Numbers
-        case (51 | 52 | 53 | 54 | 55) :
-        return "MASTERCARD\n";
-        break;
+        case (51 | 52 | 53 | 54 | 55):
+            return "MASTERCARD\n";
+            break;
         // Visa Numbers
-        case 4 :
-        return "VISA\n";
-        break;
+        case 4:
+            return "VISA\n";
+            break;
     }
     return 0;
 }
