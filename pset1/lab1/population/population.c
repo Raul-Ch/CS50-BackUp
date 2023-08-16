@@ -21,7 +21,8 @@ int main(void)
         end = get_int("Input the desired end size of the population: ");
     }
     while (end < start);
-    // "If the user enters a number less than the starting population size, the user should be re-prompted to enter an ending population"
+    // "If the user enters a number less than the starting population size, the user should be re-prompted to enter an ending
+    // population"
 
     // TODO: Calculate number of years until we reach threshold
     // TODO: Print number of years
@@ -29,7 +30,7 @@ int main(void)
     printf("Years: %i\n", calculate_years(start, end));
 }
 
-    //Function to calculate years
+// Function to calculate years
 int calculate_years(int start, int end)
 {
     int years = 0;
