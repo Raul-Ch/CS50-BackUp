@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 int checksum (long credit);
-int card_type (int length);
 
 int main(void)
 {
