@@ -38,7 +38,7 @@ void print_pyramids(int size)
         }
         // The space between pyramids
         printf ("  ");
-        // 
+        // We print the rigth tower
         for(int k = 0; k <= i; k++)
         {
              printf("#");
