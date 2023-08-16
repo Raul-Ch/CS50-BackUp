@@ -57,6 +57,7 @@ int checksum(long credit)
 
     if (sum % 10 == 0)
     {
+        printf("%i",sum);
         return length;
     }
     else
