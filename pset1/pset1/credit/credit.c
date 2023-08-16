@@ -27,7 +27,7 @@ void checksum (long credit)
         check = credit % module;
         printf("%i\n",check);
         sum += check;
-        module += 10;
+        module -= 10;
         }
-        while (check > 0);
+        while (module > 0);
 }
