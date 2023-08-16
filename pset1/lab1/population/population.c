@@ -45,7 +45,9 @@ int calculate_years(int start, int end)
         born = start / 3;
         pass = start / 4;
         start += born - pass;
-        printf("%i",start);
+        printf("Born: %f\n",born);
+        printf("pass: %f\n",pass);
+        printf("poplation: %i\n",start);
         years++;
     }
     // We return the variable int years obtained
