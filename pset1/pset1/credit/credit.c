@@ -94,4 +94,5 @@ string credit_type (long credit, int length)
         return "VISA\n";
         break;
     }
+    return 0;
 }
