@@ -57,7 +57,6 @@ bool checksum (long credit)
                     credit /= 10;
                     multiply = true;
         }
-        lenght ++;
     }
     while (credit > 0);
 
