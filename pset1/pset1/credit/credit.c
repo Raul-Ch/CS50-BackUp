@@ -24,12 +24,13 @@ void checksum (long credit)
 
         do
         {
+        credit /= 10;
         //printf("Num: %li\n",credit);
         check = credit % module;
-        //printf("Last: %li\n",check);
-        sum += check;
+        printf("Last: %li\n",check);
+        sum += check*2;
         credit /= 10;
         //printf("Num: %li\n",credit);
         }
-        while (credit < 0);
+        while (check > 0);
 }
