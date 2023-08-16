@@ -27,7 +27,7 @@ void print_pyramids(int size)
         //  Here we print out the spaces (Depending on the row is the number of spaces)
         //  We start at 0, so there will be one space more to the number of height of the tower
         //  So we need to add 1 to start counting from that number
-        for (int space = i + 1; space < size; space++)
+        for (int space = i + 1; space < size; space++)      
         {
             printf(" ");
         }
