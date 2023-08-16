@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 bool checksum (long credit);
-int 
+int card_type (int length);
 
 int main(void)
 {
@@ -16,11 +16,11 @@ int main(void)
     // "13 to 16 digit numbers"
     if (checksum (credit_number) == true)
     {
-
+        printf("%li",credit_number);
     }
     else if ((checksum (credit_number) == false))
     {
-        printf("INVALID");
+        printf("INVALID\n");
     }
 }
 
@@ -59,7 +59,7 @@ bool checksum (long credit)
         }
     }
     while (credit > 0);
-    printf("%i\n",sum%10);
+
     if (sum % 10 == 0)
     {
         return true;
