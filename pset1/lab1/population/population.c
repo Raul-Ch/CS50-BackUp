@@ -4,11 +4,12 @@
 int main(void)
 {
     // TODO: Prompt for start size
+    int start;
     do
     {
-       int star = get_int("Minimum: ");
+        start = get_int("Input the start size of the population: ");
     }
-    while (min < 1);
+    while (start > 9);
     // TODO: Prompt for end size
 
     // TODO: Calculate number of years until we reach threshold
