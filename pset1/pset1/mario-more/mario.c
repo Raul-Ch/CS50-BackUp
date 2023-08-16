@@ -17,31 +17,31 @@ int main(void)
     print_pyramids(size);
 }
 
-    // Function to print the pyramids
+// Function to print the pyramids
 void print_pyramids(int size)
 {
     // Cicle to print size (heigth)
-    for(int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
-        //Cicles to print the width
-        // Here we print out the spaces (Depending on the row is the number of spaces)
-        // We start at 0, so there will be one space more to the number of height of the tower
-        // So we need to add 1 to start counting from that number
-        for(int space = i+1; space < size; space++)
+        // Cicles to print the width
+        //  Here we print out the spaces (Depending on the row is the number of spaces)
+        //  We start at 0, so there will be one space more to the number of height of the tower
+        //  So we need to add 1 to start counting from that number
+        for (int space = i + 1; space < size; space++)
         {
-             printf(" ");
+            printf(" ");
         }
         // Here we just print the character (depending on the row) to build the pyramid
-        for(int j = 0; j <= i; j++)
+        for (int j = 0; j <= i; j++)
         {
-             printf("#");
+            printf("#");
         }
         // The space between pyramids
-        printf ("  ");
+        printf("  ");
         // We print the rigth tower
-        for(int k = 0; k <= i; k++)
+        for (int k = 0; k <= i; k++)
         {
-             printf("#");
+            printf("#");
         }
         printf("\n");
     }
