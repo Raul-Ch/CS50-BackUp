@@ -21,7 +21,16 @@ void print_pyramids(int size)
     {
         for(int j = 0; j <= i; j++)
         {
-
+            int space = 0;
+            if (space < size)
+            {
+                printf(" ");
+                space++;
+            }
+            else
+            {
+                printf("#");
+            }
         }
         printf("\n");
     }
