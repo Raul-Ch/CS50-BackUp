@@ -21,17 +21,19 @@ int main(void)
     while (end < start);
     // TODO: Calculate number of years until we reach threshold
     // TODO: Print number of years
-     printf("Years to achive de desired population: %i ",calculate_years(start, end));
+     printf("Years to achive de desired population: %i\n",calculate_years(start, end));
 }
 
 int calculate_years(int start, int end)
 {
-    int years;
-    int born;
-    int pass;
+    int years = 0;
+    float born;
+    float pass;
     while (start < end)
     {
         born = start / 3;
+        pass = start / 4;
+        start += born - pass;
         years ++;
     }
     return years;
