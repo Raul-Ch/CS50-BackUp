@@ -8,7 +8,7 @@ int main(void)
 {
     // TODO: Prompt for credit card number: "program that prompts the user for a credit card number"
     long credit_number;
-        credit_number = get_long("Input the credit card number: ");
+    credit_number = get_long("Input the credit card number: ");
     // "13 to 16 digit numbers"
     int credit_length = checksum(credit_number);
     if (credit_length != false)
@@ -98,6 +98,8 @@ string credit_type(long credit, int length)
         case 4:
             return "VISA\n";
             break;
+        default:
+            return "INVALID\n";
     }
     return 0;
 }
