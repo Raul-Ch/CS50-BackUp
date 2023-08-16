@@ -30,7 +30,7 @@ int calculate_years(int start, int end)
 
     while (start < end)
     {
-        start += start / 3;
+        start = start 
     }
 
     return years;
