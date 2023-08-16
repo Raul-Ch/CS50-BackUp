@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void checksum (int credit);
+void checksum (long credit);
 
 int main(void)
 {
@@ -16,11 +16,18 @@ int main(void)
     checksum (credit_number);
 }
 
-void checksum (int credit)
+void checksum (long credit)
 {
-    long check;
+    int check;
+    int module = 10;
+    int sum = 0;
 
-        check = credit % 10;
-        printf("%li\n",check);
-
+        do
+        {
+        check = credit % module;
+        printf("%i\n",check);
+        sum += check;
+        module -= 2;
+        }
+        while (module < 2);
 }
