@@ -29,5 +29,5 @@ void checksum (long credit)
         sum += check;
         module -= 2;
         }
-        while (module < 2);
+        while (module > 0);
 }
