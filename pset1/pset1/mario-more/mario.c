@@ -11,7 +11,7 @@ int main(void)
     {
         size = get_int("Input the size of the pyramids (1-8): ");
     }
-    while (size < 0 || size > 8);
+    while (size < 1 || size > 8);
     // "positive integer between, say, 1 and 8, inclusive"
     // Call the function and pass the size
     print_pyramids(size);
