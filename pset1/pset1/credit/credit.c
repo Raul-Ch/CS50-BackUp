@@ -32,5 +32,5 @@ void checksum (long credit)
         credit /= 10;
         //printf("Num: %li\n",credit);
         }
-        while (check > 0);
+        while (credit > 0);
 }
