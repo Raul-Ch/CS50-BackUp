@@ -12,7 +12,7 @@ int main(void)
     {
         credit_number = get_long("Input the credit card number: ");
     }
-    while (credit_number < 1000000000000 || credit_number > 9999999999999999);
+    while (credit_number < 999999999999 || credit_number > 9999999999999999);
     // "13 to 16 digit numbers"
     int credit_length = checksum(credit_number);
     if (credit_length != false)
