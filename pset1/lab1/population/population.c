@@ -35,19 +35,12 @@ int main(void)
 int calculate_years(int start, int end)
 {
     int years = 0;
-    float born;
-    float pass;
     // It stops after start reaches the desired population end
     while (start < end)
     {
         // "Each year, n / 3 new llamas are born, and n / 4 llamas pass away."
         //  "Start is an int variable, but born and pass are floats, so we can divide with out problems"
-        born = start / 3;
-        pass = start / 4;
         start += born - pass;
-        printf("Born: %f\n",born);
-        printf("pass: %f\n",pass);
-        printf("poplation: %i\n",start);
         years++;
     }
     // We return the variable int years obtained
