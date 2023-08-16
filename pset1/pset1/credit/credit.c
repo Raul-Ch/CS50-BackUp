@@ -18,18 +18,17 @@ int main(void)
 
 void checksum (long credit)
 {
-    double check;
-    int module = 100;
+    long check;
+    int module = 10;
     int sum = 0;
-
-        check = credit % module;
-        printf("%f\n",check);
 
         do
         {
-
-        // sum += check;
-        // module -= 10;
+        check = credit % module;
+        printf("%li\n",check);
+        sum += check;
+        module -= 10;
+        credit /= 100;
         }
         while (check > 0);
 }
