@@ -35,12 +35,12 @@ bool prime(int number)
     {
         return true;
     }
-    if (number % 2 != 0 || number % 3 != 0)
+    else if (number == 1 || number % 2 == 0 || number % 3 == 0)
     {
-        return true;
+        return false;
     }
     else
     {
-        return false;
+        return true;
     }
 }
