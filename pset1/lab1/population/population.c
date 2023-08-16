@@ -27,16 +27,11 @@ int main(void)
 int calculate_years(int start, int end)
 {
     int years;
-    float population = start;
-    float born;
-    float die;
-    do
+
+    while (start < end)
     {
-        born = start / 3;
-        die = start / 4;
-        poplation = start;(int) born ;
+        start += start / 3;
     }
-    while (start = end);
 
     return years;
 }
