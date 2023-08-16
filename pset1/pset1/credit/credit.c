@@ -82,11 +82,11 @@ string credit_type (long credit, int length)
     switch (credit)
     {
         // American Express Numbers
-        case 34 || 37 :
+        case (34 | 37) :
         return "AMEX\n";
         break;
         // Master Card Numbers
-        case 51 || 52 :
+        case (51 | 52) :
         return "MASTERCARD\n";
         break;
         // Visa Numbers
