@@ -25,12 +25,12 @@ void checksum (long credit)
         do
         {
         credit /= 10;
-        //printf("Num: %li\n",credit);
         check = credit % module;
-        printf("Last: %li\n",check);
+        // Print to check the numbers
+        printf("Last: %li\n",check*2);
         sum += check*2;
         credit /= 10;
-        //printf("Num: %li\n",credit);
         }
         while (credit > 0);
+    printf("%i\n",sum);
 }
