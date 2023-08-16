@@ -54,6 +54,7 @@ int checksum(long credit)
             multiply = true;
         }
         length++;
+        printf("%li",credit);
     }
     while (credit > 0);
 
