@@ -21,24 +21,24 @@ void checksum (long credit)
     long check;
     int module = 10;
     int sum = 0;
-
+    
         do
         {
         credit /= 10;
         check = credit % module;
-        // Print to check the numbers
-        printf("Last: %li\n",check*2);
-        if (check > 9)
+        // Print to check the second to last numbers: printf("Last: %li\n",check*2);
+        if (check*2 > 9)
         {
             sum += 1;
-            sum += (check-10)*2;
+            sum += (check*2-10);
         }
-        else{
+        else
+        {
         sum += (check*2);
         }
-        printf("Sum: %i\n",sum);
+        // Print to check proper sum: printf("Sum: %i\n",sum);
         credit /= 10;
         }
         while (credit > 0);
-    printf("%i\n",sum);
+
 }
