@@ -28,7 +28,8 @@ void checksum (long credit)
         check = credit % module;
         // Print to check the numbers
         printf("Last: %li\n",check*2);
-        sum += check*2;
+        sum += (check*2);
+        printf("Sum: %i\n",sum);
         credit /= 10;
         }
         while (credit > 0);
