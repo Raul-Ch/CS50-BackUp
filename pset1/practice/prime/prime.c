@@ -45,7 +45,7 @@ bool prime(int number)
     {
         return false;
     }
-    // If it does not divide by 2 or 3 then it can't be divided by any other than 1 and itself
+    // If it does not divide by 2, 3 or 5 then it can't be divided by any other than 1 and itself
     else
     {
         return true;
