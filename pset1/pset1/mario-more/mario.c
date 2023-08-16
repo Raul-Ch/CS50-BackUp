@@ -21,12 +21,7 @@ void print_pyramids(int size)
     {
         for(int j = 0; j < size; j++)
         {
-            for(int k = size; k > 0; k--)
-            {
-                printf(" ");
-                j++;
-            }
-            printf("#");
+            printf("# #");
         }
         printf("\n");
     }
