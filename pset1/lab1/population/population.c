@@ -21,7 +21,9 @@ int main(void)
     while (end < start);
     // TODO: Calculate number of years until we reach threshold
     // TODO: Print number of years
-     printf("Years to achive de desired population: %i\n",calculate_years(start, end));
+    // cs50/labs/2023/x/population not admitted output:
+    // printf("Years to achive de desired population: %i\n",calculate_years(start, end));
+    printf("Years: %i\n", calculate_years(start, end));
 }
 
 int calculate_years(int start, int end)
@@ -34,7 +36,7 @@ int calculate_years(int start, int end)
         born = start / 3;
         pass = start / 4;
         start += born - pass;
-        years ++;
+        years++;
     }
     return years;
 }
