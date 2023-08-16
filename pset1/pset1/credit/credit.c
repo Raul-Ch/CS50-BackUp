@@ -83,15 +83,19 @@ string credit_type(long credit, int length)
     {
         credit = 4;
     }
-    printf ("%li",credit);
     switch (credit)
     {
         // American Express Numbers
-        case 34 : case 37 :
+        case 34:
+        case 37:
             return "AMEX\n";
             break;
         // Master Card Numbers
-        case 51 : case : 52 : case : 53 : case : 54 : case : 55 :
+        case 51:
+        case 52:
+        case 53:
+        case 54:
+        case 55:
             return "MASTERCARD\n";
             break;
         // Visa Numbers
