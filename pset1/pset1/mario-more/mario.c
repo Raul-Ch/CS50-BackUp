@@ -23,10 +23,11 @@ void print_pyramids(int size)
         {
             do
             {
-                printf("1");
+                printf(" ");
                 j++;
             }
-            while (j<size);
+            while (j<size-1);
+            printf("#");
         }
         printf("\n");
     }
