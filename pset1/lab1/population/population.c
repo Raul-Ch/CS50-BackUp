@@ -26,5 +26,13 @@ int main(void)
 
 int calculate_years(int start, int end)
 {
+    int years;
+    float population;
+    do
+    {
+        population = start 
+    }
+    while (start = end);
 
+    return years;
 }
