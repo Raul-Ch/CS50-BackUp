@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int checksum (long credit);
+int credit_type (int length);
 
 int main(void)
 {
@@ -16,7 +17,7 @@ int main(void)
     int credit_length = checksum (credit_number);
     if (credit_length != false)
     {
-        printf("%i\n",credit_length);
+        credit_type (credit_length);
     }
 }
 
@@ -67,4 +68,9 @@ int checksum (long credit)
         printf("INVALID\n");
         return 0;
     }
+}
+
+int credit_type (int length)
+{
+    
 }
