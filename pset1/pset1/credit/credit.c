@@ -26,9 +26,9 @@ int main(void)
 
 bool checksum (long credit)
 {
+    bool multiply = false;
     long check;
     int sum = 0;
-    bool multiply = false;
 
     do
     {
@@ -57,6 +57,7 @@ bool checksum (long credit)
                     credit /= 10;
                     multiply = true;
         }
+        lenght ++;
     }
     while (credit > 0);
 
