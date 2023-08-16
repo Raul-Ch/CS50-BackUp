@@ -79,6 +79,10 @@ string credit_type (long credit, int length)
         type *= 10;
     }
     credit /= type;
+    if(credit > 39 || credit < 50)
+    {
+        credit = 4;
+    }
     printf("%li",credit);
     switch (credit)
     {
@@ -87,7 +91,7 @@ string credit_type (long credit, int length)
         return "AMEX\n";
         break;
         // Master Card Numbers
-        case (51 | 52) :
+        case (51 | 52 | 53 | 54 | 55) :
         return "MASTERCARD\n";
         break;
         // Visa Numbers
