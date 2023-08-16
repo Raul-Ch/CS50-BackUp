@@ -14,7 +14,8 @@ int main(void)
     while (credit_number < 1000000000000 || credit_number > 9999999999999999);
     // "13 to 16 digit numbers"
     int credit_length = checksum (credit_number);
-    if (credit_length < 0)
+        printf("%i\n",credit_length);
+    if (credit_length == true)
     {
         printf("%i\n",credit_length);
     }
@@ -59,13 +60,11 @@ int checksum (long credit)
                     multiply = true;
         }
         length ++;
-        printf("%i\n",length);
     }
     while (credit > 0);
 
     if (sum % 10 == 0)
     {
-        printf("%i\n",length);
         return length;
     }
     else
