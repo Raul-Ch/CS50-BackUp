@@ -31,7 +31,11 @@ int main(void)
 bool prime(int number)
 {
     // There is only one even prime number, 2.
-    if (number == 2 || number%2 != 0)
+    if (number == 2 || number == 3)
+    {
+        return true;
+    }
+    if (number % 2 != 0 || number % 3 != 0)
     {
         return true;
     }
