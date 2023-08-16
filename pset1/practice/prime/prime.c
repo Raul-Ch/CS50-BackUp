@@ -43,7 +43,7 @@ bool prime(int number)
     {
         return false;
     }
-    // If it does not divide by 2 or 3 then it can't be divided b
+    // If it does not divide by 2 or 3 then it can't be divided by any other than 1 and itself
     else
     {
         return true;
