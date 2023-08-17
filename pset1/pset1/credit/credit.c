@@ -10,9 +10,7 @@ int main(void)
     long credit_number = 0;
     credit_number = get_long("Input the credit card number: ");
     // "13 to 16 digit numbers"
-    // Calling the function to verify number
     int credit_length = checksum(credit_number);
-    // If it passes then we´ll display the type of the card
     if (credit_length != false)
     {
         printf("%s", credit_type(credit_number, credit_length));
@@ -26,15 +24,9 @@ int checksum(long credit)
     int sum = 0;
     int length = 0;
 
-    // "Algorithm invented by Hans Peter Luhn of IBM."
     do
     {
-        if (credit < 1000000000000 || credit > 9999999999999999)
-        {
-            printf("INVALID\n");
-            return 0;
-        }
-        else if (multiply == true)
+        if (multiply == true)
         {
             // credit /= 10;
             check = credit % 10;
@@ -55,7 +47,7 @@ int checksum(long credit)
         else if (multiply == false)
         {
             check = credit % 10;
-            // Print to check the second to last numbers: printf("Last: %li\n",check);
+            // Print to check the second to last numbers:printf("Last: %li\n",check);
             sum += check;
             // Print to check proper sum: printf("Sum: %i\n",sum);
             credit /= 10;
@@ -68,7 +60,7 @@ int checksum(long credit)
 
     if (sum % 10 == 0)
     {
-        // Print to check proper sum: printf("%i",sum);
+        printf("%i", sum);
         return length;
     }
     else
