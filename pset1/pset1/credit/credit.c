@@ -58,7 +58,12 @@ int checksum(long credit)
     }
     while (credit > 0);
 
-    if (sum % 10 == 0)
+    if (length < 13 || length > 16)
+    {
+        printf("INVALID\n");
+        return 0;
+    }
+    else if (sum % 10 == 0)
     {
         // Print to check proper sum: printf("%i", sum);
         return length;
