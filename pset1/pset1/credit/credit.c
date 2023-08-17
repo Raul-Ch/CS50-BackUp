@@ -9,7 +9,6 @@ int main(void)
     // TODO: Prompt for credit card number: "program that prompts the user for a credit card number"
     long credit_number = 0;
     credit_number = get_long("Input the credit card number: ");
-    // "13 to 16 digit numbers"
     int credit_length = checksum(credit_number);
     if (credit_length != false)
     {
@@ -58,6 +57,7 @@ int checksum(long credit)
     }
     while (credit > 0);
 
+    // "13 to 16 digit numbers"
     if (length < 13 || length > 16)
     {
         printf("INVALID\n");
