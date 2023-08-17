@@ -60,7 +60,7 @@ int checksum(long credit)
 
     if (sum % 10 == 0)
     {
-        printf("%i", sum);
+        // Print to check proper sum: printf("%i", sum);
         return length;
     }
     else
