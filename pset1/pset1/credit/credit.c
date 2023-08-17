@@ -32,10 +32,10 @@ int checksum(long credit)
             check = credit % 10;
             // Print to check the second to last numbers:
             printf("Last2: %li\n",check*2);
-            if (check * 2 > 10)
+            if ((check * 2) >= 10)
             {
                 sum += 1;
-                sum += (check * 2 - 10);
+                sum += ((check * 2) - 10);
             }
             else
             {
