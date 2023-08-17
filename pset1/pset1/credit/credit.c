@@ -8,9 +8,15 @@ int main(void)
 {
     // TODO: Prompt for credit card number: "program that prompts the user for a credit card number"
     long credit_number = 0;
-    credit_number = get_long("Input the credit card number: ");
+    do
+    {
+        credit_number = get_long("Input the credit card number: ");
+    }
+    while (credit_number < 1000000000000 || credit_number > 10000000000000000);
     // "13 to 16 digit numbers"
+    // Calling the function to verify number
     int credit_length = checksum(credit_number);
+    // If it passes then we´ll display the type of the card
     if (credit_length != false)
     {
         printf("%s", credit_type(credit_number, credit_length));
@@ -24,14 +30,14 @@ int checksum(long credit)
     int sum = 0;
     int length = 0;
 
+    // "Algorithm invented by Hans Peter Luhn of IBM."
     do
     {
         if (multiply == true)
         {
             // credit /= 10;
             check = credit % 10;
-            // Print to check the second to last numbers:
-            printf("Last2: %li\n",check*2);
+            // Print to check the second to last numbers: printf("Last2: %li\n",check*2);
             if ((check * 2) >= 10)
             {
                 sum += 1;
@@ -41,28 +47,27 @@ int checksum(long credit)
             {
                 sum += (check * 2);
             }
-            // Print to check proper sum:
-            printf("Sum: %i\n",sum);
+            // Print to check proper sum: printf("Sum: %i\n",sum);
             credit /= 10;
             multiply = false;
         }
         else if (multiply == false)
         {
             check = credit % 10;
-            printf("Last: %li\n",check);
+            // Print to check the second to last numbers: printf("Last: %li\n",check);
             sum += check;
-            printf("Sum: %i\n",sum);
+            // Print to check proper sum: printf("Sum: %i\n",sum);
             credit /= 10;
             multiply = true;
         }
         length++;
-        printf("Credit: %li\n",credit);
+        // Print to check proper sum: printf("Credit: %li\n",credit);
     }
     while (credit > 0);
 
     if (sum % 10 == 0)
     {
-        printf("%i",sum);
+        // Print to check proper sum: printf("%i",sum);
         return length;
     }
     else
