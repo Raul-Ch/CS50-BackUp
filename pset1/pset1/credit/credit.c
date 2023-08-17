@@ -103,7 +103,7 @@ string credit_type(long credit, int length)
             return "VISA\n";
             break;
         default:
-            return "INVALIDcase\n";
+            return "INVALID\n";
     }
     return 0;
 }
