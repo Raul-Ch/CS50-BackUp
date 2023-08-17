@@ -29,7 +29,7 @@ int checksum(long credit)
     // "Algorithm invented by Hans Peter Luhn of IBM."
     do
     {
-        if (credit < 1000000000000 || credit > 10000000000000000)
+        if (credit < 1000000000000 || credit > 9999999999999999)
         {
             printf("INVALID\n");
             return 0;
