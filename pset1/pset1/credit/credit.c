@@ -48,8 +48,8 @@ int checksum(long credit)
         }
         else if (multiply == false)
         {
-            printf("Last: %li\n",check*2);
             check = credit % 10;
+            printf("Last: %li\n",check*2);
             sum += check;
             printf("Sum: %i\n",sum);
             credit /= 10;
