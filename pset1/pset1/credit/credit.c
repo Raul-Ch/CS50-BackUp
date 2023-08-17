@@ -8,11 +8,7 @@ int main(void)
 {
     // TODO: Prompt for credit card number: "program that prompts the user for a credit card number"
     long credit_number = 0;
-    do
-    {
         credit_number = get_long("Input the credit card number: ");
-    }
-    while (credit_number < 1000000000000 || credit_number > 10000000000000000);
     // "13 to 16 digit numbers"
     // Calling the function to verify number
     int credit_length = checksum(credit_number);
