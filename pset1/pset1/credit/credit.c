@@ -8,7 +8,7 @@ int main(void)
 {
     // TODO: Prompt for credit card number: "program that prompts the user for a credit card number"
     long credit_number = 0;
-        credit_number = get_long("Input the credit card number: ");
+    credit_number = get_long("Input the credit card number: ");
     // "13 to 16 digit numbers"
     // Calling the function to verify number
     int credit_length = checksum(credit_number);
@@ -29,7 +29,12 @@ int checksum(long credit)
     // "Algorithm invented by Hans Peter Luhn of IBM."
     do
     {
-        if (multiply == true)
+        if (credit < 1000000000000 || credit > 10000000000000000)
+        {
+            printf("INVALID\n");
+            return 0;
+        }
+        else if (multiply == true)
         {
             // credit /= 10;
             check = credit % 10;
