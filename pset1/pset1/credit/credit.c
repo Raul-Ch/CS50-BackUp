@@ -30,7 +30,8 @@ int checksum(long credit)
         {
             // credit /= 10;
             check = credit % 10;
-            // Print to check the second to last numbers: printf("Last2: %li\n",check*2);
+            // Print to check the second to last numbers:
+            printf("Last2: %li\n",check*2);
             if (check * 2 > 10)
             {
                 sum += 1;
@@ -40,7 +41,8 @@ int checksum(long credit)
             {
                 sum += (check * 2);
             }
-            // Print to check proper sum: printf("Sum: %i\n",sum);
+            // Print to check proper sum:
+            printf("Sum: %i\n",sum);
             credit /= 10;
             multiply = false;
         }
