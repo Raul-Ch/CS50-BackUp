@@ -3,5 +3,9 @@
 
 int main(void)
 {
-    
+    do
+    {
+        int length = get_int("Length: ");
+    }
+    while ();
 }
