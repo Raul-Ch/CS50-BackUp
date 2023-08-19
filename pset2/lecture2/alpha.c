@@ -6,7 +6,7 @@ int main(void)
 {
     string word = get_string("Word: ");
     // Length -1 because of the '/0' NUL at the end
-    for(int i = 0; i < strlen(word)-1; i++)
+    for(int i = 0; i < strlen(word) - 1; i++)
     {
         // Checl of NOT alphabetical (i.e., "ba")
         if (word[i] > word[i + 1]){
