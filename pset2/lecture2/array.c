@@ -3,9 +3,19 @@
 
 int main(void)
 {
+    int length;
     do
     {
-        int length = get_int("Length: ");
+        length = get_int("Length: ");
     }
-    while ();
+    while (length < 1);
+
+    int twice[length];
+    
+    for (int i = 0; i < length; i++)
+    {
+        twice[i] = 2 * twice [i - 1];
+        printf("%i\n",twice[i]);
+    }
+
 }
