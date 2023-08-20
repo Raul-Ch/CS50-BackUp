@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -19,7 +19,7 @@ int main(void)
     int score2 = compute_score(word2);
 
     // TODO: Print the winner
-    if(score1 == score2)
+    if (score1 == score2)
     {
         printf("Tie!\n");
     }
@@ -38,9 +38,9 @@ int compute_score(string word)
     // TODO: Compute and return score for string
     int sum = 0;
 
-    for(int i = 0; i < strlen(word); i++)
+    for (int i = 0; i < strlen(word); i++)
     {
-        switch(tolower(word))
+        switch (tolower(word[i]))
         {
             case 'a':
             case 'e':
@@ -89,11 +89,10 @@ int compute_score(string word)
                 sum += 10;
                 break;
 
-            default :
+            default:
                 sum += 0;
-            break;
+                break;
         }
-
     }
 
     return sum;
