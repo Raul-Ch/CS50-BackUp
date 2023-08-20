@@ -11,13 +11,13 @@ string replace(string input);
 
 int main(int argc, string argv[])
 {
-    if (argc == 1 || argc > 2)
+    if (argc == 2)
     {
-        printf("Usage: ./no-vowels word\n");
+        printf("%s\n", replace(argv[1]));
     }
     else
     {
-        printf("%s\n", replace(argv[1]));
+        printf("Usage: ./no-vowels word\n");
     }
 }
 
@@ -41,7 +41,7 @@ string replace(string argv)
                 break;
             case 'o':
             case 'O':
-                argv[i] = 'u';
+                argv[i] = '0';
                 break;
         }
     }
