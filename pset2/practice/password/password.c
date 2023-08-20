@@ -51,7 +51,7 @@ bool valid(string password)
         }
         if (check[3] == false)
         {
-            if (is(password[i]))
+            if (isalpha(password[i]))
             {
                 check[3] = true;
             }
