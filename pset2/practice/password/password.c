@@ -3,8 +3,8 @@
 // Practice using the ctype library
 
 #include <cs50.h>
-#include <stdio.h>
 #include <ctype.h>
+#include <stdio.h>
 #include <string.h>
 
 bool valid(string password);
@@ -28,23 +28,23 @@ bool valid(string password)
     bool check[3] = {false, false, false};
     for (int i = 0; i < strlen(password); i++)
     {
-        if(check [0] == false)
+        if (check[0] == false)
         {
-            if(isupper(password[i]))
+            if (isupper(password[i]))
             {
                 check[0] = true;
             }
         }
-        else if(check [1] == false)
+        if (check[1] == false)
         {
-            if(islower(password[i]))
+            if (islower(password[i]))
             {
                 check[1] = true;
             }
         }
-        else if(check [2] == false)
+        if (check[2] == false)
         {
-            if(isalnum(password[i]))
+            if (isalnum(password[i]))
             {
                 check[2] = true;
             }
