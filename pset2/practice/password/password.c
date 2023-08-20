@@ -28,10 +28,9 @@ bool valid(string password)
     bool check[3] = {false, false, false};
     for (int i = 0; i < strlen(password); i++)
     {
-        switch(password[i])
+        if(isupper(password[i]))
         {
-            case (isupper(password[i])):
-
+            
         }
     }
     return false;
