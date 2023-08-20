@@ -40,14 +40,58 @@ int compute_score(string word)
 
     for(int i = 0; i < strlen(word); i++)
     {
-        if(isdigit(word[i]))
+        switch(tolower(word))
         {
-            sum += 0;
-        }
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'l':
+            case 'n':
+            case 'o':
+            case 'r':
+            case 's':
+            case 't':
+            case 'u':
+                sum += 1;
+                break;
 
-        switch(toupper(word))
-        {
-            case 'a' 
+            case 'd':
+            case 'g':
+                sum += 2;
+                break;
+
+            case 'b':
+            case 'c':
+            case 'm':
+            case 'p':
+                sum += 3;
+                break;
+
+            case 'f':
+            case 'h':
+            case 'v':
+            case 'w':
+            case 'y':
+                sum += 4;
+                break;
+
+            case 'k':
+                sum += 5;
+                break;
+
+            case 'j':
+            case 'x':
+                sum += 8;
+                break;
+
+            case 'q':
+            case 'z':
+                sum += 10;
+                break;
+
+            default :
+                sum += 0;
+            break;
         }
 
     }
