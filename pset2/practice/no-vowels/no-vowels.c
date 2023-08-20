@@ -11,5 +11,19 @@ string replace(string output);
 
 int main(int argc, string argv[])
 {
+    if (argc == 1 || argc > 2)
+    {
+        printf("Usage: ./no-vowels word");
+    }
+    else
+    {
+    replace(argv);
+    }
+}
 
+string replace(string argv)
+{
+    switch (argv)
+    {
+    }
 }
