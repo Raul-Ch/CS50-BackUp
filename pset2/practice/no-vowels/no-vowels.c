@@ -17,13 +17,12 @@ int main(int argc, string argv[])
     }
     else
     {
-    printf("%s",replace(argv[1]));
+    printf("%s\n",replace(argv[1]));
     }
 }
 
 string replace(string argv)
 {
-
     for (int i = 0; strlen(argv) < i; i++)
     {
         switch (argv[i])
