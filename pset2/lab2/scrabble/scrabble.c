@@ -40,6 +40,15 @@ int compute_score(string word)
 
     for(int i = 0; i < strlen(word); i++)
     {
+        if(isdigit(word[i]))
+        {
+            sum += 0;
+        }
+
+        switch(toupper(word))
+        {
+            case 'a' 
+        }
 
     }
 
