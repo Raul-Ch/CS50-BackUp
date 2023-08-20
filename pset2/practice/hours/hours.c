@@ -27,7 +27,7 @@ int main(void)
 // TODO: complete the calc_hours function
 float calc_hours(int hours[], int weeks, char output)
 {
-    int total, average;
+    int total = 0;
 
     for(int i = 0; i < weeks; i++)
     {
@@ -40,10 +40,6 @@ float calc_hours(int hours[], int weeks, char output)
     }
     else
     {
-        for(int i = 0; i < weeks; i++)
-        {
-            total += hours[i];
-        }
-        return total;
+        return total / weeks;
     }
 }
