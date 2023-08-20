@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 
-string replace(string output);
+string replace(string);
 
 int main(int argc, string argv[])
 {
@@ -21,7 +21,7 @@ int main(int argc, string argv[])
     }
 }
 
-string replace(string argv)
+string replace(string argv[])
 {
     switch (argv)
     {
