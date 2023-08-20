@@ -7,21 +7,31 @@
 #include <stdio.h>
 #include <string.h>
 
-string replace(string array[]);
+string replace(string input);
 
 int main(int argc, string argv[])
 {
     if (argc == 1 || argc > 2)
     {
-        printf("Usage: ./no-vowels word");
+        printf("Usage: ./no-vowels word\n");
     }
     else
     {
-    replace(argv[1]);
+    printf("%s",replace(argv[1]));
     }
 }
 
-string replace(string argv[])
+string replace(string argv)
 {
-    return "Hi";
+    string newargv;
+
+    for (int i = 0; strlen(argv) < i; i++)
+    {
+        switch (argv[i])
+        {
+            case: 'a'
+        }
+    }
+
+    return newargv;
 }
