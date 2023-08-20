@@ -28,10 +28,34 @@ bool valid(string password)
     bool check[3] = {false, false, false};
     for (int i = 0; i < strlen(password); i++)
     {
-        if(isupper(password[i]))
+        if(check [0] == false)
         {
-            
+            if(isupper(password[i]))
+            {
+                check[0] = true;
+            }
+        }
+        else if(check [1] == false)
+        {
+            if(islower(password[i]))
+            {
+                check[1] = true;
+            }
+        }
+        else if(check [2] == false)
+        {
+            if(isalnum(password[i]))
+            {
+                check[2] = true;
+            }
         }
     }
-    return false;
+    if (check[0] == true && check[1] == true && check[2] == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
