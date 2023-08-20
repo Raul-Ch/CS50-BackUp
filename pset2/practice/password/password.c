@@ -25,7 +25,7 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool valid(string password)
 {
-    bool check[3] = {false, false, false};
+    bool check[4] = {false, false, false, false};
     for (int i = 0; i < strlen(password); i++)
     {
         if (check[0] == false)
@@ -44,9 +44,16 @@ bool valid(string password)
         }
         if (check[2] == false)
         {
-            if (isalnum(password[i]))
+            if (isdigit(password[i]))
             {
                 check[2] = true;
+            }
+        }
+        if (check[3] == false)
+        {
+            if (is(password[i]))
+            {
+                check[3] = true;
             }
         }
     }
