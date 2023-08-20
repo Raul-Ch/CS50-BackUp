@@ -4,6 +4,7 @@
 
 #include <cs50.h>
 #include <stdio.h>
+#include <ctype.h>
 
 bool valid(string password);
 
@@ -23,9 +24,14 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool valid(string password)
 {
+    bool check[3] = {false, false, false};
     for (int i = 0; i < strlen(password); i++)
     {
-        if (int)
+        switch(password[i])
+        {
+            case (password[i] >= 65 || password[i] <= 90):
+
+        }
     }
     return false;
 }
