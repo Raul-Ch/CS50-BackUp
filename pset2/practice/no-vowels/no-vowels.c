@@ -23,15 +23,17 @@ int main(int argc, string argv[])
 
 string replace(string argv)
 {
-    string newargv;
 
     for (int i = 0; strlen(argv) < i; i++)
     {
         switch (argv[i])
         {
-            case: 'a'
+            case 'a':
+            case 'A':
+                argv[i] = 6;
+            break;
         }
     }
 
-    return newargv;
+    return argv;
 }
