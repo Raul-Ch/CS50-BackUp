@@ -17,20 +17,32 @@ int main(int argc, string argv[])
     }
     else
     {
-    printf("%s\n",replace(argv[1]));
+        printf("%s\n", replace(argv[1]));
     }
 }
 
 string replace(string argv)
 {
-    for (int i = 0; strlen(argv) < i; i++)
+    for (int i = 0; i < strlen(argv); i++)
     {
         switch (argv[i])
         {
             case 'a':
             case 'A':
-                argv[i] = 6;
-            break;
+                argv[i] = '6';
+                break;
+            case 'e':
+            case 'E':
+                argv[i] = '3';
+                break;
+            case 'i':
+            case 'I':
+                argv[i] = '1';
+                break;
+            case 'o':
+            case 'O':
+                argv[i] = 'u';
+                break;
         }
     }
 
