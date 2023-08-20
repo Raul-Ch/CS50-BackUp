@@ -51,7 +51,7 @@ bool valid(string password)
         }
         if (check[3] == false)
         {
-            if (isalpha(password[i]))
+            if (password[i] >= 33 && password[i] <= 47)
             {
                 check[3] = true;
             }
