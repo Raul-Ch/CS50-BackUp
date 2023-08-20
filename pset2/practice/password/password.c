@@ -5,6 +5,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 bool valid(string password);
 
@@ -29,7 +30,7 @@ bool valid(string password)
     {
         switch(password[i])
         {
-            case (password[i] >= 65 || password[i] <= 90):
+            case (isupper(password[i])):
 
         }
     }
