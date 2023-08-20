@@ -17,7 +17,7 @@ int main(int argc, string argv[])
     }
     else
     {
-    replace(argv);
+    replace(argv[1]);
     }
 }
 
