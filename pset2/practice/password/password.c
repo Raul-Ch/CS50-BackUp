@@ -57,7 +57,7 @@ bool valid(string password)
             }
         }
     }
-    if (check[0] == true && check[1] == true && check[2] == true)
+    if (check[0] == true && check[1] == true && check[2] == true && check[3] == true)
     {
         return true;
     }
