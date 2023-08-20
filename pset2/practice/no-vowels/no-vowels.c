@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 
-string replace(string);
+string replace(string array[]);
 
 int main(int argc, string argv[])
 {
@@ -23,7 +23,5 @@ int main(int argc, string argv[])
 
 string replace(string argv[])
 {
-    switch (argv)
-    {
-    }
+    return "Hi";
 }
