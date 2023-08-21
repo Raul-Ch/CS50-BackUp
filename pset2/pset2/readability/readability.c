@@ -18,7 +18,8 @@ int main(void)
     // printf("%i words\n",count_words(text));
     // // Count sentences
     // printf("%i sentences\n",count_sentences(text));
-    index = 0.0588 * L - 0.296 * S - 15.8
+
+    int index = 0.0588 * L - 0.296 * S - 15.8
 }
 
 int count_letters(string text)
