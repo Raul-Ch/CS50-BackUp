@@ -15,6 +15,8 @@ int main(void)
     printf("%i letters\n",count_letters(text));
     // Count words
     printf("%i words\n",count_words(text));
+    // Count sentences
+    printf("%i sentences\n",count_sentences(text));
 }
 
 int count_letters(string text)
@@ -34,7 +36,7 @@ int count_letters(string text)
 
 int count_words(string text)
 {
-    //  For the purpose of this problem, we’ll consider any sequence of characters separated by a space to be a word
+    //  Count words: "For the purpose of this problem, we’ll consider any sequence of characters separated by a space to be a word"
     int words = 0;
     for (int i = 0; i <= strlen(text); i++)
     {
@@ -50,14 +52,14 @@ int count_words(string text)
 
 int count_sentences(string text)
 {
-    // Checks if all of the characters in the provided string, text, are alphabetic.
-    // In the standard C locale letters are just [A-Za-z] and ctype_alpha() is equivalent to (ctype_upper($text) || ctype_lower($text))
+    //  Note: "For this problem, we’ll ask you to ignore that subtlety: you should consider any sequence of characters that ends with:
+    //  a . or a ! or a ? to be a sentence "
     int sentences = 0;
     for (int i = 0; i <= strlen(text); i++)
     {
-        if (isalpha(text[i]))
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
         {
-            letters++;
+            sentences++;
         }
     }
     return sentences;
