@@ -9,6 +9,8 @@ int main(void)
     int start;
     do
     {
+
+        
         start = get_int("Input the start size of the population: ");
     }
     while (start < 9);
