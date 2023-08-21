@@ -19,7 +19,17 @@ int main(void)
     // // Count sentences
     // printf("%i sentences\n",count_sentences(text));
 
-    int index = 0.0588 * L - 0.296 * S - 15.8
+    // "Where 'L' is the average number of letters per 100 words in the text"
+    float L = (count_letters(text) + count_words(text)) * 100;
+    // "And 'S' is the average number of sentences per 100 words in the text."
+    float S = (count_sentences(text) + count_words(text)) * 100;
+
+    int index = 0.0588 * L - 0.296 * S - 15.8;
+
+    if (index)
+    {
+
+    }
 }
 
 int count_letters(string text)
