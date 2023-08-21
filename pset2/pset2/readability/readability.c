@@ -11,12 +11,14 @@ int main(void)
 {
     // Input
     string text = get_string("Text: ");
-    // Count letters
-    printf("%i letters\n",count_letters(text));
-    // Count words
-    printf("%i words\n",count_words(text));
-    // Count sentences
-    printf("%i sentences\n",count_sentences(text));
+    // Test:
+    // // Count letters
+    // printf("%i letters\n",count_letters(text));
+    // // Count words
+    // printf("%i words\n",count_words(text));
+    // // Count sentences
+    // printf("%i sentences\n",count_sentences(text));
+    index = 0.0588 * L - 0.296 * S - 15.8
 }
 
 int count_letters(string text)
