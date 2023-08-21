@@ -26,10 +26,17 @@ int main(void)
 
     int index = 0.0588 * L - 0.296 * S - 15.8;
 
-    switch (index)
+    if (index < 1)
     {
-        case 0 when :
-            printf("Before Grade 1");
+        printf("Before Grade 1\n");
+    }
+    else if (index > 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Grade %i\n", index);
     }
 }
 
