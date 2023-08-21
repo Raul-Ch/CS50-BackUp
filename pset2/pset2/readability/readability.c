@@ -5,6 +5,7 @@
 
 int count_letters(string text);
 int count_words(string text);
+int count_sentences(string text);
 
 int main(void)
 {
@@ -45,4 +46,19 @@ int count_words(string text)
     }
     // We count spaces but the "end/final" word just ends with a point or nothing to track the last space
     return words + 1;
+}
+
+int count_sentences(string text)
+{
+    // Checks if all of the characters in the provided string, text, are alphabetic.
+    // In the standard C locale letters are just [A-Za-z] and ctype_alpha() is equivalent to (ctype_upper($text) || ctype_lower($text))
+    int sentences = 0;
+    for (int i = 0; i <= strlen(text); i++)
+    {
+        if (isalpha(text[i]))
+        {
+            letters++;
+        }
+    }
+    return sentences;
 }
