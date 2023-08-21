@@ -26,6 +26,9 @@ int main(void)
     float S = (count_sentences(text) + count_words(text)) * 100;
 
     float index = round(0.0588 * L - 0.296 * S - 15.8);
+    printf ("%f\n",L);
+    printf ("%f\n",S);
+    printf ("%f\n",index);
 
     if (index < 1)
     {
