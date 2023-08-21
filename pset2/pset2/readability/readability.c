@@ -37,10 +37,12 @@ int count_words(string text)
     int words = 0;
     for (int i = 0; i <= strlen(text); i++)
     {
-        if (text[i] == 32)
+        // && for: ""You are, of course, welcome to attempt a solution that will tolerate multiple spaces between words or indeed, no words!"
+        if (text[i] == 32 && text[i-1] != 32 && text[i+1] != 32)
         {
             words++;
         }
     }
-    return words;
+    // We count spaces but the "end/final" word just ends with a point or nothing to track the last space
+    return words + 1;
 }
