@@ -38,10 +38,13 @@ int compute_score(string word)
     // TODO: Compute and return score for string
     int sum = 0;
 
+    // For cycle to assess each char in the word
     for (int i = 0; i < strlen(word); i++)
     {
         switch (tolower(word[i]))
         {
+            // All the letters and the value each one has
+            // Value +1
             case 'a':
             case 'e':
             case 'i':
@@ -55,11 +58,13 @@ int compute_score(string word)
                 sum += 1;
                 break;
 
+            // value +2
             case 'd':
             case 'g':
                 sum += 2;
                 break;
 
+            // value +3
             case 'b':
             case 'c':
             case 'm':
@@ -67,6 +72,7 @@ int compute_score(string word)
                 sum += 3;
                 break;
 
+            // value +4
             case 'f':
             case 'h':
             case 'v':
@@ -75,20 +81,24 @@ int compute_score(string word)
                 sum += 4;
                 break;
 
+            // value +5
             case 'k':
                 sum += 5;
                 break;
 
+            // value +8
             case 'j':
             case 'x':
                 sum += 8;
                 break;
 
+            // value +10
             case 'q':
             case 'z':
                 sum += 10;
                 break;
 
+            // non value char (numbers, symbols, etc)
             default:
                 sum += 0;
                 break;
