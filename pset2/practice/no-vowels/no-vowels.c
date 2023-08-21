@@ -11,6 +11,7 @@ string replace(string input);
 
 int main(int argc, string argv[])
 {
+    // If we recive exactly one argument after ./no-vowels
     if (argc == 2)
     {
         printf("%s\n", replace(argv[1]));
@@ -27,6 +28,7 @@ string replace(string argv)
     {
         switch (argv[i])
         {
+            // We change the vowels (Lower or Upper) to number except for u
             case 'a':
             case 'A':
                 argv[i] = '6';
