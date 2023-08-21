@@ -12,6 +12,8 @@ int main(void)
     string text = get_string("Text: ");
     // Count letters
     printf("%i letters\n",count_letters(text));
+    // Count words
+    printf("%i words\n",count_words(text));
 }
 
 int count_letters(string text)
@@ -35,10 +37,10 @@ int count_words(string text)
     int words = 0;
     for (int i = 0; i <= strlen(text); i++)
     {
-        if (isalpha(text[i]))
+        if (text[i] == 32)
         {
-            letters++;
+            words++;
         }
     }
-    return letters;
+    return words;
 }
