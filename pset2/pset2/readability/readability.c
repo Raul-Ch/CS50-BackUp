@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 
 int count_letters(string text);
 int count_words(string text);
@@ -24,7 +25,7 @@ int main(void)
     // "And 'S' is the average number of sentences per 100 words in the text."
     float S = (count_sentences(text) + count_words(text)) * 100;
 
-    int index = 0.0588 * L - 0.296 * S - 15.8;
+    float index = round(0.0588 * L - 0.296 * S - 15.8);
 
     if (index < 1)
     {
