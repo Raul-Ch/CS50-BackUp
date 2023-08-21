@@ -28,7 +28,7 @@ int main(void)
 
     switch (index)
     {
-        case < 1:
+        case 0 when :
             printf("Before Grade 1");
     }
 }
