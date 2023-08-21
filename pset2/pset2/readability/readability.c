@@ -26,10 +26,7 @@ int main(void)
 
     int index = 0.0588 * L - 0.296 * S - 15.8;
 
-    if (index)
-    {
-
-    }
+    switch ()
 }
 
 int count_letters(string text)
