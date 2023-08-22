@@ -1,8 +1,8 @@
 #include <cs50.h>
-#include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 #include <math.h>
+#include <stdio.h>
+#include <string.h>
 
 int count_letters(string text);
 int count_words(string text);
@@ -20,7 +20,7 @@ int main(void)
     // // Count sentences
     // printf("%i sentences\n",count_sentences(text));
 
-    // Recall that, when dividing values of type int in C, the result will also be an int, with any remainder 
+    // Recall that, when dividing values of type int in C, the result will also be an int, with any remainder
     float words = (float) count_words(text);
     // "Where 'L' is the average number of letters per 100 words in the text"
     float L = (count_letters(text) / words) * 100;
@@ -28,7 +28,7 @@ int main(void)
     float S = (count_sentences(text) / words) * 100;
 
     float index = round(0.0588 * L - 0.296 * S - 15.8);
-    printf ("%f\n",index);
+    printf("%f\n", index);
 
     if (index < 1)
     {
@@ -40,14 +40,15 @@ int main(void)
     }
     else
     {
-        printf("Grade %i\n", (int)index);
+        printf("Grade %i\n", (int) index);
     }
 }
 
 int count_letters(string text)
 {
     // Checks if all of the characters in the provided string, text, are alphabetic.
-    // In the standard C locale letters are just [A-Za-z] and ctype_alpha() is equivalent to (ctype_upper($text) || ctype_lower($text))
+    // In the standard C locale letters are just [A-Za-z] and ctype_alpha() is equivalent to (ctype_upper($text) ||
+    // ctype_lower($text))
     int letters = 0;
     for (int i = 0; i <= strlen(text); i++)
     {
@@ -65,8 +66,9 @@ int count_words(string text)
     int words = 0;
     for (int i = 0; i <= strlen(text); i++)
     {
-        // && for: ""You are, of course, welcome to attempt a solution that will tolerate multiple spaces between words or indeed, no words!"
-        if (text[i] == 32 && text[i-1] != 32 && text[i+1] != 32)
+        // && for: ""You are, of course, welcome to attempt a solution that will tolerate multiple spaces between words or indeed,
+        // no words!"
+        if (text[i] == 32 && text[i - 1] != 32 && text[i + 1] != 32)
         {
             words++;
         }
@@ -77,8 +79,8 @@ int count_words(string text)
 
 int count_sentences(string text)
 {
-    //  Note: "For this problem, we’ll ask you to ignore that subtlety: you should consider any sequence of characters that ends with:
-    //  a . or a ! or a ? to be a sentence "
+    //  Note: "For this problem, we’ll ask you to ignore that subtlety: you should consider any sequence of characters that ends
+    //  with: a . or a ! or a ? to be a sentence "
     int sentences = 0;
     for (int i = 0; i <= strlen(text); i++)
     {
