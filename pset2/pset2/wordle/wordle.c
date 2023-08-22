@@ -38,9 +38,9 @@ int main(int argc, string argv[])
 
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
     // TODO #2
-    if (argv[1] < 53)
+    if (argv[1] != '5' || argv[1] != '6' || argv[1] != '7' || argv[1] != '8')
     {
-        printf("Usage: ./wordle wordsize\n");
+        printf("Error: wordsize must be either 5, 6, 7, or 8\n");
     }
 
     // open correct file, each file has exactly LISTSIZE words
