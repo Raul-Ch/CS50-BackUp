@@ -20,10 +20,12 @@ int main(void)
     // // Count sentences
     // printf("%i sentences\n",count_sentences(text));
 
+    // Recall that, when dividing values of type int in C, the result will also be an int, with any remainder 
+    float words = (float) count_words(text);
     // "Where 'L' is the average number of letters per 100 words in the text"
-    float L = (count_letters(text) / count_words(text)) * 100;
+    float L = (count_letters(text) / words) * 100;
     // "And 'S' is the average number of sentences per 100 words in the text."
-    float S = (count_sentences(text) / count_words(text)) * 100;
+    float S = (count_sentences(text) / words) * 100;
 
     float index = round(0.0588 * L - 0.296 * S - 15.8);
     printf ("%f\n",index);
