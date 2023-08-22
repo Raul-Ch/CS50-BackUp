@@ -13,6 +13,7 @@
 #define WRONG 0
 
 // ANSI color codes for boxed in letters
+// "Los códigos de escape ANSI se utilizan para dar formato a la salida de una terminal de texto y se basan en un estándar ANSI"
 #define GREEN   "\e[38;2;255;255;255;1m\e[48;2;106;170;100;1m"
 #define YELLOW  "\e[38;2;255;255;255;1m\e[48;2;201;180;88;1m"
 #define RED     "\e[38;2;255;255;255;1m\e[48;2;220;20;60;1m"
@@ -79,7 +80,7 @@ int main(int argc, string argv[])
         int score = check_word(guess, wordsize, status, choice);
 
         printf("Guess %i: ", i + 1);
-        
+
         // Print the guess
         print_word(guess, wordsize, status);
 
