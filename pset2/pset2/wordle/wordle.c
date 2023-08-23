@@ -158,6 +158,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
             else if (guess[i] == choice[j])
             {
                 status [i] = CLOSE;
+                break
             }
             else
             {
@@ -175,7 +176,7 @@ void print_word(string guess, int wordsize, int status[])
     // TODO #6
     for (int i = 0; i <= wordsize; i++)
     {
-        
+
     }
     printf("\n");
     return;
