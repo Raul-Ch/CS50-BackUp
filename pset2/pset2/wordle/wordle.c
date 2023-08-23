@@ -113,7 +113,10 @@ int main(int argc, string argv[])
 
     // Print the game's result
     // TODO #7
-
+    for (int i = 0; i <= wordsize; i++)
+    {
+        
+    }
     // that's all folks!
     return 0;
 }
