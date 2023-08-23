@@ -155,13 +155,9 @@ int check_word(string guess, int wordsize, int status[], string choice)
             {
                 status [i] = EXACT;
             }
-            else if (guess[i] == choice[j])
+            if (guess[i] == choice[j])
             {
                 status [i] = CLOSE;
-            }
-            else
-            {
-                status [i] = WRONG;
             }
         }
     }
@@ -177,17 +173,17 @@ void print_word(string guess, int wordsize, int status[])
     {
         if(status [i] == EXACT)
         {
-            printf(GREEN"%c"RESET"\n",guess[i]);
+            printf(GREEN"%c"RESET,guess[i]);
         }
         else if (status [i] == CLOSE)
         {
-            printf(YELLOW"%c"RESET"\n",guess[i]);
+            printf(YELLOW"%c"RESET,guess[i]);
         }
         else
         {
-            printf(RED"%c"RESET"\n",guess[i]);
+            printf(RED"%c"RESET,guess[i]);
         }
     }
-    //printf("\n");
+    printf("\n");
     return;
 }
