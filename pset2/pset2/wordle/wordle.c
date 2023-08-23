@@ -158,7 +158,6 @@ int check_word(string guess, int wordsize, int status[], string choice)
             else if (guess[i] == choice[j])
             {
                 status [i] = CLOSE;
-                break
             }
             else
             {
@@ -176,7 +175,18 @@ void print_word(string guess, int wordsize, int status[])
     // TODO #6
     for (int i = 0; i <= wordsize; i++)
     {
-
+        if(status [i] == EXACT)
+        {
+            printf(GREEN"%c"RESET"\n",guess[i]);
+        }
+        else if (status [i] == CLOSE)
+        {
+            printf(YELLOW"%c"RESET"\n",guess[i]);
+        }
+        else
+        {
+            printf(RED"%c"RESET"\n",guess[i]);
+        }
     }
     printf("\n");
     return;
