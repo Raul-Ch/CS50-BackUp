@@ -46,7 +46,8 @@ int main(int argc, string argv[])
     }
     else
     {
-        wordsize = argv[1];
+        // CS50 DUCK: "In C, you can use the function atoi() from the stdlib.h library to convert a string (char *) to an integer."
+        wordsize = atoi(argv[1]);
     }
 
     // open correct file, each file has exactly LISTSIZE words
