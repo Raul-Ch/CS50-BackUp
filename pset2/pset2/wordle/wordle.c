@@ -31,14 +31,15 @@ int main(int argc, string argv[])
 
     int wordsize = 0;
 
-    if (argc != 1)
+    if (argc != 2)
     {
         printf("Usage: ./wordle wordsize\n");
+        return 1;
     }
 
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
     // TODO #2
-    else if (*argv[1] < 53 || *argv[1] > 58)
+    if (*argv[1] < 53 || *argv[1] > 58)
     {
         printf("Error: wordsize must be either 5, 6, 7, or 8\n");
     }
