@@ -91,7 +91,7 @@ int main(int argc, string argv[])
 
         // set all elements of status array initially to 0, aka WRONG
         // TODO #4
-        for (int ini = 0; ini <= wordsize; ini++)
+        for (int ini = 0; ini < wordsize; ini++)
         {
             status[ini] = 0;
         }
@@ -154,10 +154,9 @@ int check_word(string guess, int wordsize, int status[], string choice)
                 // if it's in the word, but not the right spot, score CLOSE point (yellow)
         // keep track of the total score by adding each individual letter's score from above
 
-    for (int i = 0; i <= wordsize; i++)
+    for (int i = 0; i < wordsize; i++)
     {
-        
-        for (int j = 0; j <= wordsize; j++)
+        for (int j = 0; j < wordsize; j++)
         {
             if (guess[i] == choice[i])
             {
@@ -180,7 +179,7 @@ void print_word(string guess, int wordsize, int status[])
 {
     // print word character-for-character with correct color coding, then reset terminal font to normal
     // TODO #6
-    for (int i = 0; i <= wordsize; i++)
+    for (int i = 0; i < wordsize; i++)
     {
         if(status [i] == EXACT)
         {
