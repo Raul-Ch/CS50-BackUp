@@ -71,7 +71,7 @@ int main(int argc, string argv[])
     // pseudorandomly select a word for this game
     srand(time(NULL));
     string choice = options[rand() % LISTSIZE];
-
+    printf("THIS: %s\n",choice);
     // allow one more guess than the length of the word
     int guesses = wordsize + 1;
     bool won = false;
