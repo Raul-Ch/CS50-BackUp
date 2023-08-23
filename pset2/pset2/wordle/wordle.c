@@ -188,6 +188,6 @@ void print_word(string guess, int wordsize, int status[])
             printf(RED"%c"RESET"\n",guess[i]);
         }
     }
-    printf("\n");
+    //printf("\n");
     return;
 }
