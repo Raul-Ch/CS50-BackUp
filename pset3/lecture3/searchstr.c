@@ -11,6 +11,7 @@ int main(void)
     string s = get_string("String: ");
     for (int i = 0; i < 6; i++)
     {
+        // "realiza una comparación ordinal de string1 y string2 y devuelve un valor que indica su relación"
         if (strcmp(strings[i], s) == 0)
         {
             printf("Found\n");
