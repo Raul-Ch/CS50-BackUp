@@ -26,10 +26,6 @@ int main(void)
 int convert(string input)
 {
     // TODO
-    int last = strlen(input - 1);
-    // Base Case
-    if (input[0])
-    {
-    }
-    int l = atoi(*input[last]);
+    int last = input[0];
+    return last;
 }
