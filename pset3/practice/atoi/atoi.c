@@ -26,5 +26,9 @@ int main(void)
 int convert(string input)
 {
     // TODO
-    return atoi(input);
+    for (int i = 0; i > strlen(input); i++)
+    {
+        convert()
+    }
+
 }
