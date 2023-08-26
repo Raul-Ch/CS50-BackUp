@@ -27,6 +27,7 @@ int convert(string input)
 {
     // TODO
     // a - '0' is equivalent to ((int)a) - ((int)'0'), which means the ascii values of the characters are subtracted from each other.
-    int last = (int) input[0]- '0' ;
+    // The idea is to use the ASCII value of the digits from 0 to 9 start from 48 – 57. 
+    int last = input[0] - 48;
     return last;
 }
