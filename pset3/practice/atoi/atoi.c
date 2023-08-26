@@ -26,9 +26,11 @@ int main(void)
 int convert(string input)
 {
     // TODO
-    for (int i = 0; i > strlen(input); i++)
+    // Base Case
+    if (input[0])
     {
-        convert()
+        return;
     }
-
+    // Recursive Case
+    convert (input[0]);
 }
