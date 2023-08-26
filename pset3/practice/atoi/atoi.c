@@ -29,9 +29,11 @@ int convert(string input)
     // Base Case
     if (input[0])
     {
-        return atoi(input[0]);
+        input = atoi(input[0]);
+        return input;
     }
     // Recursive Case
     convert (input[strlen(input)-1]);
-    return atoi(input[0]);
+    input = atoi(input[0]);
+    return input;
 }
