@@ -26,6 +26,6 @@ int main(void)
 int convert(string input)
 {
     // TODO
-    int last = input[0];
+    int last = atoi(input[0]);
     return last;
 }
