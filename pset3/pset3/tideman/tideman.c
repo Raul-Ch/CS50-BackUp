@@ -118,16 +118,12 @@ void record_preferences(int ranks[])
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        printf("%i", ranks[i]);
+        for (int j = 0; j < candidate_count; j++)
+        {
+            int preference = ranks[j];
+            preferences[i][j] = preferences[i][preference];
+        }
     }
-    // for (int i = 0; i < candidate_count; i++)
-    // {
-    //     for (int j = 0; j < candidate_count; j++)
-    //     {
-    //         int preference = ranks[j];
-    //         preferences[i][j] = preferences[i][preference];
-    //     }
-    // }
     return;
 }
 
