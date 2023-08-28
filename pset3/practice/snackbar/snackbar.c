@@ -85,7 +85,6 @@ void add_items(void)
 // Search through the menu array to find an item's cost
 float get_cost(string item)
 {
-    int number = (int) item - 49;
     float add = menu[item].cost;
     return add;
 }
