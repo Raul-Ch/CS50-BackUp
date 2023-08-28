@@ -23,7 +23,7 @@
 
 // Number of menu items
 // Adjust this value (10) to number of items input below
-#define NUM_ITEMS 5
+#define NUM_ITEMS 4
 
 // Menu itmes have item name and price
 typedef struct
@@ -91,6 +91,10 @@ float get_cost(string item)
         if(strcmp(item, menu[i].item))
         {
             price = menu[i].price;
+        }
+        else
+        {
+            printf("Invalid Item\n");
         }
     }
     return price;
