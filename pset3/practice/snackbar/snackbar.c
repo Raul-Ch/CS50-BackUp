@@ -92,10 +92,6 @@ float get_cost(string item)
         {
             price = menu[i].price;
         }
-        else
-        {
-            printf("Invalid Item\n");
-        }
     }
     return price;
 }
