@@ -23,7 +23,7 @@
 
 // Number of menu items
 // Adjust this value (10) to number of items input below
-#define NUM_ITEMS 10
+#define NUM_ITEMS 5
 
 // Menu itmes have item name and price
 typedef struct
@@ -85,12 +85,13 @@ void add_items(void)
 // Search through the menu array to find an item's cost
 float get_cost(string item)
 {
+    float price = 0;
     for (int i = 0; i < NUM_ITEMS; i++)
     {
         if(strcmp(item, menu[i].item))
         {
-            float add = menu[item].cost;
-            return add;
+            price = menu[i].price;
         }
     }
+    return price;
 }
