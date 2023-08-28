@@ -69,13 +69,7 @@ void sort_cities(void)
         {
             if (temps[j].temp > temps[i].temp)
             {
-                string aux = temps[i].city;
-                int aux2 = temps[i].temp;
-
                 temps[i] = temps[j];
-
-                temps[j].city = aux;
-                temps[j].temp = aux2;
             }
         }
     }
