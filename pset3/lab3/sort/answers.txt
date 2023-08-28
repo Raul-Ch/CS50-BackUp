@@ -1,11 +1,11 @@
-sort1 uses: Seletcion
+sort1 uses: Bubble
 
-How do you know?: TODO
+How do you know?: It took the most time in random and almost the same as selection in reversed
 
 sort2 uses: Merge
 
 How do you know?: By the time it took to finish, it was the fastest
 
-sort3 uses: Bubble
+sort3 uses: Selection
 
-How do you know?: TODO
+How do you know?: In the reversed it took almost the same amount of time as bubble, but in the random we can see the efficiency difference
