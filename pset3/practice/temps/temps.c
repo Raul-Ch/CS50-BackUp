@@ -70,8 +70,8 @@ void sort_cities(void)
             if (temps[j].temp > temps[i].temp)
             {
                 int aux = temps[i].temp;
-                temps[j].temp = temps[i].temp;
-                temps[i].temp = aux;
+                temps[i].temp = temps[j].temp;
+                temps[j].temp = aux;
             }
         }
     }
