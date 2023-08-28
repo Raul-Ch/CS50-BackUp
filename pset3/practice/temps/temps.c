@@ -77,6 +77,10 @@ void sort_cities(void)
                 temps[j].city = aux;
                 temps[j].temp = aux2;
             }
+            else
+            {
+                i++;
+            }
         }
     }
 
