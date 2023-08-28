@@ -34,7 +34,10 @@ typedef struct
 menu_item;
 
 // Array of menu items
-menu_item menu[NUM_ITEMS];
+menu_item menu[NUM_ITEMS] =
+{
+    
+};
 
 // Add items to menu
 void add_items(void);
