@@ -94,6 +94,6 @@ void print_winner(void)
             }
         }
     }
-    printf("%s", candidates[where].name);
+    printf("%s\n", candidates[where].name);
     return;
 }
