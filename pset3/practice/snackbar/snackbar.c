@@ -34,10 +34,7 @@ typedef struct
 menu_item;
 
 // Array of menu items
-menu_item menu[NUM_ITEMS] =
-{
-    
-};
+menu_item menu[NUM_ITEMS];
 
 // Add items to menu
 void add_items(void);
@@ -77,16 +74,17 @@ int main(void)
 // Add at least the first four items to the menu array
 void add_items(void)
 {
-    // for (int i = 0; i < 10; i++)
-    // {
-    //     menu[i].item = get_string("Item: ");
-    //     menu[i].price = get_float("Price: ");
-    // }
-    // return;
+    for (int i = 0; i < 10; i++)
+    {
+        menu[i].item = get_string("Item: ");
+        menu[i].price = get_float("Price: ");
+    }
+    return;
 }
 
 // Search through the menu array to find an item's cost
 float get_cost(string item)
 {
+    
     return 0.0;
 }
