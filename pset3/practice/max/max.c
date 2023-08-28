@@ -37,6 +37,10 @@ int max(int array[], int n)
             {
                 max = array[j];
             }
+            else
+            {
+                j++;
+            }
         }
     }
     return max;
