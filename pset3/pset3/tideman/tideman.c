@@ -107,6 +107,7 @@ bool vote(int rank, string name, int ranks[])
         {
             ranks[i] = rank;
             printf("This is rank; %i\n",rank);
+            printf("This is rank[i]; %i\n",ranks[i]);
             return true;
         }
     }
