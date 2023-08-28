@@ -74,7 +74,7 @@ int main(void)
 // Add at least the first four items to the menu array
 void add_items(void)
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < NUM_ITEMS; i++)
     {
         menu[i].item = get_string("Item: ");
         menu[i].price = get_float("Price: ");
@@ -85,6 +85,6 @@ void add_items(void)
 // Search through the menu array to find an item's cost
 float get_cost(string item)
 {
-    add == 
+    float add = menu[item].cost;
     return add;
 }
