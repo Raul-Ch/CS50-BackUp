@@ -92,14 +92,6 @@ void print_winner(void)
                 winner = candidates[j].votes;
                 where = j;
             }
-            else if ()
-            {
-
-            }
-            else
-            {
-                i++;
-            }
         }
     }
     printf("%s", candidates[where].name);
