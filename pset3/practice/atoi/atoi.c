@@ -25,13 +25,16 @@ int main(void)
 
 int convert(string input)
 {
+    int length = strlen(input);
     // TODO
-    if ()
+    if (length == 0)
     {
-
+        return;
     }
     // a - '0' is equivalent to ((int)a) - ((int)'0'), which means the ascii values of the characters are subtracted from each other.
     // The idea is to use the ASCII value of the digits from 0 to 9 start from 48 – 57.
-    int index = strlen(input) - 1;
-    int numeric = input[index] - 48;
+    int numeric = input[length - 1] - 48;
+    input[length - 1] = '/0';
+
+    return numeric + 10 * convert(input);
 }
