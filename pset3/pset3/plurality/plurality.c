@@ -66,8 +66,20 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
+    bool found = false;
     // TODO
-    return false;
+    for(int i = 0; i < MAX; i++)
+    {
+        if (strcmp(name,candidates[i].name))
+        {
+            found = true;
+        }
+        else
+        {
+            found = false;
+        }
+    }
+    return found;
 }
 
 // Print the winner (or winners) of the election
