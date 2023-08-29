@@ -116,12 +116,13 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // TODO
-    // Record voters 
+    // Record over how many candidates are below
     for (int row = 0; row < candidate_count; row++)
     {
-        for (int column = 1; column < candidate_count; column++)
+        for (int column = row + 1; column < candidate_count; column++)
         {
-            printf("Column");
+            preferences[ranks[row]][ranks[column]]++;
+            printf("%i",preferences[row][column]);
         }
     }
     return;
