@@ -126,6 +126,13 @@ void record_preferences(int ranks[])
         }
     }
     return;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; column < candidate_count; column++)
+        {
+            preferences[ranks[row]][ranks[column]]++;
+        }
+    }
 }
 
 // Record pairs of candidates where one is preferred over the other
