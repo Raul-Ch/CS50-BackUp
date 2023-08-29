@@ -119,9 +119,9 @@ void record_preferences(int ranks[])
     // Record over how many candidates are below
     for (int row = 0; row < candidate_count; row++)
     {
+                    printf("%i",ranks[row]);
         for (int column = row + 1; column < candidate_count; column++)
         {
-            printf("%i",ranks[row]);
             preferences[ranks[row]][ranks[column]]++;
         }
     }
