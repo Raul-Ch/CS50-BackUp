@@ -116,11 +116,11 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // TODO
-    for (int row = 0; row < candidate_count; i++)
+    for (int row = 0; row < candidate_count; row++)
     {
-        for (int i = 0; i < candidate_count; i++)
+        for (int column = 0; column < candidate_count; column++)
         {
-
+            printf("Column");
         }
     }
     return;
