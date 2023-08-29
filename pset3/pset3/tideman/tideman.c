@@ -115,6 +115,7 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
+    printf("Enterinf record\n");
     // TODO
     // Record over how many candidates are below
     for (int row = 0; row < candidate_count; row++)
