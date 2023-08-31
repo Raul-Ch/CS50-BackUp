@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int main (void)
@@ -25,7 +26,7 @@ int main (void)
     printf("t: %s\n\n", t);
 
     // Crete an authentic copy of our string as follows:
-    char *original = get_string("\nReal Copys: ");
+    char *original = get_string("\nReal Copy\ns: ");
 
     // Allocate memory for another string
     char *copy = malloc(strlen(original) + 1);
@@ -43,6 +44,8 @@ int main (void)
 
     // Print strings
     printf("s: %s\n", original);
+    printf("s: %p\n", original);
     printf("t: %s\n", copy);
+    printf("s: %p\n", copy);
 
 }
