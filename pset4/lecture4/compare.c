@@ -7,13 +7,9 @@ int main(void)
     char *s = get_string("s: ");
     char *t = get_string("t: ");
 
-    // Compare strings addresses
-    if (s == t)
-    {
-        printf("Same\n");
-    }
-    else
-    {
-        printf("Different\n");
-    }
+    // Print strings
+    printf("%s\n", s);
+    printf("%p\n", s);
+    printf("%s\n", t);
+    printf("%p\n", t);
 }
