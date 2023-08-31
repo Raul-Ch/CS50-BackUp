@@ -9,7 +9,10 @@ int main(void)
 
     // Print strings
     printf("%s\n", s);
+    // Print strings' addresses
     printf("%p\n", s);
+    // Print strings
     printf("%s\n", t);
+    // Print strings' addresses
     printf("%p\n", t);
 }
