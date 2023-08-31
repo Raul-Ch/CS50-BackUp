@@ -34,7 +34,7 @@ int main (void)
     // This allows for the inclusion of the null \0 character in our final, copied string.
 
     // Copy string into memory, including '\0'
-    // CHANGE i <= strlen(s) FOR n = strlen(copy); i <= n; i++
+    // CHANGE (int i = 0; i <= strlen(s); i++) FOR n = strlen(copy); i <= n; i++
     // It’s best not to call unneeded functions in the middle condition of the for loop, as it will run over and over again.
     // strlen() only runs once.
     for (int i = 0, n = strlen(copy); i <= n; i++)
