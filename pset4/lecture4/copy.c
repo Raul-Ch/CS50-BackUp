@@ -9,6 +9,7 @@ int main (void)
     string s = get_string("s: ");
 
     // Copy strings address
+        // Notice that string t = s copies the address of s to t
     string t = s;
 
     // Capitalize first letter in string
@@ -18,6 +19,6 @@ int main (void)
     }
 
     // Print string twice
-    printf("s: %s\n", s);
-    printf("t: %s\n", t);
+    printf("s: %p\n", s);
+    printf("t: %p\n", t);
 }
