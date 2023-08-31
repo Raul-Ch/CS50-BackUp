@@ -34,7 +34,7 @@ int main (void)
     // This allows for the inclusion of the null \0 character in our final, copied string.
 
     // Copy string into memory, including '\0'
-    for (int i = 0; i <= strlen(copy); i++)
+    for (int i = 0; n = strlen(copy); i <= n; i++)
     {
         copy[i] = original[i];
     }
