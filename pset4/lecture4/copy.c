@@ -37,7 +37,7 @@ int main (void)
     // CHANGE i <= strlen(s) FOR n = strlen(copy); i <= n; i++
     // It’s best not to call unneeded functions in the middle condition of the for loop, as it will run over and over again.
     // strlen() only runs once.
-    for (int i = 0; n = strlen(copy); i <= n; i++)
+    for (int i = 0, n = strlen(copy); i <= n; i++)
     {
         copy[i] = original[i];
     }
