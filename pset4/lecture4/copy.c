@@ -11,8 +11,11 @@ int main (void)
     // Copy strings address
     string t = s;
 
-    //Capitalize first letter in string
-    t[0] = toupper(t[0]);
+    // Capitalize first letter in string
+    if (strlen(t) > 0)
+    {
+        t[0] = toupper(t[0]);
+    }
 
     // Print string twice
     printf("s: %s\n", s);
