@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void swap(int a, int b);
+void swap(int *a, int *b);
 
 int main(void)
 {
@@ -12,9 +12,9 @@ int main(void)
     printf("x is %i, y is %i\n", x, y);
 }
 
-void swap(int a, int b)
+void swap(int *a, int *b)
 {
-    int tmp = a;
-    a = b;
-    b = tmp;
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
 }
