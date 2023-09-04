@@ -4,5 +4,10 @@
 
 int main(void)
 {
-    
+    // Open CSV file
+    FILE *file = fopen("phonebook.csv","a");
+
+    // Get name and number
+    char *name = get_string("Name: ");
+    char *name = get_string("Name: ");
 }
