@@ -9,7 +9,7 @@ int main(void)
 
     // Get name and number
     char *name = get_string("Name: ");
-    char *numver = get_string("Number: ");
+    char *number = get_string("Number: ");
 
     // Print to file
     fprintf(file, "%s, %s \n", name, number);
