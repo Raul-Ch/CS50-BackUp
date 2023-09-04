@@ -8,7 +8,8 @@ int main(void)
     int y = 2;
 
     printf("x is %i, y is %i\n", x, y);
-    swap(x, y);
+    //   & Provides the address of something stored in memory.
+    swap(&x, &y);
     printf("x is %i, y is %i\n", x, y);
 }
 
