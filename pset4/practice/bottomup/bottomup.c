@@ -65,6 +65,7 @@ int main(int argc, char *argv[])
     // Iterate over infile's scanlines
     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
     {
+        printf("HERE: %i\n",biHeight);
         // Iterate over pixels in scanline
         for (int j = 0; j < bi.biWidth; j++)
         {
