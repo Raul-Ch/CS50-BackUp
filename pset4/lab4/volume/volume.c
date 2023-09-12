@@ -55,9 +55,10 @@ int main(int argc, char *argv[])
 
     int16_t buffer;
 
-    while(feof(input))
+    while(feof(input) != 0)
     {
-
+        fread(&buffer,sizeof(buffer),1,input);
+        fwrite(&buffer,sizeof(buffer),1,outputa);
     };
     // Close files
     fclose(input);
