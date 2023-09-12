@@ -34,9 +34,11 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     // TODO: Copy header from input file to output file
+    // Header its the array the memory buffer
     uint8_t header[HEADER_SIZE] = {0};
-    
-    fread(header,HEADER_SIZE,1,input);
+
+    // sizeof header tells us 
+    fread(header,sizeof(*header),HEADER_SIZE,input);
 
     for (int i = 0; i < HEADER_SIZE; i++)
     {
