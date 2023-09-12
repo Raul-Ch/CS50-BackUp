@@ -37,8 +37,11 @@ int main(int argc, char *argv[])
     // Header its the array the memory buffer
     uint8_t header[HEADER_SIZE] = {0};
 
-    // sizeof header tells us 
+    // sizeof header tells us the size units
+    // finally 44 as the qty of bytes we are reading
     fread(header,sizeof(*header),HEADER_SIZE,input);
+
+    fwrite();
 
     for (int i = 0; i < HEADER_SIZE; i++)
     {
