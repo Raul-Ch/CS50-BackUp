@@ -35,8 +35,8 @@ int main(int argc, char *argv[])
 
     // TODO: Copy header from input file to output file
     uint8_t header[HEADER_SIZE] = {0};
-
-    //fread(header,HEADER_SIZE,1,input);
+    
+    fread(header,HEADER_SIZE,1,input);
 
     for (int i = 0; i < HEADER_SIZE; i++)
     {
