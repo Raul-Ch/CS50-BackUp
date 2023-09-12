@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     // finally 44 as the qty of bytes we are reading
     fread(header,sizeof(*header),HEADER_SIZE,input);
 
-    fwrite();
+    fwrite(header,sizeof(*header),HEADER_SIZE,output);
 
     for (int i = 0; i < HEADER_SIZE; i++)
     {
