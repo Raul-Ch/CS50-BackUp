@@ -42,12 +42,20 @@ int main(int argc, char *argv[])
     fread(header,sizeof(*header),HEADER_SIZE,input);
 
     fwrite(header,sizeof(*header),HEADER_SIZE,output);
+    fclose(output);
 
     // TODO: Read samples from input file and write updated data to output file
-    int16_t buffer;
-    fread(buffer[HEADER_SIZE],sizeof(*buffer),feof(input),input);
+    // Append the samples not re-write
+    FILE *outputa = fopen(argv[2], "a");
+    if (outputa == NULL)
+    {
+        printf("Could not open file.\n");
+        return 1;
+    }
 
+    int16_t buffer;
+    fread(&buffer,sizeof(buffer),feof(input),input);
     // Close files
     fclose(input);
-    fclose(output);
+    fclose(outputa);
 }
