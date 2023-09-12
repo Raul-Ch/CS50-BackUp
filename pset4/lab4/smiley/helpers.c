@@ -7,9 +7,9 @@ void colorize(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            if(image[height][width] ==)
+            if(image[height][width] == 255)
             {
-
+                image[height][width] == 200;
             }
         }
     }
