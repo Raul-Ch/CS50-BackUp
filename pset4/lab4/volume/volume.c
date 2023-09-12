@@ -45,22 +45,15 @@ int main(int argc, char *argv[])
     fclose(output);
 
     // TODO: Read samples from input file and write updated data to output file
-    // Append the samples not re-write
-    FILE *outputa = fopen(argv[2], "a");
-    if (outputa == NULL)
-    {
-        printf("Could not open file.\n");
-        return 1;
-    }
 
     int16_t buffer;
 
-    while(feof(input) != 0)
+    while(feof(input) == 0)
     {
-        fread(&buffer,sizeof(buffer),1,input);
-        fwrite(&buffer,sizeof(buffer),1,outputa);
+        fread(&buffer,sizeof(int16_t),1,input);
+        fwrite(&buffer,sizeof(int16_t),1,output);
     };
     // Close files
     fclose(input);
-    fclose(outputa);
+    fclose(output);
 }
