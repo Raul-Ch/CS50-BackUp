@@ -48,9 +48,8 @@ int main(int argc, char *argv[])
 
     int16_t buffer;
 
-    while(feof(input) == 0)
+    while(fread(&buffer,sizeof(int16_t),1,input))
     {
-        fread(&buffer,sizeof(int16_t),1,input);
         fwrite(&buffer,sizeof(int16_t),1,output);
     };
     // Close files
