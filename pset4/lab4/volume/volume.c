@@ -39,19 +39,19 @@ int main(int argc, char *argv[])
 
     // sizeof header tells us the size units
     // finally 44 as the qty of bytes we are reading
-    fread(header,sizeof(*header),HEADER_SIZE,input);
+    fread(header, sizeof(*header), HEADER_SIZE, input);
 
-    fwrite(header,sizeof(*header),HEADER_SIZE,output);
+    fwrite(header, sizeof(*header), HEADER_SIZE, output);
 
     // TODO: Read samples from input file and write updated data to output file
 
     int16_t buffer;
 
-    while(feof(input) == 0)
+    while (feof(input) == 0)
     {
-        fread(&buffer,sizeof(int16_t),1,input);
+        fread(&buffer, sizeof(int16_t), 1, input);
         buffer *= factor;
-        fwrite(&buffer,sizeof(int16_t),1,output);
+        fwrite(&buffer, sizeof(int16_t), 1, output);
     };
     // Close files
     fclose(input);
