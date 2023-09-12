@@ -50,11 +50,12 @@ int main(int argc, char *argv[])
     // while (feof(input) == 0)
     // The feof() function checks if the end of file (EOF) has been reached.
     // However, it only returns a non-zero value after a reading operation has tried to read past the EOF.
-    // This means that if you use feof() in a while loop condition, the loop will execute one more time than you expect, because feof() doesn't return true until after you've tried to read past the EOF.
-    // While using feof(input) == 0 as your loop condition might produce the correct output for some inputs, it can lead to unexpected behavior in certain edge cases because it reads past the end of the file.
-    while (fread(&buffer, sizeof(int16_t), 1, input)
+    // This means that if you use feof() in a while loop condition, the loop will execute one more time than you expect, because
+    // feof() doesn't return true until after you've tried to read past the EOF. While using feof(input) == 0 as your loop condition
+    // might produce the correct output for some inputs, it can lead to unexpected behavior in certain edge cases because it reads
+    // past the end of the file.
+    while (fread(&buffer, sizeof(int16_t), 1, input))
     {
-        fread(&buffer, sizeof(int16_t), 1, input);
         buffer *= factor;
         fwrite(&buffer, sizeof(int16_t), 1, output);
     };
