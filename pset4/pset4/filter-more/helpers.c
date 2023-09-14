@@ -21,12 +21,15 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE temp;
     for (int i = 0; i < height; i++)
     {
         // we divide the width by two because as we change de pixels at the middle there are all changed
         for (int j = 0; j < width / 2; j++)
         {
-
+            temp = image[i][width - j];
+            image[i][width - j] = image[i][j];
+            image[i][j] = temp;
         }
     }
     return;
