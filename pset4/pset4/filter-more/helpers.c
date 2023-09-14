@@ -27,8 +27,11 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         // we divide the width by two because as we change de pixels at the middle there are all changed
         for (int j = 0; j < width / 2; j++)
         {
+            // Saving last pixel
             temp = image[i][width - j];
+            // Changing last pixel for the first one
             image[i][width - j] = image[i][j];
+            // Changing first pixel with the temp (last pixel)
             image[i][j] = temp;
         }
     }
@@ -38,7 +41,13 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width / 2; j++)
+        {
+            
+        }
+    }
     return;
 }
 
