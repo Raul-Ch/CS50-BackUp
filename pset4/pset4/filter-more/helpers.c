@@ -23,6 +23,10 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temp;
     // Width goes 1-2-3-4-5 but arrays go 0-1-2-3-4
+    // In the reflect function, we subtract one from the width because arrays in C are zero-indexed.
+    // This means that if an image has a width of 'w', the pixels are indexed from 0 to 'w-1'.
+    // So, when we want to reflect the image, we need to access the pixel at index 'w-1' (which is the last pixel)
+    // and not 'w' (which would be out of bounds).
     width -= 1;
     for (int i = 0; i < height; i++)
     {
