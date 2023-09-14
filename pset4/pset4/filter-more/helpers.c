@@ -31,9 +31,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             // Saving last pixel
             temp = image[i][width - j];
             // Changing last pixel for the first one
-            image[i][j] = image[i][width - j];
+            image[i][width - j] = image[i][j];
             // Changing first pixel with the temp (last pixel)
-            image[i][width - j] = temp;
+            image[i][j] = temp;
         }
     }
     return;
