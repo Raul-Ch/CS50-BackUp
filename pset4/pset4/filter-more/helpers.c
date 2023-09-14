@@ -21,7 +21,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE temp;
+    RGBTRIPLE temp_pixel;
     // Width goes 1-2-3-4-5 but arrays go 0-1-2-3-4
     // In the reflect function, we subtract one from the width because arrays in C are zero-indexed.
     // This means that if an image has a width of 'w', the pixels are indexed from 0 to 'w-1'.
@@ -34,11 +34,11 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < round(width / 2.0); j++)
         {
             // Saving last pixel
-            temp = image[i][width - j];
+            temp_pixel = image[i][width - j];
             // Changing last pixel for the first one
             image[i][width - j] = image[i][j];
             // Changing first pixel with the temp (last pixel)
-            image[i][j] = temp;
+            image[i][j] = temp_pixel;
         }
     }
     return;
