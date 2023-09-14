@@ -22,10 +22,11 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temp;
+    float mirror = round(width / 2);
     for (int i = 0; i < height; i++)
     {
         // we divide the width by two because as we change de pixels at the middle there are all changed
-        for (int j = 0; j < width / 2; j++)
+        for (int j = 0; j < mirror; j++)
         {
             // Saving last pixel
             temp = image[i][j];
