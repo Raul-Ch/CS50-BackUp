@@ -22,6 +22,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temp;
+    // Width goes 1-2-3-4-5 but arrays go 0-1-2-3-4
     width -= 1;
     for (int i = 0; i < height; i++)
     {
