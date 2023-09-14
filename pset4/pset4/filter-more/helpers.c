@@ -31,7 +31,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     for (int i = 0; i < height; i++)
     {
         // we divide the width by two because as we change de pixels at the middle there are all changed
-        for (int j = 0; j < round(width/2.0); j++)
+        for (int j = 0; j < width/2; j++)
         {
             // Saving last pixel
             temp = image[i][width - j];
