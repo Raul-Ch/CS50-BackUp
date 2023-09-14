@@ -29,7 +29,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < mirror; j++)
         {
             // Saving last pixel
-            temp = image[i][j];
+            temp = image[i][width - j];
             // Changing last pixel for the first one
             image[i][j] = image[i][width - j];
             // Changing first pixel with the temp (last pixel)
