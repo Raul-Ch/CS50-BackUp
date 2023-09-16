@@ -72,7 +72,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             else
             {
-                average = round((temp_image[i - 1].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0);
+
             }
         }
     }
