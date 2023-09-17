@@ -68,11 +68,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 float average_red = 0;
                 float average_green = 0;
                 float average_blue = 0;
-
+                float counter = 0.0;
                 for(int row = 0; row < 3; row++)
                 {
                     if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
                     {
+                        counter += 1;
                         average_red += temp_image[i + column][j + row].rgbtRed;
                         average_green += temp_image[i + column][j + row].rgbtGreen;
                         average_blue += temp_image[i + column][j + row].rgbtBlue;
