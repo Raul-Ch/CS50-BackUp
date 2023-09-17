@@ -53,6 +53,62 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     float average_blue = 0;
     float counter = 0.0;
 
+    int Gx[2][2] =
+    {
+        -1, 0, -1,
+        -2, 0, 2,
+        -1, 0, 1
+    };
+
+    RGBTRIPLE **temp_image = malloc(height *sizeof(RGBTRIPLE*));
+    for (int i = 0; i < height; i++)
+    {
+        temp_image[i] = malloc(width * sizeof(RGBTRIPLE));
+        for (int j = 0; j < width; j++)
+        {
+            temp_image[i][j] = image[i][j];
+        }
+    }
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            // reset average and counter for each pixel
+            average_red = 0;
+            average_green = 0;
+            average_blue = 0;
+            counter = 0.0;
+
+            // the next for's are used to see in a square of 3 x 3 of the pixels the neighbour pixels
+            // we start in -1 because in the middle we need to go "back" one pixel in the row and columns space
+            // or we need to go +1 foward to see the neighbour pixels
+            for (int column = -1; column <= 1; column++)
+            {
+                for(int row = -1; row <= 1; row++)
+                {
+                    // ensure that you're not accessing pixels outside the image
+                    if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
+                    {
+
+                    }
+                }
+            }
+
+        }
+    }
+        free(temp_image);
+    return;
+}
+
+// Detect edges
+void edges(int height, int width, RGBTRIPLE image[height][width])
+{
+      float average_red = 0;
+    float average_green = 0;
+    float average_blue = 0;
+    float counter = 0.0;
+
     RGBTRIPLE **temp_image = malloc(height *sizeof(RGBTRIPLE*));
     for (int i = 0; i < height; i++)
     {
@@ -96,11 +152,5 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
         free(temp_image);
-    return;
-}
-
-// Detect edges
-void edges(int height, int width, RGBTRIPLE image[height][width])
-{
     return;
 }
