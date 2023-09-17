@@ -72,16 +72,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             average_blue = 0;
             counter = 0.0;
             // ensure that you're not accessing pixels outside the image
-            for (int column = 0; column < 3; column++)
+            for (int column = -1; column <= 1; column++)
             {
-                for(int row = 0; row < 3; row++)
+                for(int row = -1; row <= 1; row++)
                 {
                     if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
                     {
                         counter += 1;
-                        average_red += temp_image[i][j].rgbtRed;
-                        average_green += temp_image[i][j].rgbtGreen;
-                        average_blue += temp_image[i][j].rgbtBlue;
+                        average_red += temp_image[i + column][j + row].rgbtRed;
+                        average_green += temp_image[i + column][j + row].rgbtGreen;
+                        average_blue += temp_image[i + column][j + row].rgbtBlue;
                     }
                 }
             }
