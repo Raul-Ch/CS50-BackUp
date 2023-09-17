@@ -168,6 +168,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 Colors[cap] = round(sqrt(pow(totalGx[cap],2) + pow(totalGy[cap],2)));
 
+
                 // reset totalGx and totalGy for each pixel
                 totalGx[cap] = 0;
                 totalGy[cap] = 0;
