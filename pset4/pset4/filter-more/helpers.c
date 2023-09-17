@@ -102,10 +102,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    float average_red = 0;
-    float average_green = 0;
-    float average_blue = 0;
-
     int totalGx = 0;
     int totalGy = 0;
 
@@ -163,8 +159,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-
-
+            image[i][j].rgbtRed = sqrt(totalGx / counter);
+            image[i][j].rgbtGreen = sqrt(average_green / counter);
+            image[i][j].rgbtBlue = sqrt(average_blue / counter);
         }
     }
         free(temp_image);
