@@ -138,7 +138,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             // or we need to go +1 foward to see the neighbour pixels
             for (int column = -1; column <= 1; column++)
             {
-                // reset average and counter for each pixel
+                // reset totalGx and totalGy for each pixel
                 totalGx[column + 1] = 0;
                 totalGy[column + 1] = 0;
 
