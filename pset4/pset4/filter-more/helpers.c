@@ -53,7 +53,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     float average_blue = 0;
     float counter = 0.0;
 
-    RGBTRIPLE **temp_image = malloc(height *sizeof(RGBTRIPLE*));
+    RGBTRIPLE **temp_image = malloc(height * sizeof(RGBTRIPLE *));
     for (int i = 0; i < height; i++)
     {
         temp_image[i] = malloc(width * sizeof(RGBTRIPLE));
@@ -78,10 +78,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // or we need to go +1 foward to see the neighbour pixels
             for (int column = -1; column <= 1; column++)
             {
-                for(int row = -1; row <= 1; row++)
+                for (int row = -1; row <= 1; row++)
                 {
                     // ensure that you're not accessing pixels outside the image
-                    if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
+                    if (i + column >= 0 && i + column < height && j + row >= 0 && j + row < width)
                     {
                         counter += 1;
                         average_red += temp_image[i + column][j + row].rgbtRed;
@@ -95,7 +95,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = round(average_blue / counter);
         }
     }
-        free(temp_image);
+    free(temp_image);
     return;
 }
 
@@ -105,21 +105,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int totalGx[3] = {};
     int totalGy[3] = {};
 
-    int Gx[3][3] =
-    {
-        {-1, 0, 1},
-        {-2, 0, 2},
-        {-1, 0, 1}
-    };
+    int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
 
-    int Gy[3][3] =
-    {
-        {-1, -2, -1},
-        {0, 0, 0},
-        {1, 2, 1}
-    };
+    int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
-    RGBTRIPLE **temp_image = malloc(height *sizeof(RGBTRIPLE*));
+    RGBTRIPLE **temp_image = malloc(height * sizeof(RGBTRIPLE *));
     for (int i = 0; i < height; i++)
     {
         temp_image[i] = malloc(width * sizeof(RGBTRIPLE));
@@ -138,10 +128,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             // or we need to go +1 foward to see the neighbour pixels
             for (int column = -1; column <= 1; column++)
             {
-                for(int row = -1; row <= 1; row++)
+                for (int row = -1; row <= 1; row++)
                 {
                     // ensure that you're not accessing pixels outside the image
-                    if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
+                    if (i + column >= 0 && i + column < height && j + row >= 0 && j + row < width)
                     {
                         // Here we calculate each value of color of the grid of pixels with the gx and gy matrix values
                         totalGx[0] += temp_image[i + column][j + row].rgbtRed * Gx[column + 1][row + 1];
@@ -166,10 +156,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             // then we complete the Sobel operator with the formula
             float Colors[3];
-            for(int cap = 0; cap < 3; cap++)
+            for (int cap = 0; cap < 3; cap++)
             {
-                Colors[cap] = round(sqrt(pow(totalGx[cap],2) + pow(totalGy[cap],2)));
-
+                Colors[cap] = round(sqrt(pow(totalGx[cap], 2) + pow(totalGy[cap], 2)));
 
                 // reset totalGx and totalGy for each pixel
                 totalGx[cap] = 0;
@@ -181,12 +170,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     Colors[cap] = 255;
                 }
             }
-                // else we assgin the value
-                image[i][j].rgbtRed = Colors[0];
-                image[i][j].rgbtGreen = Colors[1];
-                image[i][j].rgbtBlue = Colors[2];
+            // else we assgin the value
+            image[i][j].rgbtRed = Colors[0];
+            image[i][j].rgbtGreen = Colors[1];
+            image[i][j].rgbtBlue = Colors[2];
         }
     }
-        free(temp_image);
+    free(temp_image);
     return;
 }
