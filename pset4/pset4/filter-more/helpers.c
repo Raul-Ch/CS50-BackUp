@@ -102,8 +102,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    int totalGx[3] = {0,0,0};
-    int totalGy[3] = 0;
+    int totalGx[3] = {};
+    int totalGy[3] = {};
 
     int Gx[3][3] =
     {
@@ -133,15 +133,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            // reset average and counter for each pixel
-            totalGx[3] = {0};
-            totalGy[3] = {0};
-
             // the next for's are used to see in a square of 3 x 3 of the pixels the neighbour pixels
             // we start in -1 because in the middle we need to go "back" one pixel in the row and columns space
             // or we need to go +1 foward to see the neighbour pixels
             for (int column = -1; column <= 1; column++)
             {
+                // reset average and counter for each pixel
+                totalGx[column + 1] = 0;
+                totalGy[column + 1] = 0;
+
                 for(int row = -1; row <= 1; row++)
                 {
                     // ensure that you're not accessing pixels outside the image
