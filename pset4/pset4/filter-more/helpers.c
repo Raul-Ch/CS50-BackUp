@@ -155,6 +155,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         totalGy[1] += temp_image[i + column][j + row].rgbtGreen * Gy[column][row];
                         totalGy[2] += temp_image[i + column][j + row].rgbtBlue * Gy[column][row];
                     }
+                    else
+                    {
+                        totalGx[0] += 0;
+                        totalGx[1] += 0;
+                        totalGx[2] += 0;
+
+                        totalGy[0] += 0;
+                        totalGy[1] += 0;
+                        totalGy[2] += 0;
+                    }
                 }
             }
             int Colors[3];
