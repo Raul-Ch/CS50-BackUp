@@ -60,15 +60,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
     for (int i = 0; i < height; i++)
     {
-        float average_red = 0;
-        float average_green = 0;
-        float average_blue = 0;
-
         for (int j = 0; j < width; j++)
         {
             // ensure that you're not accessing pixels outside the image
             for (int column = 0; column < 3; column++)
             {
+                float average_red = 0;
+                float average_green = 0;
+                float average_blue = 0;
+
                 for(int row = 0; row < 3; row++)
                 {
                     if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
