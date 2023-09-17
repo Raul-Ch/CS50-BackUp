@@ -114,7 +114,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {-1, 0, 1}
     };
 
-    int Gxy[3][3] =
+    int Gy[3][3] =
     {
         {-1, -2, -1},
         {0, 0, 0},
