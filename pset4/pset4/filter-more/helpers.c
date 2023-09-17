@@ -165,10 +165,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     Colors[cap] = 255;
                 }
-                    image[i][j].rgbtRed = Colors[cap];
-                    image[i][j].rgbtGreen = Colors[cap];
-                    image[i][j].rgbtBlue = Colors[cap];
             }
+                image[i][j].rgbtRed = Colors[0];
+                image[i][j].rgbtGreen = Colors[1];
+                image[i][j].rgbtBlue = Colors[2];
         }
     }
         free(temp_image);
