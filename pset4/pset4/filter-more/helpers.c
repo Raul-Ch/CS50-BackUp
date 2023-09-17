@@ -134,10 +134,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // reset average and counter for each pixel
-            average_red = 0;
-            average_green = 0;
-            average_blue = 0;
-            counter = 0.0;
+            totalGx = 0;
+            totalGy = 0;
 
             // the next for's are used to see in a square of 3 x 3 of the pixels the neighbour pixels
             // we start in -1 because in the middle we need to go "back" one pixel in the row and columns space
@@ -159,9 +157,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            image[i][j].rgbtRed = sqrt(totalGx / counter);
-            image[i][j].rgbtGreen = sqrt(average_green / counter);
-            image[i][j].rgbtBlue = sqrt(average_blue / counter);
+            image[i][j].rgbtRed = sqrt(pow(totalGx,2) + pow(totalGy,2));
+            image[i][j].rgbtGreen = sqrt(pow(totalGx,2) + pow(totalGy,2));
+            image[i][j].rgbtBlue = sqrt(pow(totalGx,2) + pow(totalGy,2));
         }
     }
         free(temp_image);
