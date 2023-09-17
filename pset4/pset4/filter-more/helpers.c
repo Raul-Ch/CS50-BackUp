@@ -107,9 +107,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     float average_blue = 0;
     float counter = 0.0;
 
-    int Gx[2][2] =
+    int Gx[3][3] =
     {
-        -1, 0, 1,
+        {-1, 0, 1,
         -2, 0, 2,
         -1, 0, 1
     };
