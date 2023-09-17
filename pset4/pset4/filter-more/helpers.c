@@ -10,7 +10,6 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-           t4
             image[i][j].rgbtGreen = average;
             image[i][j].rgbtRed = average;
         }
@@ -53,7 +52,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     RGBTRIPLE **temp_image = malloc(height *sizeof(RGBTRIPLE*));
     for (int i = 0; i < height; i++)
     {
-        temp_image[i] = malloc(width * sizeof(RGBTRIPLE))
+        temp_image[i] = malloc(width * sizeof(RGBTRIPLE));
         for (int j = 0; j < width; j++)
         {
             temp_image[i][j] = image[i][j];
@@ -65,9 +64,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // ensure that you're not accessing pixels outside the image
-            for (k = 0; k < 9; k++)
+            for (int k = 0; k < 9; k++)
             {
-
+                average_red += temp_image[i + k][j + k].rgbtRed;
             }
         }
     }
