@@ -170,7 +170,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             float Colors[3];
             for(int cap = 0; cap < 3; cap++)
             {
-            Colors[cap] = sqrt(pow(totalGx[cap],2) + pow(totalGy[cap],2));
+            Colors[cap] = sqrt(fabs(pow(totalGx[cap],2)) + fabs(pow(totalGy[cap],2)));
                 if (Colors[cap] > 255)
                 {
                     Colors[cap] = 255;
