@@ -53,13 +53,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     float average_blue = 0;
     float counter = 0.0;
 
-    int Gx[2][2] =
-    {
-        -1, 0, -1,
-        -2, 0, 2,
-        -1, 0, 1
-    };
-
     RGBTRIPLE **temp_image = malloc(height *sizeof(RGBTRIPLE*));
     for (int i = 0; i < height; i++)
     {
@@ -90,11 +83,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     // ensure that you're not accessing pixels outside the image
                     if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
                     {
-
+                        counter += 1;
+                        average_red += temp_image[i + column][j + row].rgbtRed;
+                        average_green += temp_image[i + column][j + row].rgbtGreen;
+                        average_blue += temp_image[i + column][j + row].rgbtBlue;
                     }
                 }
             }
-
+            image[i][j].rgbtRed = round(average_red / counter);
+            image[i][j].rgbtGreen = round(average_green / counter);
+            image[i][j].rgbtBlue = round(average_blue / counter);
         }
     }
         free(temp_image);
@@ -104,10 +102,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-      float average_red = 0;
+    float average_red = 0;
     float average_green = 0;
     float average_blue = 0;
     float counter = 0.0;
+
+    int Gx[2][2] =
+    {
+        -1, 0, 1,
+        -2, 0, 2,
+        -1, 0, 1
+    };
 
     RGBTRIPLE **temp_image = malloc(height *sizeof(RGBTRIPLE*));
     for (int i = 0; i < height; i++)
