@@ -62,13 +62,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            float average_red = 0;
+            float average_green = 0;
+            float average_blue = 0;
+            float counter = 0.0;
             // ensure that you're not accessing pixels outside the image
             for (int column = 0; column < 3; column++)
             {
-                float average_red = 0;
-                float average_green = 0;
-                float average_blue = 0;
-                float counter = 0.0;
                 for(int row = 0; row < 3; row++)
                 {
                     if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
@@ -77,13 +77,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         average_red += temp_image[i + column][j + row].rgbtRed;
                         average_green += temp_image[i + column][j + row].rgbtGreen;
                         average_blue += temp_image[i + column][j + row].rgbtBlue;
-
-                        image[i][j].rgbtRed = round(average_red / 3.0);
-                        image[i][j].rgbtGreen = round(average_green / 3.0);
-                        image[i][j].rgbtBlue = round(average_blue / 3.0);
                     }
                 }
             }
+            image[i][j].rgbtRed = round(average_red / counter);
+            image[i][j].rgbtGreen = round(average_green / counter);
+            image[i][j].rgbtBlue = round(average_blue / counter);
         }
     }
         free(temp_image);
