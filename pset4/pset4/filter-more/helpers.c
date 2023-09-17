@@ -109,9 +109,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
     int Gx[3][3] =
     {
-        {-1, 0, 1,
-        -2, 0, 2,
-        -1, 0, 1
+        {-1, 0, 1},
+        {-2, 0, 2},
+        {-1, 0, 1}
+    };
+
+    int Gxy[3][3] =
+    {
+        {-1, -2, -1},
+        {0, 0, 0},
+        {1, 2, 1}
     };
 
     RGBTRIPLE **temp_image = malloc(height *sizeof(RGBTRIPLE*));
