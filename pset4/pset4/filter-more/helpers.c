@@ -164,6 +164,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
+            // then we complete the Sobel operator with the formula
             float Colors[3];
             for(int cap = 0; cap < 3; cap++)
             {
@@ -174,11 +175,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 totalGx[cap] = 0;
                 totalGy[cap] = 0;
 
+                // in case the difference it's too much we cap the color (blue,green or red) to 255 the max
                 if (Colors[cap] > 255)
                 {
                     Colors[cap] = 255;
                 }
             }
+                // else we assgin the value
                 image[i][j].rgbtRed = Colors[0];
                 image[i][j].rgbtGreen = Colors[1];
                 image[i][j].rgbtBlue = Colors[2];
