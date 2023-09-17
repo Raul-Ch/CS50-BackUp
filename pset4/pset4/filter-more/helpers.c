@@ -133,15 +133,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            // reset totalGx and totalGy for each pixel
+            totalGx[j] = 0;
+            totalGy[j] = 0;
             // the next for's are used to see in a square of 3 x 3 of the pixels the neighbour pixels
             // we start in -1 because in the middle we need to go "back" one pixel in the row and columns space
             // or we need to go +1 foward to see the neighbour pixels
             for (int column = -1; column <= 1; column++)
             {
-                // reset totalGx and totalGy for each pixel
-                totalGx[column + 1] = 0;
-                totalGy[column + 1] = 0;
-
                 for(int row = -1; row <= 1; row++)
                 {
                     // ensure that you're not accessing pixels outside the image
