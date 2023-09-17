@@ -3,6 +3,7 @@
     "files.associations": {
         "string_view": "c",
         "*.tcc": "c",
-        "string": "c"
+        "string": "c",
+        "cmath": "c"
     }
 }

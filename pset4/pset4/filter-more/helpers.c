@@ -159,18 +159,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             for(int cap = 0; cap < 3; cap++)
             {
-                if (sqrt(pow(totalGx[cap],2) + pow(totalGy[cap],2)) > 255)
+            totalGx[cap] = pow(totalGx[cap],2);
+            totalGy[cap] = pow(totalGy[cap],2);
+            int total[3];
+            total[cap] = sqrt(totalGx[cap] + totalGy[cap])
+                if (total[cap] > 255)
                 {
-                    image[i][j].rgbtRed = 255;
-                    image[i][j].rgbtGreen = 255;
-                    image[i][j].rgbtBlue = 255;
+                    total[cap] = 255;
                 }
-                else
-                {
-                    image[i][j].rgbtRed = sqrt(pow(totalGx,2) + pow(totalGy,2));
-                    image[i][j].rgbtGreen = sqrt(pow(totalGx,2) + pow(totalGy,2));
-                    image[i][j].rgbtBlue = sqrt(pow(totalGx,2) + pow(totalGy,2));
-                }
+                    image[i][j].rgbtRed = total[cap];
+                    image[i][j].rgbtGreen = total[cap];
+                    image[i][j].rgbtBlue = total[cap];
             }
         }
     }
