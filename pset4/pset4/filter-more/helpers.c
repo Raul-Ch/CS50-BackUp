@@ -143,6 +143,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // ensure that you're not accessing pixels outside the image
                     if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
                     {
+                        // Here we calculate each value of color of the grid of pixels with the gx and gy matrix values
                         totalGx[0] += temp_image[i + column][j + row].rgbtRed * Gx[column + 1][row + 1];
                         totalGx[1] += temp_image[i + column][j + row].rgbtGreen * Gx[column + 1][row + 1];
                         totalGx[2] += temp_image[i + column][j + row].rgbtBlue * Gx[column + 1][row + 1];
