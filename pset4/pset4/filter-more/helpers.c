@@ -157,17 +157,20 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-
-            if (sqrt(pow(totalGx,2) + pow(totalGy,2)) > 255)
+            for(int cap = 0; cap < 3; cap++)
             {
-                image[i][j].rgbtRed = 255;
-                image[i][j].rgbtGreen = 255;
-                image[i][j].rgbtBlue = 255;
-            }
-            else {
-            image[i][j].rgbtRed = sqrt(pow(totalGx,2) + pow(totalGy,2));
-            image[i][j].rgbtGreen = sqrt(pow(totalGx,2) + pow(totalGy,2));
-            image[i][j].rgbtBlue = sqrt(pow(totalGx,2) + pow(totalGy,2));
+                if (sqrt(pow(totalGx[cap],2) + pow(totalGy[cap],2)) > 255)
+                {
+                    image[i][j].rgbtRed = 255;
+                    image[i][j].rgbtGreen = 255;
+                    image[i][j].rgbtBlue = 255;
+                }
+                else
+                {
+                    image[i][j].rgbtRed = sqrt(pow(totalGx,2) + pow(totalGy,2));
+                    image[i][j].rgbtGreen = sqrt(pow(totalGx,2) + pow(totalGy,2));
+                    image[i][j].rgbtBlue = sqrt(pow(totalGx,2) + pow(totalGy,2));
+                }
             }
         }
     }
