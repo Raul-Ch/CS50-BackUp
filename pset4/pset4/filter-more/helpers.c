@@ -147,13 +147,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // ensure that you're not accessing pixels outside the image
                     if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
                     {
-                        totalGx[0] += temp_image[i + column][j + row].rgbtRed * Gx[column][row];
-                        totalGx[1] += temp_image[i + column][j + row].rgbtGreen * Gx[column][row];
-                        totalGx[2] += temp_image[i + column][j + row].rgbtBlue * Gx[column][row];
+                        totalGx[0] += temp_image[i + column][j + row].rgbtRed * Gx[column + 1][row + 1];
+                        totalGx[1] += temp_image[i + column][j + row].rgbtGreen * Gx[column + 1][row + 1];
+                        totalGx[2] += temp_image[i + column][j + row].rgbtBlue * Gx[column + 1][row + 1];
 
-                        totalGy[0] += temp_image[i + column][j + row].rgbtRed * Gy[column][row];
-                        totalGy[1] += temp_image[i + column][j + row].rgbtGreen * Gy[column][row];
-                        totalGy[2] += temp_image[i + column][j + row].rgbtBlue * Gy[column][row];
+                        totalGy[0] += temp_image[i + column][j + row].rgbtRed * Gy[column + 1][row + 1];
+                        totalGy[1] += temp_image[i + column][j + row].rgbtGreen * Gy[column + 1][row + 1];
+                        totalGy[2] += temp_image[i + column][j + row].rgbtBlue * Gy[column + 1][row + 1];
                     }
                     else
                     {
