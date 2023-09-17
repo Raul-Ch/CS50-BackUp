@@ -47,7 +47,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    float average = 0;
+    float average_red = 0;
+    float average_green = 0;
+    float average_blue = 0;
     RGBTRIPLE **temp_image = malloc(height *sizeof(RGBTRIPLE*));
     for (int i = 0; i < height; i++)
     {
@@ -63,6 +65,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // ensure that you're not accessing pixels outside the image
+            for (k = 0; k < 9; k++)
+            {
+
+            }
         }
     }
     return;
