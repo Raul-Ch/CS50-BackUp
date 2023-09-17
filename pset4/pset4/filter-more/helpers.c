@@ -79,9 +79,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
                     {
                         counter += 1;
-                        average_red += temp_image[i + column][j + row].rgbtRed;
-                        average_green += temp_image[i + column][j + row].rgbtGreen;
-                        average_blue += temp_image[i + column][j + row].rgbtBlue;
+                        average_red += temp_image[i][j].rgbtRed;
+                        average_green += temp_image[i][j].rgbtGreen;
+                        average_blue += temp_image[i][j].rgbtBlue;
                     }
                 }
             }
