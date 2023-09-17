@@ -105,7 +105,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     float average_red = 0;
     float average_green = 0;
     float average_blue = 0;
-    float counter = 0.0;
+
+    int totalGx = 0;
+    int totalGy = 0;
 
     int Gx[3][3] =
     {
@@ -151,20 +153,18 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // ensure that you're not accessing pixels outside the image
                     if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
                     {
-                        counter += 1;
-                        average_red += temp_image[i + column][j + row].rgbtRed * Gx[column][row];
-                        average_green += temp_image[i + column][j + row].rgbtGreen * Gx[column][row];
-                        average_blue += temp_image[i + column][j + row].rgbtBlue * Gx[column][row];
+                        totalGx += temp_image[i + column][j + row].rgbtRed * Gx[column][row];
+                        totalGx += temp_image[i + column][j + row].rgbtGreen * Gx[column][row];
+                        totalGx += temp_image[i + column][j + row].rgbtBlue * Gx[column][row];
 
-                        average_red += temp_image[i + column][j + row].rgbtRed * Gy[column][row];
-                        average_green += temp_image[i + column][j + row].rgbtGreen * Gy[column][row];
-                        average_blue += temp_image[i + column][j + row].rgbtBlue * Gy[column][row];
+                        totalGy += temp_image[i + column][j + row].rgbtRed * Gy[column][row];
+                        totalGy += temp_image[i + column][j + row].rgbtGreen * Gy[column][row];
+                        totalGy += temp_image[i + column][j + row].rgbtBlue * Gy[column][row];
                     }
                 }
             }
-            image[i][j].rgbtRed = round(average_red / counter);
-            image[i][j].rgbtGreen = round(average_green / counter);
-            image[i][j].rgbtBlue = round(average_blue / counter);
+
+
         }
     }
         free(temp_image);
