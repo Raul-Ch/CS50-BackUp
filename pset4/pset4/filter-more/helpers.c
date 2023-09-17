@@ -157,11 +157,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            total[0] = pow(totalGx[cap],2);
-            totalGy[1] = pow(totalGy[cap],2);
-
             int total[3];
-            total[cap] = sqrt(totalGx[cap] + totalGy[cap]);
+            for(int cap = 0; cap < 3; cap++)
+            {
+            total[cap] = sqrt(pow(totalGx[cap],2) + pow(totalGy[cap],2));
                 if (total[cap] > 255)
                 {
                     total[cap] = 255;
@@ -169,6 +168,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     image[i][j].rgbtRed = total[cap];
                     image[i][j].rgbtGreen = total[cap];
                     image[i][j].rgbtBlue = total[cap];
+            }
         }
     }
         free(temp_image);
