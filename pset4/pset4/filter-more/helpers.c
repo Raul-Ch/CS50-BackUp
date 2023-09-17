@@ -134,8 +134,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // reset average and counter for each pixel
-            totalGx = 0;
-            totalGy = 0;
+            totalGx[3] = 0;
+            totalGy[3] = 0;
 
             // the next for's are used to see in a square of 3 x 3 of the pixels the neighbour pixels
             // we start in -1 because in the middle we need to go "back" one pixel in the row and columns space
@@ -147,16 +147,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // ensure that you're not accessing pixels outside the image
                     if (i + column >= 0 && i + column < height && j + row >=0 && j + row < width)
                     {
-                        totalGx += temp_image[i + column][j + row].rgbtRed * Gx[column][row];
-                        totalGx += temp_image[i + column][j + row].rgbtGreen * Gx[column][row];
-                        totalGx += temp_image[i + column][j + row].rgbtBlue * Gx[column][row];
+                        totalGx[0] += temp_image[i + column][j + row].rgbtRed * Gx[column][row];
+                        totalGx[1] += temp_image[i + column][j + row].rgbtGreen * Gx[column][row];
+                        totalGx[2] += temp_image[i + column][j + row].rgbtBlue * Gx[column][row];
 
-                        totalGy += temp_image[i + column][j + row].rgbtRed * Gy[column][row];
-                        totalGy += temp_image[i + column][j + row].rgbtGreen * Gy[column][row];
-                        totalGy += temp_image[i + column][j + row].rgbtBlue * Gy[column][row];
+                        totalGy[0] += temp_image[i + column][j + row].rgbtRed * Gy[column][row];
+                        totalGy[1] += temp_image[i + column][j + row].rgbtGreen * Gy[column][row];
+                        totalGy[2] += temp_image[i + column][j + row].rgbtBlue * Gy[column][row];
                     }
                 }
             }
+
             if (sqrt(pow(totalGx,2) + pow(totalGy,2)) > 255)
             {
                 image[i][j].rgbtRed = 255;
