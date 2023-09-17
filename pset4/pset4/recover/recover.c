@@ -3,9 +3,9 @@
 
 int main(int argc, char *argv[])
 {
-    if ()
+    if (argc )
     {
-
+        printf("Usage: ./recover IMAGE\n");
     }
 
 }
