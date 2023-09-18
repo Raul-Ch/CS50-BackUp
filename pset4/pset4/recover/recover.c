@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 
     // Repeat a read until end of card
     // Read 512 bytes into a buffer
+       BYTE  *buffer = 512;
     // If first JPEG
     // ..else ....
     // If already found JPEG
