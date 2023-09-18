@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // Open input file
+    // Open memory card
     FILE *f = fopen(argv[1],"r");
 
     if (f == NULL)
@@ -19,6 +19,11 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-
+    // Repeat a read until end of card
+    // Read 512 bytes into a buffer
+    // If first JPEG
+    // ..else ....
+    // If already found JPEG
+    // Close any remaining file
 
 }
