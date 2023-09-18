@@ -39,10 +39,17 @@ int main(int argc, char *argv[])
             char *filename = "";
             // Implement jpeg format of name starting at 000.jpeg
             sprintf(filename, "%03i.jpg",number_jpg);
+
+            // Create that file
             FILE *jpeg = fopen(filename,"w");
+
+            // Write on the file
+            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+
+            // If already found JPEG
+            // Close any remaining file
+            fclose(jpeg)
         }
-        // If already found JPEG
-        // Close any remaining file
     }
 
 }
