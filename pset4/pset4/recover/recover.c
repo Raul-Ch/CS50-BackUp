@@ -28,14 +28,18 @@ int main(int argc, char *argv[])
     // unsigned 8-bit integer and can represent values from 0 to 255
     uint8_t buffer[BYTES_SIZE];
 
+    int number_jpg = 0;
+
     while (fread(&buffer, 1, BYTES_SIZE, f) == BYTES_SIZE)
     {
         // If first JPEG
         // ..else ....
         if (buffer[0] == 0xff && buffer[1] == 0xd8  && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+            char *filename = "";
             // Implement jpeg format of name starting at 000.jpeg
-            sprintf("filename");
+            sprintf(filename, "%03i.jpg",number_jpg);
+            FILE *jpeg = fopen(filename,"w");
         }
         // If already found JPEG
         // Close any remaining file
