@@ -48,8 +48,9 @@ int main(int argc, char *argv[])
 
             // If already found JPEG
             // Close any remaining file
-            fclose(jpeg)
+            fclose(jpeg);
         }
     }
+    fclose(f);
 
 }
