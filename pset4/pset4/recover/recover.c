@@ -25,7 +25,9 @@ int main(int argc, char *argv[])
 
     // Repeat a read until end of card
     // Read 512 bytes into a buffer
-    int8_t buffer[BYTES_SIZE];
+    // unsigned 8-bit integer and can represent values from 0 to 255
+    uint8_t buffer[BYTES_SIZE];
+    int number_jpg = 0;
 
     while (fread(&buffer, 1, BYTES_SIZE, f) == BYTES_SIZE)
     {
@@ -33,6 +35,7 @@ int main(int argc, char *argv[])
         // ..else ....
         if (buffer[0] == 0xff && buffer[1] == 0xd8  && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+            number_jpg
             printf("Horray");
         }
         // If already found JPEG
