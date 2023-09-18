@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     // Repeat a read until end of card
     // Read 512 bytes into a buffer
     int8_t buffer[BYTES_SIZE];
-    
+
     while (fread(&buffer, sizeof(1), BYTES_SIZE, f) == BYTES_SIZE)
     {
         // If first JPEG
