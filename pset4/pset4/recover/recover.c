@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     {
         // If first JPEG
         // ..else ....
-        if ()
+        if (&buffer == )
         {
 
         }
