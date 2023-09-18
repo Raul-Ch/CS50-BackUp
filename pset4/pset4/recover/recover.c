@@ -25,12 +25,14 @@ int main(int argc, char *argv[])
     int8_t buffer;
     while (fread(&buffer, sizeof(1), 512, f) == 512)
     {
+        // If first JPEG
+        // ..else ....
+        if ()
+        {
 
-
+        }
+        // If already found JPEG
+        // Close any remaining file
     }
-    // If first JPEG
-    // ..else ....
-    // If already found JPEG
-    // Close any remaining file
 
 }
