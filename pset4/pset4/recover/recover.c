@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     // Repeat a read until end of card
     // Read 512 bytes into a buffer
     int8_t buffer;
-    while (fread(buffer, 1, 512, raw_file) == BLOCK_SIZE)
+    while (fread(buffer, 1, 512, f) == 512)
     {
 
 
