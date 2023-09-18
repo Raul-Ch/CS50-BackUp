@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     // Read 512 bytes into a buffer
     int8_t buffer[BYTES_SIZE];
 
-    while (fread(&buffer, sizeof(1), BYTES_SIZE, f) == BYTES_SIZE)
+    while (fread(&buffer, 1, BYTES_SIZE, f) == BYTES_SIZE)
     {
         // If first JPEG
         // ..else ....
