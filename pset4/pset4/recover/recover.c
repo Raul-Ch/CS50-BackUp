@@ -45,7 +45,6 @@ int main(int argc, char *argv[])
         {
             if(number_jpg == 0)
             {
-            number_jpg ++;
             // Implement jpeg format of name starting at 000.jpeg
             sprintf(filename, "%03i.jpg",number_jpg);
 
@@ -54,6 +53,7 @@ int main(int argc, char *argv[])
 
             // Write on the file
             fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+            number_jpg ++;
             }
 
             else
