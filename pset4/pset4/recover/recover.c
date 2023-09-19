@@ -37,27 +37,20 @@ int main(int argc, char *argv[])
         // ..else ....
         if (buffer[0] == 0xff && buffer[1] == 0xd8  && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-             if (number_jpg == 0)
-             {
-                // You need space for three digits, the extension, and the null terminator
-                char *filename = malloc(8 * sizeof(char));
-                // Implement jpeg format of name starting at 000.jpeg
-                sprintf(filename, "%03i.jpg",number_jpg);
+            // You need space for three digits, the extension, and the null terminator
+            char *filename = malloc(8 * sizeof(char));
+            // Implement jpeg format of name starting at 000.jpeg
+            sprintf(filename, "%03i.jpg",number_jpg);
 
-                // Create that file
-                jpeg= fopen(filename,"w");
+            // Create that file
+            FILE *jpeg = fopen(filename,"w");
 
-                // Write on the file
-                fwrite(&buffer, 1, BYTES_SIZE, jpeg);
-             }
-             else
-             {
-
-             }
+            // Write on the file
+            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
         }
         else
         {
-            if(buffer[0] == 0xff && buffer[1] == 0xd8  && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+            if(buffer[0] == 0xff && buffer[1] == 0xd8  && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0 && number_jpg != 0)
             {
                 // If already found JPEG
                 // Close any remaining file
