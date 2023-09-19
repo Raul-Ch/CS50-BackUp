@@ -79,6 +79,7 @@ int main(int argc, char *argv[])
             }
         }
     }
+    fclose(jpeg);
     free(filename);
     fclose(f);
 }
