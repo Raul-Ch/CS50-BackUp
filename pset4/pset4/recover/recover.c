@@ -37,6 +37,8 @@ int main(int argc, char *argv[])
         // ..else ....
         if (buffer[0] == 0xff && buffer[1] == 0xd8  && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+            if (number_jpg == 0)
+            {
             // You need space for three digits, the extension, and the null terminator
             char *filename = malloc(8 * sizeof(char));
             // Implement jpeg format of name starting at 000.jpeg
@@ -47,6 +49,14 @@ int main(int argc, char *argv[])
 
             // Write on the file
             fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+            }
+            else
+            {
+                char *filename = malloc(8 * sizeof(char));
+                sprintf(filename, "%03i.jpg",number_jpg);
+                FILE *jpeg = fopen(filename,"w");
+                fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+            }
         }
         else
         {
