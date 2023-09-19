@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
             {
                 fclose(jpeg);
                 number_jpg ++;
-
+            }
                 // Implement jpeg format of name starting at 000.jpeg
                 sprintf(filename, "%03i.jpg",number_jpg);
 
