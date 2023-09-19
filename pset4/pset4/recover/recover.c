@@ -60,6 +60,7 @@ int main(int argc, char *argv[])
         }
         else
         {
+            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
             if(number_jpg != 0)
             {
                 // If already found JPEG
