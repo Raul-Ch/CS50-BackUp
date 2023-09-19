@@ -46,12 +46,17 @@ int main(int argc, char *argv[])
 
             // Write on the file
             fwrite(&buffer, 1, BYTES_SIZE, jpeg);
-
-            // If already found JPEG
-            // Close any remaining file
-            fclose(jpeg);
-            number_jpg ++;
-            free(filename);
+        }
+        else
+        {
+            if()
+            {
+                // If already found JPEG
+                // Close any remaining file
+                fclose(jpeg);
+                number_jpg ++;
+                free(filename);
+            }
         }
     }
     fclose(f);
