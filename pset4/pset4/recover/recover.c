@@ -47,7 +47,6 @@ int main(int argc, char *argv[])
 
             // Create that file
             jpeg = fopen(filename,"w");
-
             if(number_jpg == 0)
             {
                 number_jpg ++;
