@@ -43,32 +43,23 @@ int main(int argc, char *argv[])
         // ..else ....
         if (buffer[0] == 0xff && buffer[1] == 0xd8  && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            if(number_jpg == 0)
-            {
-            number_jpg ++;
             // Implement jpeg format of name starting at 000.jpeg
             sprintf(filename, "%03i.jpg",number_jpg);
 
             // Create that file
             jpeg = fopen(filename,"w");
 
-            // Write on the file
-            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+            if(number_jpg == 0)
+            {
+                number_jpg ++;
+                // Write on the file
+                fwrite(&buffer, 1, BYTES_SIZE, jpeg);
             }
 
             else
             {
-            fclose(jpeg);
-            number_jpg ++;
-
-            // Implement jpeg format of name starting at 000.jpeg
-            sprintf(filename, "%03i.jpg",number_jpg);
-
-            // Create that file
-            jpeg = fopen(filename,"w");
-
-            // Write on the file
-            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+                fclose(jpeg);
+                number_jpg ++;
             }
         }
         else
