@@ -49,7 +49,6 @@ int main(int argc, char *argv[])
             jpeg = fopen(filename,"w");
             if(number_jpg == 0)
             {
-                number_jpg ++;
                 // Write on the file
                 fwrite(&buffer, 1, BYTES_SIZE, jpeg);
             }
