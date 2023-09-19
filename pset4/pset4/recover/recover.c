@@ -34,42 +34,31 @@ int main(int argc, char *argv[])
 
     int number_jpg = 0;
 
-    // You need space for three digits, the extension, and the null terminator
-    char *filename = malloc(8 * sizeof(char));
-
     while (fread(&buffer, 1, BYTES_SIZE, f) == BYTES_SIZE)
     {
         // If first JPEG
         // ..else ....
         if (buffer[0] == 0xff && buffer[1] == 0xd8  && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            if(number_jpg == 0)
-            {
-            // Implement jpeg format of name starting at 000.jpeg
-            sprintf(filename, "%03i.jpg",number_jpg);
-
-            // Create that file
-            jpeg = fopen(filename,"w");
-
-            // Write on the file
-            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
-            }
-
-            else
+            if(jpeg != NULL)
             {
             fclose(jpeg);
             number_jpg ++;
             }
-            
-            // Implement jpeg format of name starting at 000.jpeg
-            sprintf(filename, "%03i.jpg",number_jpg);
 
-            // Create that file
-            jpeg = fopen(filename,"w");
+        // You need space for three digits, the extension, and the null terminator
+        char *filename = malloc(8 * sizeof(char));
 
-            // Write on the file
-            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
-            }
+        // Implement jpeg format of name starting at 000.jpeg
+        sprintf(filename, "%03i.jpg",number_jpg);
+
+        // Create that file
+        jpeg = fopen(filename,"w");
+        free(filename);
+        
+        // Write on the file
+        fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+
         }
         else
         {
@@ -80,6 +69,5 @@ int main(int argc, char *argv[])
         }
     }
     fclose(jpeg);
-    free(filename);
     fclose(f);
 }
