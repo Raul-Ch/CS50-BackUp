@@ -54,6 +54,7 @@ int main(int argc, char *argv[])
             // Write on the file
             fwrite(&buffer, 1, BYTES_SIZE, jpeg);
             }
+            
             else
             {
             number_jpg ++;
