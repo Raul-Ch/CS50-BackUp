@@ -59,7 +59,6 @@ int main(int argc, char *argv[])
             else
             {
             fclose(jpeg);
-            free(filename);
             number_jpg ++;
 
             // Implement jpeg format of name starting at 000.jpeg
@@ -80,5 +79,6 @@ int main(int argc, char *argv[])
             }
         }
     }
+    free(filename);
     fclose(f);
 }
