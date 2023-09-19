@@ -39,7 +39,8 @@ int main(int argc, char *argv[])
 
     while (fread(&buffer, 1, BYTES_SIZE, f) == BYTES_SIZE)
     {
-        // Check if it's the beginning of a JPEG file
+        // If first JPEG
+        // ..else ....
         if (buffer[0] == 0xff && buffer[1] == 0xd8  && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
             // Implement jpeg format of name starting at 000.jpeg
@@ -47,8 +48,10 @@ int main(int argc, char *argv[])
 
             // Create that file
             jpeg = fopen(filename,"w");
+
             if(number_jpg == 0)
             {
+                number_jpg ++;
                 // Write on the file
                 fwrite(&buffer, 1, BYTES_SIZE, jpeg);
             }
@@ -57,6 +60,15 @@ int main(int argc, char *argv[])
             {
                 fclose(jpeg);
                 number_jpg ++;
+
+                // Implement jpeg format of name starting at 000.jpeg
+                sprintf(filename, "%03i.jpg",number_jpg);
+
+                // Create that file
+                jpeg = fopen(filename,"w");
+
+            // Write on the file
+            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
             }
         }
         else
