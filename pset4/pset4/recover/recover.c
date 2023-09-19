@@ -17,8 +17,6 @@ int main(int argc, char *argv[])
     // Open memory card
     FILE *f = fopen(argv[1],"r");
 
-    // Await files
-    FILE *jpeg;
 
     if (f == NULL)
     {
@@ -35,20 +33,27 @@ int main(int argc, char *argv[])
 
     while (fread(&buffer, 1, BYTES_SIZE, f) == BYTES_SIZE)
     {
-        // You need space for three digits, the extension, and the null terminator
-        char *filename = malloc(8 * sizeof(char));
         // If first JPEG
         // ..else ....
         if (buffer[0] == 0xff && buffer[1] == 0xd8  && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            // Implement jpeg format of name starting at 000.jpeg
-            sprintf(filename, "%03i.jpg",number_jpg);
+             if (number_jpg == 0)
+             {
+                // You need space for three digits, the extension, and the null terminator
+                char *filename = malloc(8 * sizeof(char));
+                // Implement jpeg format of name starting at 000.jpeg
+                sprintf(filename, "%03i.jpg",number_jpg);
 
-            // Create that file
-            jpeg= fopen(filename,"w");
+                // Create that file
+                jpeg= fopen(filename,"w");
 
-            // Write on the file
-            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+                // Write on the file
+                fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+             }
+             else
+             {
+
+             }
         }
         else
         {
