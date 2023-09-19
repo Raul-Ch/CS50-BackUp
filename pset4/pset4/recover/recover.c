@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
         // Create that file
         jpeg = fopen(filename,"w");
         free(filename);
-        
+
         // Write on the file
         fwrite(&buffer, 1, BYTES_SIZE, jpeg);
 
