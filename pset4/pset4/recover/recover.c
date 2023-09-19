@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     FILE *f = fopen(argv[1],"r");
 
     // Prepare files
-    FILE *jpeg;
+    FILE *jpeg = NULL;
 
 
     if (f == NULL)
@@ -74,7 +74,10 @@ int main(int argc, char *argv[])
         }
         else
         {
-            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+            if ((jpeg != NULL))
+            {
+                fwrite(&buffer, 1, BYTES_SIZE, jpeg);
+            }
         }
     }
     fclose(f);
