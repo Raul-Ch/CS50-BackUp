@@ -56,8 +56,7 @@ int main(int argc, char *argv[])
             free(filename);
 
             // Write on the file
-            fwrite(&buffer, 1, BYTES_SIZE, jpeg);
-        }
+            fwrite(&buffer, 1, BYTES_SIZE, jpeg);        }
         else
         {
             if ((jpeg != NULL))
