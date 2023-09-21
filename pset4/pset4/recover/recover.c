@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 
     int number_jpg = 0;
 
+    // this while loop continues to read data from the file f into the buffer as long as fread is able to read BYTES_SIZE
+    // read through a file in chunks of BYTES_SIZE until there's no more data to read.
     while (fread(&buffer, 1, BYTES_SIZE, f) == BYTES_SIZE)
     {
         // If first JPEG
