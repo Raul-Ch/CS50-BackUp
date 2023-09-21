@@ -18,7 +18,7 @@ int main(void)
     list[2] = 3;
 
     // List of size 4
-    int *tmp = malloc(4 * sizeof(int));
+    int *tmp = realloc(list,4 * sizeof(int));
     if (tmp == NULL)
     {
         free(list);
@@ -33,9 +33,6 @@ int main(void)
 
     // Add number to list of size 4
     tmp[3] = 4;
-
-    // Free list of size 3
-    free(list);
 
     // Rember list of size 4
     list = tmp;
