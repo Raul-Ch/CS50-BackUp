@@ -30,6 +30,31 @@ int main(int argc, char *argv[])
         }
         // *n.number = number->;
         n->number = number;
+        n->next = NULL;
+
+        // If list is empty
+        if (list = NULL)
+        {
+            // This node is the while list
+            list = n;
+        }
+        // Else if list has numbers already
+        else
+        {
+            // Iterate over nodes in list
+            for (node *ptr = list; ptr != NULL; ptr = ptr->next)
+            {
+                // If at end of list
+                if (ptr->next == NULL)
+                {
+                    // Append node
+                    ptr->next = n;
+                    break;
+                }
+            }
+        }
+
+
 
 
     }
