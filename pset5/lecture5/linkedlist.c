@@ -53,8 +53,8 @@ int main(int argc, char *argv[])
                 }
             }
         }
-
-    // Print numbers
+    }
+        // Print numbers
     for (node *ptr = list; ptr != NULL; ptr = ptr->next)
     {
         printf("%i\n", ptr->number);
@@ -67,8 +67,6 @@ int main(int argc, char *argv[])
         node *next = ptr->next;
         free(ptr);
         ptr = next;
-    }
-
     }
 
 }
