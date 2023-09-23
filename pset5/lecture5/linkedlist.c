@@ -53,3 +53,12 @@ int main(int argc, char *argv[])
     }
 
 }
+
+/* Notice that what the user inputs at the command line is put into the number field of a
+   node called n, and then that node is added to the list. For example, ./list 1 2 will put
+   the number 1 into the number field of a node called n, then put a pointer to list into
+   the next field of the node, and then update list to point to n. That same process is
+   repeated for 2. Next, node *ptr = list creates a temporary variable that points at the
+   same spot that list points to. The while prints what at the node ptr points to, and then
+   updates ptr to point to the next node in the list. Finally, all the memory is freed. */
+   
