@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef stuct node
+typedef struct node
 {
     int number;
     struct node *next;
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
         // Allocate node for number
         node *n = malloc(sizeof(node));
-        if (n = NULL)
+        if (n == NULL)
         {
             return 1;
         }
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
         n->next = NULL;
 
         // If list is empty
-        if (list = NULL)
+        if (list == NULL)
         {
             // This node is the while list
             list = n;
@@ -54,8 +54,20 @@ int main(int argc, char *argv[])
             }
         }
 
+    // Print numbers
+    for (node *ptr = list; ptr != NULL; ptr = ptr->next)
+    {
+        printf("%i\n", ptr->number);
+    }
 
-
+    // Free memory
+    node *ptr = list;
+    while (ptr != NULL)
+    {
+        node *next = ptr->next;
+        free(ptr);
+        ptr = next;
+    }
 
     }
 
