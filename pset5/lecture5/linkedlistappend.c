@@ -1,5 +1,6 @@
-// LINKED LIST PREPEND
+// LINKED LIST APPEND
 // Implements a list of numbers using a linked list
+// "Further, you could place numbers at the end of the list as illustrated in this code:"
 
 #include <cs50.h>
 #include <stdio.h>
@@ -33,9 +34,27 @@ int main(int argc, char *argv[])
         n->number = number;
         n->next = NULL;
 
-        // Prepend node to list
-        n->next = list;
-        list = n;
+        // If list is empty
+        if (list == NULL)
+        {
+            // This node is the whole list
+            list = n;
+        }
+        
+        // If list has numbers already
+        else
+        {
+            // Iterate over nodes in list
+            for (node *ptr = list; ptr != NULL; ptr = ptr->next)
+            {
+                // If at end of list
+                if (ptr->next == NULL)
+                {
+                    // Append node
+                    ptr->next = n;
+                    break;
+                }
+            }
 
     }
         // Print numbers
@@ -55,10 +74,6 @@ int main(int argc, char *argv[])
 
 }
 
-/* Notice that what the user inputs at the command line is put into the number field of a
-   node called n, and then that node is added to the list. For example, ./list 1 2 will put
-   the number 1 into the number field of a node called n, then put a pointer to list into
-   the next field of the node, and then update list to point to n. That same process is
-   repeated for 2. Next, node *ptr = list creates a temporary variable that points at the
-   same spot that list points to. The while prints what at the node ptr points to, and then
-   updates ptr to point to the next node in the list. Finally, all the memory is freed. */
+/*  Notice how this code walks down this list to find the end. When appending an element,
+    (adding to the end of the list) our code will run in , as we have to go through our
+    entire list before we can add the final element. */
