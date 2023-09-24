@@ -1,3 +1,4 @@
+// LINKED LIST
 // Implements a list of numbers using a linked list
 
 #include <cs50.h>
@@ -61,4 +62,3 @@ int main(int argc, char *argv[])
    repeated for 2. Next, node *ptr = list creates a temporary variable that points at the
    same spot that list points to. The while prints what at the node ptr points to, and then
    updates ptr to point to the next node in the list. Finally, all the memory is freed. */
-   
