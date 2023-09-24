@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
             // This node is the whole list
             list = n;
         }
-        
+
         // If list has numbers already
         else
         {
@@ -55,6 +55,7 @@ int main(int argc, char *argv[])
                     break;
                 }
             }
+        }
 
     }
         // Print numbers
