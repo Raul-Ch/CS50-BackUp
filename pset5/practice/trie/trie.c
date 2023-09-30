@@ -109,6 +109,11 @@ int main(int argc, char *argv[])
 // TODO: Complete the check function, return true if found, false if not found
 bool check(char *word)
 {
+    // HERE we check:
+    // Verificamos por cada letra, si esta existe o no en el trie al cual nos referimos segun el Num de index dependiendod de la iteración en la que nos encontramos
+    // Al final, si se encuentran "todas las letras" de la palabra dada, llegaremos al puntero con el valor is_word: verdadero, si no encontramos este valor o una letra
+    // al final de la "cadena" entonces no existe la palabra
+
     // Setting a node pointer to navigate, cursor to the root of the trie.
     node *cursor = root;
 
