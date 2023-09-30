@@ -109,18 +109,28 @@ int main(int argc, char *argv[])
 // TODO: Complete the check function, return true if found, false if not found
 bool check(char *word)
 {
+    // Setting a node pointer to navigate, cursor to the root of the trie.
     node *cursor = root;
+
+    // Iterate through every letter in the argument WORD (given by the user) and, as you do,
     for (int i = 0, letter = strlen(word); i < letter; i++)
     {
+        // determine the array index that corresponds to that letter.
         int index = toupper(word[i]) - 'A';
+
+        // Check if there´s an error on the word given (character evaluated)
         if (index < 0 || index >= SIZE_OF_ALPHABET)
         {
             return false;
         }
+
+        // Use the index for a letter to check if children[index] is a NULL pointer,
         if (cursor->children[index] == NULL)
         {
+            // meaning the word does not exist in the trie.
             return false;
         }
+        // If children[index] is in fact a node, you can reset cursor to this node and check for the next letter in its children nodes.
         cursor = cursor->children[index];
     }
     return cursor->is_word;
