@@ -71,7 +71,9 @@ person *create_family(int generations)
     }
 
     // TODO: Return newly created person
-    return *new;
+    // ou should use return new;. This is because new is a pointer to a person, and dereferencing it with
+    // *new gives you the actual person object, not the pointer.
+    return new;
 }
 
 // Free `p` and all ancestors of `p`.
