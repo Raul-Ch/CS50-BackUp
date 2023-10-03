@@ -23,6 +23,10 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    if ()
+    {
+        return true;
+    }
     return false;
 }
 
