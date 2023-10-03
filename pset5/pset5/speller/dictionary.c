@@ -16,9 +16,11 @@ node;
 // TODO: Choose number of buckets in hash table
 // size of words
 const unsigned int N = 45;
+const unsigned int N2 = 26;
 
 // Hash table
 node *table[N];
+node *table2[N2];
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
