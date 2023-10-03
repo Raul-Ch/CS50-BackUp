@@ -141,6 +141,7 @@ int main(int argc, char *argv[])
     fclose(file);
 
     // Determine dictionary's size
+    // Return resource usage statistics for the calling process, which is the sum of resources used by all threads in the process.
     getrusage(RUSAGE_SELF, &before);
     unsigned int n = size();
     getrusage(RUSAGE_SELF, &after);
