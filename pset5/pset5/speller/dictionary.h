@@ -1,5 +1,6 @@
 // Declares a dictionary's functionality
-
+// 
+// si lo siguiente no está definido".
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
