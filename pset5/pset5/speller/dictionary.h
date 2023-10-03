@@ -9,7 +9,7 @@
 
 #include <stdbool.h>
 
-// Maximum length for a word
+// Maximum length for a word = 45
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
 // Allow constant values to be declared for use throughout your code.
 // It’s a constant in the sense that you can’t (accidentally) change it in your own code. In fact,
