@@ -11,9 +11,13 @@
 
 // Maximum length for a word
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
+// Allow constant values to be declared for use throughout your code.
+// It’s a constant in the sense that you can’t (accidentally) change it in your own code. In fact,
+// clang will replace any mentions of LENGTH in your own code with, literally, 45
 #define LENGTH 45
 
 // Prototypes
+// char * = string
 bool check(const char *word);
 unsigned int hash(const char *word);
 bool load(const char *dictionary);
