@@ -85,8 +85,8 @@ bool load(const char *dictionary)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    unsigned int 
-    return toupper(word[0]) - 'A';
+    unsigned int lenght = strlen(word);
+    return length - 1;
 }
 
 // Hashes word to a number (By A - Z)
