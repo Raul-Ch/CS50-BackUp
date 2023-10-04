@@ -18,7 +18,7 @@ node;
 
 // TODO: Choose number of buckets in hash table
 // size of words
-const unsigned int N = 45;
+const unsigned int N = 70;
 const unsigned int N2 = 26;
 
 // Hash table
@@ -81,15 +81,15 @@ bool load(const char *dictionary)
 }
 
 
-// Hashes word to a number (By length)
-unsigned int hash(const string word)
+// Hashes word to a number (by length)
+unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     unsigned int atoz = toupper(word[0]) - 'A';
     unsigned int length = strlen(word);
     // the bucket can go from 1 (min letter = a + 1 of lenght)
-    // to
-    return
+    // to 25 + 45 (25 being 'Z' and 45 the max length)
+    return atoz + length;
 }
 
 // Hashes word to a number (By A - Z)
