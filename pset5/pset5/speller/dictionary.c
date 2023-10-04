@@ -27,6 +27,7 @@ node *table2[N2];
 bool load(const char *dictionary)
 {
     // TODO
+    char buffer[45];
     // Open dictionary file
     FILE *file = fopen(dictionary, "r");
     if (infile == NULL)
@@ -36,7 +37,10 @@ bool load(const char *dictionary)
     }
     else
     {
-        fscanf(file, "%s", );
+        while (fscanf(file, "%s", buffer) == EOF)
+        {
+            
+        }
     }
     // Read strings from file one at a time
 
