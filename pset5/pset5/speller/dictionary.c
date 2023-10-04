@@ -43,6 +43,7 @@ bool load(const char *dictionary)
         // Read strings from file one at a time
         while (fscanf(file, "%s", buffer) == 1)
         {
+            // Create a new node for each word
             node *l_node = malloc(sizeof(node));
             if (l_node == NULL)
             {
@@ -51,29 +52,31 @@ bool load(const char *dictionary)
             }
             else
             {
-                int length = strlen(buffer) + 1;
-                printf("%i", length);
-
-                 //char *tmp_len = s;
+                // Hash a word to obtain a hash value
+                
+                hash1();
             }
         }
     }
-
-    // Create a new node for each word
-
-    // Hash a word to obtain a hash value
-
     // Insert node into hash table at that location
     return false;
 }
 
 
-// Hashes word to a number
+// Hashes word to a number (By length)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     return toupper(word[0]) - 'A';
 }
+
+// Hashes word to a number (By A - Z)
+unsigned int hash2(const char *word)
+{
+    // TODO: Improve this hash function
+    return toupper(word[0]) - 'A';
+}
+
 
 
 // Returns true if word is in dictionary, else false
