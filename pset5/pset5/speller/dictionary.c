@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "dictionary.h"
 
@@ -26,10 +27,24 @@ node *table2[N2];
 bool load(const char *dictionary)
 {
     // TODO
-    if (dictionary )
+    // Open dictionary file
+    FILE *file = fopen(dictionary, "r");
+    if (infile == NULL)
     {
-
+        printf("Return value NULL");
+        return false;
     }
+    else
+    {
+        fscanf(file, "%s", );
+    }
+    // Read strings from file one at a time
+
+    // Create a new node for each word
+
+    // Hash a word to obtain a hash value
+
+    // Insert node into hash table at that location
     return false;
 }
 
