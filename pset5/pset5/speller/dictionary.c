@@ -48,7 +48,11 @@ bool load(const char *dictionary)
             }
             else
             {
-                tmp_len = strcpy();
+                int length = malloc(sizeof(int));
+                length = strlen(buffer) + 1;
+
+                
+                char *tmp_len = s;
             }
         }
     }
