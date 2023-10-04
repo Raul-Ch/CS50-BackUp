@@ -37,10 +37,19 @@ bool load(const char *dictionary)
     }
     else
     {
-        // heck if fscanf returns 1, which indicates it successfully read a string.
+        // Check if fscanf returns 1, which indicates it successfully read a string.
         while (fscanf(file, "%s", buffer) == 1)
         {
-
+            node *l_node = malloc(sizeof(node));
+            if (l_node == NULL)
+            {
+                printf("No space");
+                return false;
+            }
+            else
+            {
+                tmp_len = strcpy();
+            }
         }
     }
     // Read strings from file one at a time
