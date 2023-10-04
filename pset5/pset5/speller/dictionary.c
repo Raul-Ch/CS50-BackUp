@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -49,11 +50,11 @@ bool load(const char *dictionary)
             }
             else
             {
-                int length = malloc(sizeof(int));
-                length = strlen(buffer) + 1;
+                 int length = malloc(sizeof(int));
+                 length = strlen(buffer) + 1;
 
 
-                char *tmp_len = s;
+                 //char *tmp_len = s;
             }
         }
     }
