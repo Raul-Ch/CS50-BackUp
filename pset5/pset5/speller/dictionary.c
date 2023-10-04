@@ -103,7 +103,7 @@ unsigned int hash2(const char *word)
 unsigned int size(void)
 {
     // TODO
-    return s
+    return size + 1;
 }
 
 // Returns true if word is in dictionary, else false
