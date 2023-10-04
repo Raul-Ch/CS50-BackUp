@@ -53,8 +53,7 @@ bool load(const char *dictionary)
             else
             {
                 // Hash a word to obtain a hash value
-                
-                hash1();
+                hash1(strcpy(,node -> word));
             }
         }
     }
