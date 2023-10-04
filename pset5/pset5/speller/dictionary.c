@@ -38,6 +38,7 @@ bool load(const char *dictionary)
     else
     {
         // Check if fscanf returns 1, which indicates it successfully read a string.
+        // Read strings from file one at a time
         while (fscanf(file, "%s", buffer) == 1)
         {
             node *l_node = malloc(sizeof(node));
@@ -51,12 +52,11 @@ bool load(const char *dictionary)
                 int length = malloc(sizeof(int));
                 length = strlen(buffer) + 1;
 
-                
+
                 char *tmp_len = s;
             }
         }
     }
-    // Read strings from file one at a time
 
     // Create a new node for each word
 
@@ -66,12 +66,6 @@ bool load(const char *dictionary)
     return false;
 }
 
-// Returns true if word is in dictionary, else false
-bool check(const char *word)
-{
-    // TODO
-    return false;
-}
 
 // Hashes word to a number
 unsigned int hash(const char *word)
@@ -80,6 +74,13 @@ unsigned int hash(const char *word)
     return toupper(word[0]) - 'A';
 }
 
+
+// Returns true if word is in dictionary, else false
+bool check(const char *word)
+{
+    // TODO
+    return false;
+}
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
