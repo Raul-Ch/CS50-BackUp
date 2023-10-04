@@ -65,7 +65,21 @@ bool load(const char *dictionary)
                     // This node is the whole list
                     table[hash(l_node -> word)] = l_node;
                 }
-
+                 // If array has numbers already
+                else
+                {
+                    // Iterate over nodes in list
+                    for (node *ptr = list; ptr != NULL; ptr = ptr->next)
+                    {
+                        // If at end of list
+                        if (ptr->next == NULL)
+                        {
+                            // Append node
+                            ptr->next = n;
+                            break;
+                        }
+                    }
+                }
             }
         }
     }
