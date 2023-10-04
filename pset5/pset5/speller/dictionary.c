@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -52,7 +53,7 @@ bool load(const char *dictionary)
             {
                  int length = malloc(sizeof(int));
                  length = strlen(buffer) + 1;
-
+    printf("%i", length);
 
                  //char *tmp_len = s;
             }
