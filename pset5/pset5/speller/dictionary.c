@@ -37,7 +37,8 @@ bool load(const char *dictionary)
     }
     else
     {
-        while (fscanf(file, "%s", buffer) == EOF)
+        // heck if fscanf returns 1, which indicates it successfully read a string.
+        while (fscanf(file, "%s", buffer) == 1)
         {
 
         }
