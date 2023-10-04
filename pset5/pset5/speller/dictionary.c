@@ -58,24 +58,24 @@ bool load(const char *dictionary)
                 l_node -> next = NULL;
                 // Use hash function (takes a string and returns an index)
                 // Recall that hash table is an array
-
+                int length = hash(l_node -> word);
                 // If array is empty
-                if (table[hash(l_node -> word)] == NULL)
+                if (table[length] == NULL)
                 {
                     // This node is the whole list
-                    table[hash(l_node -> word)] = l_node;
+                    table[length] = l_node;
                 }
                  // If array has numbers already
                 else
                 {
                     // Iterate over nodes in list
-                    for (node *ptr = list; ptr != NULL; ptr = ptr->next)
+                    for (node *ptr = l_node; ptr != NULL; ptr = ptr->next)
                     {
                         // If at end of list
                         if (ptr->next == NULL)
                         {
                             // Append node
-                            ptr->next = n;
+                            ptr->next = l_node;
                             break;
                         }
                     }
