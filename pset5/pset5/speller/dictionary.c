@@ -52,7 +52,6 @@ bool load(const char *dictionary)
             }
             else
             {
-                size();
                 // Hash a word to obtain a hash value
                 // Copy word into node using strcpy
                 strcpy(l_node -> word, buffer);
