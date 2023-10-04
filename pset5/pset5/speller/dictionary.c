@@ -52,6 +52,7 @@ bool load(const char *dictionary)
             }
             else
             {
+                size();
                 // Hash a word to obtain a hash value
                 // Copy word into node using strcpy
                 strcpy(l_node -> word, buffer);
@@ -99,7 +100,12 @@ unsigned int hash2(const char *word)
     return toupper(word[0]) - 'A';
 }
 
-
+// Returns number of words in dictionary if loaded, else 0 if not yet loaded
+unsigned int size(void)
+{
+    // TODO
+    return size + 1;
+}
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -108,12 +114,6 @@ bool check(const char *word)
     return false;
 }
 
-// Returns number of words in dictionary if loaded, else 0 if not yet loaded
-unsigned int size(void)
-{
-    // TODO
-    return 0;
-}
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
