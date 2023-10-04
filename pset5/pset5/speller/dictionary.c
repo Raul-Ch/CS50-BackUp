@@ -51,7 +51,7 @@ bool load(const char *dictionary)
             }
             else
             {
-                 int length = malloc(sizeof(int));
+                 int length = malloc(N);
                  length = strlen(buffer) + 1;
     printf("%i", length);
 
