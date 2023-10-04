@@ -30,7 +30,7 @@ bool load(const char *dictionary)
     char buffer[45];
     // Open dictionary file
     FILE *file = fopen(dictionary, "r");
-    if (infile == NULL)
+    if (file == NULL)
     {
         printf("Return value NULL");
         return false;
@@ -39,7 +39,7 @@ bool load(const char *dictionary)
     {
         while (fscanf(file, "%s", buffer) == EOF)
         {
-            
+
         }
     }
     // Read strings from file one at a time
