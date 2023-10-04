@@ -57,6 +57,7 @@ bool load(const char *dictionary)
                 strcpy(l_node -> word, buffer);
                 // Use hash function (takes a string and returns an index)
                 // Recall that hash table is an array
+                table[hash(l_node -> word)];
                 
             }
         }
