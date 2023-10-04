@@ -55,10 +55,17 @@ bool load(const char *dictionary)
                 // Hash a word to obtain a hash value
                 // Copy word into node using strcpy
                 strcpy(l_node -> word, buffer);
+                l_node -> next = NULL;
                 // Use hash function (takes a string and returns an index)
                 // Recall that hash table is an array
-                table[hash(l_node -> word)];
-                
+
+                // If array is empty
+                if (table[hash(l_node -> word)] == NULL)
+                {
+                    // This node is the whole list
+                    table[hash(l_node -> word)] = l_node;
+                }
+
             }
         }
     }
