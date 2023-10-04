@@ -68,23 +68,16 @@ bool load(const char *dictionary)
                  // If array has numbers already
                 else
                 {
-                    // Iterate over nodes in list
-                    for (node *ptr = l_node; ptr != NULL; ptr = ptr->next)
-                    {
-                        // If at end of list
-                        if (ptr->next == NULL)
-                        {
-                            // Append node
-                            ptr->next = l_node;
-                            break;
-                        }
-                    }
+                    // Insert node at beginning of list
+                    l_node -> next = table[length];
+                    table[length] = l_node;
                 }
             }
         }
     }
     // Insert node into hash table at that location
-    return false;
+    fclose(file);
+    return true;
 }
 
 
