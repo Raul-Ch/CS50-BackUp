@@ -18,7 +18,7 @@ node;
 
 // TODO: Choose number of buckets in hash table
 // size of words
-const unsigned int N = 45;
+const unsigned int N = 1,170;
 const unsigned int N2 = 26;
 
 // Hash table
@@ -85,7 +85,7 @@ bool load(const char *dictionary)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    unsigned int lenght = strlen(word);
+    unsigned int function = strlen(word);
     return length - 1;
 }
 
