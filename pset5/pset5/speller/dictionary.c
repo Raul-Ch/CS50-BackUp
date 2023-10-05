@@ -125,12 +125,6 @@ unsigned int size(void)
 bool check(const char *word)
 {
     // TODO
-    unsigned int length = strlen(word);
-    for (int i = 0; i < length; i++)
-    {
-       word[i] = tolower(word[i]);
-    }
-
     node *cursor = table[hash(word)];
     // Hash word to obtain a hash value
     // Access linked list at that index in the hash table
