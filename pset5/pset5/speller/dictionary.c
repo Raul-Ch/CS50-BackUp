@@ -103,7 +103,7 @@ unsigned int hash(const char *word)
     // the bucket can go from 1 (min letter = a + 1 of lenght)
     // to 25 + 45 (25 being 'Z' and 45 the max length)
     */
-    return sum + length;
+    return sum;
 }
 
 // Hashes word to a number (By A - Z)
