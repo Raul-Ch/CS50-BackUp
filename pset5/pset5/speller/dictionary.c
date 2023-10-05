@@ -86,7 +86,7 @@ unsigned int hash(const char *word)
 {
     // TODO2: IMPROVE THIS HASH FUNCTIONX
     unsigned int atoz = 0;
-    unsigned int length = strlen(word);
+    unsigned int length = strlen(word) + 1;
 
     for (int i = 0; i == length; i++)
     {
