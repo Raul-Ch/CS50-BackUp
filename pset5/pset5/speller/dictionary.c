@@ -56,6 +56,7 @@ bool load(const char *dictionary)
                 // Hash a word to obtain a hash value
                 // Copy word into node using strcpy
                 strcpy(l_node->word, buffer);
+                l_node->next = NULL;
                 // Use hash function (takes a string and returns an index)
                 // Recall that hash table is an array
                 int length = hash(l_node->word);
