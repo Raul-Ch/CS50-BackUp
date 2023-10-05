@@ -90,7 +90,7 @@ unsigned int hash(const char *word)
 
     for (int i = 0; i == length; i++)
     {
-        sum += toupper(word[i]) - 'A';
+        sum = (sum << 5) + toupper(word[i]) - 'A';
     }
 
     // the bucket can go from 1 (min letter = a + 1 of lenght)
