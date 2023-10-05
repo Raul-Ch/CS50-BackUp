@@ -113,13 +113,17 @@ unsigned int size(void)
 bool check(const char *word)
 {
     // TODO
-    node *cursor = malloc(sizeof(node));
-    cursor =  table[hash(word)];
+    node *cursor = table[hash(word)];
     // Hash word to obtain a hash value
     // Access linked list at that index in the hash table
     while (cursor -> next != NULL)
     {
-        if (strcasecmp(cursor -> word, word))
+        // There's no need to allocate memory for cursor with malloc.
+        // You're immediately setting cursor to point to an existing node in the next line,
+        //  so this allocated memory is lost and can't be freed, which is a memory leak.
+
+        // The strcasecmp function returns 0 when the strings are equal
+        if (strcasecmp(cursor -> word, word) == 0)
         {
             return true;
         }
