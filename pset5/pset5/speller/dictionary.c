@@ -143,6 +143,15 @@ bool check(const char *word)
 bool unload(void)
 {
     // TODO
-
-    return false;
+    for (int i = 0; i < N; i++)
+    {
+        node *ptr = table[i];
+        while (ptr != NULL)
+        {
+            node *next = ptr->next;
+            free(ptr);
+            ptr = next;
+        }
+    }
+    return true;
 }
