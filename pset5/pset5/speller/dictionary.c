@@ -90,7 +90,7 @@ unsigned int hash(const char *word)
 
     for (int i = 0; i < length; i++)
     {
-        atoz += tword[i];
+        atoz += toupper(word[i]);
     }
 
 
