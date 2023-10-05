@@ -88,7 +88,7 @@ unsigned int hash(const char *word)
     unsigned int sum = 0;
     unsigned int length = strlen(word);
 
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i == length; i++)
     {
         sum += toupper(word[i]) - 'A';
     }
