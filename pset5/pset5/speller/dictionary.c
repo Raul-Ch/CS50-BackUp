@@ -116,7 +116,9 @@ bool check(const char *word)
     node *cursor = table[hash(word)];
     // Hash word to obtain a hash value
     // Access linked list at that index in the hash table
-    while (cursor -> next != NULL)
+
+    // Continue the loop as long as cursor is not NULL (word not found).
+    while (cursor != NULL)
     {
         // There's no need to allocate memory for cursor with malloc.
         // You're immediately setting cursor to point to an existing node in the next line,
@@ -133,7 +135,7 @@ bool check(const char *word)
             cursor = cursor -> next;
         }
     }
-
+    return false;
 }
 
 
