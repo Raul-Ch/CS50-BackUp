@@ -113,6 +113,7 @@ unsigned int size(void)
 bool check(const char *word)
 {
     // TODO
+    node *cursor = malloc(sizeof(node));
     // Hash word to obtain a hash value
     // Access linked list at that index in the hash table
     table[hash(word)];
