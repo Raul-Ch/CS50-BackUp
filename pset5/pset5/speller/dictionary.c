@@ -114,12 +114,22 @@ bool check(const char *word)
 {
     // TODO
     node *cursor = malloc(sizeof(node));
+    cursor =  table[hash(word)];
     // Hash word to obtain a hash value
     // Access linked list at that index in the hash table
-    table[hash(word)];
-    // Traverse linked list, looking for the word (strcasecmp)
-    cursor = cursor -> next;
-    return false;
+    while (cursor -> next != NULL)
+    {
+        if (strcasecmp(cursor -> word, word))
+        {
+            return true;
+        }
+        else
+        {
+            // Traverse linked list, looking for the word (strcasecmp)
+            cursor = cursor -> next;
+        }
+    }
+
 }
 
 
