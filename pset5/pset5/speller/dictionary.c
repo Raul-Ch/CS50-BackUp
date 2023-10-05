@@ -28,6 +28,7 @@ node *table2[N2];
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
+    int size = 0;
     // TODO
     char buffer[N];
     // Open dictionary file
@@ -52,6 +53,7 @@ bool load(const char *dictionary)
             }
             else
             {
+                size ++;
                 // Hash a word to obtain a hash value
                 // Copy word into node using strcpy
                 strcpy(l_node -> word, buffer);
