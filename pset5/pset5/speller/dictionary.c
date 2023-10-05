@@ -85,9 +85,13 @@ bool load(const char *dictionary)
 unsigned int hash(const char *word)
 {
      // TODO2: IMPROVE THIS HASH FUNCTIONX2
-
-    unsigned int sum += toupper(word[0]) - 'A';
+    unsigned int sum = 0;
     unsigned int length = strlen(word);
+
+    for (int i = 0; i < length; i++)
+    {
+        sum += toupper(word[i]) - 'A';
+    }
 
     // the bucket can go from 1 (min letter = a + 1 of lenght)
     // to 25 + 45 (25 being 'Z' and 45 the max length)
@@ -99,7 +103,7 @@ unsigned int hash(const char *word)
     // the bucket can go from 1 (min letter = a + 1 of lenght)
     // to 25 + 45 (25 being 'Z' and 45 the max length)
     */
-    return atoz + length;
+    return sum + length;
 }
 
 // Hashes word to a number (By A - Z)
