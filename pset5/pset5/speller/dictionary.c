@@ -16,8 +16,7 @@ typedef struct node
 {
     char word[LENGTH + 1];
     struct node *next;
-}
-node;
+} node;
 
 // TODO: Choose number of buckets in hash table
 // size of words
@@ -58,22 +57,22 @@ bool load(const char *dictionary)
                 size_counter++;
                 // Hash a word to obtain a hash value
                 // Copy word into node using strcpy
-                strcpy(l_node -> word, buffer);
-                l_node -> next = NULL;
+                strcpy(l_node->word, buffer);
+                l_node->next = NULL;
                 // Use hash function (takes a string and returns an index)
                 // Recall that hash table is an array
-                int length = hash(l_node -> word);
+                int length = hash(l_node->word);
                 // If array is empty
                 if (table[length] == NULL)
                 {
                     // This node is the whole list
                     table[length] = l_node;
                 }
-                 // If array has numbers already
+                // If array has numbers already
                 else
                 {
                     // Insert node at beginning of list
-                    l_node -> next = table[length];
+                    l_node->next = table[length];
                     table[length] = l_node;
                 }
             }
@@ -83,7 +82,6 @@ bool load(const char *dictionary)
     fclose(file);
     return true;
 }
-
 
 // Hashes word to a number (by length)
 unsigned int hash(const char *word)
@@ -107,7 +105,7 @@ unsigned int hash2(const char *word)
 unsigned int size(void)
 {
     // TODO
-    return  size_counter;
+    return size_counter;
 }
 
 // Returns true if word is in dictionary, else false
@@ -126,19 +124,18 @@ bool check(const char *word)
         //  so this allocated memory is lost and can't be freed, which is a memory leak.
 
         // The strcasecmp function returns 0 when the strings are equal
-        if (strcasecmp(cursor -> word, word) == 0)
+        if (strcasecmp(cursor->word, word) == 0)
         {
             return true;
         }
         else
         {
             // Traverse linked list, looking for the word (strcasecmp)
-            cursor = cursor -> next;
+            cursor = cursor->next;
         }
     }
     return false;
 }
-
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
