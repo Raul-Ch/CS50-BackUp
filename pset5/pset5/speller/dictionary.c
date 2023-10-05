@@ -8,6 +8,8 @@
 
 #include "dictionary.h"
 
+int counter = 0;
+
 // Represents a node in a hash table
 typedef struct node
 {
@@ -28,7 +30,6 @@ node *table2[N2];
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    int size = 0;
     // TODO
     char buffer[N];
     // Open dictionary file
@@ -105,6 +106,7 @@ unsigned int hash2(const char *word)
 unsigned int size(void)
 {
     // TODO
+    s
     return 0;
 }
 
