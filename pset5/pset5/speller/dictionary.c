@@ -85,7 +85,8 @@ bool load(const char *dictionary)
 unsigned int hash(const char *word)
 {
      // TODO2: IMPROVE THIS HASH FUNCTIONX2
-    unsigned int atoz = toupper(word[0]) - 'A';
+
+    unsigned int sum += toupper(word[0]) - 'A';
     unsigned int length = strlen(word);
 
     // the bucket can go from 1 (min letter = a + 1 of lenght)
