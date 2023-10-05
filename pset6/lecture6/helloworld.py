@@ -1,4 +1,4 @@
-" IN C "
+# IN C
 """ // A program that says hello to the world
 
 #include <stdio.h>
@@ -11,3 +11,5 @@ int main(void)
 # A program that says hello to the world
 
 print("hello, world")
+
+# To run it: python helloworld.py
