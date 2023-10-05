@@ -118,6 +118,7 @@ bool check(const char *word)
     // Access linked list at that index in the hash table
 
     // Traverse linked list, looking for the word (strcasecmp)
+    cursor = cursor -> next;
     return false;
 }
 
