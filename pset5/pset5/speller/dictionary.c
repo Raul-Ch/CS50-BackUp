@@ -20,7 +20,7 @@ typedef struct node
 
 // TODO: Choose number of buckets in hash table
 // size of words
-const unsigned int N = 1170;
+const unsigned int N = 70;
 
 // Hash table
 node *table[N];
@@ -84,14 +84,13 @@ bool load(const char *dictionary)
 // Hashes word to a number (by length)
 unsigned int hash(const char *word)
 {
-    unsigned int hash = 0;
     // TODO2: IMPROVE THIS HASH FUNCTIONX
     unsigned int sum = 0;
-    unsigned int length = strlen(word) / 3;
+    unsigned int length = strlen(word);
 
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i == length; i++)
     {
-        sum += word[i]- 'A';
+        sum += tolower(word[i]) - 'a';
     }
 
     // the bucket can go from 1 (min letter = a + 1 of lenght)
@@ -104,7 +103,7 @@ unsigned int hash(const char *word)
     // the bucket can go from 1 (min letter = a + 1 of lenght)
     // to 25 + 45 (25 being 'Z' and 45 the max length)
     */
-    return sum;
+    return sum + length;
 }
 
 // Hashes word to a number (By A - Z)
