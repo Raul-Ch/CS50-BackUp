@@ -88,11 +88,18 @@ unsigned int hash(const char *word)
     unsigned int sum = 0;
     unsigned int length = strlen(word);
 
-    for (int i = 0; i == length; i++)
+    if (length > 3)
     {
-        sum += tolower(word[i]) - 'a';
+        length = strlen(word) / 3;
+        for (int i = 0; i == length; i++)
+        {
+            sum += tolower(word[i]) - 'a';
+        }
     }
-
+    else
+    {
+        sum += tolower(word[0]) - 'a';
+    }
     // the bucket can go from 1 (min letter = a + 1 of lenght)
     // to 25 + 45 (25 being 'Z' and 45 the max length)
 
