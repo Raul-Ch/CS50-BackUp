@@ -90,7 +90,7 @@ unsigned int hash(const char *word)
 
     for (int i = 0; i < length; i++)
     {
-        atoz += word[i];
+        atoz += tword[i];
     }
 
 
@@ -99,12 +99,14 @@ unsigned int hash(const char *word)
 
     /* This works but it can be better
     // TODO: Improve this hash function
-    unsigned int atoz = toupper(word[0]) - 'A';
-    unsigned int length = strlen(word);
+    for (int i = 0; i < length; i++)
+        {
+            atoz += word[i];
+        }
     // the bucket can go from 1 (min letter = a + 1 of lenght)
     // to 25 + 45 (25 being 'Z' and 45 the max length)
     */
-    return atoz + length;
+    return atoz;
 }
 
 // Hashes word to a number (By A - Z)
