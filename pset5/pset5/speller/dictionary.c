@@ -54,7 +54,7 @@ bool load(const char *dictionary)
             }
             else
             {
-                size();
+                size_counter++;.
                 // Hash a word to obtain a hash value
                 // Copy word into node using strcpy
                 strcpy(l_node -> word, buffer);
@@ -106,7 +106,7 @@ unsigned int hash2(const char *word)
 unsigned int size(void)
 {
     // TODO
-    return  size_counter ++;
+    return  size_counter;
 }
 
 // Returns true if word is in dictionary, else false
