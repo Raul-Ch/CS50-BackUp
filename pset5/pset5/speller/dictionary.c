@@ -84,12 +84,20 @@ bool load(const char *dictionary)
 // Hashes word to a number (by length)
 unsigned int hash(const char *word)
 {
+     // TODO2: IMPROVE THIS HASH FUNCTIONX2
+    unsigned int atoz = toupper(word[0]) - 'A';
+    unsigned int length = strlen(word);
+
+    // the bucket can go from 1 (min letter = a + 1 of lenght)
+    // to 25 + 45 (25 being 'Z' and 45 the max length)
+
+    /* This works but it can be better
     // TODO: Improve this hash function
-    // TODO2: IMPROVE THIS HASH FUNCTIONX2 
     unsigned int atoz = toupper(word[0]) - 'A';
     unsigned int length = strlen(word);
     // the bucket can go from 1 (min letter = a + 1 of lenght)
     // to 25 + 45 (25 being 'Z' and 45 the max length)
+    */
     return atoz + length;
 }
 
