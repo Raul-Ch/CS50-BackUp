@@ -93,7 +93,7 @@ unsigned int hash(const char *word)
         length = strlen(word) / 3;
         for (int i = 0; i == length; i++)
         {
-            sum += tolower(word[i]) - 'a';
+            sum += word[i] - 'a';
         }
     }
     else
