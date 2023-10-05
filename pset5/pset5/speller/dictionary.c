@@ -93,7 +93,6 @@ unsigned int hash(const char *word)
         atoz += toupper(word[i]);
     }
 
-
     // the bucket can go from 1 (min letter = a + 1 of lenght)
     // to 25 + 45 (25 being 'Z' and 45 the max length)
 
