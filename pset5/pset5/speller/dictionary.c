@@ -87,11 +87,11 @@ unsigned int hash(const char *word)
     // TODO2: IMPROVE THIS HASH FUNCTIONX
     unsigned int atoz = 0;
     unsigned int length = strlen(word);
-    
-        for (int i = 0; i < 3; i++)
-        {
-            atoz += word[i];
-        }
+
+    for (int i = 0; i < length; i++)
+    {
+        atoz += word[i];
+    }
 
 
     // the bucket can go from 1 (min letter = a + 1 of lenght)
