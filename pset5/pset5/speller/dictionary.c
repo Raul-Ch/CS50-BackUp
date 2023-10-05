@@ -84,7 +84,7 @@ bool load(const char *dictionary)
 // Hashes word to a number (by length)
 unsigned int hash(const char *word)
 {
-    // TODO2: IMPROVE THIS HASH FUNCTIONX2
+    // TODO2: IMPROVE THIS HASH FUNCTIONX
     unsigned int sum = 0;
     unsigned int length = strlen(word);
 
