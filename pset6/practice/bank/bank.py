@@ -2,7 +2,12 @@
 
 from sys import argv
 
-if argv[2] == 'Hello':
-    print("$0")
-else if argv[2]:
-    print("hello, world")
+for check in argv:
+    if argv[2] == 'Hello':
+        print("$0")
+    elif
+        for checkh in argv[2]
+            if checkh == 'H':
+                    print("$20")
+    else
+        print("$100")
