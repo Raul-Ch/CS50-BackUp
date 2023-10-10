@@ -6,11 +6,11 @@ import random
 figlet = Figlet()
 fonts = figlet.getFonts()
 
-if len(argv) > 1 and len(argv) < 4:
+if len(argv) < 4:
     if argv[1] not in ["-f","--font"]:
         exit("Invalid usage")
     else:
-         figlet.setFont(fonts[random.randrange(len(fonts))])
+         figlet.setFont(font = fonts[random.randrange(len(fonts))])
 
     if len(argv) > 1:
         if argv[2] in fonts:
