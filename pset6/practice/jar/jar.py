@@ -17,16 +17,16 @@ class Jar:
 
     # This method could be used to add a certain number (n) of items to the jar.
     def deposit(self, n):
-       if self.size += n > self.capacity:
+        self.size += n
+        if self.size > self.capacity:
             raise ValueError
-       else self.size += n
 
 
     # This method could be used to remove a certain number (n) of items from the jar.
     def withdraw(self, n):
-       if self.size -= n < self.0:
+       self.size -= n
+       if self.size < 0:
             raise ValueError
-        else self.size -= n
 
 
     # This is a decorator that allows a method to be accessed like an attribute instead of a method.
@@ -38,6 +38,4 @@ class Jar:
     @property
     # This method, also decorated with @property, could be used to get the current number of items in the jar.
     def size(self):
-        return size
-
-def main():
+        return self.size
