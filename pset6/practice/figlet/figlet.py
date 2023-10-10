@@ -10,7 +10,7 @@ if len(argv) == 1:
 
     # You can then get a list of available fonts with code like this:
 elif len(argv) == 2:
-    if argv[2] not in [figlet.getFonts()]:
+    if argv[2] in figlet.getFonts():
         exit("Invalid usage")
 
 s = input("Input: ")
