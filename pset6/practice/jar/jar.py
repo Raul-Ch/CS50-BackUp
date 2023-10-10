@@ -2,12 +2,13 @@ class Jar:
     #  This is the constructor method that gets called when you create a new instance of the class
     #  The capacity parameter is optional and defaults to 12 if not provided.
     def __init__(self, capacity=12):
-        ...
+        main()
 
 
     # This method returns a string representation of the object.
     # It's what gets printed when you print an instance of the class.
     def __str__(self):
+        print(str(jar))
 
 
     # This method could be used to add a certain number (n) of items to the jar.
