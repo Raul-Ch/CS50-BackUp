@@ -5,9 +5,10 @@ from pyfiglet import Figlet
 if len(argv) > 3:
     exit("Invalid usage")
 
-if argv[1] != "-f" and argv[1] != "--font":
+if argv[1] not in ["-f","--font"]:
      exit("Invalid usage")
 
+input("Input: ")
 
 figlet = Figlet()
 
