@@ -3,8 +3,7 @@
 # output $20. Otherwise, output $100. Ignore any leading whitespace in the user’s greeting, and treat
 # the user’s greeting case-insensitively.
 
-prompt = input("Greetings: ").lstrip()
-print(prompt)
+prompt = input("Greetings: ").strip()
 if (prompt.lower() == "hello"):
     print("$0")
 else:
