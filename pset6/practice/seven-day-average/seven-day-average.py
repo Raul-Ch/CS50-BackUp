@@ -4,7 +4,7 @@ import requests
 
 def main():
     # Read NYTimes Covid Database
-    # The distribution code for this problem uses the python requests library to access the New York Times data stored in an accessible GitHub repository. 
+    # The distribution code for this problem uses the python requests library to access the New York Times data stored in an accessible GitHub repository.
     download = requests.get(
         "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"
     )
@@ -35,8 +35,9 @@ def main():
 
 # TODO: Create a dictionary to store 14 most recent days of new cases by state
 def calculate(reader):
-    ...
+    new_cases = dict()
 
+    return new_cases
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
