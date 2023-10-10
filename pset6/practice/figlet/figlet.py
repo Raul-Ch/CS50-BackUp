@@ -4,10 +4,7 @@ from pyfiglet import Figlet
 
 figlet = Figlet()
 
-if len(argv) != 1 or 2:
-    exit("Invalid usage")
-
-elif len(argv) == 1:
+if len(argv) == 1:
     if argv[1] not in ["-f","--font"]:
         exit("Invalid usage")
 
@@ -25,3 +22,5 @@ s = input("Input: ")
 # And you can output text in that font with code like this, wherein s is that text as a str:
 print(figlet.renderText(s))
 
+else:
+    exit("Invalid usage")
