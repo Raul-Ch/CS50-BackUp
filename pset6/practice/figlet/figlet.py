@@ -15,7 +15,7 @@ def main():
 
 if len(argv) == 2:
     if argv[1] in ["-f","--font"]:
-         figlet.setFont(font = fonts[random.randrange(len(fonts))])
+         
          main()
     else:
         exit("Invalid usage")
@@ -24,7 +24,7 @@ elif len(argv) == 3:
     if argv[2] in fonts and argv[1] in ["-f","--font"]:
             figlet.setFont(font = argv[2])
             main()
-        else:
-            exit("Invalid usage")
+    else:
+        exit("Invalid usage")
 else:
-    exit("Invalid usage last")
+    exit("Invalid usage")
