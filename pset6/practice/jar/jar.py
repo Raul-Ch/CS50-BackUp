@@ -13,19 +13,19 @@ class Jar:
     def __str__(self):
         """Finally, the whole expression is wrapped in {} inside the f-string, which means
         "evaluate this expression and convert the result to a string" """
-        return f"{self.size * '🍪'}"
+        return f"{self._size * '🍪'}"
 
     # This method could be used to add a certain number (n) of items to the jar.
     def deposit(self, n):
-        self.size += n
-        if self.size > self.capacity:
+        self._size += n
+        if self._size > self._capacity:
             raise ValueError
 
 
     # This method could be used to remove a certain number (n) of items from the jar.
     def withdraw(self, n):
-       self.size -= n
-       if self.size < 0:
+       self._size -= n
+       if self._size < 0:
             raise ValueError
 
 
