@@ -3,13 +3,16 @@ from sys import argv, exit
 from pyfiglet import Figlet
 
 figlet = Figlet()
+fonts = figlet.getFonts():
 
 if len(argv) >= 1 or len(argv) <= 2:
     if argv[1] not in ["-f","--font"]:
         exit("Invalid usage")
+    else:
+         figlet.setFont(fonts[random.randrange()])
 
     if len(argv) > 1:
-        if argv[2] in figlet.getFonts():
+        if argv[2] in fonts:
             figlet.setFont(font = argv[2])
         else:
             exit("Invalid usage")
