@@ -43,11 +43,11 @@ def calculate(reader):
 
         if state in new_cases:
             # append new cases to new_cases[state]
-            state.append(cases)
+            new_cases[state].append(cases)
 
         else:
             # initialize new_cases[state] as a list and add new cases
-            new_cases[state] = cases[]
+            new_cases[state] = [cases]
 
     return new_cases
 
