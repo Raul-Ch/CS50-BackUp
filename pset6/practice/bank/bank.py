@@ -5,15 +5,11 @@
 
 from sys import argv
 
-for check in argv:
-    if (check.upper() == "Hello"):
+if (argv[1].upper() == "HELLO"):
         print("$0")
-        break
-    else:
-        for check2 in check[0:1]:
-            if (check2.upper() == "H"):
-                 print("$20")
-                 break
-            else:
-                print("$100")
-                break
+else:
+    for check in argv[0:1]:
+        if (check.upper() == "H"):
+            print("$20")
+        else:
+            print("$100")
