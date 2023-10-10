@@ -35,10 +35,11 @@ def main():
 
 # TODO: Create a dictionary to store 14 most recent days of new cases by state
 def calculate(reader):
-    new_cases = dict(14)
+    new_cases = dict()
     previous_cases = new_cases
 
-  mydict = {rows[0]:rows[1] for rows in reader}
+    for row in reader:
+        print(row)
     return new_cases
 
 # TODO: Calculate and print out seven day average for given state
