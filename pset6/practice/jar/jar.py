@@ -9,7 +9,7 @@ class Jar:
     # This method returns a string representation of the object.
     # It's what gets printed when you print an instance of the class.
     def __str__(self):
-
+        return f"{self.size * '🍪'}"
 
     # This method could be used to add a certain number (n) of items to the jar.
     def deposit(self, n):
