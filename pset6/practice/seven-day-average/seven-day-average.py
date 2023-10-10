@@ -41,13 +41,13 @@ def calculate(reader):
         state = row['state']
         cases = row['cases']
 
-    if state in new_cases:
-        # update new_cases[state] with new cases
-        new_cases[state] = new_cases
+        if state in new_cases:
+            # update new_cases[state] with new cases
+            new_cases[state] = new_cases
 
-    else:
-        # add new_cases[state] with new cases
-       new_cases[state].appen(new_cases)
+        else:
+            # add new_cases[state] with new cases
+            new_cases[state].appen(new_cases)
 
     return new_cases
 
