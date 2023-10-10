@@ -6,23 +6,25 @@ import random
 figlet = Figlet()
 fonts = figlet.getFonts()
 
-if len(argv) < 4:
-    if argv[1] not in ["-f","--font"]:
-        exit("Invalid usage")
-    else:
-         figlet.setFont(font = fonts[random.randrange(len(fonts))])
-
-    if len(argv) > 1:
-        if argv[2] in fonts:
-            figlet.setFont(font = argv[2])
-        else:
-            exit("Invalid usage")
-
+#def main
+def main():
     s = input("Input: ")
 
     # And you can output text in that font with code like this, wherein s is that text as a str:
     print(figlet.renderText(s))
 
+if len(argv) == 2:
+    if argv[1] in ["-f","--font"]:
+         figlet.setFont(font = fonts[random.randrange(len(fonts))])
+         main()
+    else:
+        exit("Invalid usage")
+
+elif len(argv) == 3:
+    if argv[2] in fonts:
+            figlet.setFont(font = argv[2])
+            main()
+        else:
+            exit("Invalid usage")
 else:
     exit("Invalid usage last")
-
