@@ -15,7 +15,6 @@ def main():
 
 if len(argv) == 2:
     if argv[1] in ["-f","--font"]:
-         
          main()
     else:
         exit("Invalid usage")
