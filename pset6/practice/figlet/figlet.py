@@ -5,7 +5,7 @@ from pyfiglet import Figlet
 if len(argv) > 3:
     exit("Invalid usage")
 
-if argv[1] not "-f" or "--font":
+if argv[1] != "-f" and argv[1] != "--font":
      exit("Invalid usage")
 
 
