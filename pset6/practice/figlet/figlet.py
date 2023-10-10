@@ -1,9 +1,10 @@
-from sys import argv
+from sys import argv exit
 # The documentation for pyfiglet isn’t very clear, but you can use the module as follows:
 from pyfiglet import Figlet
 
-if len(argv) > 2:
+if len(argv) > 3:
     sys.exit("Invalid usage")
+
 """
 figlet = Figlet()
 
