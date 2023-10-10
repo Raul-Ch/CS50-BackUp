@@ -39,3 +39,8 @@ class Jar:
     # This method, also decorated with @property, could be used to get the current number of items in the jar.
     def size(self):
         return self._size
+
+
+""" WHY THE UNDER SCORE ___
+Remember, the purpose of making these attributes private and creating property methods is to control how these attributes are accessed
+and modified, so you should always use the property methods or the private attributes, not the original attribute names. """
