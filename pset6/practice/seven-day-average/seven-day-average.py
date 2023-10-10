@@ -38,10 +38,10 @@ def calculate(reader):
     new_cases = dict()
 
     for row in reader:
-        if row[state] in dict:
+        if row[state] in new_cases:
             print("Good")
         else:
-            dict[state] = state
+            new_cases[state] = state
 
 
 # TODO: Calculate and print out seven day average for given state
