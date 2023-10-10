@@ -9,7 +9,7 @@ class Jar:
     # It's what gets printed when you print an instance of the class.
     def __str__(self):
         print(str(jar))
-
+        return 
 
     # This method could be used to add a certain number (n) of items to the jar.
     def deposit(self, n):
@@ -34,6 +34,8 @@ class Jar:
 
 def main():
     jar = Jar()
+    jar.size(5)
+    print(str(jar.size))
     print(str(jar.capacity))
     print(str(jar))
     jar.deposit(2)
