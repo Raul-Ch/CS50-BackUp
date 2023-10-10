@@ -4,6 +4,7 @@ import requests
 
 def main():
     # Read NYTimes Covid Database
+    # The distribution code for this problem uses the python requests library to access the New York Times data stored in an accessible GitHub repository. 
     download = requests.get(
         "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"
     )
