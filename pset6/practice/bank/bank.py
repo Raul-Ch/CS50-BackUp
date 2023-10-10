@@ -3,15 +3,12 @@
 # output $20. Otherwise, output $100. Ignore any leading whitespace in the user’s greeting, and treat
 # the user’s greeting case-insensitively.
 
-from cs50 import get_string
+prompt = input("Greetings: ").lstrip()
 
-prompt = get_string("Greetings: ")
-print(prompt[0])
-if (prompt[0].upper() == "HELLO"):
-        print("$0")
+if (prompt.lower() == "hello"):
+    print("$0")
 else:
-    for check in prompt[0:1]:
-        if (check.upper() == "H"):
-            print("$20")
-        else:
-            print("$100")
+    if (prompt[0].lower() == "h"):
+        print("$20")
+    else:
+        print("$100")
