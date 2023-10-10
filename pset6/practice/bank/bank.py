@@ -5,8 +5,8 @@
 
 from cs50 import get_string
 
-prompt = list()
 prompt = get_string("Greetings: ")
+print(prompt[0])
 if (prompt[0].upper() == "HELLO"):
         print("$0")
 else:
