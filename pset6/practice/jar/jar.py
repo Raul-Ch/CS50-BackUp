@@ -24,9 +24,9 @@ class Jar:
 
     # This method could be used to remove a certain number (n) of items from the jar.
     def withdraw(self, n):
-       if self.size -= n < self.capacity0::
+       if self.size -= n < self.0:
             raise ValueError
-       else self.size -= n
+        else self.size -= n
 
 
     # This is a decorator that allows a method to be accessed like an attribute instead of a method.
