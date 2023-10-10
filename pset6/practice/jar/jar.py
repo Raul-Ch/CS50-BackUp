@@ -31,3 +31,6 @@ class Jar:
     # This method, also decorated with @property, could be used to get the current number of items in the jar.
     def size(self):
         ...
+
+def main():
+    jar = Jar()
