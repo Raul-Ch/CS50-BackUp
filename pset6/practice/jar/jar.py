@@ -1,7 +1,7 @@
 # self allows an object to refer to its own properties and methods.
 
 def main():
-    jar = Jar(20)  # Create a jar with capacity 20
+    # jar = Jar(20)  # Create a jar with capacity 20
     jar.deposit(5)  # Deposit 5 cookies
     print(jar)  # Print the jar
     jar.withdraw(2)  # Withdraw 2 cookies
