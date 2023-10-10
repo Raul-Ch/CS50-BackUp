@@ -1,8 +1,10 @@
+# self allows an object to refer to its own properties and methods.
 class Jar:
     #  This is the constructor method that gets called when you create a new instance of the class
     #  The capacity parameter is optional and defaults to 12 if not provided.
     def __init__(self, capacity=12):
-
+        self.capacity = capacity
+        self.size = 0
 
     # This method returns a string representation of the object.
     # It's what gets printed when you print an instance of the class.
