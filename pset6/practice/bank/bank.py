@@ -5,12 +5,12 @@
 
 from sys import argv
 
-for check in argv[1]:
+for check in argv:
     if (check.upper() == "Hello"):
         print("$0")
         break
     else:
-        for check2 in argv[1]:
+        for check2 in check[0:1]:
             if (check2.upper() == "H"):
                  print("$20")
                  break
