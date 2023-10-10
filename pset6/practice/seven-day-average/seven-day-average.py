@@ -38,9 +38,7 @@ def calculate(reader):
     new_cases = dict(14)
     previous_cases = new_cases
 
-    for case in reader:
-        new_cases[case] = reader
-
+  mydict = {rows[0]:rows[1] for rows in reader}
     return new_cases
 
 # TODO: Calculate and print out seven day average for given state
