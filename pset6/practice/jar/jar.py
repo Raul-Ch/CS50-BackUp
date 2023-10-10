@@ -1,4 +1,12 @@
 # self allows an object to refer to its own properties and methods.
+
+def main():
+    jar = Jar(20)  # Create a jar with capacity 20
+    jar.deposit(5)  # Deposit 5 cookies
+    print(jar)  # Print the jar
+    jar.withdraw(2)  # Withdraw 2 cookies
+    print(jar)  # Print the jar again
+
 class Jar:
     #  This is the constructor method that gets called when you create a new instance of the class
     #  The capacity parameter is optional and defaults to 12 if not provided.
@@ -39,6 +47,9 @@ class Jar:
     # This method, also decorated with @property, could be used to get the current number of items in the jar.
     def size(self):
         return self._size
+
+if __name__ == "__main__":
+    main()
 
 
 """ WHY THE UNDER SCORE ___
