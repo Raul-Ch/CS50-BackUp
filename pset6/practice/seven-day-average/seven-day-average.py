@@ -39,7 +39,7 @@ def calculate(reader):
     previous_cases = new_cases
 
     for row in reader:
-        print(row)
+        print()
     return new_cases
 
 # TODO: Calculate and print out seven day average for given state
