@@ -4,7 +4,7 @@
 # the user’s greeting case-insensitively.
 
 prompt = input("Greetings: ").lstrip()
-
+print(prompt)
 if (prompt.lower() == "hello"):
     print("$0")
 else:
