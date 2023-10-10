@@ -15,6 +15,7 @@ def main():
 
 if len(argv) == 2:
     if argv[1] in ["-f","--font"]:
+         figlet.setFont(font = random.choice(fonts))
          main()
     else:
         exit("Invalid usage")
