@@ -3,8 +3,8 @@ class Jar:
     #  This is the constructor method that gets called when you create a new instance of the class
     #  The capacity parameter is optional and defaults to 12 if not provided.
     def __init__(self, capacity=12):
-        self.capacity = capacity
-        self.size = 0
+        self._capacity = capacity
+        self._size = 0
         if capacity < 0:
             raise ValueError
 
@@ -33,9 +33,9 @@ class Jar:
     @property
     # This method, decorated with @property, could be used to get the capacity of the jar.
     def capacity(self):
-        return self.capacity
+        return self._capacity
 
     @property
     # This method, also decorated with @property, could be used to get the current number of items in the jar.
     def size(self):
-        return self.size
+        return self._size
