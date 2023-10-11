@@ -72,9 +72,9 @@ def comparative_averages(new_cases, states):
     for states in new_cases:
         try:
             average = new_cases[state] / 7
-            print(states,"had a 7-day average of " ,, "and a")
+            print(states,"had a 7-day average of " , average, "and a")
         except ZeroDivisionError:
-
+            
 
 
 main()
