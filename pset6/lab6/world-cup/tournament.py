@@ -14,6 +14,7 @@ def main():
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
 
+    # This is a LIST [ ]
     teams = []
     # TODO: Read teams into memory from file
     """ The with statement ensures that the file is properly closed after it is no longer needed. """
@@ -21,8 +22,10 @@ def main():
       reader = csv.DictReader(file)
 
       for row in reader:
-          teams.append(row['team'])
-          
+        # Here we have our dictionary
+            team = {
+                teams.append(row['team'])
+            }
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
