@@ -11,15 +11,14 @@ while True:
 
 # For each row of the pyramid depending on his height
 # i starts in 0
-i = 1
-for i in range(height + 1):
+for i in range(height):
     # Print the leading spaces for the left pyramid
     # SPACE * (3 - 0 - 1) = 2 spaces with no /n
-    print(" " * (height - i), end="")
+    print(" " * (height - i - 1), end="")
     # Then we print the "#", multiplied by the row we are at
     # NOTE that: 1 of height one #, 2 equal ## and lvl 3 its also ###
-    print("#" * (i), end="")
+    print("#" * (i + 1), end="")
     # Then we print ALWAYS the space between pyramids
     print("  ", end="")
     # We do the simple pyramid method # * i iteration + 1 (cause we start at 0)
-    print("#" * (i))
+    print("#" * (i + 1))
