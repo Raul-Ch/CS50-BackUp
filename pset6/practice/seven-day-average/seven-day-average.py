@@ -48,7 +48,6 @@ def calculate(reader):
         # Here state is our "key"
         # If it already exists on our new_cases dictionary
         if state in new_cases:
-            print(cases)
             if len(new_cases[state]) >= 14:
                 """Check if the list already contains 14 elements. If it does, you can remove the oldest element"""
                 new_cases[state].pop(0)
