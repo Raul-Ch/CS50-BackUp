@@ -6,7 +6,7 @@ def checksum(credit):
         print("ok")
 
 
-credit_number = get_long("Input the credit card number: ")
+credit_number = get_int("Input the credit card number: ")
 checksum(credit_number)
 
 
