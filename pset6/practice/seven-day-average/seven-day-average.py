@@ -55,7 +55,9 @@ def calculate(reader):
                 # append the cases we find to that state
                 new_cases[state].append(cases - previous_cases[state])
                 # will always hold the last known number of cases for that state.
-
+            else:
+                new_cases[state] = []
+                previous_cases[state] = cases
         # If we dont find that "Key" or state, we create a new index or key with that state
         # and append our first new value
         # Like a hash maps and his nodes
