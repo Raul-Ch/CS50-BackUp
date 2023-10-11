@@ -9,5 +9,11 @@ while True:
     if 1 <= size <= 8:
         break
 
-for height in range(1, size + 1):
-    print(f'{"#" * height}')
+# For each row (the height) of the pyramid
+for height in range(size):
+    # Print the leading spaces for the left pyramid
+    print(" " * (size - height - 1), end="")
+    #
+    print("#" * (height + 1), end="")
+    print("  ", end="")
+    print("#" * (height + 1))
