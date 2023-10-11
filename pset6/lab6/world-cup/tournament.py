@@ -9,7 +9,10 @@ N = 1000
 
 
 def main():
-
+    print(argv[0])
+    print(argv[1])
+    print(argc[2])
+    
     # Ensure correct usage
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
