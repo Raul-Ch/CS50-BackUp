@@ -43,7 +43,7 @@ def calculate(reader):
 
     for row in reader:
         state = row['state']
-       z
+        cases = int(row['cases'])
 
         # Here state is our "key"
         # If it already exists on our new_cases dictionary
