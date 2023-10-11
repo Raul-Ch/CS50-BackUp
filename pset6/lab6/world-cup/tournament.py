@@ -38,6 +38,8 @@ def main():
     for _ in range(N):
         team_name = simulate_tournament(teams)
         if team_name in counts:
+            
+        else:
             counts[team_name] = counts.get(team_name, 0) + 1
             print(counts)
 
