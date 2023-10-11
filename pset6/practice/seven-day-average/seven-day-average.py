@@ -53,7 +53,7 @@ def calculate(reader):
                 new_cases[state].pop(0)
                 """Remove the first (oldest) element"""
                 # append the cases we find to that state
-                new_cases[state].append(cases)
+                new_cases[state].append(cases - previous_cases[state])
 
         # If we dont find that "Key" or state, we create a new index or key with that state
         # and append our first new value
@@ -61,6 +61,7 @@ def calculate(reader):
         else:
             # initialize new_cases[state] as a list and add new cases
             new_cases[state] = [cases]
+            previous_cases[state] = [cases]
 
     return new_cases
 
