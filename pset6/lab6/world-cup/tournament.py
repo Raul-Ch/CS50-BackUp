@@ -9,7 +9,6 @@ N = 1000000
 
 
 def main():
-
     # Ensure correct usage
     if len(sys.argv) != 2:
         sys.exit("Usage: python tournament.py FILENAME")
@@ -19,14 +18,11 @@ def main():
     # TODO: Read teams into memory from file
     """ The with statement ensures that the file is properly closed after it is no longer needed. """
     with open(sys.argv[1]) as file:
-      reader = csv.DictReader(file)
+        reader = csv.DictReader(file)
 
-      for row in reader:
-        # Here we have our dictionary
-            team = {
-                "name": row['team'],
-                "rating": int(row['rating'])
-            }
+        for row in reader:
+            # Here we have our dictionary
+            team = {"name": row["team"], "rating": int(row["rating"])}
             # Here we append a team into TEAMS List
             teams.append(team)
 
@@ -78,7 +74,7 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    while (len(teams) > 1):
+    while len(teams) > 1:
         # Update teams with the winners of each round.
         teams = simulate_round(teams)
 
