@@ -75,12 +75,11 @@ def comparative_averages(new_cases, states):
     for state in states:
         # For each state, get the list of new cases from the new_cases dictionary.
         if (len(new_cases[state]) >= 7):
-           dasd
            """ gets the last 7 elements of the list, and sum() adds them up """
            sum = sum(new_cases[state][-7:])
         else:
             sum = sum(new_cases[state])
 
-    print(states, "had a 7-day average of", sum , "and a decrease of 8%.")
+    print(states + "had a 7-day average of" + sum + "and a decrease of 8%.")
 
 main()
