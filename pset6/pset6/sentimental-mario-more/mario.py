@@ -5,15 +5,20 @@ from cs50 import get_int
 # positive integer between 1 and 8, inclusive
 # re-prompt if wrong
 while True:
-    size = get_int("Height: ")
-    if 1 <= size <= 8:
+    height = get_int("Height: ")
+    if 1 <= height <= 8:
         break
 
-# For each row (the height) of the pyramid
-for height in range(size):
+# For each row of the pyramid depending on his height
+# i starts in 0
+for i = 1 in range(height):
     # Print the leading spaces for the left pyramid
-    print(" " * (size - height - 1), end="")
-    #
-    print("#" * (height + 1), end="")
+    # SPACE * (3 - 0 - 1) = 2 spaces with no /n
+    print(" " * (height - i - 1), end="")
+    # Then we print the "#", multiplied by the row we are at
+    # NOTE that: 1 of height one #, 2 equal ## and lvl 3 its also ###
+    print("#" * (i + 1), end="")
+    # Then we print ALWAYS the space between pyramids
     print("  ", end="")
-    print("#" * (height + 1))
+    # We do the simple pyramid method # * i iteration + 1 (cause we start at 0)
+    print("#" * (i + 1))
