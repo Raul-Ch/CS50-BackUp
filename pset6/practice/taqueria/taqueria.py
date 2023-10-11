@@ -10,7 +10,7 @@ felipes = {
     "Taco": 3.00,
     "Tortilla Salad": 8.00
 }
-
-input("Item: ")
-
-if
+try:
+    item = input("Item: ")
+except EOFError:
+    input("Item: ")
