@@ -14,4 +14,4 @@ felipes = {
 try:
     item = input("Item: ")
 except EOFError:
-    input("Item: ")
+    print("/n")
