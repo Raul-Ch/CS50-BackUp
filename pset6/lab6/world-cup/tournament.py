@@ -24,8 +24,11 @@ def main():
       for row in reader:
         # Here we have our dictionary
             team = {
-                teams.append(row['team'])
+                "name": row['team'],
+                "average": row['average']
             }
+            # Here we append a team into TEAMS List
+            teams.append(team)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
