@@ -11,12 +11,14 @@ felipes = {
     "Tortilla Salad": 8.00
 }
 
+total = 0
 while True:
     try:
         item = input("Item: ").title()
         print(item)
         if item in felipes:
-            print(f"Total: ${felipes[item]}")
+            total += felipes[item]
+            print(f"Total: ${total}")
     except EOFError:
         print("\n")
         break
