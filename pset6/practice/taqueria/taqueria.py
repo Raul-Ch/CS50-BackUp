@@ -13,7 +13,8 @@ felipes = {
 
 while True:
     try:
-        item = input("Item: ").capitalize() 
+        item = input("Item: ").capitalize()
+        print(item)
         if item in felipes:
             print(f"Total: ${felipes[item]}")
     except EOFError:
