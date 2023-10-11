@@ -1,4 +1,6 @@
 # TODO
 from cs50 import get_int
 
-while(get_int("Height: ") in range(1:9)):
+height = int(input("Height: "))
+while not 1 <= height <= 8:
+        height = int(input("Height: "))
