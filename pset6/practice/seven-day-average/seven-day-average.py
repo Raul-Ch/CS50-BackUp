@@ -63,7 +63,7 @@ def calculate(reader):
         else:
             # initialize new_cases[state] as a list and add new cases
             new_cases[state] = [cases]
-            previous_cases[state] = [cases]
+            previous_cases[state] = cases
 
     return new_cases
 
