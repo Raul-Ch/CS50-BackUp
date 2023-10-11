@@ -39,6 +39,7 @@ def main():
         team_name = simulate_tournament(teams)
         if team_name in counts:
             counts[team_name] += 1
+            print(counts[team_name])
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
@@ -76,6 +77,7 @@ def simulate_tournament(teams):
 
     # return the name of the winning team, not the list teams.
     # You can access the name of the winning team with teams[0]["name"]
+    print(teams[0]["name"])
     return teams[0]["name"]
 
 
