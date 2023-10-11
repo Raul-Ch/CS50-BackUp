@@ -25,14 +25,17 @@ def main():
         # Here we have our dictionary
             team = {
                 "name": row['team'],
-                "average": row['average']
+                "rating": row['rating']
             }
             # Here we append a team into TEAMS List
             teams.append(team)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
-    for times in N:
+    #  if N is an integer, you should use range(N) to loop N times
+    # The _ is a common convention in Python for a variable that you don't plan on using.
+    # In this case, you don't need to use the loop variable itself; you just want to repeat the loop N times.
+    for _ in range(N):
         team_name = simulate_tournament(teams)
         if team_name in counts:
             counts[team_name] += 1
