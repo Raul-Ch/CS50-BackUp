@@ -70,16 +70,18 @@ def calculate(reader):
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
-    sum = 0
+    average = 0
     # Iterate over the states list instead of the new_cases dictionary.
     for state in states:
         # For each state, get the list of new cases from the new_cases dictionary.
         if (len(new_cases[state]) >= 7):
            """ gets the last 7 elements of the list, and sum() adds them up """
-           sum = sum(new_cases[state][-7:])
+           average = sum(new_cases[state][-7:])
         else:
-            sum = sum(new_cases[state])
+            average = sum(new_cases[state])
 
-    print(states + "had a 7-day average of" + sum + "and a decrease of 8%.")
+    average = average / 7
+    # The str() function is used to convert the average to a string so it can be concatenated with the other strings in the print statement.
+    print(state + " had a 7-day average of " + str(average) + " and a decrease of 8%.")
 
 main()
