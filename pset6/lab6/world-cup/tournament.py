@@ -38,7 +38,7 @@ def main():
     for _ in range(N):
         team_name = simulate_tournament(teams)
         if team_name in counts:
-            counts[team_name] += 1
+            counts[team_name] = counts.get(team_name, 0) + 1
             print(counts)
 
     # Print each team's chances of winning, according to simulation
