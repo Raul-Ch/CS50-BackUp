@@ -37,15 +37,21 @@ def main():
 def calculate(reader):
     # {} for Dictionaries = dict()
     new_cases = {}
-
+    previous_cases = {}
+    
     for row in reader:
         state = row['state']
         cases = row['cases']
 
+        # Here state is our "key"
+        # If it already exists on our new_cases dictionary
         if state in new_cases:
-            # append new cases to new_cases[state]
+            # append the cases we find to that state
             new_cases[state].append(cases)
 
+        # If we dont find that "Key" or state, we create a new index or key with that state
+        # and append our first new value
+        # Like a hash maps and his nodes
         else:
             # initialize new_cases[state] as a list and add new cases
             new_cases[state] = [cases]
