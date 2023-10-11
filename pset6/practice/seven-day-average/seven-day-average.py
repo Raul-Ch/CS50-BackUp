@@ -48,8 +48,6 @@ def calculate(reader):
         # Here state is our "key"
         # If it already exists on our new_cases dictionary
         if state in new_cases:
-            previous_cases[state] = [cases]
-            new_cases[cases] -= previous_cases[cases]
             if len(new_cases[state]) >= 14:
                 """Check if the list already contains 14 elements. If it does, you can remove the oldest element"""
                 new_cases[state].pop(0)
@@ -63,7 +61,7 @@ def calculate(reader):
         else:
             # initialize new_cases[state] as a list and add new cases
             new_cases[state] = [cases]
-
+    print(new_cases)
     return new_cases
 
 # TODO: Calculate and print out seven day average for given state
