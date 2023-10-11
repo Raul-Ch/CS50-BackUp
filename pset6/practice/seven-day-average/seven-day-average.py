@@ -70,11 +70,7 @@ def calculate(reader):
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
     for states in new_cases:
-        try:
-            average = states / 7
-            print(states,"had a 7-day average of " , average, "and a")
-        except KeyError:
-            print("Doesnt exist")
+        print(new_cases)
 
 
 
