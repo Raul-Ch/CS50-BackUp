@@ -18,7 +18,7 @@ while True:
         print(item)
         if item in felipes:
             total += felipes[item]
-            print(f"Total: ${total}")
+            print(f"Total: ${total:0.2f}")
     except EOFError:
         print("\n")
         break
