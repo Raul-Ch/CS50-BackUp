@@ -82,6 +82,7 @@ def comparative_averages(new_cases, states):
 
     average = average / 7
     # The str() function is used to convert the average to a string so it can be concatenated with the other strings in the print statement.
-    print(state + " had a 7-day average of " + str(average) + " and a decrease of 8%.")
+    print(f"{state} had a 7-day average of {average:0.0f} and a decrease of 8%.")
+    # In this code, {average:.2f} formats the average variable as a floating-point number with 2 digits after the decimal point.
 
 main()
