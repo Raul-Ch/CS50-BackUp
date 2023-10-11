@@ -14,7 +14,8 @@ felipes = {
 while True:
     try:
         item = input("Item: ")
-        if
+        if item in felipes:
+            print(f"${felipes[item]}")
     except EOFError:
         print("\n")
         break
