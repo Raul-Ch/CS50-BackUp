@@ -37,7 +37,16 @@ def main():
     # In this case, you don't need to use the loop variable itself; you just want to repeat the loop N times.
     for _ in range(N):
         team_name = simulate_tournament(teams)
-        counts[team_name] = counts.get(team_name, 0) + 1
+        if team_name in counts:
+            counts[team_name] += 1
+        else:
+            counts[team_name] = 1
+
+            """ NOTE: counts[team_name] = counts.get(team_name, 0) + 1 """
+            # dict.get() method,  returns the value for a given key if it exists in the dictionary, or a default value if it doesn't.
+            # In this case, if team_name is not in counts, counts.get(team_name, 0) will return 0.
+            # Then, it adds 1 to this value and assigns it back to counts[team_name].
+            # This works whether or not team_name is already in counts.
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
