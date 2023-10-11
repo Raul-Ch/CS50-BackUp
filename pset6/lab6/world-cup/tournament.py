@@ -25,7 +25,7 @@ def main():
         # Here we have our dictionary
             team = {
                 "name": row['team'],
-                "rating": row['rating']
+                "rating": int(row['rating'])
             }
             # Here we append a team into TEAMS List
             teams.append(team)
