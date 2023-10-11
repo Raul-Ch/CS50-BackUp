@@ -36,9 +36,11 @@ def main():
 # TODO: Create a dictionary to store 14 most recent days of new cases by state
 def calculate(reader):
     # {} for Dictionaries = dict()
+
+    """NOTE: In Python, you can't directly declare a dictionary with a fixed size. """
     new_cases = {}
     previous_cases = {}
-    
+
     for row in reader:
         state = row['state']
         cases = row['cases']
@@ -46,8 +48,12 @@ def calculate(reader):
         # Here state is our "key"
         # If it already exists on our new_cases dictionary
         if state in new_cases:
-            # append the cases we find to that state
-            new_cases[state].append(cases)
+            if len(new_cases[state]) >= 14:
+                """Check if the list already contains 14 elements. If it does, you can remove the oldest element"""
+                new_cases[state].pop(0)
+                """Remove the first (oldest) element"""
+                # append the cases we find to that state
+                new_cases[state].append(cases)
 
         # If we dont find that "Key" or state, we create a new index or key with that state
         # and append our first new value
