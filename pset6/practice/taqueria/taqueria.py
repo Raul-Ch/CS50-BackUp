@@ -15,7 +15,7 @@ while True:
     try:
         item = input("Item: ")
         if item in felipes:
-            print(f"${felipes[item]}")
+            print(f"Total: ${felipes[item]}")
     except EOFError:
         print("\n")
         break
