@@ -14,6 +14,7 @@ felipes = {
 while True:
     try:
         item = input("Item: ")
+        if
     except EOFError:
-        False
-        print("/n")
+        print("\n")
+        break
