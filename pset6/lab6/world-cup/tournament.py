@@ -16,6 +16,7 @@ def main():
 
     teams = []
     # TODO: Read teams into memory from file
+    """ The with statement ensures that the file is properly closed after it is no longer needed. """
     with open(filename) as file:
       reader = csv.DictReader(file)
 
