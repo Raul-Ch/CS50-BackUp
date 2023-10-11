@@ -83,23 +83,24 @@ def comparative_averages(new_cases, states):
         else:
             average = sum(new_cases[state])
 
-    try:
-        average = average / 7
-        old_average = old_average / 7
+        try:
+            average = average / 7
+            old_average = old_average / 7
 
-        old_average = (average - old_average) / old_average * 100
-    except ZeroDivisionError:
+            old_average = (average - old_average) / old_average * 100
+        except ZeroDivisionError:
+            old_average = 0
 
-    #The "old average" would typically refer to the 7-day average from the previous week. If you're storing daily case numbers in a list,
-    # you could calculate this by taking the average of the 8th to 14th last elements in the list.
+        #The "old average" would typically refer to the 7-day average from the previous week. If you're storing daily case numbers in a list,
+        # you could calculate this by taking the average of the 8th to 14th last elements in the list.
 
-    if (old_average > 0):
-        percentil = "increase"
-    else.
-        percentil = "decrease"
+        if (old_average > 0):
+            percentil = "increase"
+        else:
+            percentil = "decrease"
 
-    # The str() function is used to convert the average to a string so it can be concatenated with the other strings in the print statement.
-    print(f"{state} had a 7-day average of {average:0.0f} and a {percentil} of {abs(old_average)}%.")
-    # In this code, {average:.2f} formats the average variable as a floating-point number with 2 digits after the decimal point.
+        # The str() function is used to convert the average to a string so it can be concatenated with the other strings in the print statement.
+        print(f"{state} had a 7-day average of {average:0.0f} and a {percentil} of {abs(old_average):0.0f}%.")
+        # In this code, {average:.2f} formats the average variable as a floating-point number with 2 digits after the decimal point.
 
 main()
