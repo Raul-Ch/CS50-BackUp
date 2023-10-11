@@ -55,7 +55,6 @@ def calculate(reader):
                 # append the cases we find to that state
                 new_cases[state].append(cases - previous_cases[state])
                 # will always hold the last known number of cases for that state.
-                previous_cases[state] = cases
 
         # If we dont find that "Key" or state, we create a new index or key with that state
         # and append our first new value
@@ -69,9 +68,9 @@ def calculate(reader):
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
- for state in new_cases:
-    print("State: ", state)
-    print("New cases: ", new_cases[state])
+    for state in new_cases:
+        print("State: ", state)
+        print("New cases: ", new_cases[state])
 
 
 main()
