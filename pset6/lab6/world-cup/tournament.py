@@ -80,7 +80,6 @@ def simulate_tournament(teams):
 
     # return the name of the winning team, not the list teams.
     # You can access the name of the winning team with teams[0]["name"]
-    print(teams[0]["name"])
     return teams[0]["name"]
 
 
