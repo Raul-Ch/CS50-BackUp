@@ -11,7 +11,9 @@ felipes = {
     "Tortilla Salad": 8.00
 }
 
-try:
-    item = input("Item: ")
-except EOFError:
-    print("/n")
+while True:
+    try:
+        item = input("Item: ")
+    except EOFError:
+        False
+        print("/n")
