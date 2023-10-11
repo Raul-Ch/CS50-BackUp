@@ -61,7 +61,7 @@ def calculate(reader):
         else:
             # initialize new_cases[state] as a list and add new cases
             new_cases[state] = [cases]
-
+    print(new_cases)
     return new_cases
 
 # TODO: Calculate and print out seven day average for given state
