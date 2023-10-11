@@ -43,7 +43,7 @@ def calculate(reader):
 
     for row in reader:
         state = row['state']
-        cases = row['cases']
+        int cases = row['cases']
 
         # Here state is our "key"
         # If it already exists on our new_cases dictionary
@@ -52,7 +52,7 @@ def calculate(reader):
                 """Check if the list already contains 14 elements. If it does, you can remove the oldest element"""
                 new_cases[state].pop(0)
                 """Remove the first (oldest) element"""
-                
+
                 # append the cases we find to that state
             new_cases[state].append(cases - previous_cases[state])
                 # will always hold the last known number of cases for that state.
