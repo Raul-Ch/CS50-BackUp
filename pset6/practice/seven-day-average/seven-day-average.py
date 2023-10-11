@@ -70,11 +70,15 @@ def calculate(reader):
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
+    sum = 0
     # Iterate over the states list instead of the new_cases dictionary.
     for state in states:
-        sum += new_cases[state]
-
-    print(sum)
-
+        # For each state, get the list of new cases from the new_cases dictionary.
+        if (len(new_cases[state]) >= 7):
+           """ gets the last 7 elements of the list, and sum() adds them up """
+           sum = sum(new_cases[state][-7:])
+        else:
+            sum = sum(new_cases[state])
+    print(California had a 7-day average of 20461 and a decrease of 8%.)
 
 main()
