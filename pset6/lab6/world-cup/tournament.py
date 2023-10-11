@@ -22,7 +22,7 @@ def main():
 
         for row in reader:
             # Here we have our dictionary
-            team = {"name": row["team"], "rating": int(row["rating"])}
+            team = {"team": row["team"], "rating": int(row["rating"])}
             # Here we append a team into TEAMS List
             teams.append(team)
 
@@ -80,7 +80,7 @@ def simulate_tournament(teams):
 
     # return the name of the winning team, not the list teams.
     # You can access the name of the winning team with teams[0]["name"]
-    return teams[0]["name"]
+    return teams[0]["team"]
 
 
 if __name__ == "__main__":
