@@ -13,4 +13,4 @@ Which predictions, if any, proved incorrect as you increased the number of simul
 acceptable time and maybe 1000000 would took more time but not as long as it took
 
 Suppose you're charged a fee for each second of compute time your program uses.
-After how many simulations would you call the predictions "good enough"?: After 100000
+After how many simulations would you call the predictions "good enough"?: It seems that in 10000 simulations are sufficient if we compare the fee wit the time, but i'll rather say that it maybe more accurrate after 100000
