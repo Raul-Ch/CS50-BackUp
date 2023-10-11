@@ -9,5 +9,5 @@ while True:
     if 1 <= size <= 8:
         break
 
-for height in range(size):
+for height in range(1, size + 1):
     print(f'{"#" * height}')
