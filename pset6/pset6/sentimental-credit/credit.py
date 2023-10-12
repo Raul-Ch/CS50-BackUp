@@ -63,5 +63,5 @@ def credit_type(credit):
 
 
 credit_number = get_int("Input the credit card number: ")
-# length = checksum(credit_number)
+checksum(credit_number)
 print(credit_type(credit_number))
