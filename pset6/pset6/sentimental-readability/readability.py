@@ -8,6 +8,7 @@ text = input("Text: ")
 words_list = text.split()
 
 # Number of words
+# Any sequence of characters separated by spaces should count as a word,
 words = len(words_list)
 
 # Get the number of letters with len(words).
@@ -17,8 +18,10 @@ sentences = 0
 for letter in words_list:
     for char in letter:
         if char.isalpha():
+            # Checks if all of the characters in the provided string, text, are alphabetic.y
             letters += 1
     if letter.endswith((".", "!", "?")):
+        # any occurrence of a period, exclamation point, or question mark indicates the end of a sentence.
         sentences += 1
 
 """print(words, letters, sentences)"""
