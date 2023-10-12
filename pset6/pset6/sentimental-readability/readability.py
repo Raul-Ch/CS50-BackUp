@@ -15,8 +15,8 @@ letters = 0
 sentences = 0
 
 for word in words:
-    letters += 1
-    if letter == '.':
+    letters += len(word)
+    if word.endswith(('.', '!', '?')):
         sentences += 1
 
 print(words, letters, sentences)
