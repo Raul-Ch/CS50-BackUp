@@ -1,5 +1,6 @@
 # TODO
 from cs50 import get_int
+from sys import exit
 
 def checksum(credit):
     multiply = False
@@ -26,15 +27,16 @@ def checksum(credit):
         length += 1
 
     if not (13 <= length <= 16):
-        print("INVALID")
+        exit("INVALID")
     elif (sum % 10 == 0):
         return length
     else:
-        print("INVALID")
+        exit("INVALID")
 
+def credit_type(credit, length):
+    length -= 2
+    type = 1
 
 
 credit_number = get_int("Input the credit card number: ")
-checksum(credit_number)
-
-
+credit_type(credit_number, checksum(credit_number)):
