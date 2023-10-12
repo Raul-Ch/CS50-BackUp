@@ -36,7 +36,15 @@ def checksum(credit):
 def credit_type(credit, length):
     length -= 2
     type = 1
+    for i in length:
+        type *= 10
+    credit //= type
+
+    if 39 < credit < 50:
+        exit("VISA")
+
 
 
 credit_number = get_int("Input the credit card number: ")
-credit_type(credit_number, checksum(credit_number)):
+length = checksum(credit_number)
+credit_type(credit_number, length)
