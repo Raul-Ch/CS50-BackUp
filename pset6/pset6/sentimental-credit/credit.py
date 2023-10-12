@@ -8,7 +8,7 @@ def checksum(credit):
     length = 0
 
     while(credit > 0):
-        if (multiply):
+        if multiply:
             check = credit % 10
             if (check * 2 >= 10):
                 sum += 1
@@ -24,6 +24,14 @@ def checksum(credit):
             credit //= 10
             multiply = True
         length += 1
+
+    if not (13 <= length <= 16):
+        print("INVALID")
+    elif (sum % 10 == 0):
+        return length
+    else:
+        print("INVALID")
+
 
 
 credit_number = get_int("Input the credit card number: ")
