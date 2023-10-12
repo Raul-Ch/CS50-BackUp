@@ -5,7 +5,7 @@
 text = input("Text: ")
 
 # Now, words is a list of words.
-word = text.split()
+words_list = text.split()
 
 # Number of words
 words = len(word)
