@@ -1,3 +1,3 @@
 # TODO
 
-input("Text: ")
+text[] = input("Text: ")
