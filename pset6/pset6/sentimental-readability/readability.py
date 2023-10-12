@@ -16,7 +16,7 @@ sentences = 0
 
 for letter in word:
     letters += len(letter)
-    if letter.endswith(('.', '!', '?')):
+    if letter.endswith((".", "!", "?")):
         sentences += 1
 
 """print(words, letters, sentences)"""
@@ -28,10 +28,10 @@ S = (sentences / words) * 100
 
 CL_Index = 0.0588 * L - 0.296 * S - 15.8
 
-if (CL_Index < 1):
+if CL_Index < 1:
     print("Before Grade 1\n")
 
-elif (CL_Index > 16):
+elif CL_Index > 16:
     print("Grade 16+\n")
 
 else:
