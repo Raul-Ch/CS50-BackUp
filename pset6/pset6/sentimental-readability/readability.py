@@ -15,7 +15,9 @@ letters = 0
 sentences = 0
 
 for letter in words_list:
-    letters += len(letter)
+    for char in letter:
+        if char.isalpha()
+            letters += len(letter)
     if letter.endswith((".", "!", "?")):
         sentences += 1
 
