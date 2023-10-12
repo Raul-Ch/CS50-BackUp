@@ -26,13 +26,13 @@ L = (letters / words) * 100
 # And 'S' is the average number of sentences per 100 words in the text."
 S = (sentences / words) * 100
 
-CL_Index = 0.0588 * L - 0.296 * S - 15.8
+CL_Index = round(0.0588 * L - 0.296 * S - 15.8)
 
 if CL_Index < 1:
-    print("Before Grade 1\n")
+    print("Before Grade 1")
 
 elif CL_Index > 16:
-    print("Grade 16+\n")
+    print("Grade 16+")
 
 else:
-    print(f"Grade: {int(CL_Index)}")
+    print(f"Grade {CL_Index}")
