@@ -2,21 +2,22 @@
 from cs50 import get_int
 from sys import exit
 
+
 def checksum(credit):
     multiply = False
     check = 0
     sum = 0
     length = 0
 
-    while(credit > 0):
+    while credit > 0:
         if multiply:
             check = credit % 10
-            if (check * 2 >= 10):
+            if check * 2 >= 10:
                 sum += 1
                 sum += check * 2 - 10
             else:
                 sum += check * 2
-        # The // operator in Python performs integer division, which is equivalent to the / operator in C when both operands are integers.
+            # The // operator in Python performs integer division, which is equivalent to the / operator in C when both operands are integers.
             credit //= 10
             multiply = False
         else:
@@ -28,33 +29,29 @@ def checksum(credit):
 
     if not (13 <= length <= 16):
         exit("INVALID")
-    elif (sum % 10 == 0):
+    elif sum % 10 == 0:
         return length
     else:
         exit("INVALID")
 
-""" #def credit_type(credit, length):
+
+def credit_type(credit, length):
     length -= 2
     type = 1
-    for i in length:
+    for i in range(length):
         type *= 10
     credit //= type
 
     if 39 < credit < 50:
-        exit("VISA") """
+        exit("VISA")
+    elif credit in [34, 37]:
+        exit("AMEX")
+    elif credit in range(51, 56):
+        exit("MASTERCARD")
+    else:
+        exit("INVALID")
 
-def credit_type(length):
-    length -= 2
-    type = 1
-
-    for i in range(length):
-        type *= 10
-        credit //= type
-
-        if 39 < credit < 50:
-            exit("VISA")
 
 credit_number = get_int("Input the credit card number: ")
-#length = checksum(credit_number)
-#credit_type(credit_number, length)
-credit_type(len(str(credit_number)))
+# length = checksum(credit_number)
+credit_type(credit_number, len(str(credit_number)))
