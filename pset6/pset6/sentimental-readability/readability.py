@@ -16,8 +16,8 @@ sentences = 0
 
 for letter in words_list:
     for char in letter:
-        if char.isalpha()
-            letters += len(letter)
+        if char.isalpha():
+            letters += 1
     if letter.endswith((".", "!", "?")):
         sentences += 1
 
@@ -28,7 +28,7 @@ L = (letters / words) * 100
 # And 'S' is the average number of sentences per 100 words in the text."
 S = (sentences / words) * 100
 
-CL_Index = 0.0588 * L - 0.296 * S - 15.8
+CL_Index = int(0.0588 * L - 0.296 * S - 15.8)
 
 if CL_Index < 1:
     print("Before Grade 1")
