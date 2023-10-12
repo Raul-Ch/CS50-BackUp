@@ -14,7 +14,7 @@ words = len(words_list)
 letters = 0
 sentences = 0
 
-for letter in words_list:
+for letter in word:
     letters += len(letter)
     if letter.endswith((".", "!", "?")):
         sentences += 1
