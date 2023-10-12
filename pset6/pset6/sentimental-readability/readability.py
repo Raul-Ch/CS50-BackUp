@@ -8,13 +8,13 @@ text = input("Text: ")
 words_list = text.split()
 
 # Number of words
-words = len(word)
+words = len(words_list)
 
 # Get the number of letters with len(words).
 letters = 0
 sentences = 0
 
-for letter in word:
+for letter in words_list:
     letters += len(letter)
     if letter.endswith((".", "!", "?")):
         sentences += 1
