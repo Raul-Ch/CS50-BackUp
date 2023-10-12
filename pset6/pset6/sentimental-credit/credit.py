@@ -46,7 +46,7 @@ def checksum(credit):
 def credit_type(length):
     length -= 2
     type = 1
-    
+
     for i in length:
         type *= 10
         credit //= type
