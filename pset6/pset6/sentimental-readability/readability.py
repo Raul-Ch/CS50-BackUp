@@ -8,5 +8,6 @@ text = input("Text: ")
 words = text.split()
 
 # Get the number of words with len(words).
+ # Number ofprint(len(words))
 for word in words:
     print(len(word))
