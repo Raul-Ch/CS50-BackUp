@@ -14,10 +14,9 @@ words = len(word)
 letters = 0
 sentences = 0
 
-for letter in word:
-        letters =+ 1
-        print(letter)
-        if letter == '.':
-            sentences =+ 1
+for word in words:
+    letters += 1
+    if letter == '.':
+        sentences += 1
 
 print(words, letters, sentences)
