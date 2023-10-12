@@ -47,7 +47,7 @@ def credit_type(length):
     length -= 2
     type = 1
 
-    for i in length:
+    for i in range(length):
         type *= 10
         credit //= type
 
