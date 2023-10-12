@@ -5,9 +5,12 @@
 text = input("Text: ")
 
 # Now, words is a list of words.
-words = text.split()
+word = text.split()
 
-# Get the number of words with len(words).
- # Number ofprint(len(words))
-for word in words:
-    print(len(word))
+# Number of words
+words = len(words)
+
+# Get the number of letters with len(words).
+letters = 0
+for letter in word:
+    letters =+ 1
