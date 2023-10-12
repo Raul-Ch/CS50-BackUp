@@ -35,16 +35,17 @@ def checksum(credit):
         exit("INVALID")
 
 
+# The first two digits of a credit card number are used to identify the card
 def credit_type(credit):
     # NOTE: C to PYTHON
-"""     length -= 2 """
+    """length -= 2"""
     # The type variable is used to calculate a power of 10,
-""" type = 1
-    for i in range(length):
-        type *= 10"""
+    """ type = 1
+        for i in range(length):
+            type *= 10"""
     # which is then used to divide credit. This operation is used to get the first two digits of credit
-""" credit //= type
- """
+    """ credit //= type
+    """
     # NOTE: BETTER PYTHON SOLUTION
     """ Convert credit to a string"""
     credit_str = str(credit)
@@ -52,13 +53,13 @@ def credit_type(credit):
     first_two_digits = int(credit_str[:2])
 
     if 39 < first_two_digits < 50:
-        return("VISA")
-    elif first_two_digits  in [34, 37]:
-        return("AMEX")
-    elif first_two_digits  in range(51, 56):
-        return("MASTERCARD")
+        return "VISA"
+    elif first_two_digits in [34, 37]:
+        return "AMEX"
+    elif first_two_digits in range(51, 56):
+        return "MASTERCARD"
     else:
-        return("INVALID")
+        return "INVALID"
 
 
 credit_number = get_int("Input the credit card number: ")
