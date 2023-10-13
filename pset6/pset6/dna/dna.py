@@ -4,7 +4,7 @@ import sys
 
 def main():
 
-    str = ["AGATC, TTTTTTCT, AATG, TCTAG, GATA, TATC, GAAA, TCTG"]
+    strs = ["AGATC, TTTTTTCT, AATG, TCTAG, GATA, TATC, GAAA, TCTG"]
 
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
@@ -21,7 +21,7 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     for str in sequence:
-        print(str)
+        print(strs[str])
 
     # TODO: Check database for matching profiles
 
