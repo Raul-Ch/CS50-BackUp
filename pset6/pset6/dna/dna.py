@@ -27,12 +27,10 @@ def main():
 
     # TODO: Check database for matching profiles
     for profile in database:
-        for each_str in strs:
-            
-            name = row['name']
-            str = int(row[strs])
+        for each_str in strs_length:
+            if strs_compare[each_str] == profile[]
 
-            if strs_length == str:
+
                 print(profile['name'])
 
 
