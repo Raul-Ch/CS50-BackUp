@@ -28,11 +28,14 @@ def main():
 
     # TODO: Check database for matching profiles
     for profile in profiles:
+        match = 0
         for each_str in strs_length:
-            if profile[each_str] == 
-        print(profile["name"])
-    """         for each_str in strs_length:
-            if strs_compare[each_str] == profile[] """
+            if profile[each_str] == strs_length[each_str]:
+                match += 1
+    if match == len(strs):
+        print(profile['name'])
+    else:
+        print("No match.")
 
 
     return
