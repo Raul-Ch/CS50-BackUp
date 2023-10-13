@@ -6,6 +6,7 @@ def main():
 
     strs = {"AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"}
 
+
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
         print("Invalid usage: python dna.py database.csv sequence.txt")
