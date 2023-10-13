@@ -23,7 +23,8 @@ def main():
     strs_length = {}
     for each_str in strs:
         longest = longest_match(sequence, each_str)
-        strs_length[each_str] = [longest]
+        # Store it as a string for latter comparison
+        strs_length[each_str] = str[longest]
 
     # TODO: Check database for matching profiles
     for profile in profiles:
@@ -35,7 +36,6 @@ def main():
         print(profile['name'])
     else:
         print("No match.")
-
 
     return
 
