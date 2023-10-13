@@ -8,9 +8,9 @@ def main():
     if len(sys.argv) != 3:
         print("Invalid usage: python dna.py database.csv sequence.txt")
 
-
     # TODO: Read database file into a variable
-    #reader = csv.DictReader(file)
+    reader = csv.DictReader(sys.argv[1])
+    print(reader)
 
     # TODO: Read DNA sequence file into a variable
 
