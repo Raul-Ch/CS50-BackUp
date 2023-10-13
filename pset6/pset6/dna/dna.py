@@ -21,13 +21,18 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     max_longest = 0
+
     for str in strs:
         longest = longest_match(sequence, str)
         if longest > max_longest:
             max_longest = longest
-
+            look_str = str
 
     # TODO: Check database for matching profiles
+    for profile in database:
+        if look_str[max_longest] in profile:
+            print('name'[profile])
+
 
     return
 
