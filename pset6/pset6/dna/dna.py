@@ -4,6 +4,8 @@ import sys
 
 def main():
 
+    str = [AGATC, TTTTTTCT, AATG, TCTAG, GATA, TATC, GAAA, TCTG]
+
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
         print("Invalid usage: python dna.py database.csv sequence.txt")
@@ -18,7 +20,8 @@ def main():
         sequence = sfile.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    
+    for str in sequence:
+        print(str)
 
     # TODO: Check database for matching profiles
 
