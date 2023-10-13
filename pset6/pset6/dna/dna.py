@@ -27,11 +27,9 @@ def main():
 
     # TODO: Check database for matching profiles
     for profile in database:
-        for each_str in strs_length:
-            if strs_compare[each_str] == profile[]
-
-
-                print(profile['name'])
+        print(profile)
+    """         for each_str in strs_length:
+            if strs_compare[each_str] == profile[] """
 
 
     return
