@@ -31,7 +31,7 @@ def main():
     # TODO: Check database for matching profiles
     for profile in database:
         if look_str[max_longest] in profile:
-            print('name'[profile])
+            print(profile['name'])
 
 
     return
