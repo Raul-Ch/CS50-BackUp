@@ -23,7 +23,7 @@ def main():
 
     for str in strs:
         longest = longest_match(sequence, str)
-        strs.append(longest)
+        strs[str] = [longest]
 
     # TODO: Check database for matching profiles
     #for profile in database:
