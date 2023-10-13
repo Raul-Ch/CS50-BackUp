@@ -14,6 +14,7 @@ def main():
     # Open CSV file
     with open(sys.argv[1], "r") as dbfile:
         database = csv.DictReader(dbfile)
+        profiles = list(database)
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as sfile:
@@ -26,8 +27,10 @@ def main():
         strs_length[each_str] = [longest]
 
     # TODO: Check database for matching profiles
-    for profile in database:
-        print(profile)
+    for profile in profiles:
+        for each_str in strs_length:
+            if profile[each_str] == 
+        print(profile["name"])
     """         for each_str in strs_length:
             if strs_compare[each_str] == profile[] """
 
