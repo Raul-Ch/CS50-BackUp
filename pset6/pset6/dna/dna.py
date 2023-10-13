@@ -9,7 +9,9 @@ def main():
         print("Invalid usage: python dna.py database.csv sequence.txt")
 
     # TODO: Read database file into a variable
-    database = csv.DictReader(sys.argv[1])
+    # Open CSV file
+    with open(sys.argv[1], "r") as dbfile:
+        database = csv.DictReader(dbfile)
 
     # TODO: Read DNA sequence file into a variable
     sequence = csv.DictReader(sys.argv[2])
