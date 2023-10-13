@@ -32,10 +32,11 @@ def main():
         for each_str in strs_length:
             if profile[each_str] == strs_length[each_str]:
                 match += 1
-    if match == len(strs):
-        print(profile['name'])
-    else:
-        print("No match.")
+        if match == len(strs):
+            print(profile['name'])
+            break
+        else:
+            print("No match.")
 
     return
 
