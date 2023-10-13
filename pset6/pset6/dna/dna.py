@@ -20,18 +20,14 @@ def main():
         sequence = sfile.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    max_longest = 0
 
     for str in strs:
         longest = longest_match(sequence, str)
-        if longest > max_longest:
-            max_longest = longest
-            look_str = str
+        append.
 
     # TODO: Check database for matching profiles
-    for profile in database:
-        if look_str[max_longest] in profile:
-            print(profile['name'])
+    #for profile in database:
+            # print(profile['name'])
 
 
     return
