@@ -4,9 +4,6 @@ import sys
 
 def main():
 
-    strs = {"AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"}
-
-
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
         print("Invalid usage: python dna.py database.csv sequence.txt")
@@ -16,6 +13,7 @@ def main():
     with open(sys.argv[1], "r") as dbfile:
         database = csv.DictReader(dbfile)
         profiles = list(database)
+        strs = database.fieldnames[1:]
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as sfile:
