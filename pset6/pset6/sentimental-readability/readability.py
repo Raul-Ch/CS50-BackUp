@@ -9,7 +9,7 @@ words_list = text.split()
 
 # Number of words
 # Any sequence of characters separated by spaces should count as a word,
-words = len(words_list)
+words = len(words_licdcdst)
 
 # Get the number of letters with len(words).
 letters = 0
