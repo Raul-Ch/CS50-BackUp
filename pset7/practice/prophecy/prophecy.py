@@ -1,6 +1,14 @@
 from cs50 import SQL
 import csv
 
+def students_Table():
+
+
+#LISTS
+students = []
+houses = []
+assignments = []
+
 #DB
 # Open database
 db = SQL("sqlite:///roster.db")
@@ -13,10 +21,11 @@ with open("students.csv", "r") as file:
 
     # Iterate over CSV file,
     for row in reader:
-        db.execute("INSERT INTO students (student_name) VALUES (?)",row["students_name"])
-        db.execute("INSERT INTO houses (name, house, head) VALUES (? ,? , ?)",row["students_name"])
-        db.execute("INSERT INTO students (name, house, head) VALUES (? ,? , ?)",row["students_name"])
-
+        students = row["student_name"]
+        house = row["house"]
+        head = row["head"]
 
         students_Table(students, )
+        houses_Table(students, )
+        assignments_Table(students, )
 
