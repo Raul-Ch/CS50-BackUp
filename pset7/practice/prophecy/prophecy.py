@@ -21,11 +21,11 @@ with open("students.csv", "r") as file:
 
     # Iterate over CSV file,
     for row in reader:
-        students = row["student_name"]
+        student = row["student_name"]
         house = row["house"]
         head = row["head"]
 
-        students_Table(students, )
-        houses_Table(students, )
-        assignments_Table(students, )
+        students_Table(student, )
+        houses_Table( )
+        assignments_Table( )
 
