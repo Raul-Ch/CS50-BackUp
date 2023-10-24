@@ -7,9 +7,10 @@ houses = []
 assignments = []
 
 def house_Table(house):
-    for _ in houses:
-        if _ == houses:
-            
+    for check in houses:
+        if check != houses:
+            houses.append(house)
+
 
 
 #DB
