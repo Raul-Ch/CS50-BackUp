@@ -1,6 +1,9 @@
 // ” Suppose Spotify determines an audio aura by looking at the average energy, valence, and danceability of a person’s top 100 songs from the past year"
 // If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
-In "Learn More About the Audio Aura in Your Spotify 2021 Wrapped With Aura Reader Mystic Michaela" it mentions different types of colors 
+In "Learn More About the Audio Aura in Your Spotify 2021 Wrapped With Aura Reader Mystic Michaela" it mentions different types of colors deppending on the "vibe", as for songs.db
+I see a variaty of rap, pop and some trap, so I infer that is loud, energetic music, so a Purple aura that mixes pretty well with orange as perse:
+Purple: This aura color pairs well with passionate music listeners. Purple auras tune in to get amped up, entertained, and moving while they navigate the twists and turns of their day.
+Orange: Oranges are the rebellious and bold type. They share a need for high-energy, confidence-boosting sounds.
 
 
 
