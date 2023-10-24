@@ -1,13 +1,16 @@
 from cs50 import SQL
 import csv
 
-def students_Table():
-
-
 #LISTS
 students = []
 houses = []
 assignments = []
+
+def house_Table(house):
+    for _ in houses:
+        if _ == houses:
+            
+
 
 #DB
 # Open database
@@ -25,7 +28,7 @@ with open("students.csv", "r") as file:
         house = row["house"]
         head = row["head"]
 
-        students_Table(student, )
-        houses_Table( )
-        assignments_Table( )
+        #students_Table(student, )
+        houses_Table(house)
+        #assignments_Table( )
 
