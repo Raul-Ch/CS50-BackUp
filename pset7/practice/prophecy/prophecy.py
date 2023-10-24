@@ -45,6 +45,7 @@ with open("students.csv", "r") as file:
     for assignment in assignments:
         student_id = db.execute("SELECT id FROM students WHERE student_name = ?", assignment["Student"])[0]['id']
         house_id = db.execute("SELECT id FROM houses WHERE house = ?", assignment["House"])[0]['id']
+        
         db.execute("INSERT INTO assignments (id_students, id_houses) VALUES (?, ?)", student_id, house_id)
 
 
