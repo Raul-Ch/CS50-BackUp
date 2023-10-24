@@ -7,6 +7,6 @@ Orange: Oranges are the rebellious and bold type. They share a need for high-ene
 
 
 // Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
-Beacause the way I calculated the aura was by pure inferience with a quick scan and my knowleadge on the songs and artists, and not by adding up, or averaging numbers. A better way
-that i found is to englobe songs into a category or type, as markers so we can sense and check first those markers to attribute an aura and then apply the adding up, averaging or other operations
-dependind on the characteristics of each song
+The way I calculated the aura was by pure inference with a quick scan and my knowledge of the songs and artists, and not by adding up or averaging numbers. A better way
+that I found is to englobe songs into a category or type, as markers so we can sense and check first those markers to attribute an aura and then apply the adding up, averaging or other operations
+depending on the characteristics of each song
