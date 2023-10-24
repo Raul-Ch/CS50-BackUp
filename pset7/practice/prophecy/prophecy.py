@@ -7,7 +7,7 @@ houses = []
 assignments = []
 
 def students_Table(student):
-    houses.append({"Name": student})
+    students.append({"Name": student})
 
 def houses_Table(house, head):
     if not any(h['House'] == house for h in houses):
@@ -35,4 +35,4 @@ with open("students.csv", "r") as file:
         #assignments_Table( )
 
     print(houses)
-    print(studentS)
+    print(students)
