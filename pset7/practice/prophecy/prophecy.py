@@ -1,5 +1,10 @@
 import csv
 
+# Lists
+students = []
+houses = []
+assignments = []
+
 # Open CSV file
 with open("students.csv", "r") as file:
 
