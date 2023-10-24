@@ -9,19 +9,19 @@ heads = []
 with open("students.csv", "r") as file:
 
     # Create reader
-    reader = csv.reader(file)
+    reader = csv.Dictreader(file)
 
-    # Iterate over CSV file, printing each favorite
+    # Iterate over CSV file,
     for row in reader:
         students = row["student_name"]
         houses = row["house"]
         heads = row["head"]
 
-    for student in students:
-        print(student)
+for student in students:
+    print(student)
 
-    for house in houses:
-        print(house)
+for house in houses:
+    print(house)
 
-    for head in heads:
-        print(head)
+for head in heads:
+    print(head)
