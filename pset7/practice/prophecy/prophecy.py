@@ -3,7 +3,7 @@ import csv
 # Lists
 students = []
 houses = []
-assignments = []
+heads = []
 
 # Open CSV file
 with open("students.csv", "r") as file:
@@ -15,4 +15,13 @@ with open("students.csv", "r") as file:
     for row in reader:
         students = row["student_name"]
         houses = row["house"]
-        assignments = row["student_name"]
+        heads = row["head"]
+
+    for student in students:
+        print(student)
+
+    for house in houses:
+        print(house)
+
+    for head in heads:
+        print(head)
