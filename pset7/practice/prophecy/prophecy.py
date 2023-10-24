@@ -6,10 +6,12 @@ students = []
 houses = []
 assignments = []
 
-def houses_Table(house, head):
-    if house not in houses:
-        houses.append({"House": house, "Head": head})
+def students_Table(student):
+    houses.append({"Name": student})
 
+def houses_Table(house, head):
+    if not any(h['House'] == house for h in houses):
+        houses.append({"House": house, "Head": head})
 
 
 #DB
@@ -28,8 +30,9 @@ with open("students.csv", "r") as file:
         house = row["house"]
         head = row["head"]
 
-        #students_Table(student, )
+        students_Table(student)
         houses_Table(house, head)
         #assignments_Table( )
 
     print(houses)
+    print(studentS)
