@@ -6,9 +6,9 @@ students = []
 houses = []
 assignments = []
 
-def houses_Table(house):
+def houses_Table(house, head):
     if house not in houses:
-        houses.append(house)
+        houses.append({"House": house, "Head": head})
 
 
 
@@ -29,6 +29,7 @@ with open("students.csv", "r") as file:
         head = row["head"]
 
         #students_Table(student, )
-        houses_Table(house)
+        houses_Table(house, head)
         #assignments_Table( )
 
+    print(houses)
