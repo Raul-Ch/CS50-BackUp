@@ -6,10 +6,9 @@ students = []
 houses = []
 assignments = []
 
-def house_Table(house):
-    for check in houses:
-        if check != houses:
-            houses.append(house)
+def houses_Table(house):
+    if house not in houses:
+        houses.append(house)
 
 
 
