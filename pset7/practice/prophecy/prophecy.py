@@ -9,13 +9,14 @@ heads = []
 with open("students.csv", "r") as file:
 
     # Create reader
-    reader = csv.Dictreader(file)
+    reader = csv.DictReader(file)
 
     # Iterate over CSV file,
     for row in reader:
         students = row["student_name"]
         houses = row["house"]
         heads = row["head"]
+
 
 for student in students:
     print(student)
