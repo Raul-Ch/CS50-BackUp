@@ -13,4 +13,6 @@ with open("students.csv", "r") as file:
 
     # Iterate over CSV file, printing each favorite
     for row in reader:
-        print(row)
+        students = row["student_name"]
+        houses = row["house"]
+        assignments = row["student_name"]
