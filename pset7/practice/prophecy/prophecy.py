@@ -7,12 +7,14 @@ houses = []
 assignments = []
 
 def students_Table(student):
-    students.append({"Name": student})
+    students.append({"Student": student})
 
 def houses_Table(house, head):
     if not any(h['House'] == house for h in houses):
         houses.append({"House": house, "Head": head})
 
+def assignments_Table(student, house):
+    assignments.append({"Student": student, "House": house})
 
 #DB
 # Open database
@@ -32,7 +34,14 @@ with open("students.csv", "r") as file:
 
         students_Table(student)
         houses_Table(house, head)
-        #assignments_Table( )
+        assignments_Table(student, house)
 
-    print(houses)
+    for student in students:
+        db.execute("INSERT INTO students (student_name) VALUES ?", students["Student"])
+        db.execute("INSERT INTO houses (house, head) VALUES ?", houses["House"], houses["Head"], )
+        db.execute("INSERT INTO assignments (id_students, id_houses) VALUES ?", assignments["Student"], assignments["House"])
+
+
+"""     print(houses)
     print(students)
+    print(assignments) """
