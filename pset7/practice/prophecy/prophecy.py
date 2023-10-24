@@ -37,11 +37,11 @@ with open("students.csv", "r") as file:
         assignments_Table(student, house)
 
     for student in students:
-        db.execute("INSERT INTO students (student_name) VALUES ?", student["Student"])
+        db.execute("INSERT INTO students (student_name) VALUES (?)", student["Student"])
     for house in houses:
-        db.execute("INSERT INTO houses (house, head) VALUES ? ?", house["House"], house["Head"], )
+        db.execute("INSERT INTO houses (house, head) VALUES (?,?)", house["House"], house["Head"], )
     for assignment in assignments:
-        db.execute("INSERT INTO assignments (id_students, id_houses) VALUES ? ?", assignment["Student"], assignment["House"])
+        db.execute("INSERT INTO assignments (id_students, id_houses) VALUES (?,?)", assignment["Student"], assignment["House"])
 
 
 """     print(houses)
