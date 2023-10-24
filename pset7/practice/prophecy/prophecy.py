@@ -19,10 +19,4 @@ with open("students.csv", "r") as file:
 
 
 for student in students:
-    print(student)
-
-for house in houses:
-    print(house)
-
-for head in heads:
-    print(head)
+    print(students[student])
