@@ -38,8 +38,10 @@ with open("students.csv", "r") as file:
 
     for student in students:
         db.execute("INSERT INTO students (student_name) VALUES ?", students["Student"])
-        db.execute("INSERT INTO houses (house, head) VALUES ?", houses["House"], houses["Head"], )
-        db.execute("INSERT INTO assignments (id_students, id_houses) VALUES ?", assignments["Student"], assignments["House"])
+    for house in houses:
+        db.execute("INSERT INTO houses (house, head) VALUES ? ?", houses["House"], houses["Head"], )
+    for assignment in assignments:
+        db.execute("INSERT INTO assignments (id_students, id_houses) VALUES ? ?", assignments["Student"], assignments["House"])
 
 
 """     print(houses)
