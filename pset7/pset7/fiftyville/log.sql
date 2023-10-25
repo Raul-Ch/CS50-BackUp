@@ -114,5 +114,5 @@ SELECT * FROM airports WHERE city = "Fiftyville";
 -- Abr: id= 8; CSF, Fiftyville Regional Airport
 
 -- 17.- CEHCK FLGHTS from that airport and the day "Earliest Fligth to FiftyVille tomorrow (7-29-2021)"
-SELECT * FROM flights WHERE origin_airport_id IN (SELECT id FROM airports WHERE city = "Fiftyville");
+SELECT * FROM flights WHERE destination_airport_id IN (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 28 AND month = 7 AND year = 2021;
 
