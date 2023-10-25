@@ -98,7 +98,12 @@ ON Q1.id = Q2.person_id;
 -- Diana is the principal suspect, beacause taylor plate was registeres at 10:35 more than minutes after the robbery
 
 -- 13.- Check the phone Calls on the same day of the robbery
-SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60;
+SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 61;
+
+
+--
+-- EXTRA.- Check the phone Calls on the same day of the robbery
+SELECT people FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 61;
 
 -- 14.- Compare last querie with suspects
 WITH Q1 AS (
