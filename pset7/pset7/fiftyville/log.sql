@@ -88,4 +88,4 @@ ON Q1.id = Q2.person_id;
 SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60;
 
 -- 14.- Compare last querie with suspects
-SELECT * FROM (SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) INNER JOIN (SELECT * FROM people) ON phone_calls.id = people.id;
+SELECT * FROM (SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) INNER JOIN (SELECT * FROM people) ON people.phone_number = phone_calls.caller;
