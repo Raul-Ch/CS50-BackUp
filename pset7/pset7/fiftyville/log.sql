@@ -101,4 +101,8 @@ SELECT * FROM phone_calls INNER JOIN people ON phone_calls.caller = people.phone
 */
 
 -- 15.- See the call recieviers
-SELECT * FROM people INNER JOIN (SELECT * FROM phone_calls INNER JOIN people ON phone_calls.caller = people.phone_number WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60 AND (people.name = "Diana" OR people.name = "Taylor")) ON phone_calls.receiver = people.phone_number;
+SELECT * FROM
+(SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) AS calls
+INNER JOIN people AS caller ON calls.caller = caller.phone_number
+INNER JOIN people AS receiver ON calls.receiver = receiver.phone_number
+WHERE (caller.name = "Diana" OR caller.name = "Taylor");
