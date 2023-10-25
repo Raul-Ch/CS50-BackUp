@@ -109,11 +109,10 @@ WHERE (caller.name = "Diana" OR caller.name = "Taylor");
 -- NOTES SUSPECT: THIEF: Taylor , ACCOMPLICE: James
 -- REAL LIKE: THIEF: Diana , ACCOMPLICE: Philip
 
--- 16.- CHECK FLIGTHS
+-- 16.- CHECK Airports
 SELECT * FROM airports WHERE city = "Fiftyville";
 -- Abr: id= 8; CSF, Fiftyville Regional Airport
 
--- 17.-
-SELECT * FROM flights WHERE id IN (SELECT id FROM airports WHERE city = "Fiftyville");
-SELECT * FROM flights WHERE id IN (SELECT id FROM airports WHERE city = "Fiftyville");
+-- 17.- CEHCK FLGHTS from that airport and the day "Earliest Fligth to FiftyVille tomorrow (7-29-2021)"
+SELECT * FROM flights WHERE origin_airport_id IN (SELECT id FROM airports WHERE city = "Fiftyville");
 
