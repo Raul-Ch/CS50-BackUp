@@ -31,7 +31,15 @@ SELECT * FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 
 
 -- 7.- Check the people table with the plates given
 SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 15);
-    -- Notes:
+-- or
+SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE license_plate = "322W7JE" OR license_plate = "0NTHK55" OR license_plate = "1106N58");
+/*
+|   id   |  name  |  phone_number  | passport_number | license_plate |
++--------+--------+----------------+-----------------+---------------+
+| 449774 | Taylor | (286) 555-6063 | 1988161715      | 1106N58       |
+| 514354 | Diana  | (770) 555-1861 | 3592750733      | 322W7JE       |
+| 560886 | Kelsey | (499) 555-9472 | 8294398571      | 0NTHK55
+*/
 
 -- 8.- Check the type of info (columns) table atm_transactions had
 SELECT * FROM atm_transactions LIMIT 5;
