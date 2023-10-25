@@ -127,3 +127,5 @@ SELECT * FROM airports WHERE id IN
 (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1);
 
 -- 19.- Passengers on fligth
+(SELECT passport_number FROM passengers WHERE origin_airport_id IN
+(SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1);
