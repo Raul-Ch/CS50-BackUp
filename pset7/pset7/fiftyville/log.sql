@@ -29,6 +29,7 @@ SELECT * FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 
     -- Notes: There are 2 plates within the 10 minutes mark at 10:23 that exit and one at 10:35 being;
         -- 322W7JE, 0NTHK55 and 1106N58
 
+-- CAR FOOTAGE
 -- 7.- Check the people table with the plates given
 SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 15);
 -- or
@@ -48,7 +49,24 @@ SELECT * FROM atm_transactions LIMIT 5;
 SELECT * FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw";
     -- Theres a Total of 8 transactions with the respective account_number
 
+-- MONEY WITHDRAWN
 -- 10.- Check the TABLE bank_accounts and get the names from TABLE PEOPLE with the previous information (only withdraws) with the same of day, month and year of the crime on Leggett Street
 SELECT bank_accounts.person_id, people.name, bank_accounts.account_number FROM people INNER JOIN bank_accounts ON people.id = bank_accounts.person_id
 WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw");
     -- Theres a Total of 8 transactions with the respective account_number
+/*
++-----------+---------+----------------+
+| person_id |  name   | account_number |
++-----------+---------+----------------+
+| 686048    | Bruce   | 49610011       |
+| 514354    | Diana   | 26013199       |
+| 458378    | Brooke  | 16153065       |
+| 395717    | Kenny   | 28296815       |
+| 396669    | Iman    | 25506511       |
+| 467400    | Luca    | 28500762       |
+| 449774    | Taylor  | 76054385       |
+| 438727    | Benista | 81061156       |
++-----------+---------+----------------+
+*/
+
+-- 11.- Check the phone Calls
