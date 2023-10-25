@@ -120,7 +120,7 @@ FROM phone_calls
 INNER JOIN people ON phone_calls.caller = people.phone_number
 INNER JOIN Q1 ON people.id = Q1.id
 INNER JOIN Q2 ON people.id = Q2.person_id
-WHERE phone_calls.day = 28 AND phone_calls.month = 7 AND phone_calls.year = 2021 and phone_calls.duration < 60;
+WHERE phone_calls.day = 28 AND phone_calls.month = 7 AND phone_calls.year = 2021 and phone_calls.duration < 61;
 /*
 +-----+----------------+----------------+------+-------+-----+----------+--------+--------+----------------+-----------------+---------------+
 | id  |     caller     |    receiver    | year | month | day | duration |   id   |  name  |  phone_number  | passport_number | license_plate |
@@ -132,7 +132,7 @@ WHERE phone_calls.day = 28 AND phone_calls.month = 7 AND phone_calls.year = 2021
 
 -- 15.- See the call recieviers
 SELECT * FROM
-(SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) AS calls
+(SELECT caller, receiver FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) AS calls
 INNER JOIN people AS caller ON calls.caller = caller.phone_number
 INNER JOIN people AS receiver ON calls.receiver = receiver.phone_number
 WHERE (caller.name = "Diana" OR caller.name = "Taylor");
