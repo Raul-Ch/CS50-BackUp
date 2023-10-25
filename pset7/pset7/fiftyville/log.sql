@@ -122,6 +122,8 @@ SELECT * FROM flights WHERE origin_airport_id IN (SELECT id FROM airports WHERE 
 
 -- 18.- See the city escaped
 SELECT * FROM airports WHERE id = 4;
-SELECT * FROM airports WHERE id = destination_airport_id IN (SELECT * FROM flights WHERE origin_airport_id IN (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1);
+SELECT * FROM airports WHERE id IN
+(SELECT destination_airport_id FROM flights WHERE origin_airport_id IN
+(SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1);
 
 -- 19.- Passengers on fligth
