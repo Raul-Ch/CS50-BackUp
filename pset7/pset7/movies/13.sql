@@ -2,6 +2,4 @@
 -- Your query should output a table with a single column for the name of each person.
 -- There may be multiple people named Kevin Bacon in the database. Be sure to only select the Kevin Bacon born in 1958.
 -- Kevin Bacon himself should not be included in the resulting list.
-SELECT people.name FROM people INNER JOIN stars ON people.id = stars.movie_id
-
-SELECT name FROM people WHERE name = "Kevin Bacon" AND birth = 1958;
+SELECT name FROM people WHERE id IN (SELECT movie_id FROM stars INNER JOIN people ON stars.person_id = people.id WHERE people.name = "Kevin Bacon" AND people.birth = 1958);
