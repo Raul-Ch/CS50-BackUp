@@ -140,6 +140,21 @@ WHERE flight_id IN
 (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1);
 
 -- 20.- FINAL RESULTS
+WITH Q1 AS (
+  SELECT passengers.passport_number, people.name FROM passengers
+  INNER JOIN flights ON passengers.flight_id = flights.id
+  INNER JOIN people ON passengers.passport_number = people.passport_number
+  WHERE flight_id IN ...
+),
+Q2 AS (
+  SELECT * FROM
+  (SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) AS calls
+  INNER JOIN people AS caller ON calls.caller = caller.phone_number
+  INNER JOIN people AS receiver ON calls.receiver = receiver.phone_number
+  WHERE (caller.name = "Diana" OR caller.name = "Taylor")
+)
+SELECT * FROM Q1 INNER JOIN Q2 ON Q1.name = Q2.name;
+
 SELECT passengers.passport_number, people.name FROM passengers
 INNER JOIN flights ON passengers.flight_id = flights.id
 INNER JOIN people ON passengers.passport_number = people.passport_number
@@ -149,4 +164,4 @@ WHERE flight_id IN
 (SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) AS calls
 INNER JOIN people AS caller ON calls.caller = caller.phone_number
 INNER JOIN people AS receiver ON calls.receiver = receiver.phone_number
-WHERE (caller.name = "Diana" OR caller.name = "Taylor")) AS Q2 ON Q1.people.name == Q2;
+WHERE (caller.name = "Diana" OR caller.name = "Taylor")) AS Q2 ON Q1.name == Q2.name;
