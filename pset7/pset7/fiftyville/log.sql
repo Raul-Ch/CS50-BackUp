@@ -103,6 +103,7 @@ SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and durat
 
 --
 -- EXTRA.- Check the phone Calls on the same day of the robbery
+SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 61;
 SELECT * FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 61);
 
 -- 14.- Compare last querie with suspects
@@ -135,7 +136,7 @@ SELECT * FROM
 (SELECT caller, receiver FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) AS calls
 INNER JOIN people AS caller ON calls.caller = caller.phone_number
 INNER JOIN people AS receiver ON calls.receiver = receiver.phone_number
-WHERE (caller.name = "Diana" OR caller.name = "Taylor" or caller);
+WHERE (caller.name = "Diana" OR caller.name = "Taylor");
 -- NOTES SUSPECT: THIEF: Taylor , ACCOMPLICE: James
 -- REAL LIKE: THIEF: Diana , ACCOMPLICE: Philip
 
