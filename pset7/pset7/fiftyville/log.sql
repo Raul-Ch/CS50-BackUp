@@ -155,6 +155,11 @@ Q2 AS (
   INNER JOIN people AS receiver ON calls.receiver = receiver.phone_number
   WHERE (caller.name = "Diana" OR caller.name = "Taylor")
 )
-SELECT Q1.name, Q2.caller_name, Q2.receiver_name FROM Q1 INNER JOIN Q2 ON Q1.name = Q2.caller_name AS "name","THIEF" ,"ACCOMPLICE";
+SELECT Q1.name, Q2.caller_name AS thief, Q2.receiver_name AS accomplice FROM Q1 INNER JOIN Q2 ON Q1.name = Q2.caller_name;
 
 -- RESULT
+/*
+THIEF: Taylor
+CITY: 
+ACCOMPLIE: James
+*/
