@@ -83,6 +83,7 @@ ON Q1.id = Q2.person_id;
 | 449774 | Taylor | (286) 555-6063 | 1988161715      | 1106N58       | 449774    | Taylor | 76054385       |
 +--------+--------+----------------+-----------------+---------------+-----------+--------+----------------+
 */ -- NOTES: Diana and Taylor as suspects
+-- Diana is the principal suspect, beacause taylor plate was registeres at 10:35 more than minutes after the robbery
 
 -- 13.- Check the phone Calls on the same day of the robbery
 SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60;
