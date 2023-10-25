@@ -115,7 +115,7 @@ INNER JOIN people ON phone_calls.caller = people.phone_number
 INNER JOIN Q1 ON people.id = Q1.id
 INNER JOIN Q2 ON people.id = Q2.person_id
 WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60
-SELECT caller, receiver, 
+SELECT caller, receiver, id, name, phone_number, passport_number, license_plate
 ;
 /*
 +-----+----------------+----------------+------+-------+-----+----------+--------+--------+----------------+-----------------+---------------+
