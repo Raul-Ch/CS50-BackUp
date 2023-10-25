@@ -39,9 +39,8 @@ SELECT * FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 
 
 -- CAR FOOTAGE
 -- 7.- Check the people table with the plates given
-SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 15);
--- or
-SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE (SELECT * FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 20 AND activity = "exit");
+SELECT * FROM people WHERE license_plate IN
+(SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 20 AND activity = "exit");
 /*
 +--------+--------+----------------+-----------------+---------------+
 |   id   |  name  |  phone_number  | passport_number | license_plate |
