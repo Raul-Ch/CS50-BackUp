@@ -69,4 +69,9 @@ WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day =
 +-----------+---------+----------------+
 */
 
--- 11.- Check the phone Calls
+-- 12.- Compare the tables to find a relationship
+
+
+-- 12.- Check the phone Calls on the same day of the robbery
+SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60;
+
