@@ -73,7 +73,8 @@ WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day =
 
 
 -- 12.- Check the phone Calls on the same day of the robbery
-SELECT DISTINCT * FROM
+SELECT * FROM
 (SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE license_plate = "322W7JE" OR license_plate = "0NTHK55" OR license_plate = "1106N58")) AS Q1
-JOIN
-(SELECT bank_accounts.person_id, people.name, bank_accounts.account_number FROM people INNER JOIN bank_accounts ON people.id = bank_accounts.person_id WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw")) AS Q2;
+INNER JOIN
+(SELECT bank_accounts.person_id, people.name, bank_accounts.account_number FROM people INNER JOIN bank_accounts ON people.id = bank_accounts.person_id WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw")) AS Q2
+ON Q1.id = Q2.person_id;
