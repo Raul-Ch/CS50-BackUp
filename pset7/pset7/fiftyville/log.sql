@@ -115,4 +115,4 @@ SELECT * FROM airports WHERE city = "Fiftyville";
 
 -- 17.- CEHCK FLGHTS from that airport and the day "Earliest Fligth to FiftyVille tomorrow (7-29-2021)"
 SELECT * FROM flights WHERE destination_airport_id IN (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 28 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute;
-
+/*FLIGTH ID
