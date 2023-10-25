@@ -83,6 +83,7 @@ ON Q1.id = Q2.person_id;
 | 449774 | Taylor | (286) 555-6063 | 1988161715      | 1106N58       | 449774    | Taylor | 76054385       |
 +--------+--------+----------------+-----------------+---------------+-----------+--------+----------------+
 */ -- NOTES: Diana and Taylor as suspects
+            --NOTES FROM INTERVIEWS: Car - Footage from the bakery 10 minutes of the thieft = 10:25
 -- Diana is the principal suspect, beacause taylor plate was registeres at 10:35 more than minutes after the robbery
 
 -- 13.- Check the phone Calls on the same day of the robbery
@@ -90,3 +91,14 @@ SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and durat
 
 -- 14.- Compare last querie with suspects
 SELECT * FROM phone_calls INNER JOIN people ON phone_calls.caller = people.phone_number WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60 AND (people.name = "Diana" OR people.name = "Taylor");
+/*
++-----+----------------+----------------+------+-------+-----+----------+--------+--------+----------------+-----------------+---------------+
+| id  |     caller     |    receiver    | year | month | day | duration |   id   |  name  |  phone_number  | passport_number | license_plate |
++-----+----------------+----------------+------+-------+-----+----------+--------+--------+----------------+-----------------+---------------+
+| 254 | (286) 555-6063 | (676) 555-6554 | 2021 | 7     | 28  | 43       | 449774 | Taylor | (286) 555-6063 | 1988161715      | 1106N58       |
+| 255 | (770) 555-1861 | (725) 555-3243 | 2021 | 7     | 28  | 49       | 514354 | Diana  | (770) 555-1861 | 3592750733      | 322W7JE       |
++-----+----------------+----------------+------+-------+-----+----------+--------+--------+----------------+-----------------+---------------+
+*/
+
+-- 15.- See the call recieviers
+SELECT * FROM phone_calls INNER JOIN people ON phone_calls.caller = people.phone_number WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60 AND (people.name = "Diana" OR people.name = "Taylor")
