@@ -101,12 +101,22 @@ ON Q1.id = Q2.person_id;
 SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60;
 
 -- 14.- Compare last querie with suspects
-SELECT * FROM phone_calls INNER JOIN people ON phone_calls.caller = people.phone_number WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60 AND (SELECT * FROM
-(SELECT * FROM people WHERE license_plate IN
-(SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 20 AND activity = "exit")) AS Q1
-INNER JOIN
-(SELECT bank_accounts.person_id, people.name, bank_accounts.account_number FROM people INNER JOIN bank_accounts ON people.id = bank_accounts.person_id WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw")) AS Q2
-ON Q1.id = Q2.person_id);
+WITH Q1 AS (
+  SELECT * FROM people WHERE license_plate IN
+  (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 20 AND activity = "exit")
+),
+Q2 AS (
+  SELECT bank_accounts.person_id, people.name, bank_accounts.account_number FROM people
+  INNER JOIN bank_accounts ON people.id = bank_accounts.person_id
+  WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw")
+)
+SELECT * FROM phone_calls
+INNER JOIN people ON phone_calls.caller = people.phone_number
+INNER JOIN Q1 ON people.id = Q1.id
+INNER JOIN Q2 ON people.id = Q2.person_id
+WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60
+SELECT caller, receiver, 
+;
 /*
 +-----+----------------+----------------+------+-------+-----+----------+--------+--------+----------------+-----------------+---------------+
 | id  |     caller     |    receiver    | year | month | day | duration |   id   |  name  |  phone_number  | passport_number | license_plate |
