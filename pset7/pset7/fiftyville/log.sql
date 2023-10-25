@@ -106,7 +106,9 @@ SELECT * FROM
 INNER JOIN people AS caller ON calls.caller = caller.phone_number
 INNER JOIN people AS receiver ON calls.receiver = receiver.phone_number
 WHERE (caller.name = "Diana" OR caller.name = "Taylor");
--- NOTES: THIEF: Taylor , ACCOMPLICE: James
+-- NOTES SUSPECT: THIEF: Taylor , ACCOMPLICE: James
 -- REAL LIKE: THIEF: Diana , ACCOMPLICE: Philip
+
+
 
 
