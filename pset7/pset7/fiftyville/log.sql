@@ -115,11 +115,13 @@ SELECT * FROM airports WHERE city = "Fiftyville";
 
 -- 17.- CEHCK FLGHTS from that airport and the day "Earliest Fligth out of FiftyVille tomorrow (7-29-2021)"
 SELECT * FROM flights WHERE origin_airport_id IN (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute;
+SELECT * FROM flights WHERE origin_airport_id IN (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1;
 --FLIGTH ID: 36 earlist fligth to fiftyville on the next day of the robbery
 -- Leaving from fiftyville: 8
 -- To: 4 = LGA = LaGuardia Airport = New York City
 
 -- 18.- See the city escaped
 SELECT * FROM airports WHERE id = 4;
+SELECT * FROM airports WHERE id = destination_airport_id IN (SELECT * FROM flights WHERE origin_airport_id IN (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1);
 
 -- 19.- Passengers on fligth
