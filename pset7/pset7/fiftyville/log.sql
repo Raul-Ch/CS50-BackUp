@@ -41,7 +41,7 @@ SELECT * FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 
 -- 7.- Check the people table with the plates given
 SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 15);
 -- or
-SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE license_plate = "322W7JE" OR license_plate = "0NTHK55" OR license_plate = "1106N58" OR license_plate = "L93JTIZ");
+SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE (SELECT * FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 20 AND activity = "exit");
 /*
 +--------+--------+----------------+-----------------+---------------+
 |   id   |  name  |  phone_number  | passport_number | license_plate |
@@ -90,6 +90,7 @@ ON Q1.id = Q2.person_id;
 |   id   |  name  |  phone_number  | passport_number | license_plate | person_id |  name  | account_number |
 +--------+--------+----------------+-----------------+---------------+-----------+--------+----------------+
 | 514354 | Diana  | (770) 555-1861 | 3592750733      | 322W7JE       | 514354    | Diana  | 26013199       |
+| 396669 | Iman   | (829) 555-5269 | 7049073643      | L93JTIZ       | 396669    | Iman   | 25506511       |
 | 449774 | Taylor | (286) 555-6063 | 1988161715      | 1106N58       | 449774    | Taylor | 76054385       |
 +--------+--------+----------------+-----------------+---------------+-----------+--------+----------------+
 */ -- NOTES: Diana and Taylor as suspects
@@ -100,7 +101,7 @@ ON Q1.id = Q2.person_id;
 SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60;
 
 -- 14.- Compare last querie with suspects
-SELECT * FROM phone_calls INNER JOIN people ON phone_calls.caller = people.phone_number WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60 AND (people.name = "Diana" OR people.name = "Taylor");
+SELECT * FROM phone_calls INNER JOIN people ON phone_calls.caller = people.phone_number WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60 AND (people.name = "Diana" OR people.name = "Taylor" );
 /*
 +-----+----------------+----------------+------+-------+-----+----------+--------+--------+----------------+-----------------+---------------+
 | id  |     caller     |    receiver    | year | month | day | duration |   id   |  name  |  phone_number  | passport_number | license_plate |
