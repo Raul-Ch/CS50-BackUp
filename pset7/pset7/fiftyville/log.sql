@@ -109,6 +109,11 @@ WHERE (caller.name = "Diana" OR caller.name = "Taylor");
 -- NOTES SUSPECT: THIEF: Taylor , ACCOMPLICE: James
 -- REAL LIKE: THIEF: Diana , ACCOMPLICE: Philip
 
+-- 16.- CHECK FLIGTHS
+SELECT * FROM airports WHERE city = "Fiftyville";
+-- Abr: id= 8; CSF, Fiftyville Regional Airport
 
-
+-- 17.-
+SELECT * FROM flights WHERE id IN (SELECT id FROM airports WHERE city = "Fiftyville");
+SELECT * FROM flights WHERE id IN (SELECT id FROM airports WHERE city = "Fiftyville");
 
