@@ -32,7 +32,7 @@ As the thief was leaving the bakery, they called someone who talked to them for 
 SELECT * FROM bakery_security_logs LIMIT 5;
 
 -- 6.- Check the logs with the same of day, month, year and time of the crime
-SELECT * FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 15;
+SELECT * FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 25 AND minute < 35;
     -- Notes: There are 2 plates within the 10 minutes mark at 10:23 that exit and one at 10:35 being;
         -- 322W7JE, 0NTHK55 and 1106N58
 
