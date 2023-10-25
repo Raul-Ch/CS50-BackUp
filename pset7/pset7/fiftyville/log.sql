@@ -103,7 +103,7 @@ SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and durat
 
 --
 -- EXTRA.- Check the phone Calls on the same day of the robbery
-SELECT people FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 61;
+SELECT * FROM people WHERE phone_number IN (SELECT WHERE day = 28 AND month = 7 AND year = 2021 and duration < 61);
 
 -- 14.- Compare last querie with suspects
 WITH Q1 AS (
