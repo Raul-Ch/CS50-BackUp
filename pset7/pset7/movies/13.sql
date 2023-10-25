@@ -4,6 +4,6 @@
 -- Kevin Bacon himself should not be included in the resulting list.
 SELECT name FROM people WHERE id IN
     (SELECT person_id FROM stars WHERE movie_id IN
-    (SELECT movie_id FROM stars OUTER JOIN people ON stars.person_id = people.id
+    (SELECT movie_id FROM stars LEFT JOIN people ON stars.person_id = people.id
     WHERE people.name = "Kevin Bacon" AND people.birth = 1958)
 );
