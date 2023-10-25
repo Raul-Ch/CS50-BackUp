@@ -160,6 +160,6 @@ SELECT Q1.name, Q2.caller_name AS thief, Q2.receiver_name AS accomplice FROM Q1 
 -- RESULT
 /*
 THIEF: Taylor
-CITY: 
+CITY: New York City
 ACCOMPLIE: James
 */
