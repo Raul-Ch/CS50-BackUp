@@ -21,6 +21,9 @@ SELECT * FROM interviews WHERE day = 28 AND month = 7 AND year = 2021;
             -- After the thief, talked with someone less than a minute,
             -- Earliest Fligth to FiftyVille tomorrow (7-29-2021), coplice bought the ticket
 
+
+
+
 -- 5.- Check the type of info (columns) table secutirylogs had
 SELECT * FROM bakery_security_logs LIMIT 5;
 
