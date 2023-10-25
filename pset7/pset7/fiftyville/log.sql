@@ -6,8 +6,8 @@ SELECT * FROM crime_scene_reports LIMIT 5;
 
 -- 2.- Check the crimes on Humphery Street
 SELECT * FROM crime_scene_reports WHERE street = "Humphrey Street" AND day = 28 AND month = 7 AND year = 2021;
-    -- NOTES: Humphrey Street | Theft of the CS50 duck three witnesses who were present at the time – each of their interview transcripts mentions the bakery.
-        -- Notes: Robbery at 10:15 am
+    -- NOTES: ID = 295 Humphrey Street |  Theft of the CS50 duck took place at 10:15am at the Humphrey Street bakery. Interviews were conducted today with three witnesses who were present at the time – each of their interview transcripts mentions the bakery.
+        -- Notes: Robbery at 10:15am
 
 -- 3.- Check the type of info (columns) table interviews had
 SELECT * FROM crime_scene_reports LIMIT 5;
