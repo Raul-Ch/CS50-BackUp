@@ -64,7 +64,6 @@ SELECT * FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND 
 -- 10.- Check the TABLE bank_accounts and get the names from TABLE PEOPLE with the previous information (only withdraws) with the same of day, month and year of the crime on Leggett Street
 SELECT bank_accounts.person_id, people.name, bank_accounts.account_number FROM people INNER JOIN bank_accounts ON people.id = bank_accounts.person_id
 WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw");
-    -- Theres a Total of 8 transactions with the respective account_number
 /*
 +-----------+---------+----------------+
 | person_id |  name   | account_number |
@@ -82,7 +81,7 @@ WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day =
 
 -- 12.- Compare the tables to find a relationship
 SELECT * FROM
-(SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE license_plate = "322W7JE" OR license_plate = "0NTHK55" OR license_plate = "1106N58")) AS Q1
+(SELECT * FROM people WHERE license_plate IN (SELECT * FROM people WHERE license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE license_plate = "322W7JE" OR license_plate = "0NTHK55" OR license_plate = "1106N58" OR license_plate = "L93JTIZ")AS Q1
 INNER JOIN
 (SELECT bank_accounts.person_id, people.name, bank_accounts.account_number FROM people INNER JOIN bank_accounts ON people.id = bank_accounts.person_id WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw")) AS Q2
 ON Q1.id = Q2.person_id;
