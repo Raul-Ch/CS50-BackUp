@@ -49,5 +49,5 @@ SELECT * FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND 
     -- Theres a Total of 8 transactions with the respective account_number
 
 -- 10.- Check the TABLE bank_accounts with the previous information (only withdraws) with the same of day, month and year of the crime on Leggett Street
-SELECT * FROM bank_accounts LIMIT 5;
+SELECT * FROM bank_accounts WHERE account_number IN (SELECT * FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw");
     -- Theres a Total of 8 transactions with the respective account_number
