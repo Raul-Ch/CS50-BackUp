@@ -149,12 +149,12 @@ WITH Q1 AS (
   (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1)
 ),
 Q2 AS (
-  SELECT * FROM
+  SELECT caller.name AS caller_name, receiver.name AS receiver_name FROM
   (SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) AS calls
   INNER JOIN people AS caller ON calls.caller = caller.phone_number
   INNER JOIN people AS receiver ON calls.receiver = receiver.phone_number
   WHERE (caller.name = "Diana" OR caller.name = "Taylor")
 )
-SELECT * FROM Q1 INNER JOIN Q2 ON Q1.name = Q2.name;
+SELECT Q1.name, Q2.caller_name, Q2.receiver_name FROM Q1 INNER JOIN Q2 ON Q1.name = Q2.caller_name AS "name","THIEF" ,"ACCOMPLICE";
 
--- RESULT 
+-- RESULT
