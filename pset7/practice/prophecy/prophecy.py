@@ -15,7 +15,6 @@ def houses_Table(house, head):
     if not any(h["House"] == house for h in houses):
         houses.append({"House": house, "Head": head})
 
-
 def assignments_Table(student, house):
     assignments.append({"Student": student, "House": house})
 
