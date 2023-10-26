@@ -32,24 +32,40 @@ As the thief was leaving the bakery, they called someone who talked to them for 
 SELECT * FROM bakery_security_logs LIMIT 5;
 
 -- 6.- Check the logs with the same of day, month, year and time of the crime
-SELECT * FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 20 AND activity = "exit";
-    -- Notes: There are 2 plates within the 10 minutes mark at 10:23 that exit and one at 10:35 being;
-        -- 322W7JE, 0NTHK55 and 1106N58
-        -- L93JTIZ
+SELECT * FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute BETWEEN 15 AND 25 AND activity = "exit";
+  /*
+    -- Notes: There are 8 plates within the 10 minutes mark betwwn 10:15 and 10:25 being;
++-----+------+-------+-----+------+--------+----------+---------------+
+| id  | year | month | day | hour | minute | activity | license_plate |
++-----+------+-------+-----+------+--------+----------+---------------+
+| 260 | 2021 | 7     | 28  | 10   | 16     | exit     | 5P2BI95       |
+| 261 | 2021 | 7     | 28  | 10   | 18     | exit     | 94KL13X       |
+| 262 | 2021 | 7     | 28  | 10   | 18     | exit     | 6P58WS2       |
+| 263 | 2021 | 7     | 28  | 10   | 19     | exit     | 4328GD8       |
+| 264 | 2021 | 7     | 28  | 10   | 20     | exit     | G412CB7       |
+| 265 | 2021 | 7     | 28  | 10   | 21     | exit     | L93JTIZ       |
+| 266 | 2021 | 7     | 28  | 10   | 23     | exit     | 322W7JE       |
+| 267 | 2021 | 7     | 28  | 10   | 23     | exit     | 0NTHK55       |
++-----+------+-------+-----+------+--------+----------+---------------+
+*/
 
 -- CAR FOOTAGE
 -- 7.- Check the people table with the plates given
 SELECT * FROM people WHERE license_plate IN
-(SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 20 AND activity = "exit");
+(SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute BETWEEN 15 AND 25 AND activity = "exit");
 /*
-+--------+--------+----------------+-----------------+---------------+
-|   id   |  name  |  phone_number  | passport_number | license_plate |
-+--------+--------+----------------+-----------------+---------------+
-| 396669 | Iman   | (829) 555-5269 | 7049073643      | L93JTIZ       |
-| 449774 | Taylor | (286) 555-6063 | 1988161715      | 1106N58       |
-| 514354 | Diana  | (770) 555-1861 | 3592750733      | 322W7JE       |
-| 560886 | Kelsey | (499) 555-9472 | 8294398571      | 0NTHK55       |
-+--------+--------+----------------+-----------------+---------------+
++--------+---------+----------------+-----------------+---------------+
+|   id   |  name   |  phone_number  | passport_number | license_plate |
++--------+---------+----------------+-----------------+---------------+
+| 221103 | Vanessa | (725) 555-4692 | 2963008352      | 5P2BI95       |
+| 243696 | Barry   | (301) 555-4174 | 7526138472      | 6P58WS2       |
+| 396669 | Iman    | (829) 555-5269 | 7049073643      | L93JTIZ       |
+| 398010 | Sofia   | (130) 555-0289 | 1695452385      | G412CB7       |
+| 467400 | Luca    | (389) 555-5198 | 8496433585      | 4328GD8       |
+| 514354 | Diana   | (770) 555-1861 | 3592750733      | 322W7JE       |
+| 560886 | Kelsey  | (499) 555-9472 | 8294398571      | 0NTHK55       |
+| 686048 | Bruce   | (367) 555-5533 | 5773159633      | 94KL13X       |
++--------+---------+----------------+-----------------+---------------+
 */
 
 -- 8.- Check the type of info (columns) table atm_transactions had
@@ -81,21 +97,21 @@ WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day =
 -- 12.- Compare the tables to find a relationship
 SELECT * FROM
 (SELECT * FROM people WHERE license_plate IN
-(SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 20 AND activity = "exit")) AS Q1
+(SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute BETWEEN 15 AND 25 AND activity = "exit")) AS Q1
 INNER JOIN
 (SELECT bank_accounts.person_id, people.name, bank_accounts.account_number FROM people INNER JOIN bank_accounts ON people.id = bank_accounts.person_id WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE day = 28 AND month = 7 AND year = 2021 AND atm_location = "Leggett Street" AND transaction_type = "withdraw")) AS Q2
 ON Q1.id = Q2.person_id;
-/*
-+--------+--------+----------------+-----------------+---------------+-----------+--------+----------------+
-|   id   |  name  |  phone_number  | passport_number | license_plate | person_id |  name  | account_number |
-+--------+--------+----------------+-----------------+---------------+-----------+--------+----------------+
-| 514354 | Diana  | (770) 555-1861 | 3592750733      | 322W7JE       | 514354    | Diana  | 26013199       |
-| 396669 | Iman   | (829) 555-5269 | 7049073643      | L93JTIZ       | 396669    | Iman   | 25506511       |
-| 449774 | Taylor | (286) 555-6063 | 1988161715      | 1106N58       | 449774    | Taylor | 76054385       |
-+--------+--------+----------------+-----------------+---------------+-----------+--------+----------------+
-*/ -- NOTES: Diana and Taylor as suspects
+/* This should return a list of people who were both at the bakery parking lot during the specified time and made a withdrawal at the ATM on Leggett Street on the same day.
++--------+-------+----------------+-----------------+---------------+-----------+-------+----------------+
+|   id   | name  |  phone_number  | passport_number | license_plate | person_id | name  | account_number |
++--------+-------+----------------+-----------------+---------------+-----------+-------+----------------+
+| 686048 | Bruce | (367) 555-5533 | 5773159633      | 94KL13X       | 686048    | Bruce | 49610011       |
+| 514354 | Diana | (770) 555-1861 | 3592750733      | 322W7JE       | 514354    | Diana | 26013199       |
+| 396669 | Iman  | (829) 555-5269 | 7049073643      | L93JTIZ       | 396669    | Iman  | 25506511       |
+| 467400 | Luca  | (389) 555-5198 | 8496433585      | 4328GD8       | 467400    | Luca  | 28500762       |
++--------+-------+----------------+-----------------+---------------+-----------+-------+----------------+
+*/ -- NOTES: Brice, Diana, Iman and Luca as suspects
             --NOTES FROM INTERVIEWS: Car - Footage from the bakery 10 minutes of the thieft = 10:25
--- Diana is the principal suspect, beacause taylor plate was registeres at 10:35 more than minutes after the robbery
 
 -- 13.- Check the phone Calls on the same day of the robbery
 SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 61;
@@ -109,7 +125,7 @@ SELECT * FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE
 -- 14.- Compare last querie with suspects
 WITH Q1 AS (
   SELECT * FROM people WHERE license_plate IN
-  (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute > 20 AND activity = "exit")
+  (SELECT license_plate FROM bakery_security_logs WHERE day = 28 AND month = 7 AND year = 2021 AND hour = 10 AND minute BETWEEN 15 AND 25 AND activity = "exit")
 ),
 Q2 AS (
   SELECT bank_accounts.person_id, people.name, bank_accounts.account_number FROM people
@@ -123,12 +139,12 @@ INNER JOIN Q1 ON people.id = Q1.id
 INNER JOIN Q2 ON people.id = Q2.person_id
 WHERE phone_calls.day = 28 AND phone_calls.month = 7 AND phone_calls.year = 2021 and phone_calls.duration < 61;
 /*
-+-----+----------------+----------------+------+-------+-----+----------+--------+--------+----------------+-----------------+---------------+
-| id  |     caller     |    receiver    | year | month | day | duration |   id   |  name  |  phone_number  | passport_number | license_plate |
-+-----+----------------+----------------+------+-------+-----+----------+--------+--------+----------------+-----------------+---------------+
-| 254 | (286) 555-6063 | (676) 555-6554 | 2021 | 7     | 28  | 43       | 449774 | Taylor | (286) 555-6063 | 1988161715      | 1106N58       |
-| 255 | (770) 555-1861 | (725) 555-3243 | 2021 | 7     | 28  | 49       | 514354 | Diana  | (770) 555-1861 | 3592750733      | 322W7JE       |
-+-----+----------------+----------------+------+-------+-----+----------+--------+--------+----------------+-----------------+---------------+
++----------------+----------------+--------+-------+----------------+-----------------+---------------+
+|     caller     |    receiver    |   id   | name  |  phone_number  | passport_number | license_plate |
++----------------+----------------+--------+-------+----------------+-----------------+---------------+
+| (367) 555-5533 | (375) 555-8161 | 686048 | Bruce | (367) 555-5533 | 5773159633      | 94KL13X       |
+| (770) 555-1861 | (725) 555-3243 | 514354 | Diana | (770) 555-1861 | 3592750733      | 322W7JE       |
++----------------+----------------+--------+-------+----------------+-----------------+---------------+
 */
 
 -- 15.- See the call recieviers
@@ -136,9 +152,9 @@ SELECT * FROM
 (SELECT caller, receiver FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) AS calls
 INNER JOIN people AS caller ON calls.caller = caller.phone_number
 INNER JOIN people AS receiver ON calls.receiver = receiver.phone_number
-WHERE (caller.name = "Diana" OR caller.name = "Taylor");
--- NOTES SUSPECT: THIEF: Taylor , ACCOMPLICE: James
--- REAL LIKE: THIEF: Diana , ACCOMPLICE: Philip
+WHERE (caller.name = "Bruce" OR caller.name = "Diana");
+-- NOTES SUSPECT: THIEF: Diana , ACCOMPLICE: Philip
+-- REAL LIKE: THIEF: Bruce , ACCOMPLICE: Robin
 
 -- 16.- CHECK Airports
 SELECT * FROM airports WHERE city = "Fiftyville";
@@ -156,8 +172,10 @@ SELECT * FROM airports WHERE id = 4;
 SELECT * FROM airports WHERE id IN
 (SELECT destination_airport_id FROM flights WHERE origin_airport_id IN
 (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1);
+-- Leaving from fiftyville: 8
+-- To: 4 = LGA = LaGuardia Airport = New York City
 
--- 19.- Passports of assengers on fligth
+-- 19.- Passports of passengers on fligth
 SELECT passport_number FROM passengers WHERE flight_id IN
 (SELECT destination_airport_id FROM flights WHERE origin_airport_id IN
 (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1);
@@ -169,8 +187,22 @@ INNER JOIN people ON passengers.passport_number = people.passport_number
 WHERE flight_id IN
 (SELECT id FROM flights WHERE origin_airport_id IN
 (SELECT id FROM airports WHERE city = "Fiftyville") AND day = 29 AND month = 7 AND year = 2021 ORDER BY month, day, hour, minute LIMIT 1);
+/*
++-----------------+--------+
+| passport_number |  name  |
++-----------------+--------+
+| 7214083635      | Doris  |
+| 1695452385      | Sofia  |
+| 5773159633      | Bruce  |
+| 1540955065      | Edward |
+| 8294398571      | Kelsey |
+| 1988161715      | Taylor |
+| 9878712108      | Kenny  |
+| 8496433585      | Luca   |
++-----------------+--------+
+*/
 
--- 20.- FINAL RESULTS
+-- 20.- FINAL RESULTS - Merging passengers with the calls and get their partners in crime
 WITH Q1 AS (
   SELECT passengers.passport_number, people.name FROM passengers
   INNER JOIN flights ON passengers.flight_id = flights.id
@@ -184,13 +216,15 @@ Q2 AS (
   (SELECT * FROM phone_calls WHERE day = 28 AND month = 7 AND year = 2021 and duration < 60) AS calls
   INNER JOIN people AS caller ON calls.caller = caller.phone_number
   INNER JOIN people AS receiver ON calls.receiver = receiver.phone_number
-  WHERE (caller.name = "Diana" OR caller.name = "Taylor")
+  WHERE (caller.name = "Bruce" OR caller.name = "Diana")
 )
 SELECT Q1.name, Q2.caller_name AS thief, Q2.receiver_name AS accomplice FROM Q1 INNER JOIN Q2 ON Q1.name = Q2.caller_name;
 
 -- RESULT
 /*
-THIEF: Taylor
-CITY: New York City
-ACCOMPLIE: James
++-------+-------+------------+
+| name  | thief | accomplice |
++-------+-------+------------+
+| Bruce | Bruce | Robin      |
++-------+-------+------------+
 */
