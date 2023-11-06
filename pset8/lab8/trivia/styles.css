@@ -37,7 +37,8 @@ h1 {
     font-size: 48px;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
     border-radius: 0.25rem;
@@ -59,4 +60,83 @@ input[type="text"] {
 input[type="text"]:hover {
     background-color: #f5f5f5;
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.buttoncontainer {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/*Button Types*/
+.button1 {
+    display: inline-block;
+}
+
+.button1:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.buttonCA {
+    display: inline-block;
+}
+
+.buttonCA:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+/*Button Behaviour*/
+.button1.correct {
+    background-color: green;
+    color: white;
+}
+
+.button1.incorrect {
+    background-color: red;
+    color: white;
+}
+
+
+/* Add your styles for correct and incorrect feedback */
+#feedback {
+    font-size: 18px;
+}
+
+.correct-feedback {
+    color: green;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+}
+
+.incorrect-feedback {
+    color: red;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+}
+
+/* Add your styles for correct and incorrect Input */
+.correct-input {
+    border: 2px solid green;
+}
+
+.incorrect-input {
+    border: 2px solid red;
+}
+
+.correct-feedback {
+    color: green;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+.incorrect-feedback {
+    color: red;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
 }

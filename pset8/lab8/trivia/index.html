@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
-        <script>
-            // TODO: Add code to check answers to questions
-        </script>
+        <script defer src="script.js"></script>
+        <meta charset="UTF-8"/><meta>
     </head>
+
     <body>
         <div class="header">
             <h1>Trivia!</h1>
@@ -19,13 +20,29 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
+                <h3>How many years does a domestic bunny live?</h3>
+                </hr>
+                <link rel="stylesheet" type="text/css" href="styles.css">
+                <div class="buttoncontainer">
+                    <button class="button1" onclick="checkAnswer(false)">+12 years</button>
+                    <button class="button1" onclick="checkAnswer(false)">5 - 8 years</button>
+                    <button class="button1" onclick="checkAnswer(true)">8 - 12 years</button>
+                    <button class="button1" onclick="checkAnswer(false)">Less than 6 years</button>
+                </div>
+                <div id="feedback"></div>
             </div>
 
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
+                <h3>What's the name of the most famous rabbit from the Looney Tunes?</h3>
+                </hr>
                 <!-- TODO: Add free response question here -->
+                <input id="freeResponse" type="text" name="Answer" />
+                <button class="buttonCA" onclick="checkFreeResponse()">Check Answer</button>
+                <div id="freeResponseFeedback"></div>
             </div>
         </div>
     </body>
+
 </html>
