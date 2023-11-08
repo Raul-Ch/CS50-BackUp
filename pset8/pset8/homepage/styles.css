@@ -1,0 +1,120 @@
+.home-page {
+    background-color: #8f4d4d;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .home-page .div {
+    background-color: #8f4d4d;
+    width: 1732px;
+    height: 1547px;
+    position: relative;
+  }
+
+  .home-page .head {
+    position: absolute;
+    width: 1732px;
+    height: 343px;
+    top: -13px;
+    left: 0;
+  }
+
+  .home-page .overlap-group {
+    position: relative;
+    height: 330px;
+    top: 13px;
+  }
+
+  .home-page .header-background {
+    position: absolute;
+    width: 1732px;
+    height: 272px;
+    top: 58px;
+    left: 0;
+  }
+
+  .home-page .back-mountain-rigth {
+    width: 815px;
+    height: 264px;
+    top: 8px;
+    left: 917px;
+    position: absolute;
+    mix-blend-mode: darken;
+  }
+
+  .home-page .back-mountain-left {
+    width: 348px;
+    height: 272px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    mix-blend-mode: darken;
+  }
+
+  .home-page .header-mayan {
+    position: absolute;
+    width: 755px;
+    height: 277px;
+    top: 0;
+    left: 482px;
+  }
+
+  .home-page .header-main-mountain {
+    position: absolute;
+    width: 1437px;
+    height: 321px;
+    top: 9px;
+    left: 0;
+  }
+
+  .home-page .header-bunny-moon {
+    position: absolute;
+    width: 298px;
+    height: 270px;
+    top: 34px;
+    left: 707px;
+  }
+
+  .home-page .menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1731px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 7px 0px;
+    position: absolute;
+    top: 330px;
+    left: 0;
+  }
+
+  .home-page .menu-bar {
+    position: relative;
+    width: 678px;
+    height: 31px;
+    mix-blend-mode: color-burn;
+    object-fit: cover;
+  }
+
+  .home-page .menu-moon {
+    position: relative;
+    width: 361px;
+    height: 62px;
+    mix-blend-mode: darken;
+    object-fit: cover;
+  }
+
+  .home-page .title-menu {
+    position: relative;
+    width: 150px;
+    height: 39px;
+    -webkit-text-stroke: 0.5px #000000;
+    font-family: "Slackside One-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
