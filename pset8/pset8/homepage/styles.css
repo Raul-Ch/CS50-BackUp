@@ -1,15 +1,46 @@
 .home-page {
   background-color: #883d3d;
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  width: 100%;
 }
 
 .home-page .head-wrapper {
-  width: 100%; /* Adjust width as needed */
+  background-color: #883d3d;
+  overflow: hidden;
+  width: 1920px;
+  height: 1080px;
 }
 
-.head {
-  width: 100%; /* Take the full width of its container */
-  height: auto; /* Maintain aspect ratio */
-  display: block;
+.home-page .head {
+  position: relative;
+  width: 2105px;
+  height: 357px;
+  top: -11px;
+  left: -108px;
+}
+
+.home-page .overlap-group {
+  position: relative;
+  width: 1920px;
+  height: 346px;
+  top: 11px;
+  left: 108px;
+}
+
+.home-page .header-bunny-moon {
+  position: absolute;
+  width: 299px;
+  height: 270px;
+  top: 50px;
+  left: 821px;
+}
+
+.home-page .header-mountains {
+  position: absolute;
+  width: 1920px;
+  height: 346px;
+  top: 0;
+  left: 0;
 }
