@@ -9,9 +9,6 @@
         font-family: 'Slackside One Regular';
         font-weight: 400;
         color: #000000;
-        font-size: 50px;
+        font-size: 50px !important;
 }
 
-.navbar{
-    --bs-navbar-brand-font-size: 2rem;
-}
