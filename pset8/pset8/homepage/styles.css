@@ -3,28 +3,26 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  width: auto;
   overflow: hidden; /* Add overflow: hidden to contain the absolute positioned elements */
 }
 
 .home-page .head-wrapper {
   background-color: #883d3d;
-  width: 100%; /* Change fixed width to 100% */
-  max-width: 1920px; /* Add max-width to maintain original width up to 1920px */
-  height: auto; /* Change height to auto */
+  width: auto;
+  height: auto;
   position: relative;
 }
 
 .home-page .head {
-  width: 100%; /* Change fixed width to 100% */
-  max-width: 1920px; /* Add max-width to maintain original width up to 1920px */
+  width: auto; /* Change fixed width to 100% */
   height: auto; /* Change height to auto */
   top: 0;
   left: 0;
 }
 
 .head {
-  width: 100%;
+  width: auto;
   height: auto;
   display: block;
 }
