@@ -16,7 +16,6 @@
 }
 
 .home-page .head {
-  position: absolute;
   width: 100%; /* Change fixed width to 100% */
   max-width: 1920px; /* Add max-width to maintain original width up to 1920px */
   height: auto; /* Change height to auto */
