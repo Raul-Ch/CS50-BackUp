@@ -1,46 +1,16 @@
-.home-page {
-  background-color: #883d3d;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.header {
   width: 100%;
+  background-color: #f0f0f0; /* Set a background color for the header */
+  display: flex;
+  justify-content: center;
 }
 
-.home-page .head-wrapper {
-  background-color: #883d3d;
-  overflow: hidden;
-  width: 1920px;
-  height: 1080px;
-}
-
-.home-page .head {
-  position: relative;
-  width: 2105px;
-  height: 357px;
-  top: -11px;
-  left: -108px;
-}
-
-.home-page .overlap-group {
-  position: relative;
-  width: 1920px;
-  height: 346px;
-  top: 11px;
-  left: 108px;
-}
-
-.home-page .header-bunny-moon {
-  position: absolute;
-  width: 299px;
-  height: 270px;
-  top: 50px;
-  left: 821px;
-}
-
-.home-page .header-mountains {
-  position: absolute;
-  width: 1920px;
-  height: 346px;
-  top: 0;
-  left: 0;
+.header-svg {
+  width: 100%;
+  height: auto;
 }
