@@ -11,3 +11,7 @@
         color: #000000;
         font-size: 50px;
 }
+
+.navbar{
+    --bs-navbar-brand-font-size: 2rem;
+}
