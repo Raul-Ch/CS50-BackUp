@@ -4,25 +4,28 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  overflow: hidden; /* Add overflow: hidden to contain the absolute positioned elements */
 }
 
 .home-page .head-wrapper {
   background-color: #883d3d;
-  width: 1920px;
-  height: 1080px;
+  width: 100%; /* Change fixed width to 100% */
+  max-width: 1920px; /* Add max-width to maintain original width up to 1920px */
+  height: auto; /* Change height to auto */
   position: relative;
 }
 
 .home-page .head {
   position: absolute;
-  width: 1920px;
-  height: 346px;
+  width: 100%; /* Change fixed width to 100% */
+  max-width: 1920px; /* Add max-width to maintain original width up to 1920px */
+  height: auto; /* Change height to auto */
   top: 0;
   left: 0;
 }
 
 .head {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
