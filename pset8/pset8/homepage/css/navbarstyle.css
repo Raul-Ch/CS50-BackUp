@@ -1,6 +1,13 @@
+@font-face {
+    font-family: 'Slackside One Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Slackside One Regular'), url('SlacksideOne-Regular.woff') format('woff');
+    }
+
 .navbar-brand
 {
-        font-family: "Noto Sans Linear B", Helvetica;
+        font-family: 'Slackside One Regular';
         font-weight: 400;
         color: #000000;
         font-size: 50px;
