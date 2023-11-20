@@ -10,5 +10,6 @@
         font-weight: 400;
         color: #000000;
         font-size: 50px !important;
+        margin: 0;
+        float: none;
 }
-
