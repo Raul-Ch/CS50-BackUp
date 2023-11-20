@@ -3,21 +3,31 @@
     font-style: normal;
     font-weight: normal;
     src: local('Slackside One Regular'), url('SlacksideOne-Regular.woff') format('woff');
-    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    /* Vertical alignment */
+    justify-content: center;
+    /* Horizontal alignment */
+    height: 100vh;
+    /* Set the height to 100% of the viewport height */
+}
 
 h1 {
-    font-family: 'Slackside One Regular'!important;
+    font-family: 'Slackside One Regular' !important;
     font-weight: 400;
     color: #000000;
     font-size: 300% !important;
     margin: 0;
 }
 
-.navbar-brand{
-        font-family: 'Slackside One Regular';
-        font-weight: 400;
-        color: #000000;
-        font-size: 50px !important;
-        margin: 0;
-        float: none;
+.navbar-brand {
+    font-family: 'Slackside One Regular';
+    font-weight: 400;
+    color: #000000;
+    font-size: 50px !important;
+    margin: 0;
+    float: none;
 }
