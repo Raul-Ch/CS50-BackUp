@@ -5,6 +5,15 @@
     src: local('Slackside One Regular'), url('SlacksideOne-Regular.woff') format('woff');
     }
 
+.h1 {
+    font-family: 'Slackside One Regular'!important;
+    font-weight: 400;
+    color: #000000;
+    font-size: 100px !important;
+    margin: 0;
+    float: none;
+}
+
 .navbar-brand{
         font-family: 'Slackside One Regular';
         font-weight: 400;
