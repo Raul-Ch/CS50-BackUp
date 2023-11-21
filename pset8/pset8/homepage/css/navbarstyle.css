@@ -25,3 +25,8 @@ h1 {
     margin: 0;
     float: none;
 }
+
+.nav-item{
+    font-family: 'Slackside One Regular';
+    font-size: 50px !important;
+}
