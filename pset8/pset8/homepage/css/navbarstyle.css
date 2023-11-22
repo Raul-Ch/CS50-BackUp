@@ -9,14 +9,14 @@
     font-family: 'QuickAsABunny';
     font-style: normal;
     font-weight: normal;
-    src: local('QuickAsABunny'), url('/fonts/QuickAsABunny.ttf') format('ttf');
+    src: local('QuickAsABunny'), url('/fonts/QuickAsABunny.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'BunnyStory';
     font-style: normal;
     font-weight: normal;
-    src: local('BunnyStory'), url('/fonts/BunnyStory.ttf') format('ttf');
+    src: local('BunnyStory'), url('/fonts/BunnyStory.ttf') format('truetype');
 }
 
 .container {
