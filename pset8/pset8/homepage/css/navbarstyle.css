@@ -5,8 +5,8 @@
 }
 
 h1 {
-    font-family: 'Bunny' !important;
-    font-weight: 400;
+    font-family: 'QuickAsABunny' !important;
+    font-weight: 150%;
     color: #000000;
     font-size: 400% !important;
     margin: 0;
@@ -23,5 +23,5 @@ h1 {
 
 .nav-item {
     font-family: 'Bunny', sans-serif;
-    font-size: 200% !important;
+    font-size: 150% !important;
 }
