@@ -2,21 +2,21 @@
     font-family: 'Slackside One Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Slackside One Regular'), url('/fonts/SlacksideOne-Regular.woff') format('woff');
+    src: local('Slackside One Regular'), url('SlacksideOne-Regular.woff') format('woff');
 }
 
 @font-face {
     font-family: 'QuickAsABunny';
     font-style: normal;
     font-weight: normal;
-    src: local('QuickAsABunny'), url('/fonts/QuickAsABunny.ttf') format('truetype');
+    src: local('QuickAsABunny'), url('QuickAsABunny.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'BunnyStory';
     font-style: normal;
     font-weight: normal;
-    src: local('BunnyStory'), url('/fonts/BunnyStory.ttf') format('truetype');
+    src: local('BunnyStory'), url('BunnyStory.ttf') format('truetype');
 }
 
 
@@ -24,5 +24,5 @@
     font-family: 'Bunny';
     font-style: normal;
     font-weight: normal;
-    src: local('Bunny'), url('/fonts/Bunny.otf') format('opentype');
+    src: local('Bunny'), url('Bunny.otf') format('opentype');
 }
