@@ -31,19 +31,19 @@
     font-family: 'BunnyHopper';
     font-style: normal;
     font-weight: normal;
-    src: local('BunnyHopper'), url('BunnyHopper.otf') format('truetype');
+    src: local('BunnyHopper'), url('BunnyHopper.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'BunnyHopperEar';
     font-style: normal;
     font-weight: normal;
-    src: local('BunnyHopperEar'), url('BunnyHopperEar.otf') format('truetype');
+    src: local('BunnyHopperEar'), url('BunnyHopperEar.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'HannieBunny';
     font-style: normal;
     font-weight: normal;
-    src: local('HannieBunny'), url('HannieBunny.otf') format('truetype');
+    src: local('HannieBunny'), url('HannieBunny.ttf') format('truetype');
 }

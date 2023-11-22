@@ -5,7 +5,7 @@
 }
 
 h1 {
-    font-family: 'BunnyHopper' !important;
+    font-family: 'HannieBunny' !important;
     font-weight: 150%;
     color: #000000;
     font-size: 400% !important;
@@ -22,6 +22,6 @@ h1 {
 }
 
 .nav-item {
-    font-family: 'BunnyHopper', sans-serif;
+    font-family: 'HannieBunny', sans-serif;
     font-size: 200% !important;
 }
