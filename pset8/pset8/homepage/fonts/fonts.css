@@ -26,3 +26,24 @@
     font-weight: normal;
     src: local('Bunny'), url('Bunny.otf') format('opentype');
 }
+
+@font-face {
+    font-family: 'BunnyHopper';
+    font-style: normal;
+    font-weight: normal;
+    src: local('BunnyHopper'), url('BunnyHopper.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BunnyHopperEar';
+    font-style: normal;
+    font-weight: normal;
+    src: local('BunnyHopperEar'), url('BunnyHopperEar.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HannieBunny';
+    font-style: normal;
+    font-weight: normal;
+    src: local('HannieBunny'), url('HannieBunny.otf') format('truetype');
+}
