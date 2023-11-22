@@ -2,7 +2,7 @@
     font-family: 'Slackside One Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Slackside One Regular'), url('SlacksideOne-Regular.woff') format('woff');
+    src: local('Slackside One Regular'), url('../fonts/SlacksideOne-Regular.woff') format('woff');
 }
 
 
@@ -10,7 +10,7 @@
     font-family: 'QuickAsABunny';
     font-style: normal;
     font-weight: normal;
-    src: local('QuickAsABunny'), url('QuickAsABunny.ttf') format('ttf');
+    src: local('QuickAsABunny'), url('/fonts/QuickAsABunny.ttf') format('ttf');
 }
 
 
@@ -18,7 +18,7 @@
     font-family: 'BunnyStory';
     font-style: normal;
     font-weight: normal;
-    src: local('BunnyStory'), url('BunnyStory.ttf') format('ttf');
+    src: local('BunnyStory'), url('fonts/BunnyStory.ttf') format('ttf');
 }
 
 
@@ -27,7 +27,7 @@
 }
 
 h1 {
-    font-family: 'QuickAsABunny' !important;
+    font-family: 'QuickAsABunny', sans-serif !important;
     font-weight: 400;
     color: #000000;
     font-size: 300% !important;
@@ -35,7 +35,7 @@ h1 {
 }
 
 .navbar-brand {
-    font-family: 'QuickAsABunny';
+    font-family: 'BunnyStory', sans-serif;
     font-weight: 400;
     color: #000000;
     font-size: 50px !important;
@@ -43,7 +43,7 @@ h1 {
     float: none;
 }
 
-.nav-item{
-    font-family: 'QuickAsABunny';
+.nav-item {
+    font-family: 'QuickAsABunny', sans-serif;
     font-size: 50px !important;
 }
