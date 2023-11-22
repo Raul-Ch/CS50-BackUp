@@ -19,12 +19,20 @@
     src: local('BunnyStory'), url('/fonts/BunnyStory.ttf') format('truetype');
 }
 
+
+@font-face {
+    font-family: 'Bunny';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bunny'), url('/fonts/Bunny.otf') format('opentype');
+}
+
 .container {
     align-items: center;
 }
 
 h1 {
-    font-family: 'BunnyStory' !important;
+    font-family: 'Bunny' !important;
     font-weight: 400;
     color: #000000;
     font-size: 300% !important;
@@ -32,7 +40,7 @@ h1 {
 }
 
 .navbar-brand {
-    font-family: 'BunnyStory', sans-serif;
+    font-family: 'Bunny', sans-serif;
     font-weight: 400;
     color: #000000;
     font-size: 50px !important;
@@ -41,6 +49,6 @@ h1 {
 }
 
 .nav-item {
-    font-family: 'BunnyStory', sans-serif;
+    font-family: 'Bunny', sans-serif;
     font-size: 120% !important;
 }
