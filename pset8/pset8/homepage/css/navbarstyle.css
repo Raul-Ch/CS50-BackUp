@@ -1,31 +1,4 @@
-@font-face {
-    font-family: 'Slackside One Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Slackside One Regular'), url('/fonts/SlacksideOne-Regular.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'QuickAsABunny';
-    font-style: normal;
-    font-weight: normal;
-    src: local('QuickAsABunny'), url('/fonts/QuickAsABunny.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'BunnyStory';
-    font-style: normal;
-    font-weight: normal;
-    src: local('BunnyStory'), url('/fonts/BunnyStory.ttf') format('truetype');
-}
-
-
-@font-face {
-    font-family: 'Bunny';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Bunny'), url('/fonts/Bunny.otf') format('opentype');
-}
+@import url('fonts/fonts.css');
 
 .container {
     align-items: center;
