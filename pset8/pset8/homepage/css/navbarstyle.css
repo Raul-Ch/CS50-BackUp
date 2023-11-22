@@ -8,7 +8,7 @@ h1 {
     font-family: 'Bunny' !important;
     font-weight: 400;
     color: #000000;
-    font-size: 300% !important;
+    font-size: 400% !important;
     margin: 0;
 }
 
@@ -23,5 +23,5 @@ h1 {
 
 .nav-item {
     font-family: 'Bunny', sans-serif;
-    font-size: 120% !important;
+    font-size: 200% !important;
 }
