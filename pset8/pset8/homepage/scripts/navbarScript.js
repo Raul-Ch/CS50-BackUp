@@ -3,7 +3,7 @@ function loadNavbar() {
     // Fetch the container element
     var container = document.getElementById('navbar-container');
 
-    fetch('../navbar.html')
+    fetch('/homepage/navbar.html')
       .then(response => response.text())
       .then(data => {
         container.innerHTML = data;
