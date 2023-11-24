@@ -1,13 +1,13 @@
 // Use a function to load the navigation bar into the specified container
-function loadNavbar() {
+function loadHeader() {
     // Fetch the container element
-    var container = document.getElementById('navbar-container');
+    var container = document.getElementById('header');
 
-    fetch('../navbar.html')  // Adjust the path to go up one level to the root directory
+    fetch('../header.html')  // Adjust the path to go up one level to the root directory
       .then(response => response.text())
       .then(data => {
         container.innerHTML = data;
       });
   }
 
-  document.addEventListener('DOMContentLoaded', loadNavbar);
+  document.addEventListener('DOMContentLoaded', loadHeader);
