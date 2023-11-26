@@ -9,10 +9,8 @@
             lines.shift();
 
             // Parse each line into a quote and an author
-            const quotes = lines.map(line => {
-                const [quote, author] = line.split(',');
-                return { quote: quote.trim(), author: author.trim() };
-            });
+            const [quote, author] = line.split(',');
+            return { quote: quote.trim().replace(/"/g, ''), author: author.trim().replace(/"/g, '') };
 
             // Function to display a random quote
             function getRandomQuote() {
