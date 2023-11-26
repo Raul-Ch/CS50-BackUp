@@ -16,11 +16,8 @@ fetch('../text/DailyBunnyQuote.csv')
         }
 
         // Parse each line into a quote and an author
-        const quotes = lines.filter(line => line.trim() !== '').map(line => {
-            const [quote, author] = line.split(',');
-            return { quote: quote.trim().replace(/"/g, ''), author: author.trim().replace(/"/g, '') };
-        });
-
+        const [quote, author] = line.split('|');
+        
         // Function to display a random quote
         function getRandomQuote() {
             // Get a random index
