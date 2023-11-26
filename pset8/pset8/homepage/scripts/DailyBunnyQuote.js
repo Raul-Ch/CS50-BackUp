@@ -8,7 +8,10 @@ fetch('../text/DailyBunnyQuote.csv')
     })
     .then(data => {
         // Split the CSV string into an array of lines
-        const lines = data.split('\n');
+        let lines = data.split('\n');
+        if (lines[lines.length - 1] === '') {
+            lines.pop();
+        }
 
         // Remove the header line (if present)
         if (lines.length > 0) {
@@ -30,7 +33,7 @@ fetch('../text/DailyBunnyQuote.csv')
             const randomQuote = quotes[randomIndex];
 
             // Display the quote and author on the webpage
-            document.getElementById('quote').textContent = randomQuote.quote;
+            document.getElementById('quote').textContent = `"${randomQuote.quote}"`;
             document.getElementById('author').textContent = `${randomQuote.author}`;
         }
 
