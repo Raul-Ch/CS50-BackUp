@@ -11,6 +11,9 @@
             // Parse each line into a quote and an author
             const quotes = lines.map(line => {
                 const [quote, author] = line.split(',');
+                if (!quote || !author) {
+                    console.log(`Issue with line: ${line}`);
+                }
                 return { quote: quote.trim().replace(/"/g, ''), author: author.trim().replace(/"/g, '') };
             });
 
