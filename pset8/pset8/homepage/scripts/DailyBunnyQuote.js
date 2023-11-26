@@ -31,7 +31,7 @@ fetch('../text/DailyBunnyQuote.csv')
             console.log(randomQuote);
             // Display the quote and author on the webpage
             document.getElementById('quote').textContent = randomQuote.quote;
-            document.getElementById('author').textContent = `- ${randomQuote.author}`;
+            document.getElementById('author').textContent = `${randomQuote.author}`;
         }
         // Initial display
         getRandomQuote();
