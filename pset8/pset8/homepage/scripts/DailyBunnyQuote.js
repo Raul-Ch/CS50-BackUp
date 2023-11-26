@@ -16,8 +16,11 @@ fetch('../text/DailyBunnyQuote.csv')
         }
 
         // Parse each line into a quote and an author
-        const [quote, author] = line.split('|');
-        
+        const quotes = lines.map(line => {
+            const [quote, author] = line.split('|');
+            return { quote: quote.trim().replace(/"/g, ''), author: author.trim().replace(/"/g, '') };
+        });
+
         // Function to display a random quote
         function getRandomQuote() {
             // Get a random index
@@ -25,11 +28,12 @@ fetch('../text/DailyBunnyQuote.csv')
 
             // Get the random quote and author
             const randomQuote = quotes[randomIndex];
-            console.log(randomQuote);
+
             // Display the quote and author on the webpage
             document.getElementById('quote').textContent = randomQuote.quote;
             document.getElementById('author').textContent = `${randomQuote.author}`;
         }
+
         // Initial display
         getRandomQuote();
     })
