@@ -1,6 +1,9 @@
 .card-img {
     position: relative;
     opacity: 0.5;
+    object-fit: cover; /* or 'contain' depending on your needs */
+    width: 100%;
+    height: 100%;
 }
 
 .blockquote {
