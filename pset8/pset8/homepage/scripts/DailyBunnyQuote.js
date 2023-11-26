@@ -16,11 +16,8 @@ fetch('../text/DailyBunnyQuote.csv')
         }
 
         // Parse each line into a quote and an author
-        const quotes = lines.map(line => {
+        const quotes = lines.filter(line => line.trim() !== '').map(line => {
             const [quote, author] = line.split(',');
-            if (!quote || !author) {
-                return { quote: "Default quote", author: "Default author" };
-            }
             return { quote: quote.trim().replace(/"/g, ''), author: author.trim().replace(/"/g, '') };
         });
 
