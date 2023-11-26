@@ -1,5 +1,5 @@
 // Fetch the CSV file using the Fetch API
-    fetch('yourfile.csv')
+    fetch('../text/DailyBunnyQuote.csv')
         .then(response => response.text())
         .then(data => {
             // Split the CSV string into an array of lines
