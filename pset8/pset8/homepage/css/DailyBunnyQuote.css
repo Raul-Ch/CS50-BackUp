@@ -47,7 +47,7 @@
 /* For small screens (phones) */
 @media (max-width: 767px) {
     #quote, #author, .blockquote-footer {
-        font-size: 2vw;  /* Adjust font size for smaller screens */
+        font-size: 5vw;  /* Adjust font size for smaller screens */
     }
 }
 
