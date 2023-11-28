@@ -39,3 +39,16 @@
     margin: 0;
 }
 
+/* For small screens (phones) */
+@media (max-width: 767px) {
+    #quote, #author, .blockquote-footer {
+        font-size: 150%; /* Adjust font size for smaller screens */
+    }
+}
+
+/* For medium and large screens (tablets and desktops) */
+@media (min-width: 768px) {
+    #quote, #author, .blockquote-footer {
+        font-size: 200%; /* Default font size for medium and large screens */
+    }
+}
