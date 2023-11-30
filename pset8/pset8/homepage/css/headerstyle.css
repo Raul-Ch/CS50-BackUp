@@ -20,3 +20,8 @@ h1,
   width: 100%;
   height: auto;
 }
+
+.Title{
+  position: relative;
+  bottom: -10%;
+}
