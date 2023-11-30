@@ -8,6 +8,10 @@ footer {
     padding: 5px;
 }
 
+#row-container{
+    padding: 7px;
+}
+
 #Footer {
     font-family: 'HannieBunny' !important;
     font-weight: 150%;
