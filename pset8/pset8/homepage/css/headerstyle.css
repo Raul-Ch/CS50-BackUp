@@ -3,6 +3,14 @@ body, html {
   margin: 0;
 }
 
+
+h1,
+.head-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+
 .header {
   width: 100%;
   background-color: transparent; /* Set a background color for the header */
