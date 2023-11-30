@@ -13,7 +13,7 @@ footer {
 #Footer {
     font-family: 'HannieBunny' !important;
     font-weight: 150%;
-    color: #000000;
+    color: #FFFFFF;
     font-size: 150% !important;
     margin: 0;
 }
@@ -26,6 +26,9 @@ footer {
     text-align: center;
     margin: 0;
 }
+    #Author a {
+        color: #FFFFFF;
+    }
 
 .social_media img{
     width: 20px; /* adjust as needed */
