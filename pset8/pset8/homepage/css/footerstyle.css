@@ -30,4 +30,5 @@ footer {
 .social_media img{
     width: 20px; /* adjust as needed */
     height: auto;
+    margin-right: 15px;
 }
