@@ -27,7 +27,7 @@ footer {
     margin: 0;
 }
 
-.social_media{
-    width: 1px; /* adjust as needed */
+.social_media img{
+    width: 20px; /* adjust as needed */
     height: auto;
 }
