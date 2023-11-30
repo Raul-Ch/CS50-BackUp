@@ -7,8 +7,13 @@
   user-select: none;/* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-h1,
+#Header {
+  position: relative;
+}
+
+#Header h1,
 .head-wrapper {
+  position: absolute;
   margin: 0;
   padding: 0;
 }
