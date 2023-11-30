@@ -9,3 +9,20 @@ footer {
     width: 10%;
     height: auto;
 }
+
+#Footer {
+    font-family: 'HannieBunny' !important;
+    font-weight: 150%;
+    color: #000000;
+    font-size: 150% !important;
+    margin: 0;
+}
+
+#Author {
+    font-family: 'BunnyHopperEar' !important;
+    font-weight: 150%;
+    color: #000000;
+    font-size: 100% !important;
+    text-align: center;
+    margin: 0;
+}
