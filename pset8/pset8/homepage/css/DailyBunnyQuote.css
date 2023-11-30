@@ -59,7 +59,8 @@
     }
 }
 
-.Title {
+#TitleDB {
     font-size: 3vw !important;
     font-family: 'BunnyHopperEar'!important;
+    color: #000000;
 }
