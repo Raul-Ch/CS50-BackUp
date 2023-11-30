@@ -48,7 +48,7 @@
 /* For small screens (phones) */
 @media (max-width: 767px) {
     #quote, #author, .blockquote-footer {
-        font-size: 4vw;  /* Adjust font size for smaller screens */
+        font-size: 3vw;  /* Adjust font size for smaller screens */
     }
 }
 
@@ -57,4 +57,9 @@
     #quote, #author, .blockquote-footer {
         font-size: 3vw;  /* Default font size for medium and large screens */
     }
+}
+
+.Title {
+    font-size: 3vw !important;
+    font-family: 'BunnyHopperEar'!important;
 }
