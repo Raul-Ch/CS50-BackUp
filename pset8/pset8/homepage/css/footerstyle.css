@@ -23,6 +23,8 @@ footer {
     font-size: 80% !important;
     text-align: center;
     margin: 0;
+    margin-top: 6px;
+    margin-bottom: 4px;
 }
     #Author a {
         color: #FFFFFF;

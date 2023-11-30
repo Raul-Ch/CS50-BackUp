@@ -48,13 +48,13 @@
 /* For small screens (phones) */
 @media (max-width: 767px) {
     #quote, #author, .blockquote-footer {
-        font-size: 4vw;  /* Adjust font size for smaller screens */
+        font-size: 5vw;  /* Adjust font size for smaller screens */
     }
 }
 
 /* For medium and large screens (tablets and desktops) */
 @media (min-width: 768px) {
     #quote, #author, .blockquote-footer {
-        font-size: 2.5vw;  /* Default font size for medium and large screens */
+        font-size: 3vw;  /* Default font size for medium and large screens */
     }
 }
