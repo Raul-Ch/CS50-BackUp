@@ -59,14 +59,16 @@
     }
 }
 
+.CapitalTitle {
+    font-size: 3vw !important;
+    font-family: 'BunnyHopperEar' !important;
+    color: #000000;
+}
+
 #TitleDB {
     font-size: 3vw !important;
     font-family: 'BunnyHopper'!important;
     color: #000000;
 }
 
-#CapitalTitle {
-    font-size: 3vw !important;
-    font-family: 'BunnyHopperEar'!important;
-    color: #000000;
-}
+
