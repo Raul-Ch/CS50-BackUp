@@ -26,11 +26,9 @@
   overflow: hidden;
   position: relative;
 }
+
 .image img {
-  will-change: transform;
-  /* existing styles */
-}
-.image img {
+  object-fit: cover;
   will-change: transform;
   transform: scaleX(0);
   transform-origin: right;
