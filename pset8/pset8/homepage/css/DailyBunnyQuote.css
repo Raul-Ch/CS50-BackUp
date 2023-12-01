@@ -40,28 +40,29 @@
 .blockquote-footer {
     font-family: 'BunnyHopper';
     color: #000000 !important;
-    font-size: 200%;
+    font-size: 4vw !important;
 /*     margin: 0;
     box-sizing: border-box; */
 }
 
 /* For small screens (phones) */
 @media (max-width: 767px) {
-    #quote, #author, .blockquote-footer {
-        font-size: 3vw;  /* Adjust font size for smaller screens */
+    #quote, #author, .blockquote-footer, #TitleDB {
+        font-size:  7vw;  /* Adjust font size for smaller screens */
     }
 }
 
 /* For medium and large screens (tablets and desktops) */
 @media (min-width: 768px) {
-    #quote, #author, .blockquote-footer {
-        font-size: 3vw;  /* Default font size for medium and large screens */
+    #quote, #author, .blockquote-footer, #TitleDB {
+        font-size: 4vw;  /* Default font size for medium and large screens */
     }
 }
 
 .CapitalTitle {
     font-size: 3vw !important;
     font-family: 'BunnyHopperEar' !important;
+    font: bold;
     color: #000000;
 }
 

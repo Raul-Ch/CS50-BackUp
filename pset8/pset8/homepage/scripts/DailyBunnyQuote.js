@@ -39,7 +39,7 @@ fetch('../text/DailyBunnyQuote.csv')
             let words = randomQuote.author.split(' ');
 
             // Wrap the first letter of each word in a <span> tag with class "CapitalAuthor"
-            words = words.map(word => '<span class="CapitalAuthor">' + word[0] + '</span>' + word.slice(1));
+            words = words.map(word => '<span class="CapitalTitle">' + word[0] + '</span>' + word.slice(1));
 
             // Join the words back together into a single string
             let authorWithStyledInitials = words.join(' ');
