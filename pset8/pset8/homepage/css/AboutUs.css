@@ -28,11 +28,10 @@
 }
 
 .image img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
+  width: 0;
+  transition: width 0.3s ease-in-out;
 }
 
-.image:hover img {
-  transform: scale(1.1);
+.row:hover .image img {
+  width: 50%;
 }
