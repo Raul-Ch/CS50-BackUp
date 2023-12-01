@@ -21,17 +21,6 @@
   box-sizing: border-box;
 }
 
-.text h2 {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-.row:hover .text h2 {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .text p {
   opacity: 0;
   transition: opacity 0.3s;
