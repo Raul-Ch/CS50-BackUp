@@ -26,12 +26,17 @@
   overflow: hidden;
   position: relative;
 }
-
 .image img {
-  width: 0;
-  transition: width 0.3s ease-in-out;
+  will-change: transform;
+  /* existing styles */
+}
+.image img {
+  will-change: transform;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
 }
 
 .row:hover .image img {
-  width: 50%;
+  transform: scaleX(1);
 }
