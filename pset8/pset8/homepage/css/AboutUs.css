@@ -1,0 +1,30 @@
+.vertical-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-item {
+    text-align: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    transform: rotate(90deg);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    transform: rotate(-90deg);
+}
+
+.CarouselImgs{
+    width: 20px;
+    height: auto;
+}
