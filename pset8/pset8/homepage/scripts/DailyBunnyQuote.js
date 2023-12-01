@@ -34,7 +34,18 @@ fetch('../text/DailyBunnyQuote.csv')
 
             // Display the quote and author on the webpage
             document.getElementById('quote').textContent = `"${randomQuote.quote}"`;
-            document.getElementById('author').textContent = `${randomQuote.author}`;
+
+            // Split the author's name into an array of words
+            let words = randomQuote.author.split(' ');
+
+            // Wrap the first letter of each word in a <span> tag with class "CapitalAuthor"
+            words = words.map(word => '<span class="CapitalAuthor">' + word[0] + '</span>' + word.slice(1));
+
+            // Join the words back together into a single string
+            let authorWithStyledInitials = words.join(' ');
+
+            // Set the styled author string as the HTML content of the author element
+            document.getElementById('author').innerHTML = authorWithStyledInitials;
         }
 
         // Initial display
