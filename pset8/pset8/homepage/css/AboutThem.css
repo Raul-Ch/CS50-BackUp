@@ -1,7 +1,14 @@
 #TitleDB {
-    font-size: calc(18px + 2vw) !important;
+    font-size: calc(18px + 2.5vw) !important;
     font-family: 'BunnyHopper'!important;
     color: #000000;
+}
+
+/* For small screens (phones) */
+@media (max-width: 767px) {
+    #TitleDB {
+        font-size: calc(20px + 4vw) !important;  /* Adjust font size for smaller screens */
+    }
 }
 
 .divider {
