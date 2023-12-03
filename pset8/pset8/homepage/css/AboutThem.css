@@ -34,6 +34,7 @@
     text-decoration: none;
     padding: 0;
     display: inline-block;
+    line-height: 1; /* Set line-height to 1 to match the height of the text */
   }
 
   .btn-link:hover {
