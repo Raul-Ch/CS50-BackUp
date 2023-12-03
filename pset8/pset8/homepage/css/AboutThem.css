@@ -35,8 +35,10 @@
     padding: 0;
     display: inline-block;
     line-height: 1; /* Set line-height to 1 to match the height of the text */
+    margin-top: 5px; /* Adjust the top margin to reduce the height */
   }
 
   .btn-link:hover {
     text-decoration: underline;
   }
+
