@@ -15,3 +15,27 @@
     border-top: 1px solid #000; /* Change color as needed */
     width: 100%;
   }
+
+  .card {
+    text-align: center;
+    opacity: 0.8;
+  }
+
+  .card-body {
+    margin-bottom: 15px;
+  }
+
+  .card-body hr {
+    margin: 15px 0;
+  }
+
+  .btn-link {
+    color: #007bff;
+    text-decoration: none;
+    padding: 0;
+    display: inline-block;
+  }
+
+  .btn-link:hover {
+    text-decoration: underline;
+  }
