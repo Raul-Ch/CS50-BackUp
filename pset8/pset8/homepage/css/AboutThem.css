@@ -1,6 +1,6 @@
 #TitleDB {
     font-size: calc(18px + 2.5vw) !important;
-    font-family: 'BunnyHopper'!important;
+    font-family: 'BunnyHopper' !important;
     color: #000000;
 }
 
@@ -14,43 +14,48 @@
 .divider {
     border-top: 1px solid #000; /* Change color as needed */
     width: 100%;
-  }
+}
 
-  .card {
+.card {
     text-align: center;
     opacity: 0.8;
     padding-top: 10px;
-  }
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition properties */
+}
 
-  .card-body {
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
     margin-bottom: 15px;
-  }
+}
 
-  .card-body hr {
+.card-body hr {
     margin: 15px 0;
-  }
+}
 
-  .btn-link {
+.btn-link {
     color: #007bff;
     text-decoration: none;
     padding: 0;
     margin: 0;
     display: inline-block;
-  }
+}
 
-  .btn-link:hover {
+.btn-link:hover {
     text-decoration: underline;
-  }
+}
 
-  .card-footer {
+.card-footer {
     text-align: left;
-  }
+}
 
-  .card-link {
+.card-link {
     pointer-events: none;
-  }
+}
 
-  .explore-button {
+.explore-button {
     pointer-events: auto;
-  }
-
+}
