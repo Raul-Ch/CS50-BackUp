@@ -51,11 +51,3 @@
 .card-footer {
     text-align: left;
 }
-
-.card-link {
-    pointer-events: none;
-}
-
-.explore-button {
-    pointer-events: auto;
-}
