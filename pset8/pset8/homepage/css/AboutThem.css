@@ -42,3 +42,6 @@
     text-decoration: underline;
   }
 
+  .card-footer {
+    text-align: left;
+  }
