@@ -4,6 +4,12 @@
   align-items: flex-start;
 }
 
+.AboutUsh2{
+  font-size: calc(18px + 2.5vw) !important;
+  font-family: 'Bunny' !important;
+  color: #000000;
+}
+
 .row {
   display: flex;
   justify-content: space-between;

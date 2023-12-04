@@ -4,6 +4,12 @@
     color: #000000;
 }
 
+.card-title{
+    font-size: calc(18px + 2.5vw) !important;
+    font-family: 'Bunny' !important;
+    color: #000000;
+}
+
 /* For small screens (phones) */
 @media (max-width: 767px) {
     #TitleDB {
