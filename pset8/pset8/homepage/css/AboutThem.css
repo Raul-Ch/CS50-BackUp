@@ -36,7 +36,7 @@
 
 .card-body {
     margin-bottom: 15px;
-    font-family: 'HannieBunny' !important;
+    font-family: 'Urbanist' !important;
     color: #000000;
 }
 
@@ -51,7 +51,7 @@
 /* For medium and large screens (tablets and desktops) */
 @media (min-width: 768px) {
     .card-body {
-        font-size: calc(8px + 1.5vw)  /* Default font size for medium and large screens */
+        font-size: calc(8px + 1vw)  /* Default font size for medium and large screens */
     }
 }
 
