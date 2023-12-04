@@ -52,3 +52,12 @@
     text-align: rigth;
 }
 
+.card-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the parent's color (usually black) */
+    cursor: pointer; /* Change cursor to pointer on hover for better UX */
+  }
+
+  .card-link:hover {
+    color: inherit; /* Maintain the same color on hover */
+  }
