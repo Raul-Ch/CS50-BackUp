@@ -36,6 +36,9 @@
 
 .card-body {
     margin-bottom: 15px;
+    font-size: calc(8px + 1vw) !important;
+    font-family: 'HannieBunny' !important;
+    color: #000000;
 }
 
 .card-body hr {
@@ -56,6 +59,9 @@
 
 .card-footer {
     text-align: rigth;
+    font-size: calc(8px + 1vw) !important;
+    font-family: 'Bunny' !important;
+    color: #000000;
 }
 
 .card-link {
