@@ -4,7 +4,7 @@
   align-items: flex-start;
 }
 
-.AboutUsh2{
+.AboutUsh2 {
   font-size: calc(18px + 2.5vw) !important;
   font-family: 'Bunny' !important;
   color: #000000;
@@ -30,6 +30,12 @@
 .text p {
   opacity: 0;
   transition: opacity 0.3s;
+}
+
+.AboutUsp {
+  font-size: calc(12px + 2vw) !important;
+  font-family: 'HannieBunny' !important;
+  color: #000000;
 }
 
 .row:hover .text p {

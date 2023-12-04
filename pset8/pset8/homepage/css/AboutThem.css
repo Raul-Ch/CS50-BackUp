@@ -1,6 +1,6 @@
 #TitleDB {
     font-size: calc(18px + 2.5vw) !important;
-    font-family: 'BunnyHopper' !important;
+    font-family: 'HannieBunny' !important;
     color: #000000;
 }
 
@@ -36,9 +36,23 @@
 
 .card-body {
     margin-bottom: 15px;
-    font-size: calc(8px + 1vw) !important;
     font-family: 'HannieBunny' !important;
     color: #000000;
+}
+
+
+/* For small screens (phones) */
+@media (max-width: 767px) {
+    .card-body {
+        font-size: calc(10px + 2vw)  /* Adjust font size for smaller screens */
+    }
+}
+
+/* For medium and large screens (tablets and desktops) */
+@media (min-width: 768px) {
+    .card-body {
+        font-size: calc(8px + 1.5vw)  /* Default font size for medium and large screens */
+    }
 }
 
 .card-body hr {
