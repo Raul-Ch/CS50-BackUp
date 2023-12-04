@@ -44,7 +44,7 @@
 /* For small screens (phones) */
 @media (max-width: 767px) {
     .card-body {
-        font-size: calc(10px + 2vw)  /* Adjust font size for smaller screens */
+        font-size: calc(8px + 1.5vw)  /* Adjust font size for smaller screens */
     }
 }
 
