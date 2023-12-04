@@ -25,7 +25,7 @@
     </meta>
   </head>
 
-  <body>
+  <body data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0">
 
     <div id="Header">
       <!-- Title -->
@@ -105,24 +105,30 @@
     </nav>
 
 
-<div class="container">
-    <div id="list-example" class="list-group">
-        <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+    <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div id="list-example" class="list-group">
+              <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+              <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+              <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+              <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="scrollspy-example">
+              <h4 id="list-item-1">Item 1</h4>
+              <p>Content for Item 1</p>
+              <h4 id="list-item-2">Item 2</h4>
+              <p>Content for Item 2</p>
+              <h4 id="list-item-3">Item 3</h4>
+              <p>Content for Item 3</p>
+              <h4 id="list-item-4">Item 4</h4>
+              <p>Content for Item 4</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-        <h4 id="list-item-1">Item 1</h4>
-        <p>...</p>
-        <h4 id="list-item-2">Item 2</h4>
-        <p>...</p>
-        <h4 id="list-item-3">Item 3</h4>
-        <p>...</p>
-        <h4 id="list-item-4">Item 4</h4>
-        <p>...</p>
-      </div>
-    </div>
 
 
   </body>
