@@ -148,3 +148,8 @@ button {
     background-color: red;
     border: 2px solid darkred !important;
 }
+
+.delete:hover {
+    outline: none;
+    background-color: darkred !important;
+}

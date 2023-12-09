@@ -41,12 +41,12 @@
                         <tr>
                             <td>{{ friend.name }}</td>
                             <td>{{ friend.month }}/{{ friend.day }}</td>
-                            <td>
-                                <button class="delete" type="submit">
 
-                                    3:17
-                                    A Very Merry Unbirthday to You!</button>
-                            </td>
+                            <td width=20%>
+                                <form action="/" method="post">
+                                    <input name="id" type="hidden" value="{{ registrant.id }}">
+                                    <button class="delete" type="submit">A Very Merry Unbirthday to You!</button></td>
+                                </form>
                         </tr>
                         {% endfor %}
                     </tbody>
