@@ -25,16 +25,20 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        # TODO: Add the user's entry into the database
-        # Validate submission
-        name = request.form.get("name")
-        month = request.form.get("month")
-        day = request.form.get("day")
+        id = request.form.get("id")
+        if id:
+            db.execute("DELETE FROM birthdays WHERE id = ?", id)
+            # TODO: Add the user's entry into the database
+            # Validate submission
+        else:
+            name = request.form.get("name")
+            month = request.form.get("month")
+            day = request.form.get("day")
 
-        # Remember registrant
-        db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+            # Remember registrant
+            db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
 
-        # Confirm registration
+            # Confirm registration
         return redirect("/")
 
     else:
