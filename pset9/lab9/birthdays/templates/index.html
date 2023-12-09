@@ -17,7 +17,7 @@
 
                 <h2>Add a Birthday</h2>
                 <!-- TODO: Create a form for users to submit a name, a month, and a day -->
-                <form action="/sumbit" method="post">
+                <form action="/" method="post">
                     <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
                     <input autocomplete="off" autofocus name="month" placeholder="Month" type="number">
                     <input autocomplete="off" autofocus name="day" placeholder="Day" type="number">
@@ -42,7 +42,10 @@
                             <td>{{ friend.name }}</td>
                             <td>{{ friend.month }}/{{ friend.day }}</td>
                             <td>
+                                <button class="delete" type="submit">
 
+                                    3:17
+                                    A Very Merry Unbirthday to You!</button>
                             </td>
                         </tr>
                         {% endfor %}

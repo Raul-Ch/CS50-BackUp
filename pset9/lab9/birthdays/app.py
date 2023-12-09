@@ -29,15 +29,13 @@ def index():
         # TODO: Add the user's entry into the database
         # Validate submission
         name = request.form.get("name")
-        sport = request.form.get("sport")
-        if not name or sport not in SPORTS:
-            return render_template("failure.html")
+        month = request.form.get("month")
+        day = request.form.get("day")
 
         # Remember registrant
-        db.execute("INSERT INTO registrants (name, sport) VALUES(?, ?)", name, sport)
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
 
         # Confirm registration
-        return redirect("/registrants")
         return redirect("/")
 
     else:

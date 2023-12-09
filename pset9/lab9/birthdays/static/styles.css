@@ -40,8 +40,8 @@ input {
     margin-bottom: 10px;
     font-size: 16px;
     font-family: 'Arial', sans-serif;
-    transition: border-color 0.5s ease, color 0.5s ease; 
-  }
+    transition: border-color 0.5s ease, color 0.5s ease;
+}
 
 .section:hover {
     background-color: #f5f5f5;
@@ -53,7 +53,8 @@ h1 {
     font-size: 48px;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
     border-radius: 0.25rem;
@@ -66,12 +67,14 @@ button, input[type="submit"] {
     vertical-align: middle;
 }
 
-input[type="text"], input[type="number"] {
+input[type="text"],
+input[type="number"] {
     line-height: 1.8;
     width: 25%;
 }
 
-input[type="text"]:hover, input[type="number"]:hover {
+input[type="text"]:hover,
+input[type="number"]:hover {
     background-color: #f5f5f5;
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
@@ -100,21 +103,48 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: border-color 0.5s ease;
-  }
+}
 
-  button:hover {
-      outline: none;
-      background-color: white;
+button:hover {
+    outline: none;
+    background-color: white;
+}
+
+@keyframes colorChange {
+    0% {
+        border-color: rgb(255, 0, 0);
     }
 
-  @keyframes colorChange {
-    0% { border-color: rgb(255, 0, 0); } /* Red */
-    25% { border-color: rgb(255, 255, 0); } /* Yellow */
-    50% { border-color: rgb(0, 255, 0); } /* Green */
-    75% { border-color: rgb(0, 0, 255); } /* Blue */
-    100% { border-color: rgb(255, 0, 0); } /* Red */
-  }
+    /* Red */
+    25% {
+        border-color: rgb(255, 255, 0);
+    }
 
-  input, button {
+    /* Yellow */
+    50% {
+        border-color: rgb(0, 255, 0);
+    }
+
+    /* Green */
+    75% {
+        border-color: rgb(0, 0, 255);
+    }
+
+    /* Blue */
+    100% {
+        border-color: rgb(255, 0, 0);
+    }
+
+    /* Red */
+}
+
+input,
+button {
     animation: colorChange 4s infinite;
-  }
+}
+
+.delete {
+    color: white;
+    background-color: red;
+    border: 2px solid darkred !important;
+}
