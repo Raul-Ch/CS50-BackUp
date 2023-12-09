@@ -23,17 +23,8 @@ def after_request(response):
 
 
 @app.route("/", methods=["GET", "POST"])
-def deregister():
-    # Forget registrant
-    id = request.form.get("id")
-    if id:
-        db.execute("DELETE FROM birthdays WHERE id = ?", id)
-    return redirect("/")
-
-
 def index():
     if request.method == "POST":
-
         # TODO: Add the user's entry into the database
         # Validate submission
         name = request.form.get("name")
@@ -55,4 +46,3 @@ def index():
              displaybirthdays = e
 
     return render_template("index.html",birthdays=displaybirthdays)
-
