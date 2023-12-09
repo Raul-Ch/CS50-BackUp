@@ -81,3 +81,29 @@ table td {
 tbody tr:nth-of-type(odd) {
     background-color: rgb(179, 208, 255, 0.3)
 }
+
+
+button {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.5s ease; /* Smooth transition for border color change */
+  }
+
+  button:hover {
+    outline: none;
+  }
+
+  @keyframes colorChange {
+    0% { border-color: rgb(255, 0, 0); } /* Red */
+    25% { border-color: rgb(255, 255, 0); } /* Yellow */
+    50% { border-color: rgb(0, 255, 0); } /* Green */
+    75% { border-color: rgb(0, 0, 255); } /* Blue */
+    100% { border-color: rgb(255, 0, 0); } /* Red */
+  }
+
+  input, button {
+    animation: colorChange 4s infinite; /* Adjust timing based on your preference */
+  }
