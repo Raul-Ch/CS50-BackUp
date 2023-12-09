@@ -27,7 +27,17 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database
+        # Validate submission
+        name = request.form.get("name")
+        sport = request.form.get("sport")
+        if not name or sport not in SPORTS:
+            return render_template("failure.html")
 
+        # Remember registrant
+        db.execute("INSERT INTO registrants (name, sport) VALUES(?, ?)", name, sport)
+
+        # Confirm registration
+        return redirect("/registrants")
         return redirect("/")
 
     else:
@@ -38,8 +48,4 @@ def index():
         except Exception as e:
              displaybirthdays = e
 
-
-
     return render_template("index.html",birthdays=displaybirthdays)
-
-
