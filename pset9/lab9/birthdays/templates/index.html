@@ -15,8 +15,12 @@
 
                 <h2>Add a Birthday</h2>
                 <!-- TODO: Create a form for users to submit a name, a month, and a day -->
-                <form>
-                    
+                <form action="/register" method="post">
+                    <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+                    {% for sport in sports %}
+                        <input name="sport" type="radio" value="{{ sport }}"> {{ sport }}
+                    {% endfor %}
+                    <button type="submit">Register</button>
                 </form>
             </div>
 
