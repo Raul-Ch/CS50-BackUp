@@ -33,6 +33,16 @@ body {
     padding-top: 0.5rem;
 }
 
+input {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    transition: border-color 0.5s ease, color 0.5s ease; 
+  }
+
 .section:hover {
     background-color: #f5f5f5;
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
@@ -89,12 +99,13 @@ button {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    transition: border-color 0.5s ease; /* Smooth transition for border color change */
+    transition: border-color 0.5s ease;
   }
 
   button:hover {
-    outline: none;
-  }
+      outline: none;
+      background-color: white;
+    }
 
   @keyframes colorChange {
     0% { border-color: rgb(255, 0, 0); } /* Red */
@@ -105,5 +116,5 @@ button {
   }
 
   input, button {
-    animation: colorChange 4s infinite; /* Adjust timing based on your preference */
+    animation: colorChange 4s infinite;
   }
