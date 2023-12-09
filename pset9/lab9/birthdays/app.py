@@ -45,7 +45,7 @@ def index():
 
         # TODO: Display the entries in the database on index.html
         try:
-            displaybirthdays = db.execute("SELECT * FROM birthdays")
+            displaybirthdays = db.execute("SELECT * FROM birthdays ORDER BY name ASC")
         except Exception as e:
              displaybirthdays = e
 
