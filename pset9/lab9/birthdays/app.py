@@ -23,6 +23,14 @@ def after_request(response):
 
 
 @app.route("/", methods=["GET", "POST"])
+def deregister():
+    # Forget registrant
+    id = request.form.get("id")
+    if id:
+        db.execute("DELETE FROM birthdays WHERE id = ?", id)
+    return redirect("/")
+
+
 def index():
     if request.method == "POST":
 
@@ -48,10 +56,3 @@ def index():
 
     return render_template("index.html",birthdays=displaybirthdays)
 
-@app.route("/", methods=["POST"])
-def deregister():
-    # Forget registrant
-    id = request.form.get("id")
-    if id:
-        db.execute("DELETE FROM birthdays WHERE id = ?", id)
-    return redirect("/")
