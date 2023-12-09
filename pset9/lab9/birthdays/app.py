@@ -33,7 +33,12 @@ def index():
     else:
 
         # TODO: Display the entries in the database on index.html
-        displaybirthdays = db.execute("SELECT * FROM birthdays")
+        try:
+            displaybirthdays = db.execute("SELECT * FROM birthdays")
+        except Exception as e:
+             displaybirthdays = e
+
+
 
     return render_template("index.html",birthdays=displaybirthdays)
 
