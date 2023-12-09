@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="/static/styles.css" rel="stylesheet">
         <title>Birthdays</title>
     </head>
+
     <body>
         <div class="header">
             <h1>Birthdays</h1>
@@ -35,19 +37,20 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
-                        {% for birthday in birthdays %}
+                        {% for friend in birthdays %}
                         <tr>
                             <tc>Name</tc>
-                            <td>{{ birthday.name }}</td>
-                            <td>{{ birthday.month }}/{{ birthday.day }}</td>
+                            <td>{{ friend.name }}</td>
+                            <td>{{ friend.month }}/{{ friend.day }}</td>
                             <td>
 
                             </td>
                         </tr>
-                    {% endfor %}
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
         </div>
     </body>
+
 </html>
