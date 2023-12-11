@@ -16,7 +16,7 @@ Log In
         <label for="password">Please insert password</label>
         <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
         </br>
-        <button id="showPasswordBtn" type="button">Show Password</button>
+        <button class="btn btn-primary" id="togglePasswordBtn" type="button">Show Password</button>
     </div>
     <div class="mb-3">
         <label for="confirmation">Please confirm password</label>
@@ -31,7 +31,7 @@ Log In
         // Add an event listener to the password input field
         document.getElementById('password').addEventListener('input', validatePassword);
         // Add an event listener to the show password button
-        document.getElementById('showPasswordBtn').addEventListener('click', togglePasswordVisibility);
+        document.getElementById('togglePasswordBtn').addEventListener('click', togglePasswordVisibility);
     </script>
 </form>
 {% endblock %}

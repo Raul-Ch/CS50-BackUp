@@ -24,13 +24,17 @@ function validatePassword() {
 }
 
 // Show password
+// Function to toggle password visibility
 function togglePasswordVisibility() {
     var passwordInput = document.getElementById('password');
+    var toggleButton = document.getElementById('togglePasswordBtn');
 
     // Toggle the type attribute of the password input field
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
+        toggleButton.textContent = 'Hide Password';
     } else {
         passwordInput.type = 'password';
+        toggleButton.textContent = 'Show Password';
     }
 }
