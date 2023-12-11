@@ -110,6 +110,9 @@ def quote():
 def register():
     """Register user"""
     if request.method == "POST":
+        return register("/")
+
+    else:
         return apology("TODO")
 
 
