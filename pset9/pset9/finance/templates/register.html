@@ -1,18 +1,28 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Log In
+Log In
 {% endblock %}
 
 {% block main %}
-    <form action="/login" method="post">
-        <div class="mb-3">
-            <label text="Please insert Username">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
-        </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
-        </div>
-        <button class="btn btn-primary" type="submit">Register</button>
-    </form>
+<form action="/login" method="post">
+    <div class="mb-3">
+        <label for="username">Please insert username</label>
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username"
+            placeholder="Username" type="text">
+    </div>
+    </br>
+    <div class="mb-3">
+        <label for="password">Please insert password</label>
+        <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+    </div>
+    <div class="mb-3">
+        <label for="confirmation">Please confirm password</label>
+        <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Password"
+            type="password">
+    </div>
+    <label id="Consideration">Consideration: </label> <label id="Note"> User passwords need to have some number of letters, numbers, and/or symbols.</label>
+    </br></br>
+    <button class="btn btn-primary" type="submit">Register</button>
+</form>
 {% endblock %}
