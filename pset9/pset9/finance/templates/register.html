@@ -33,6 +33,8 @@ Log In
         document.getElementById('password').addEventListener('input', validatePassword);
         // Add an event listener to the show password button
         document.getElementById('togglePasswordBtn').addEventListener('click', togglePasswordVisibility);
+        // Add an event listener to the confirmation input field
+        document.getElementById('confirmation').addEventListener('input', validateConfirmation);
     </script>
 </form>
 {% endblock %}

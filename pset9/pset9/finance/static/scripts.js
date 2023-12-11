@@ -23,14 +23,18 @@ function validatePassword() {
     }
 }
 
+// Function to validate the confirmation password
+function validateConfirmation() {
+    var password = document.getElementById('password').value;
+    var confirmation = document.getElementById('confirmation').value;
 
     // Check if the passwords coincide
     if (password === confirmation) {
         document.getElementById('confirmation').textContent = "";
     } else {
-        document.getElementById('confirmation').className = 'validate';
-        document.getElementById('confirmation').className = "Passwords do not match.";
+        document.getElementById('confirmation').textContent = "Passwords do not match.";
     }
+}
 
 // Show password
 // Function to toggle password visibility
