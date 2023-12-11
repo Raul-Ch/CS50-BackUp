@@ -18,17 +18,19 @@ function validatePassword() {
         console.log("Password is invalid");
         document.getElementById('Consideration').textContent = "Consideration: ";
         document.getElementById('Note').textContent = "User passwords need to have at least 8 number of letters, 2 numbers, and 1 symbol.";
-        document.getElementById('Consideration').className = 'validate_password';
-        document.getElementById('Note').className = 'validate_password';
+        document.getElementById('Consideration').className = 'validate';
+        document.getElementById('Note').className = 'validate';
     }
+}
+
 
     // Check if the passwords coincide
     if (password === confirmation) {
-        document.getElementById('PasswordError').textContent = "";
+        document.getElementById('confirmation').textContent = "";
     } else {
-        document.getElementById('PasswordError').textContent = "Passwords do not match.";
+        document.getElementById('confirmation').className = 'validate';
+        document.getElementById('confirmation').className = "Passwords do not match.";
     }
-}
 
 // Show password
 // Function to toggle password visibility

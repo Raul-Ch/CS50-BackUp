@@ -22,7 +22,7 @@ nav .navbar-brand .green
     color: #2e944b;
 }
 
-.validate_password {
+.validate {
     color: red;
     font-weight: bold;
 }
