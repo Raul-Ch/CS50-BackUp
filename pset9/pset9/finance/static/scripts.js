@@ -22,3 +22,15 @@ function validatePassword() {
         document.getElementById('Note').className = 'validate_password';
     }
 }
+
+// Show password
+function togglePasswordVisibility() {
+    var passwordInput = document.getElementById('password');
+
+    // Toggle the type attribute of the password input field
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+    } else {
+        passwordInput.type = 'password';
+    }
+}
