@@ -23,6 +23,6 @@ function validatePassword() {
             parentElement.insertBefore(errorLabel, document.getElementById('password'));
         }
         document.getElementById('Consideration').textContent = "Consideration: ";
-        document.getElementById('Note').textContent = ": Good password!";
+        document.getElementById('Note').textContent = "";
     }
 }
