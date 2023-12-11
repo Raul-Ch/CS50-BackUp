@@ -1,5 +1,3 @@
-// scripts.js
-
 // Function to validate the password
 function validatePassword() {
     var password = document.getElementById('password').value;
@@ -13,8 +11,8 @@ function validatePassword() {
         if (errorLabel) {
             parentElement.removeChild(errorLabel);
         }
-        document.getElementById('Consideration').textContent = "Consideration: Good password!";
-        document.getElementById('Note').textContent = "";
+        document.getElementById('Consideration').textContent = "Consideration:";
+        document.getElementById('Note').textContent = ": Good password!";
     } else {
         // Password is invalid, create and insert the error label if it doesn't exist
         if (!errorLabel) {
@@ -25,6 +23,6 @@ function validatePassword() {
             parentElement.insertBefore(errorLabel, document.getElementById('password'));
         }
         document.getElementById('Consideration').textContent = "Consideration: ";
-        document.getElementById('Note').textContent = "";
+        document.getElementById('Note').textContent = ": Good password!";
     }
 }
