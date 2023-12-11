@@ -21,6 +21,13 @@ function validatePassword() {
         document.getElementById('Consideration').className = 'validate_password';
         document.getElementById('Note').className = 'validate_password';
     }
+
+    // Check if the passwords coincide
+    if (password === confirmation) {
+        document.getElementById('PasswordError').textContent = "";
+    } else {
+        document.getElementById('PasswordError').textContent = "Passwords do not match.";
+    }
 }
 
 // Show password
