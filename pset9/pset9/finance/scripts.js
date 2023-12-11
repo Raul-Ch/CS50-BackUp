@@ -9,8 +9,8 @@ function validatePassword() {
 
     // Check if the password meets the requirements
     if (passwordRegex.test(password)) {
-        document.getElementById('Consideration').textContent = "Consideration: Good password!";
-        document.getElementById('Note').textContent = "";
+        document.getElementById('Consideration').textContent = "Consideration:";
+        document.getElementById('Note').textContent = "Good password!";
     } else {
         document.getElementById('Consideration').textContent = "Consideration: ";
         document.getElementById('Note').textContent = "User passwords need to have some number of letters, numbers, and/or symbols.";
