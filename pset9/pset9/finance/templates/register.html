@@ -6,7 +6,9 @@ Log In
 
 {% block main %}
 <script>
-    document.getElementById('password').addEventListener('input', validatePassword);
+    window.onload = function() {
+        document.getElementById('password').addEventListener('input', validatePassword);
+    };
 </script>
 
 <form action="/register" method="post">
