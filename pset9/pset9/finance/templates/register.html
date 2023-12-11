@@ -5,12 +5,6 @@ Log In
 {% endblock %}
 
 {% block main %}
-<script>
-    window.onload = function() {
-        document.getElementById('password').addEventListener('input', validatePassword);
-    };
-</script>
-
 <form action="/register" method="post">
     <div class="mb-3">
         <label for="username">Please insert username</label>
@@ -30,5 +24,10 @@ Log In
     <label id="Consideration" class="bad_password"></label> <label id="Note" class="bad_password"></label>
     </br></br>
     <button class="btn btn-primary" type="submit">Register</button>
+    <script src="scripts.js"></script>
+    <script>
+        // Add an event listener to the password input field
+        document.getElementById('password').addEventListener('input', validatePassword);
+    </script>
 </form>
 {% endblock %}
