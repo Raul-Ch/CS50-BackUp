@@ -5,6 +5,10 @@ Log In
 {% endblock %}
 
 {% block main %}
+<script>
+    document.getElementById('password').addEventListener('input', validatePassword);
+</script>
+
 <form action="/register" method="post">
     <div class="mb-3">
         <label for="username">Please insert username</label>
