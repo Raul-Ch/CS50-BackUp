@@ -21,11 +21,10 @@ function validatePassword() {
         if (!errorLabel) {
             errorLabel = document.createElement('label');
             errorLabel.id = 'errorLabel';
-            errorLabel.textContent = "User passwords need to have some number of letters, numbers, and/or symbols.";
+            document.getElementById('Consideration').textContent = "Consideration: ";
+            document.getElementById('Note').textContent = "User passwords need to have some number of letters, numbers, and/or symbols.";
             errorLabel.className = 'bad_password';
             parentElement.insertBefore(errorLabel, document.getElementById('password'));
         }
-        document.getElementById('Consideration').textContent = "Consideration: ";
-        document.getElementById('Note').textContent = "";
     }
 }
