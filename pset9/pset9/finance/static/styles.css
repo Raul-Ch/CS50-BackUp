@@ -26,3 +26,8 @@ nav .navbar-brand .green
     color: red;
     font-weight: bold;
 }
+
+.good_password {
+    color: green;
+    font-weight: bold;
+}
