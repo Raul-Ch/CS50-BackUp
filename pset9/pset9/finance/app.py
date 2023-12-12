@@ -116,8 +116,8 @@ def register():
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
 
-        if not username:
-            return apology("must provide username", "Registration Error")
+        if not request.form.get("username"):
+            return apology("must provide username", 403)
 
         # Validate the password
         password_valid = validate_password(password)
