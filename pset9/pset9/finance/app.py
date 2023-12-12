@@ -111,7 +111,7 @@ def register():
     """Register user"""
     if request.method == "POST":
         return apology("TODO")
-    
+
     else:
         return render_template("register.html")
 
