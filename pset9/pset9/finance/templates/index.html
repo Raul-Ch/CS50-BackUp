@@ -6,8 +6,8 @@
 
 {% block main %}
     <div class="container">
-        <table class="table table-striped">
-            <thead>
+        <table class="table table-bordered">
+            <thead class="table-dark">
                 <tr>
                     <th class="text-start">Symbol</th>
                     <th class="text-start">Name</th>
@@ -17,7 +17,20 @@
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                <!-- Add your table body content here -->
+                <!-- Add your table body content here with alternating row colors -->
+                <tr class="table-primary">
+                    <!-- Row content -->
+                </tr>
+                <tr class="table-danger">
+                    <!-- Row content -->
+                </tr>
+                <tr class="table-warning">
+                    <!-- Row content -->
+                </tr>
+                <tr class="table-success">
+                    <!-- Row content -->
+                </tr>
+                <!-- Repeat rows for alternating colors -->
             </tbody>
             <tfoot>
                 <tr>
@@ -32,3 +45,4 @@
         </table>
     </div>
 {% endblock %}
+
