@@ -42,7 +42,6 @@ def index():
         return redirect("/")
 
     else:
-
         # TODO: Display the entries in the database on index.html
         try:
             displaybirthdays = db.execute("SELECT * FROM birthdays ORDER BY name ASC")
