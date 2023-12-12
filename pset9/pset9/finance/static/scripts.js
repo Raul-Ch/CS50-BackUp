@@ -3,7 +3,7 @@ function validatePassword() {
     console.log("validatePassword function called");
     var password = document.getElementById('password').value;
     //  regular expression to enforce a minimum length of 11 characters for the password, which includes at least 8 letters, 2 numbers, and 1 symbol
-    var passwordRegex = /^(?=(?:.*[a-zA-Z]){8})(?=(?:.*\d){2})(?=(?:.*\W){1})[a-zA-Z\d\W]{11,}$/;
+    var passwordRegex = /^(?=(?:.*[a-zA-Z]){5})(?=(?:.*\d){2})(?=(?:.*\W){1})[a-zA-Z\d\W]{11,}$/;
     var parentElement = document.getElementById('password').parentNode;
     var errorLabel = document.getElementById('errorLabel');
 
@@ -17,7 +17,7 @@ function validatePassword() {
     } else {
         console.log("Password is invalid");
         document.getElementById('Consideration').textContent = "Consideration: ";
-        document.getElementById('Note').textContent = "User passwords need to have at least 8 number of letters, 2 numbers, and 1 symbol.";
+        document.getElementById('Note').textContent = "User passwords need to have at least 5 number of letters, 2 numbers, and 1 symbol.";
         document.getElementById('Consideration').className = 'validate';
         document.getElementById('Note').className = 'validate';
     }
