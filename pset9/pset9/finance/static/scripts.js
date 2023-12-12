@@ -2,8 +2,8 @@
 function validatePassword() {
     console.log("validatePassword function called");
     var password = document.getElementById('password').value;
-    //  regular expression to enforce a minimum length of 11 characters for the password, which includes at least 8 letters, 2 numbers, and 1 symbol
-    var passwordRegex = /^(?=(?:.*[a-zA-Z]){5})(?=(?:.*\d){2})(?=(?:.*\W){1})[a-zA-Z\d\W]{11,}$/;
+    //  regular expression to enforce a minimum length of 11 characters for the password, which includes at least 5 letters, 2 numbers, and 1 symbol
+    var passwordRegex = /^(?=(?:.*[a-zA-Z]){5})(?=(?:.*\d){2})(?=(?:.*\W){1})[a-zA-Z\d\W]{8,}$/;
     var parentElement = document.getElementById('password').parentNode;
     var errorLabel = document.getElementById('errorLabel');
 

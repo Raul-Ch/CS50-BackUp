@@ -154,7 +154,7 @@ def register():
         return render_template("register.html")
 
 def validate_password(password):
-    password_regex = r"^(?=(?:.*[a-zA-Z]){5})(?=(?:.*\d){2})(?=(?:.*\W){1})[a-zA-Z\d\W]{11,}$"
+    password_regex = r"^(?=(?:.*[a-zA-Z]){5})(?=(?:.*\d){2})(?=(?:.*\W){1})[a-zA-Z\d\W]{8,}$"
 
     if re.match(password_regex, password):
         return True
