@@ -110,11 +110,42 @@ def quote():
 def register():
     """Register user"""
     if request.method == "POST":
-        return apology("TODO")
+        # Get user input from the registration form
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirmation = request.form.get("confirmation")
+
+        # Validate the password
+        password_valid = validate_password(password)
+
+        # Check if the passwords match
+        passwords_match = password == confirmation
+
+        # If there are validation errors, redirect to apology page with error message
+        if not password_valid or not passwords_match:
+            error_message = "Invalid password. Please make sure your password meets the criteria and confirmation matches."
+            flash(error_message)
+            return render_template("apology.html", top="Registration Error", bottom=error_message)
+
+        # Check if the username is available
+        rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+        if len(rows) > 0:
+            error_message = "Username already taken. Please choose a different username."
+            flash(error_message)
+            return render_template("apology.html", top="Registration Error", bottom=error_message)
+
+        # Hash the password
+        hashed_password = generate_password_hash(password)
+
+        # Insert the new user into the database
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hashed_password)
+
+        # Redirect to login page after successful registration
+        flash("Registration successful! You can now log in.")
+        return redirect("/login")
 
     else:
         return render_template("register.html")
-
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
