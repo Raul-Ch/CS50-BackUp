@@ -30,9 +30,9 @@ function validateConfirmation() {
 
     // Check if the passwords coincide
     if (password === confirmation) {
-        document.getElementById('confirmation').textContent = "";
+        document.getElementById('lblconfirmation').textContent = "Great passwords match!";
     } else {
-        document.getElementById('confirmation').textContent = "Passwords do not match.";
+        document.getElementById('lblconfirmation').textContent = "Passwords do not match.";
     }
 }
 
