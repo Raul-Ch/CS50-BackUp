@@ -129,13 +129,7 @@ def register():
         password_valid = validate_password(password)
 
         # Check if the passwords match
-        if password == confirmation:
-            passwords_match = True
-        else:
-            passwords_match = False
-
-        console.log(password_valid)
-        console.log(passwords_match)
+        passwords_match = password == confirmation
 
         # If there are validation errors, redirect to apology page with error message
         if not password_valid or not passwords_match:
