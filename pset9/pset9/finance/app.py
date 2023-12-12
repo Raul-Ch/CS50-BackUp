@@ -157,9 +157,9 @@ def validate_password(password):
     password_regex = r"^(?=(?:.*[a-zA-Z]){8})(?=(?:.*\d){2})(?=(?:.*\W){1})[a-zA-Z\d\W]{11,}$"
 
     if re.match(password_regex, password):
-        return True, None
+        return True
     else:
-        return False, "User passwords need to have at least 8 letters, 2 numbers, and 1 symbol."
+        return False
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
