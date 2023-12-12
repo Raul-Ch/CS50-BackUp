@@ -32,11 +32,11 @@ def after_request(response):
     return response
 
 
-@app.route("/")
+@app.route("/index")
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("Error")
+    return index()
 
 
 @app.route("/buy", methods=["GET", "POST"])
