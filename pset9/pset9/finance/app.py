@@ -127,14 +127,12 @@ def register():
 
         # If there are validation errors, redirect to apology page with error message
         if not password_valid or not passwords_match:
-            return apology("Invalid password. Please make sure your password meets the criteria and confirmation matches.", "Registration Error")
+            return apology("Invalid password. Please make sure your password meets the criteria and confirmation matches.", 403)
 
         # Check if the username is available
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
         if len(rows) > 0:
-            error_message = "Username already taken. Please choose a different username."
-            flash(error_message)
-            return render_template("apology.html", top="Registration Error", bottom=error_message)
+            return apology( "Username already taken. Please choose a different username.", 403)
 
         # Hash the password
         hashed_password = generate_password_hash(password)
