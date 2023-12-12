@@ -147,6 +147,12 @@ def register():
     else:
         return render_template("register.html")
 
+def validate_password(password):
+    # Your password validation logic goes here
+    # Example: You can use a regular expression to enforce a certain password policy
+    # For now, it returns True, but you should replace it with your actual validation logic
+    return True
+
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
