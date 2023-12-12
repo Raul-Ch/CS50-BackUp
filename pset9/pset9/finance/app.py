@@ -36,7 +36,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return index()
+     return redirect("/")
 
 
 @app.route("/buy", methods=["GET", "POST"])
