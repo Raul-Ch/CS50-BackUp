@@ -148,10 +148,12 @@ def register():
         return render_template("register.html")
 
 def validate_password(password):
-    # Your password validation logic goes here
-    # Example: You can use a regular expression to enforce a certain password policy
-    # For now, it returns True, but you should replace it with your actual validation logic
-    return True
+    password_regex = r"^(?=(?:.*[a-zA-Z]){8})(?=(?:.*\d){2})(?=(?:.*\W){1})[a-zA-Z\d\W]{11,}$"
+
+    if re.match(password_regex, password):
+        return True, None
+    else:
+        return False, "User passwords need to have at least 8 letters, 2 numbers, and 1 symbol."
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
