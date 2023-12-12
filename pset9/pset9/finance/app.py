@@ -116,6 +116,9 @@ def register():
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
 
+        if not request.form.get("username"):
+            return apology("must provide username", "Registration Error")
+
         # Validate the password
         password_valid = validate_password(password)
 
@@ -124,9 +127,7 @@ def register():
 
         # If there are validation errors, redirect to apology page with error message
         if not password_valid or not passwords_match:
-            error_message = "Invalid password. Please make sure your password meets the criteria and confirmation matches."
-            flash(error_message)
-            return render_template("apology.html", top="Registration Error", bottom=error_message)
+            return apology("Invalid password. Please make sure your password meets the criteria and confirmation matches.", "Registration Error")
 
         # Check if the username is available
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
