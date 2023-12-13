@@ -106,7 +106,7 @@ def quote():
     if request.method == "POST":
         symbol = request.form.get("symbol")
      # Ensure username was submitted
-        if not request.form.get("symbol"):
+        if not symbol:
             return apology("must provide symbol", 403)
         else:
             dic_symbol = lookup(symbol)
