@@ -34,8 +34,9 @@ def after_request(response):
 @app.route("/profile")
 @login_required
 def profile():
-    username = session["name"]
-    rows = db.execute("SELECT cash FROM users WHERE username = ?", (username,))
+    user_id = session["user_id"]
+    rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
+    username = rows[0]['username'] if rows else None
     cash_flow = rows[0]['cash'] if rows else None
     return render_template("profile.html", username = username, cash_flow = cash_flow)
 
