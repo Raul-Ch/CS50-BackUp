@@ -34,6 +34,8 @@ def after_request(response):
 @app.route("/profile")
 @login_required
 def profile():
+    
+
     return render_template("profile.html")
 
 @app.route("/")
