@@ -114,9 +114,14 @@ def quote():
                 return apology("invalid symbol", 403)
             else:
                 return render_template("quoted.html",dic_symbol = dic_symbol)
-
     else:
         return render_template("quote.html")
+
+@app.route("/quoted")
+@login_required
+def quoted():
+    return render_template("quote.html")
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
