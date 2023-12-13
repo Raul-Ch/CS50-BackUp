@@ -104,12 +104,13 @@ def logout():
 def quote():
     """Get stock quote."""
     if request.method == "POST":
+        symbol = request.form.get("symbol")
      # Ensure username was submitted
         if not request.form.get("symbol"):
             return apology("must provide symbol", 403)
         else:
-            
-            return render_template("quoted.html")
+            dic_symbol = lookup(symbol)
+            return render_template("quoted.html",dic_symbol)
 
     else:
         return render_template("quote.html")
