@@ -62,7 +62,6 @@ def lookup(symbol):
 
         # CSV header: Date,Open,High,Low,Close,Adj Close,Volume
         quotes = list(csv.DictReader(response.content.decode("utf-8").splitlines()))
-        print(quotes)
         quotes.reverse()
         price = round(float(quotes[0]["Adj Close"]), 2)
         return {
