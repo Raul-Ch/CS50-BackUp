@@ -65,7 +65,7 @@ def lookup(symbol):
         quotes.reverse()
         price = round(float(quotes[0]["Adj Close"]), 2)
         return {
-            "name": companyName,
+            "name": symbol,
             "price": price,
             "symbol": symbol
         }
