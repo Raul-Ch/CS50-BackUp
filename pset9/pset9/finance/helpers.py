@@ -12,16 +12,26 @@ from functools import wraps
 
 def apology(message, code=400):
     """Render message as an apology to user."""
+
     def escape(s):
         """
         Escape special characters.
 
         https://github.com/jacebrowning/memegen#special-characters
         """
-        for old, new in [("-", "--"), (" ", "-"), ("_", "__"), ("?", "~q"),
-                         ("%", "~p"), ("#", "~h"), ("/", "~s"), ("\"", "''")]:
+        for old, new in [
+            ("-", "--"),
+            (" ", "-"),
+            ("_", "__"),
+            ("?", "~q"),
+            ("%", "~p"),
+            ("#", "~h"),
+            ("/", "~s"),
+            ('"', "''"),
+        ]:
             s = s.replace(old, new)
         return s
+
     return render_template("apology.html", top=code, bottom=escape(message)), code
 
 
@@ -31,11 +41,13 @@ def login_required(f):
 
     http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/
     """
+
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if session.get("user_id") is None:
             return redirect("/login")
         return f(*args, **kwargs)
+
     return decorated_function
 
 
@@ -62,7 +74,11 @@ def lookup(symbol):
 
     # Query API
     try:
-        response = requests.get(url, cookies={"session": str(uuid.uuid4())}, headers={"User-Agent": "python-requests", "Accept": "*/*"})
+        response = requests.get(
+            url,
+            cookies={"session": str(uuid.uuid4())},
+            headers={"User-Agent": "python-requests", "Accept": "*/*"},
+        )
         response.raise_for_status()
 
         # CSV header: Date,Open,High,Low,Close,Adj Close,Volume
@@ -70,11 +86,7 @@ def lookup(symbol):
 
         quotes.reverse()
         price = round(float(quotes[0]["Adj Close"]), 2)
-        return {
-            "name": company_name,
-            "price": price,
-            "symbol": symbol
-        }
+        return {"name": company_name, "price": price, "symbol": symbol}
     except (requests.RequestException, ValueError, KeyError, IndexError):
         return None
 
@@ -82,6 +94,7 @@ def lookup(symbol):
 def usd(value):
     """Format value as USD."""
     return f"${value:,.2f}"
+
 
 def get_company_name(symbol, api_key):
     """
@@ -107,5 +120,6 @@ def get_company_name(symbol, api_key):
 
     except requests.RequestException as e:
         print(f"Error fetching company name: {e}")
+        return apology("Error fetching company name", 405)
 
     return None
