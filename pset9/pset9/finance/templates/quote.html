@@ -8,8 +8,8 @@
 <div class="container">
     <form action="/quote" method="post">
         <label for="symbol" class="form-label">Symbol</label>
-        <input type="text" id="symbol" autofocus class="form-control form-control-sm mx-auto w-auto" style="width: 200px; " aria-describedby="symbolHelpBlock" placeholder="Ex: AAPL for Apple Inc.">
-        <div id="symbolHelpBlock" class="form-text">
+        <input name="symbol" type="text" id="symbol" autofocus class="form-control form-control-sm mx-auto w-auto" style="width: 200px; " aria-describedby="symbolHelpBlock" placeholder="Ex: AAPL for Apple Inc.">
+        <div name="symbolHelpBlock" id="symbolHelpBlock" class="form-text">
             Please insert “Ticker Symbol”, Symbol is a unique one to five letter code used by the stock exchanges to identify a company.
         </div>
         <button for="symbol" type="submit" class="btn btn-primary mt-3">Quote</button>
