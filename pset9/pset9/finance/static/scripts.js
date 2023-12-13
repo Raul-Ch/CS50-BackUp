@@ -44,9 +44,6 @@ function togglePasswordVisibility() {
     var passwordInput = document.getElementById('password');
     var toggleButton = document.getElementById('togglePasswordBtn');
 
-    var newPasswordInput = document.getElementById('newPassword');
-    var toggleNewButton = document.getElementById('toggleNewPasswordBtn');
-
     // Toggle the type attribute of the password input field
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
