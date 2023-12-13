@@ -110,7 +110,7 @@ def quote():
             return apology("must provide symbol", 403)
         else:
             dic_symbol = lookup(symbol)
-            return render_template("quoted.html",dic_symbol)
+            return render_template("quoted.html",dic_symbol = dic_symbol)
 
     else:
         return render_template("quote.html")
