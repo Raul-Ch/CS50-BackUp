@@ -11,7 +11,6 @@ Profile
             <div class="card text-white bg-dark border-light shadow">
                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
                     class="card-img-top" alt="Default Image">
-                <!-- Replace the placeholder image URL with the actual image or icon URL -->
                 <div class="card-header">User:</div>
                 <div class="card-body">
                     <div class="card-footer">Cash:</div>
@@ -19,10 +18,10 @@ Profile
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-6">
-                            <button class="btn btn-primary mt-3">Add more cash</button>
+                            <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#addCashModal">Add more cash</button>
                         </div>
                         <div class="col-md-6">
-                            <button class="btn btn-primary mt-3">Change Password</button>
+                            <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
                         </div>
                     </div>
                 </div>
@@ -30,4 +29,53 @@ Profile
         </div>
     </div>
 </div>
+
+<!-- Add more cash modal -->
+<div class="modal fade" id="addCashModal" tabindex="-1" role="dialog" aria-labelledby="addCashModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCashModalLabel">Add More Cash</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your input field and form elements here -->
+                <label for="cashAmount">Enter cash amount:</label>
+                <input type="text" class="form-control" id="cashAmount">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add Cash</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Change password modal -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your input field and form elements here -->
+                <label for="newPassword">Enter new password:</label>
+                <input type="password" class="form-control" id="newPassword">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Change Password</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
+
+
