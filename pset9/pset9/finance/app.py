@@ -35,8 +35,8 @@ def after_request(response):
 @login_required
 def profile():
     username = session["name"]
-
-    return render_template("profile.html", username = username)
+    cash_flow = db.execute("SELECT cash FROM users WHERE username = ?", (username,))
+    return render_template("profile.html", username = username, cash_flow = cash_flow)
 
 @app.route("/")
 @login_required
