@@ -42,10 +42,15 @@ def login_required(f):
 def lookup(symbol):
     """Look up quote for symbol."""
 
+    company_name = get_company_name(symbol, api_key)
+
     # Prepare API request
     symbol = symbol.upper()
-    end = datetime.datetime.now(pytz.timezone("US/Eastern"))
-    start = end - datetime.timedelta(days=7)
+    if company_name is not None:
+        end = datetime.datetime.now(pytz.timezone("US/Eastern"))
+        start = end - datetime.timedelta(days=7)
+    else:
+        company_name = symbol
 
     # Yahoo Finance API
     url = (
@@ -66,7 +71,7 @@ def lookup(symbol):
         quotes.reverse()
         price = round(float(quotes[0]["Adj Close"]), 2)
         return {
-            "name": symbol,
+            "name": company_name,
             "price": price,
             "symbol": symbol
         }
@@ -77,3 +82,32 @@ def lookup(symbol):
 def usd(value):
     """Format value as USD."""
     return f"${value:,.2f}"
+
+def get_company_name(symbol, api_key):
+    """
+    Get the company name based on the symbol using Alpha Vantage API.
+
+    Note: You need to sign up for a free API key from Alpha Vantage (https://www.alphavantage.co/) and replace 'YOUR_API_KEY' with your actual key.
+    """
+    base_url = "https://www.alphavantage.co/query"
+    function = "SYMBOL_SEARCH"
+
+    params = {
+        "function": function,
+        "keywords": symbol,
+        "apikey": api_key,
+    }
+
+    try:
+        response = requests.get(base_url, params=params)
+        response.raise_for_status()
+        data = response.json()
+
+        # Extract the company name from the response
+        if "bestMatches" in data and data["bestMatches"]:
+            return data["bestMatches"][0]["2. name"]
+
+    except requests.RequestException as e:
+        print(f"Error fetching company name: {e}")
+
+    return None
