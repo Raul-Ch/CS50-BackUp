@@ -6,13 +6,17 @@
 
 {% block main %}
 <div class="container">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">A share of {{ dic_symbol.name }} ({{ dic_symbol.symbol }})</h5>
-            <p class="card-text">Costs ${{ dic_symbol.price }}</p>
-            <a href="/quote">
-                <button class="btn btn-primary mt-3">Make another quote</button>
-            </a>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-primary shadow">
+                <div class="card-body">
+                    <h5 class="card-title">A share of {{ dic_symbol.name }} ({{ dic_symbol.symbol }})</h5>
+                    <p class="card-text">Costs ${{ dic_symbol.price }}</p>
+                    <a href="/quote">
+                        <button class="btn btn-primary mt-3">Make another quote</button>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
