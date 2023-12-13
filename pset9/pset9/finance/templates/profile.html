@@ -18,10 +18,12 @@ Profile
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-6">
-                            <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#addCashModal">Add more cash</button>
+                            <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#addCashModal">Add
+                                more cash</button>
                         </div>
                         <div class="col-md-6">
-                            <button class="btn btn-primary mt-3" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
+                            <button class="btn btn-primary mt-3" data-toggle="modal"
+                                data-target="#changePasswordModal">Change Password</button>
                         </div>
                     </div>
                 </div>
@@ -31,13 +33,15 @@ Profile
 </div>
 
 <!-- Add more cash modal -->
-<div class="modal fade" id="addCashModal" tabindex="-1" role="dialog" aria-labelledby="addCashModalLabel" aria-hidden="true">
+<div class="modal fade" id="addCashModal" tabindex="-1" role="dialog" aria-labelledby="addCashModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addCashModalLabel">Add More Cash</h5>
-                <button type="button" class="btn-close btn-close-white" data-dismiss="modal"  aria-label="Close"></button>
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close btn-close-white" data-dismiss="modal"
+                    aria-label="Close"></button>
+                <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
@@ -54,21 +58,23 @@ Profile
 </div>
 
 <!-- Change password modal -->
-<div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+<div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
-                <button type="button" class="btn-close btn-close-white" data-dismiss="modal"  aria-label="Close"></button>
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close btn-close-white" data-dismiss="modal"
+                    aria-label="Close"></button>
+                <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <!-- Add your input field and form elements here -->
                 <label for="newPassword">Enter new password:</label>
-                <input type="password" class="form-control" id="newPassword">
-                <label for="newPassword" id="newPasswordConsideration" ></label>
-                <label for="newPassword" id="newPasswordNote"></label>
+                <input type="password" class="form-control" id="newPassword" oninput="validateNewPassword()">
+                <label for="newPasswordConsideration" id="newPasswordConsideration"></label>
+                <label for="newPasswordNote" id="newPasswordNote"></label>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">Cancel</button>
@@ -78,6 +84,5 @@ Profile
     </div>
 </div>
 
+
 {% endblock %}
-
-
