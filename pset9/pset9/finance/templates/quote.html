@@ -5,14 +5,15 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container">
-        <form>
-            <label for="symbol" class="form-label">Symbol</label>
-            <input type="text" id="symbol" class="form-control" aria-describedby="symbolHelpBlock">
-            <div id="symbolHelpBlock" class="form-text">
-                Please insert “Ticker Symbol”, Symbol is a unique one to five letter code used by the stock exchanges to identify a company.
-            </div>
-        </form>
-    </div>
+<div class="container">
+    <form>
+        <label for="symbol" class="form-label">Symbol</label>
+        <input type="text" id="symbol" class="form-control form-control-sm" aria-describedby="symbolHelpBlock">
+        <div id="symbolHelpBlock" class="form-text">
+            Please insert “Ticker Symbol”, Symbol is a unique one to five letter code used by the stock exchanges to identify a company.
+        </div>
+        <button for="symbol" type="button" class="btn btn-primary mt-3">Quote</button>
+    </form>
+</div>
 {% endblock %}
 
