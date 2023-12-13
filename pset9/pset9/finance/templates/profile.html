@@ -70,11 +70,13 @@ Profile
                 </button>
             </div>
             <div class="modal-body">
-                <!-- Add your input field and form elements here -->
+                <!-- Password input and labels -->
                 <label for="newPassword">Enter new password:</label>
-                <input type="password" class="form-control" id="newPassword" oninput="validateNewPassword()">
-                <label for="newPasswordConsideration" id="newPasswordConsideration"></label>
-                <label for="newPasswordNote" id="newPasswordNote"></label>
+                <input type="password" class="form-control" id="newPassword">
+                <label for="newPassword" id="newPasswordConsideration"></label>
+                <label for="newPassword" id="newPasswordNote"></label>
+                <br>
+                <button class="btn btn-primary" id="toggleNewPasswordBtn" type="button">Show Password</button>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">Cancel</button>
