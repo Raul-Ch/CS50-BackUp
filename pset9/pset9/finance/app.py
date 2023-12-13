@@ -34,9 +34,9 @@ def after_request(response):
 @app.route("/profile")
 @login_required
 def profile():
-    
+    username = session["name"]
 
-    return render_template("profile.html")
+    return render_template("profile.html", username = username)
 
 @app.route("/")
 @login_required
