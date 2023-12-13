@@ -42,7 +42,7 @@ def login_required(f):
 def lookup(symbol):
     """Look up quote for symbol."""
 
-    company_name = get_company_name(symbol, api_key)
+    company_name = get_company_name(symbol, YN7WHJ5TIIXRRI4M)
 
     # Prepare API request
     symbol = symbol.upper()
@@ -86,8 +86,6 @@ def usd(value):
 def get_company_name(symbol, api_key):
     """
     Get the company name based on the symbol using Alpha Vantage API.
-
-    Note: You need to sign up for a free API key from Alpha Vantage (https://www.alphavantage.co/) and replace 'YOUR_API_KEY' with your actual key.
     """
     base_url = "https://www.alphavantage.co/query"
     function = "SYMBOL_SEARCH"
