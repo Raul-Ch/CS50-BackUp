@@ -37,7 +37,7 @@ def profile():
     if request.method == "POST":
         username = request.form.get("username")
 
-        if 'change_password' in request.form:
+        if "change_password" in request.form:
             password = request.form.get("password")
             # Ensure password was submitted
             if not password:
@@ -49,38 +49,49 @@ def profile():
 
             # If there are validation errors, redirect to apology page with error message
             if not password_valid:
-                return apology("Invalid password. Please make sure your password meets the criteria.", 403)
+                return apology(
+                    "Invalid password. Please make sure your password meets the criteria.",
+                    403,
+                )
 
             # Hash the password
             hashed_password = generate_password_hash(password)
 
             # Insert the new user into the database
-            db.execute("UPDATE users SET hash = ? WHERE username = ?", hashed_password, username)
+            db.execute(
+                "UPDATE users SET hash = ? WHERE username = ?",
+                hashed_password,
+                username,
+            )
 
             # Redirect to login page after successful registration
             flash("Password Update successful!")
-            return redirect(url_for('profile'))
+            return redirect(url_for("profile"))
 
-        elif 'update_money' in request.form:
-              cashAmount = request.form.get("cashAmount")
-              if not cashAmount:
+        elif "update_money" in request.form:
+            cashAmount = request.form.get("cashAmount")
+            if not cashAmount:
                 return apology("Must provide cash amount to increment", 403)
 
-              else:
+            else:
                 # Insert the new user into the database
-                db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", cashAmount, username)
+                db.execute(
+                    "UPDATE users SET cash = cash + ? WHERE username = ?",
+                    cashAmount,
+                    username,
+                )
 
                 # Redirect to login page after successful registration
                 flash("Cash update successful!")
-                return redirect(url_for('profile'))
+                return redirect(url_for("profile"))
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         user_id = session["user_id"]
         rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
-        username = rows[0]['username'] if rows else None
-        cash_flow = rows[0]['cash'] if rows else None
-        return render_template("profile.html", username = username, cash_flow = cash_flow)
+        username = rows[0]["username"] if rows else None
+        cash_flow = rows[0]["cash"] if rows else None
+        return render_template("profile.html", username=username, cash_flow=cash_flow)
 
 
 @app.route("/")
@@ -88,6 +99,7 @@ def profile():
 def index():
     """Show portfolio of stocks"""
     return render_template("index.html")
+
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
@@ -112,7 +124,6 @@ def login():
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-
         # Ensure username was submitted
         if not request.form.get("username"):
             return apology("must provide username", 403)
@@ -122,10 +133,14 @@ def login():
             return apology("must provide password", 403)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if len(rows) != 1 or not check_password_hash(
+            rows[0]["hash"], request.form.get("password")
+        ):
             return apology("invalid username and/or password", 403)
 
         # Remember which user has logged in
@@ -156,7 +171,7 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-     # Ensure username was submitted
+        # Ensure username was submitted
         if not symbol:
             return apology("must provide symbol", 403)
         else:
@@ -164,9 +179,10 @@ def quote():
             if dic_symbol is None:
                 return apology("invalid symbol", 403)
             else:
-                return render_template("quoted.html",dic_symbol = dic_symbol)
+                return render_template("quoted.html", dic_symbol=dic_symbol)
     else:
         return render_template("quote.html")
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -194,18 +210,27 @@ def register():
 
         # If there are validation errors, redirect to apology page with error message
         if not password_valid or not passwords_match:
-            return apology("Invalid password. Please make sure your password meets the criteria and confirmation matches.", 403)
+            return apology(
+                "Invalid password. Please make sure your password meets the criteria and confirmation matches.",
+                403,
+            )
 
         # Check if the username is available
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
         if len(rows) > 0:
-            return apology( "Username already taken. Please choose a different username.", 403)
+            return apology(
+                "Username already taken. Please choose a different username.", 403
+            )
 
         # Hash the password
         hashed_password = generate_password_hash(password)
 
         # Insert the new user into the database
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hashed_password)
+        db.execute(
+            "INSERT INTO users (username, hash) VALUES (?, ?)",
+            username,
+            hashed_password,
+        )
 
         # Redirect to login page after successful registration
         flash("Registration successful! You can now log in.")
@@ -214,13 +239,17 @@ def register():
     else:
         return render_template("register.html")
 
+
 def validate_password(password):
-    password_regex = r"^(?=(?:.*[a-zA-Z]){5})(?=(?:.*\d){2})(?=(?:.*\W){1})[a-zA-Z\d\W]{8,}$"
+    password_regex = (
+        r"^(?=(?:.*[a-zA-Z]){5})(?=(?:.*\d){2})(?=(?:.*\W){1})[a-zA-Z\d\W]{8,}$"
+    )
 
     if re.match(password_regex, password):
         return True
     else:
         return False
+
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
