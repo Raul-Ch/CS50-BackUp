@@ -70,7 +70,7 @@ def profile():
 
             # Insert the new user into the database
             db.execute(
-                "UPDATE users SET hash = ? WHERE username = ?",
+                "UPDATE users SET hash = ? WHERE id = ?",
                 hashed_password,
                 username,
             )
@@ -85,11 +85,10 @@ def profile():
                 return apology("Must provide cash amount to increment", 403)
 
             else:
-                # Insert the new user into the database
                 db.execute(
-                    "UPDATE users SET cash = cash + ? WHERE username = ?",
+                    "UPDATE users SET cash = cash + ? WHERE id = ?",
                     cashAmount,
-                    username,
+                    user_id,
                 )
 
                 # Redirect to login page after successful registration
@@ -127,7 +126,7 @@ def buy():
                     return apology("user cannot afford the number of shares at the current price", 402)
 
                 else:
-                    db.execute("UPDATE users SET cash = ? WHERE username = ?",(total, user_id))
+                    db.execute("UPDATE users SET cash = ? WHERE id = ?",(total, user_id))
                     db.execute("INSERT INTO transactions user_id, symbol, shares, price, timestamp VALUES ?, ?, ?, ? , ?", (user_id, symbol, shares, dic_symbol.price))
                     flash("Transaction: Bought shares, successful!")
                     return render_template("index.html")
