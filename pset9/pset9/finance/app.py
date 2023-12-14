@@ -336,4 +336,5 @@ def sell():
         return render_template("sell.html")
 
     else:
+        symbols = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
         return render_template("sell.html")
