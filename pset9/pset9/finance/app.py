@@ -35,14 +35,28 @@ def after_request(response):
 @login_required
 def profile():
     if request.method == "POST":
-        password_valid = request.form.get("password")
+        password = request.form.get("password")
         # Ensure password was submitted
-        if not password_valid:
+        if not password:
             return apology("must provide password", 403)
 
         else:
             # Validate the password
             password_valid = validate_password(password)
+
+        # If there are validation errors, redirect to apology page with error message
+        if not password_valid:
+            return apology("Invalid password. Please make sure your password meets the criteria.", 403)
+
+        # Hash the password
+        hashed_password = generate_password_hash(password)
+
+        # Insert the new user into the database
+        db.execute("UPDATE INTO users (username, hash) VALUES (?, ?)", username, hashed_password)
+
+        # Redirect to login page after successful registration
+        flash("Registration successful! You can now log in.")
+        return redirect("/login")
 
         # Reload page
         return redirect("/profile")
