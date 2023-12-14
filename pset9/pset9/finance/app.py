@@ -36,7 +36,11 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return render_template("index.html")
+    user_id = session["user_id"]
+    rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
+    cash = rows[0]["cash"] if rows else None
+
+    return render_template("index.html", cash = cash)
 
 
 @app.route("/profile", methods=["GET", "POST"])
@@ -125,22 +129,22 @@ def buy():
                 )
                 money = rows[0]["cash"] if rows else None
                 cost = dic_symbol["price"] * int(shares)
-                total = money - cost
+                cash = money - cost
 
-                if total < 0:
+                if cash < 0:
                     return apology(
                         "user cannot afford the number of shares at the current price",
                         402,
                     )
 
                 else:
-                    db.execute("UPDATE users SET cash = ? WHERE id = ?", total, user_id)
+                    db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, user_id)
                     db.execute(
                         "INSERT INTO transactions (user_id, symbol, shares, price, timestamp) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)",
                         user_id, symbol, shares, dic_symbol["price"],
                     )
                     flash("Transaction: Bought shares, successful!")
-                    return render_template("index.html")
+                    return render_template("index.html", cash = cash)
     else:
         return render_template("buy.html")
 
