@@ -298,6 +298,9 @@ def register():
         return render_template("register.html")
 
 def load_index():
+    user_id = session["user_id"]
+    rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
+    username = rows[0]["username"] if rows else None
     rows = db.execute("SELECT id, username, cash FROM users WHERE username = ?", username)
     cash = rows[0]["cash"] if rows else None
     user_id = rows[0]["id"] if rows else None
