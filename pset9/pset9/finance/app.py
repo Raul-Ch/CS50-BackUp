@@ -291,8 +291,9 @@ def register():
         )
 
         # Redirect to home page after successful registration
-        rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
+        rows = db.execute("SELECT username, cash FROM users WHERE username = ?", username)
         cash = rows[0]["cash"] if rows else None
+        user_id = rows[0]["id"] if rows else None
         total_rows = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
         overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
         total = overall_total + float(cash)
