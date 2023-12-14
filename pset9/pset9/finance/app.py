@@ -50,7 +50,7 @@ def index():
     cash = usd(cash)
     total = usd(total)
 
-    return render_template("index.html", cash = cash, transactions = transactions, total = total)
+    return render_template("index.html", cash = usd(cash), transactions = transactions, total = total)
 
 
 @app.route("/profile", methods=["GET", "POST"])
@@ -162,7 +162,7 @@ def buy():
                     cash = usd(cash)
                     total = usd(total)
                     flash("Transaction: Bought shares, successful!")
-                    return render_template("index.html", cash = cash, transactions = transactions, total = total)
+                    return render_template("index.html", cash = usd(cash), transactions = transactions, total = total)
     else:
         return render_template("buy.html")
 
@@ -314,7 +314,7 @@ def load_index():
     total = usd(total)
     flash("Registration successful! You can now log in.")
 
-    return render_template("index.html", cash=cash, transactions=transactions, total=total)
+    return render_template("index.html", cash=usd(cash),, transactions=transactions, total=total)
 
 
 def validate_password(password):
