@@ -31,11 +31,13 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+
 @app.route("/")
 @login_required
 def index():
     """Show portfolio of stocks"""
     return render_template("index.html")
+
 
 @app.route("/profile", methods=["GET", "POST"])
 @login_required
@@ -99,6 +101,7 @@ def profile():
     else:
         return render_template("profile.html", username=username, cash_flow=cash_flow)
 
+
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
@@ -117,17 +120,27 @@ def buy():
                 return apology("invalid symbol", 403)
             else:
                 user_id = session["user_id"]
-                rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
+                rows = db.execute(
+                    "SELECT username, cash FROM users WHERE id = ?", (user_id,)
+                )
                 money = rows[0]["cash"] if rows else None
                 cost = dic_symbol["price"] * int(shares)
                 total = money - cost
 
                 if total < 0:
-                    return apology("user cannot afford the number of shares at the current price", 402)
+                    return apology(
+                        "user cannot afford the number of shares at the current price",
+                        402,
+                    )
 
                 else:
-                    db.execute("UPDATE users SET cash = ? WHERE id = ?",(total, user_id))
-                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price, timestamp) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)", (user_id, symbol, shares, dic_symbol["price"]))
+                    db.execute(
+                        "UPDATE users SET cash = ? WHERE id = ?", (float(total), user_id)
+                    )
+                    db.execute(
+                        "INSERT INTO transactions (user_id, symbol, shares, price, timestamp) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)",
+                        (user_id, symbol, shares, dic_symbol["price"]),
+                    )
                     flash("Transaction: Bought shares, successful!")
                     return render_template("index.html")
     else:
