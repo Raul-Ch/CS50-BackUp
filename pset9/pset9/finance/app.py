@@ -47,8 +47,8 @@ def index():
     total = overall_total + float(cash)
 
     #FORMAT
-    cash = "${:,.2f}".format(cash)
-    total = "${:,.2f}".format(total)
+    cash = usd(cash)
+    total = usd(total)
 
     return render_template("index.html", cash = cash, transactions = transactions, total = total)
 
@@ -60,7 +60,7 @@ def profile():
     rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
     username = rows[0]["username"] if rows else None
     cash = rows[0]["cash"] if rows else None
-    cash = "${:,.2f}".format(cash)
+    cash = usd(cash)
 
     if request.method == "POST":
         form_name = request.form.get("form_name")
@@ -159,8 +159,8 @@ def buy():
                     overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
                     total = overall_total + float(cash)
                     #FORMAT
-                    cash = "${:,.2f}".format(cash)
-                    total = "${:,.2f}".format(total)
+                    cash = usd(cash)
+                    total = usd(total)
                     flash("Transaction: Bought shares, successful!")
                     return render_template("index.html", cash = cash, transactions = transactions, total = total)
     else:
@@ -310,8 +310,8 @@ def load_index():
     overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
     total = overall_total + float(cash)
     #FORMAT
-    cash = "${:,.2f}".format(cash)
-    total = "${:,.2f}".format(total)
+    cash = usd(cash)
+    total = usd(total)
     flash("Registration successful! You can now log in.")
 
     return render_template("index.html", cash=cash, transactions=transactions, total=total)
