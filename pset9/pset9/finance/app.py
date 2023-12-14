@@ -41,7 +41,8 @@ def profile():
     cash_flow = rows[0]["cash"] if rows else None
 
     if request.method == "POST":
-        if "change_password" in request.form:
+        form_name = request.form.get("form_name")
+        if form_name == "Change Password":
             password = request.form.get("password")
 
             # Ensure password was submitted
@@ -73,7 +74,7 @@ def profile():
             flash("Password Update successful!")
             return redirect(url_for("profile"))
 
-        elif "update_money" in request.form:
+        elif form_name == "Update Money":
             cashAmount = request.form.get("cashAmount")
             if not cashAmount:
                 return apology("Must provide cash amount to increment", 403)
