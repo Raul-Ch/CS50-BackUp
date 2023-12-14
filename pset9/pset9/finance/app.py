@@ -2,7 +2,7 @@ import os
 import re
 
 from cs50 import SQL
-from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, redirect, render_template, request, session, url_for
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -59,7 +59,7 @@ def profile():
 
             # Redirect to login page after successful registration
             flash("Password Update successful!")
-            return redirect("/profile")
+            return redirect(url_for('profile'))
 
         elif 'update_money' in request.form:
               cashAmount = request.form.get("cashAmount")
@@ -72,7 +72,7 @@ def profile():
 
                 # Redirect to login page after successful registration
                 flash("Cash update successful!")
-                return redirect("/profile")
+                return redirect(url_for('profile'))
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
