@@ -127,8 +127,8 @@ def buy():
                     return apology("user cannot afford the number of shares at the current price", 402)
 
                 else:
-                    db.execute("UPDATE users SET cash = cash + ? WHERE username = ?",(total, user_id))
-                    db.execute("INSERT INTO transactions user_id, symbol, shares, price, timestamp", (user_id, symbol, shares, dic_symbol.price))
+                    db.execute("UPDATE users SET cash = ? WHERE username = ?",(total, user_id))
+                    db.execute("INSERT INTO transactions user_id, symbol, shares, price, timestamp VALUES ?, ?, ?, ? , ?", (user_id, symbol, shares, dic_symbol.price))
                     flash("Transaction: Bought shares, successful!")
                     return render_template("index.html")
     else:
