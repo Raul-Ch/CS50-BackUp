@@ -332,4 +332,8 @@ def validate_password(password):
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+    if request.method == "POST":
+        return render_template("sell.html")
+
+    else:
+        return render_template("sell.html")
