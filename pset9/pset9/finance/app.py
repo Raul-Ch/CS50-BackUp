@@ -119,7 +119,7 @@ def buy():
                 user_id = session["user_id"]
                 rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
                 money = rows[0]["cash"] if rows else None
-                cost = dic_symbol.price * shares
+                cost = dic_symbol["price"] * shares
                 total = money - cost
 
                 if total < 0:
