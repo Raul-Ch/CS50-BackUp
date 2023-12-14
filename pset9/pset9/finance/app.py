@@ -351,29 +351,22 @@ def sell():
                 )
                 money = rows[0]["cash"] if rows else None
                 cost = dic_symbol["price"] * int(shares)
-                cash = money - cost
+                cash = money + cost
 
-                if cash < 0:
-                    return apology(
-                        "user cannot afford the number of shares at the current price",
-                        402,
-                    )
-
-                else:
-                    db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, user_id)
-                    db.execute(
-                        "INSERT INTO transactions (user_id, symbol, shares, price, timestamp, name, type) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)",
-                        user_id, symbol, shares, dic_symbol["price"],dic_symbol["name"], 0
-                    )
-                    transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
-                    total_rows = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
-                    overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
-                    total = overall_total + float(cash)
-                    #FORMAT
-                    cash = usd(cash)
-                    total = usd(total)
-                    flash("Transaction: Bought shares, successful!")
-                    return render_template("index.html", cash = cash, transactions = transactions, total = total)
+                db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, user_id)
+                db.execute(
+                    "INSERT INTO transactions (user_id, symbol, shares, price, timestamp, name, type) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)",
+                    user_id, symbol, shares, dic_symbol["price"],dic_symbol["name"], 0
+                )
+                transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
+                total_rows = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
+                overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
+                total = overall_total + float(cash)
+                #FORMAT
+                cash = usd(cash)
+                total = usd(total)
+                flash("Transaction: Bought shares, successful!")
+                return render_template("index.html", cash = cash, transactions = transactions, total = total)
     else:
         user_id = session["user_id"]
         symbols = db.execute("SELECT DISTINCT symbol FROM transactions WHERE user_id = ?", user_id)
