@@ -38,9 +38,10 @@ def index():
     """Show portfolio of stocks"""
     user_id = session["user_id"]
     rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
-    cash = "${:,.2f}".format(rows[0]["cash"]) if rows else None
+    cash = (rows[0]["cash"]) if rows else None
+    cash = "${:,.2f}".format(cash)
 
-    transactions = db.execute("SELECT symbol, shares, price, timestamp FROM transactions WHERE user_id = ?", user_id)
+    transactions = db.execute("SELECT symbol, name, shares, price, timestamp FROM transactions WHERE user_id = ?", user_id)
 
     return render_template("index.html", cash = cash, transactions=transactions)
 
@@ -145,8 +146,10 @@ def buy():
                         "INSERT INTO transactions (user_id, symbol, shares, price, timestamp, name) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?)",
                         user_id, symbol, shares, dic_symbol["price"],dic_symbol["name"]
                     )
+                    cash = "${:,.2f}".format(cash)
+                    transactions = db.execute("SELECT symbol, name, shares, price, timestamp FROM transactions WHERE user_id = ?", user_id)
                     flash("Transaction: Bought shares, successful!")
-                    return render_template("index.html", cash = cash)
+                    return render_template("index.html", cash = cash, transactions = transactions)
     else:
         return render_template("buy.html")
 

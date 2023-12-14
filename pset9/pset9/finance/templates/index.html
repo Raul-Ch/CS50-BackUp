@@ -22,7 +22,7 @@ Home
                 {% set row_classes = ['table-primary', 'table-danger', 'table-warning', 'table-success'] %}
                 <tr class="{{ row_classes[loop.index0 % 4] }}">
                     <td class="text-start">{{ transaction.symbol }}</td>
-                    <!-- Add other columns based on your transaction data -->
+                    <td class="text-start">{{ transaction.name }}</td>
                     <td class="text-end">{{ transaction.shares }}</td>
                     <td class="text-end">{{ transaction.price }}</td>
                     <td class="text-end">{{ transaction.shares * transaction.price }}</td>
