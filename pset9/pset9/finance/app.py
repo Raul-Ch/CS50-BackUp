@@ -39,7 +39,10 @@ def index():
     user_id = session["user_id"]
     rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
     cash = "${:,.2f}".format(rows[0]["cash"]) if rows else None
-    return render_template("index.html", cash = cash)
+
+    transactions = db.execute("SELECT symbol, shares, price, timestamp FROM transactions WHERE user_id = ?", user_id)
+
+    return render_template("index.html", cash = cash, transactions=transactions)
 
 
 @app.route("/profile", methods=["GET", "POST"])

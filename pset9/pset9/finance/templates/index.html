@@ -18,10 +18,14 @@ Home
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                {% for item in data %}
-                    <tr class="{{ cycle('table-primary', 'table-danger', 'table-warning', 'table-success') }}">
-                        <!-- Row content -->
-                    </tr>
+                {% for transaction in transactions %}
+                <tr class="{{ cycle('table-primary', 'table-danger', 'table-warning', 'table-success') }}">
+                    <td class="text-start">{{ transaction.symbol }}</td>
+                    <!-- Add other columns based on your transaction data -->
+                    <td class="text-end">{{ transaction.shares }}</td>
+                    <td class="text-end">{{ transaction.price }}</td>
+                    <td class="text-end">{{ transaction.shares * transaction.price }}</td>
+                </tr>
                 {% endfor %}
             </tbody>
             <tfoot>
