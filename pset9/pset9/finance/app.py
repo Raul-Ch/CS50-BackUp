@@ -117,7 +117,8 @@ def buy():
             if dic_symbol is None:
                 return apology("invalid symbol", 403)
             else:
-                flash("Transaction: buy, successful!")
+                
+                flash("Transaction: Bought shares, successful!")
                 return render_template("index.html")
     else:
         return render_template("buy.html")

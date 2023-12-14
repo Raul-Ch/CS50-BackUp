@@ -1,26 +1,36 @@
-{% extends 'quote.html' %}
+{% extends "layout.html" %}
 
 {% block title %}
-    Buy
+Buy
 {% endblock %}
 
-{% block buy %}
-{% block button %}
-{% endblock %}
+{% block main %}
+<div class="container">
+    <form action="/buy" method="post">
+        <div></div><b><label for="symbol" class="form-label">Symbol</label></b>
+</div>
+<div name="symbolHelpBlock" id="symbolHelpBlock" class="form-text">
+    Please insert “Ticker Symbol”, Symbol is a unique one to five letter code used by the stock exchanges to
+    identify a company.
+</div>
+<div class="p-3">
+    <input name="symbol" type="text" autofocus id="symbol" class="form-control form-control-sm mx-auto w-auto"
+        style="width: 250px; height: 40px;" aria-describedby="symbolHelpBlock" placeholder="Ex: AAPL for Apple Inc.">
+</div>
+</div>
 <br>
 <div class="container">
     <form action="/buy" method="post">
-        <div></div><b><label for="symbol" class="form-label">Shares</label></b></div>
-        <div name="sharesHelpBlock" id="sharesHelpBlock" class="form-text">
-            Please insert the amount of company's stock Shares you want to buy
-        </div>
-        <div class="p-3">
-            <input name="shares" type="number" min=1 autofocus id="shares" class="form-control form-control-sm mx-auto w-auto"
-                style="width: 250px; height: 40px;" aria-describedby="sharesHelpBlock"
-                placeholder="Ex: 10">
-            <button for="shares" type="submit" class="btn btn-primary mt-3">Buy</button>
-        </div>
-    </form>
+        <div></div><b><label for="symbol" class="form-label">Shares</label></b>
+</div>
+<div name="sharesHelpBlock" id="sharesHelpBlock" class="form-text">
+    Please insert the amount of company's stock Shares you want to buy
+</div>
+<div class="p-3">
+    <input name="shares" type="number" min=1 autofocus id="shares" class="form-control form-control-sm mx-auto w-auto"
+        style="width: 250px; height: 40px;" aria-describedby="sharesHelpBlock" placeholder="Ex: 10">
+    <button for="shares" type="submit" class="btn btn-primary mt-3">Buy</button>
+</div>
+</form>
 </div>
 {% endblock %}
-
