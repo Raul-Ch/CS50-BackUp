@@ -25,7 +25,7 @@ Home
                     <td class="text-start">{{ transaction.name }}</td>
                     <td class="text-end">{{ transaction.shares }}</td>
                     <td class="text-end">${{ transaction.price }}</td>
-                    <td class="text-end">${{ transaction.shares * transaction.price }}</td>
+                    <td class="text-end">${{ transaction.total }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

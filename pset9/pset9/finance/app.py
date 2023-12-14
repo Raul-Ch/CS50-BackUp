@@ -41,7 +41,7 @@ def index():
     cash = (rows[0]["cash"]) if rows else None
     cash = "${:,.2f}".format(cash)
 
-    transactions = db.execute("SELECT symbol, name, shares, price, timestamp FROM transactions WHERE user_id = ?", user_id)
+    transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
 
     return render_template("index.html", cash = cash, transactions=transactions)
 
