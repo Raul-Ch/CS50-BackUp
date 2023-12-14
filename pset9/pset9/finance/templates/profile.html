@@ -82,7 +82,8 @@ Profile
                         Password</button>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="cancel_password" class="btn btn-danger text-white" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="cancel_password" class="btn btn-danger text-white"
+                        data-bs-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-primary">Change Password</button>
                 </div>
             </div>
@@ -93,9 +94,11 @@ Profile
             document.getElementById('password').addEventListener('input', validatePassword);
             // Add an event listener to the show password button
             document.getElementById('togglePasswordBtn').addEventListener('click', togglePasswordVisibility);
-             // Add an event listener to the restar password input
+            // Add an event listener to the restar password input
             document.getElementById('cancel_password').addEventListener('click', function() {
                 document.querySelector('#password').value = '';
+                document.querySelector('#Consideration').innerHTML = '';
+                document.querySelector('#Note').innerHTML = '';
             });
         </script>
 </form>
