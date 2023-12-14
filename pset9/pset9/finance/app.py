@@ -107,7 +107,19 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        # Ensure username was submitted
+        if not symbol:
+            return apology("must provide symbol", 403)
+        else:
+            dic_symbol = lookup(symbol)
+            if dic_symbol is None:
+                return apology("invalid symbol", 403)
+            else:
+                return render_template("quoted.html", dic_symbol=dic_symbol)
+    else:
+        return render_template("buy.html")
 
 
 @app.route("/history")

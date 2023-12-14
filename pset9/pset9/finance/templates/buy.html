@@ -1,1 +1,24 @@
-{% include 'quote.html' %}
+{% extends 'quote.html' %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block buy %}
+<br>
+<div class="container">
+    <form action="/buy" method="post">
+        <div></div><b><label for="symbol" class="form-label">Shares</label></b></div>
+        <div name="sharesHelpBlock" id="sharesHelpBlock" class="form-text">
+            Please insert the amount of company's stock Shares you want to buy
+        </div>
+        <div class="p-3">
+            <input name="shares" type="text" autofocus id="shares" class="form-control form-control-sm mx-auto w-auto"
+                style="width: 250px; height: 40px;" aria-describedby="sharesHelpBlock"
+                placeholder="Ex: AAPL for Apple Inc.">
+            <button for="shares" type="submit" class="btn btn-primary mt-3">Buy</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
