@@ -72,7 +72,7 @@ def profile():
             db.execute(
                 "UPDATE users SET hash = ? WHERE id = ?",
                 hashed_password,
-                username,
+                user_id,
             )
 
             # Redirect to login page after successful registration
@@ -127,7 +127,7 @@ def buy():
 
                 else:
                     db.execute("UPDATE users SET cash = ? WHERE id = ?",(total, user_id))
-                    db.execute("INSERT INTO transactions user_id, symbol, shares, price, timestamp VALUES ?, ?, ?, ? , ?", (user_id, symbol, shares, dic_symbol.price))
+                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price, timestamp) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)", (user_id, symbol, shares, dic_symbol.price))
                     flash("Transaction: Bought shares, successful!")
                     return render_template("index.html")
     else:
