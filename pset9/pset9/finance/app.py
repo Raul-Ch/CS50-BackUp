@@ -38,8 +38,7 @@ def index():
     """Show portfolio of stocks"""
     user_id = session["user_id"]
     rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
-    cash = rows[0]["cash"] if rows else None
-
+    cash = "${:,.2f}".format(rows[0]["cash"]) if rows else None
     return render_template("index.html", cash = cash)
 
 
