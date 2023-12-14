@@ -36,28 +36,43 @@ def after_request(response):
 def profile():
     if request.method == "POST":
         username = request.form.get("username")
-        password = request.form.get("password")
-        # Ensure password was submitted
-        if not password:
-            return apology("must provide password", 403)
 
-        else:
-            # Validate the password
-            password_valid = validate_password(password)
+        if 'change_password' in request.form:
+            password = request.form.get("password")
+            # Ensure password was submitted
+            if not password:
+                return apology("Must provide password", 403)
 
-        # If there are validation errors, redirect to apology page with error message
-        if not password_valid:
-            return apology("Invalid password. Please make sure your password meets the criteria.", 403)
+            else:
+                # Validate the password
+                password_valid = validate_password(password)
 
-        # Hash the password
-        hashed_password = generate_password_hash(password)
+            # If there are validation errors, redirect to apology page with error message
+            if not password_valid:
+                return apology("Invalid password. Please make sure your password meets the criteria.", 403)
 
-        # Insert the new user into the database
-        db.execute("UPDATE users SET hash = ? WHERE username = ?", hashed_password, username)
+            # Hash the password
+            hashed_password = generate_password_hash(password)
 
-        # Redirect to login page after successful registration
-        flash("Password Update successful!")
-        return redirect("/profile")
+            # Insert the new user into the database
+            db.execute("UPDATE users SET hash = ? WHERE username = ?", hashed_password, username)
+
+            # Redirect to login page after successful registration
+            flash("Password Update successful!")
+            return redirect("/profile")
+
+        elif 'update_money' in request.form:
+              cashAmount = request.form.get("cashAmount")
+              if not cashAmount:
+                return apology("Must provide cash amount to increment", 403)
+
+              else:
+                # Insert the new user into the database
+                db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", cashAmount, username)
+
+                # Redirect to login page after successful registration
+                flash("Cash update successful!")
+                return redirect("/profile")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
