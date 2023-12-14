@@ -117,9 +117,20 @@ def buy():
             if dic_symbol is None:
                 return apology("invalid symbol", 403)
             else:
-                
-                flash("Transaction: Bought shares, successful!")
-                return render_template("index.html")
+                user_id = session["user_id"]
+                rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
+                money = rows[0]["cash"] if rows else None
+                cost = dic_symbol.price * shares
+                total = money - cost
+
+                if total < 0:
+                    return apology("user cannot afford the number of shares at the current price", 402)
+
+                else:
+                    db.execute("UPDATE users SET cash = cash + ? WHERE username = ?",(total, user_id))
+                    db.execute("INSERT INTO transactions user_id, symbol, shares, price, timestamp", (user_id, symbol, shares, dic_symbol.price))
+                    flash("Transaction: Bought shares, successful!")
+                    return render_template("index.html")
     else:
         return render_template("buy.html")
 
