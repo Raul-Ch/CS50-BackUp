@@ -31,12 +31,12 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-@app.route("/profile")
+@app.route("/profile", methods=["GET", "POST"])
 @login_required
 def profile():
     if request.method == "POST":
         # Reload page
-        return redirect("/")
+        return location.reload();
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
