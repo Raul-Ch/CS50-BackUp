@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block buy %}
+{% block button %}
+{% endblock %}
 <br>
 <div class="container">
     <form action="/buy" method="post">
@@ -13,9 +15,9 @@
             Please insert the amount of company's stock Shares you want to buy
         </div>
         <div class="p-3">
-            <input name="shares" type="text" autofocus id="shares" class="form-control form-control-sm mx-auto w-auto"
+            <input name="shares" type="number" min=1 autofocus id="shares" class="form-control form-control-sm mx-auto w-auto"
                 style="width: 250px; height: 40px;" aria-describedby="sharesHelpBlock"
-                placeholder="Ex: AAPL for Apple Inc.">
+                placeholder="Ex: 10">
             <button for="shares" type="submit" class="btn btn-primary mt-3">Buy</button>
         </div>
     </form>
