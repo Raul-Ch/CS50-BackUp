@@ -292,7 +292,8 @@ def register():
         )
 
         # Redirect to home page after successful registration
-        return load_index()
+        session["user_id"] = db.execute("SELECT id FROM users WHERE username = ?", username)[0]["id"]
+        return redirect(url_for("index"))
 
     else:
         return render_template("register.html")
