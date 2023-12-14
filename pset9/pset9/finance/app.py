@@ -34,12 +34,9 @@ def after_request(response):
 @app.route("/profile", methods=["GET", "POST"])
 @login_required
 def profile():
-    user_id = session["user_id"]
-    rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
-    username = rows[0]['username'] if rows else None
-    cash_flow = rows[0]['cash'] if rows else None
-
     if request.method == "POST":
+        username = request.form.get("username")
+
         if 'change_password' in request.form:
             password = request.form.get("password")
             # Ensure password was submitted
@@ -62,12 +59,12 @@ def profile():
 
             # Redirect to login page after successful registration
             flash("Password Update successful!")
-            return render_template("profile.html", username = username, cash_flow = cash_flow)
+            return redirect("/profile")
 
         elif 'update_money' in request.form:
               cashAmount = request.form.get("cashAmount")
               if not cashAmount:
-                  return apology("Must provide cash amount to increment", 403)
+                return apology("Must provide cash amount to increment", 403)
 
               else:
                 # Insert the new user into the database
@@ -75,10 +72,14 @@ def profile():
 
                 # Redirect to login page after successful registration
                 flash("Cash update successful!")
-                return render_template("profile.html", username = username, cash_flow = cash_flow)
+                return redirect("/profile")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
+        user_id = session["user_id"]
+        rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
+        username = rows[0]['username'] if rows else None
+        cash_flow = rows[0]['cash'] if rows else None
         return render_template("profile.html", username = username, cash_flow = cash_flow)
 
 
