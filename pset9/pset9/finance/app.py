@@ -166,6 +166,9 @@ def buy():
     else:
         return render_template("buy.html")
 
+@app.template_filter('currency')
+def format_currency(value):
+    return "{:,.2f}".format(value)
 
 @app.route("/history")
 @login_required

@@ -24,7 +24,7 @@ Home
                     <td class="text-start">{{ transaction.symbol }}</td>
                     <td class="text-start">{{ transaction.name }}</td>
                     <td class="text-end">{{ transaction.shares }}</td>
-                    <td class="text-end">${{ "{:,.2f}".format(transaction.price) }}</td>
+                    <td class="text-end">${{ transaction.price }}</td>
                     <td class="text-end">${{ transaction.total }}</td>
                 </tr>
                 {% endfor %}
