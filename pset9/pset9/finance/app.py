@@ -35,19 +35,16 @@ def after_request(response):
 @login_required
 def profile():
     if request.method == "POST":
-        # Reload page
-
+        password_valid = request.form.get("password")
         # Ensure password was submitted
-        if not request.form.get("password"):
+        if not password_valid:
             return apology("must provide password", 403)
 
         else:
-            # Query database for username
-            rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+            # Validate the password
+            password_valid = validate_password(password)
 
-            if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-                return apology("invalid username and/or password", 403)
-
+        # Reload page
         return redirect("/profile")
 
     # User reached route via GET (as by clicking a link or via redirect)
