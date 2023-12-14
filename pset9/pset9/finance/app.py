@@ -57,8 +57,9 @@ def profile():
     user_id = session["user_id"]
     rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
     username = rows[0]["username"] if rows else None
-    cash_flow = rows[0]["cash"] if rows else None
-
+    cash = rows[0]["cash"] if rows else None
+    cash = "${:,.2f}".format(cash)
+    
     if request.method == "POST":
         form_name = request.form.get("form_name")
         if form_name == "Change Password":
@@ -111,7 +112,7 @@ def profile():
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("profile.html", username=username, cash_flow=cash_flow)
+        return render_template("profile.html", username=username, cash = cash)
 
 
 @app.route("/buy", methods=["GET", "POST"])
