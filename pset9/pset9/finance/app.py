@@ -290,9 +290,15 @@ def register():
             hashed_password,
         )
 
-        # Redirect to login page after successful registration
+        # Redirect to home page after successful registration
+        total_rows = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
+        overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
+        total = overall_total + float(cash)
+        #FORMAT
+        cash = "${:,.2f}".format(cash)
+        total = "${:,.2f}".format(total)
         flash("Registration successful! You can now log in.")
-        return redirect("/login")
+        return render_template("index.html", cash = cash, transactions = transactions, total = total)
 
     else:
         return render_template("register.html")
