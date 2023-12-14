@@ -34,11 +34,15 @@ def after_request(response):
 @app.route("/profile", methods=["GET", "POST"])
 @login_required
 def profile():
-    if request.method == "POST":
-        username = request.form.get("username")
+    user_id = session["user_id"]
+    rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
+    username = rows[0]["username"] if rows else None
+    cash_flow = rows[0]["cash"] if rows else None
 
+    if request.method == "POST":
         if "change_password" in request.form:
             password = request.form.get("password")
+
             # Ensure password was submitted
             if not password:
                 return apology("Must provide password", 403)
@@ -87,10 +91,6 @@ def profile():
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        user_id = session["user_id"]
-        rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
-        username = rows[0]["username"] if rows else None
-        cash_flow = rows[0]["cash"] if rows else None
         return render_template("profile.html", username=username, cash_flow=cash_flow)
 
 
