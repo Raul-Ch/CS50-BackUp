@@ -43,6 +43,7 @@ def index():
 
     transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
     total = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
+    total = total[0]['overall_total']
 
     return render_template("index.html", cash = cash, transactions = transactions, total = total)
 
@@ -150,6 +151,7 @@ def buy():
                     cash = "${:,.2f}".format(cash)
                     transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
                     total = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
+                    total = total[0]['overall_total']
                     flash("Transaction: Bought shares, successful!")
                     return render_template("index.html", cash = cash, transactions = transactions, total = total)
     else:
