@@ -31,6 +31,11 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+@app.route("/")
+@login_required
+def index():
+    """Show portfolio of stocks"""
+    return render_template("index.html")
 
 @app.route("/profile", methods=["GET", "POST"])
 @login_required
@@ -95,29 +100,25 @@ def profile():
     else:
         return render_template("profile.html", username=username, cash_flow=cash_flow)
 
-
-@app.route("/")
-@login_required
-def index():
-    """Show portfolio of stocks"""
-    return render_template("index.html")
-
-
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        # Ensure username was submitted
+        shares = request.form.get("shares")
+
         if not symbol:
             return apology("must provide symbol", 403)
+        elif not shares:
+            return apology("must provide shares", 403)
         else:
             dic_symbol = lookup(symbol)
             if dic_symbol is None:
                 return apology("invalid symbol", 403)
             else:
-                return render_template("quoted.html", dic_symbol=dic_symbol)
+                flash("Transaction: buy, successful!")
+                return render_template("index.html")
     else:
         return render_template("buy.html")
 
