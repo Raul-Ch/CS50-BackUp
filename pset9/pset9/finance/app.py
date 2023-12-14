@@ -39,11 +39,14 @@ def index():
     user_id = session["user_id"]
     rows = db.execute("SELECT username, cash FROM users WHERE id = ?", (user_id,))
     cash = (rows[0]["cash"]) if rows else None
-    cash = "${:,.2f}".format(cash)
+
 
     transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
-    total = db.execute(("SELECT cash FROM users") + ("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id))
-    total = total[0]['overall_total']
+    total = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
+    total = float(total[0]['overall_total']) + float(cash)
+    #FORMAT
+    cash = "${:,.2f}".format(cash)
+    total = "${:,.2f}".format(total)
 
     return render_template("index.html", cash = cash, transactions = transactions, total = total)
 
