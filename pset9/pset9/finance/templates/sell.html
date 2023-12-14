@@ -7,12 +7,12 @@ Buy
 {% block main %}
 <div class="container">
     <form action="/sell" method="post">
-        {% for symbol in symbols %}
         <select class="form-select mx-auto w-auto" name="symbol">
             <option disabled="" selected="">Symbol</option>
-                <option value="{{ transaction.symbol }}">{{ symbol.symbol }}</option>
+            {% for symbol in symbols %}
+                <option value="{{ symbol.symbol }}">{{ symbol.symbol }}</option>
+            {% endfor %}
         </select>
-        {% endfor %}
     </form>
 </div>
 {% endblock %}
