@@ -18,20 +18,11 @@ Home
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                <!-- Add your table body content here with alternating row colors -->
-                <tr class="table-primary">
-                    <!-- Row content -->
-                </tr>
-                <tr class="table-danger">
-                    <!-- Row content -->
-                </tr>
-                <tr class="table-warning">
-                    <!-- Row content -->
-                </tr>
-                <tr class="table-success">
-                    <!-- Row content -->
-                </tr>
-                <!-- Repeat rows for alternating colors -->
+                {% for item in data %}
+                    <tr class="{{ cycle('table-primary', 'table-danger', 'table-warning', 'table-success') }}">
+                        <!-- Row content -->
+                    </tr>
+                {% endfor %}
             </tbody>
             <tfoot>
                 <tr>
