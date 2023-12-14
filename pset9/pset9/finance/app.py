@@ -31,6 +31,7 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+
 @app.route("/profile", methods=["GET", "POST"])
 @login_required
 def profile():
