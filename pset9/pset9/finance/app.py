@@ -36,7 +36,8 @@ def after_request(response):
 def profile():
     if request.method == "POST":
         # Reload page
-        return location.reload();
+
+        return redirect("/profile")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
