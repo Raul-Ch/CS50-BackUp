@@ -15,7 +15,7 @@ Buy
             Please select the "Symbol” of the stock you want to sell from your wallet.
         </div>
         <br>
-        <select class="form-select mx-auto w-auto" name="symbol">
+        <select id="symbol" class="form-select mx-auto w-auto" name="symbol">
             <option disabled="" selected="">Symbol</option>
             {% for symbol in symbols %}
             <option value="{{ symbol['symbol'] }}">{{ symbol['symbol'] }}</option>
