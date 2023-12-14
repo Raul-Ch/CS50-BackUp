@@ -154,6 +154,7 @@ def buy():
                         "INSERT INTO transactions (user_id, symbol, shares, price, timestamp, name) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?)",
                         user_id, symbol, shares, dic_symbol["price"],dic_symbol["name"]
                     )
+                    transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
                     total_rows = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
                     overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
                     total = overall_total + float(cash)
@@ -294,6 +295,7 @@ def register():
         rows = db.execute("SELECT id, username, cash FROM users WHERE username = ?", username)
         cash = rows[0]["cash"] if rows else None
         user_id = rows[0]["id"] if rows else None
+        transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
         total_rows = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
         overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
         total = overall_total + float(cash)
@@ -301,7 +303,7 @@ def register():
         cash = "${:,.2f}".format(cash)
         total = "${:,.2f}".format(total)
         flash("Registration successful! You can now log in.")
-        return render_template("index.html", cash = cash, transactions = transactions, total = total)
+        return redirect("index.html", cash = cash, transactions = transactions, total = total)
 
     else:
         return render_template("register.html")
