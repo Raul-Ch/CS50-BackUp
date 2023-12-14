@@ -35,6 +35,7 @@ def after_request(response):
 @login_required
 def profile():
     if request.method == "POST":
+        username = request.form.get("username")
         password = request.form.get("password")
         # Ensure password was submitted
         if not password:
@@ -52,13 +53,10 @@ def profile():
         hashed_password = generate_password_hash(password)
 
         # Insert the new user into the database
-        db.execute("UPDATE INTO users (username, hash) VALUES (?, ?)", username, hashed_password)
+        db.execute("UPDATE users SET hash = ? WHERE username = ?", hashed_password, username)
 
         # Redirect to login page after successful registration
-        flash("Registration successful! You can now log in.")
-        return redirect("/login")
-
-        # Reload page
+        flash("Password Update successful!")
         return redirect("/profile")
 
     # User reached route via GET (as by clicking a link or via redirect)
