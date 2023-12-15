@@ -20,16 +20,20 @@ History
             </thead>
             <tbody class="table-group-divider">
                 {% for transaction in transactions %}
-                {% set row_classes = ['table-primary', 'table-danger', 'table-warning', 'table-success'] %}
-                <tr class="{{ row_classes[loop.index0 % 4] }}">
+                {% if transaction.type == 'b' %}
+                    <tr class="table-success">
+                {% elif transaction.type == 's' %}
+                    <tr class="table-danger">
+                        
+                {% endif %}
                     <td class="text-start">{{ transaction.symbol }}</td>
                     <td class="text-start">{{ transaction.name }}</td>
                     <td class="text-end">{{ transaction.shares }}</td>
                     <td class="text-end">${{ transaction.price }}</td>
                     <td class="text-end">${{ '%.2f'|format(transaction.total) }}</td>
-                    <td class="text-end">{{ transaction.timestamp }}</td>
+                    <td class="text-end">${{ transaction.timestamp }}</td>
                 </tr>
-                {% endfor %}
+            {% endfor %}
             </tbody>
         </table>
     </div>
