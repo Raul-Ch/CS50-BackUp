@@ -378,7 +378,7 @@ def sell():
                 #FORMAT
                 cash = usd(cash)
                 total = usd(total)
-                flash("Transaction: Bought shares, successful!")
+                flash("Transaction: Sell shares, successful!")
                 return render_template("index.html", cash = cash, transactions = transactions, total = total)
     else:
         user_id = session["user_id"]
