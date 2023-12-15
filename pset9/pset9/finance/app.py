@@ -126,7 +126,7 @@ def buy():
         symbol = symbol.strip()
         shares = request.form.get("shares")
         shares = int(request.form.get("shares"))
-        
+
         if not symbol:
             return apology("must provide symbol", 403)
         elif not shares:
@@ -157,7 +157,7 @@ def buy():
                     if not foundshares:
                         db.execute(
                             "INSERT INTO transactions (user_id, symbol, shares, price, timestamp, name, type) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)",
-                            user_id, symbol, shares, dic_symbol["price"],dic_symbol["name"], 0
+                            user_id, symbol, shares, dic_symbol["price"],dic_symbol["name"], "b"
                         )
                     else:
                         shares = shares + foundshares
