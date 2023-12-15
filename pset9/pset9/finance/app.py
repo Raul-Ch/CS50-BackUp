@@ -360,7 +360,8 @@ def sell():
                 )
 
                 # (TODO) NEED TO UPDATE AMOUNT OF SHARES IN TRANSACTIONS WHERE SYMBOL AND USER:ID
-                
+                shares = db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ?", user_id,symbol)
+
 
                 transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
                 total_rows = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
