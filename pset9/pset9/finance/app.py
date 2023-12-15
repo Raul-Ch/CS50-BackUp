@@ -159,7 +159,7 @@ def buy():
                         )
                     else:
                         db.execute(
-                            "UPDATE transactions SET shares = ?, price = ?(user_id, symbol, shares, price, timestamp, name, type) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)",
+                            "UPDATE transactions SET shares = ?, price =(user_id, symbol, shares, price, timestamp, name, type) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)",
                             user_id, symbol, shares, dic_symbol["price"],dic_symbol["name"], 0
                         )
                     transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
