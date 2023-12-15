@@ -162,7 +162,7 @@ def buy():
                     else:
                         shares = shares + foundshares
                         db.execute("UPDATE transactions SET shares = ? WHERE user_id = ? AND symbol = ?", shares, user_id, symbol)
-                    transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
+                    transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?  GROUP BY symbol", user_id)
                     total_rows = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
                     overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
                     total = overall_total + float(cash)
@@ -314,7 +314,7 @@ def load_index():
     rows = db.execute("SELECT id, username, cash FROM users WHERE username = ?", username)
     cash = rows[0]["cash"] if rows else None
     user_id = rows[0]["id"] if rows else None
-    transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
+    transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?  GROUP BY symbol", user_id)
     total_rows = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
     overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
     total = overall_total + float(cash)
