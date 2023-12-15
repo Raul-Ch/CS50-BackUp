@@ -103,7 +103,7 @@ bool vote(int rank, string name, int ranks[])
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcasecmp(name, candidates[i]) == 0)
+        if (strcmp(name, candidates[i]) == 0)
         {
             // Save the place of the candidate[] in order of preference
             ranks[rank] = i;
@@ -116,7 +116,6 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    printf("Enter record_preferences");
     // TODO
     // Record over how many candidates are below
     for (int row = 0; row < candidate_count; row++)
@@ -126,7 +125,6 @@ void record_preferences(int ranks[])
             preferences[ranks[row]][ranks[column]]++;
         }
     }
-    printf("End record");
     return;
 }
 
