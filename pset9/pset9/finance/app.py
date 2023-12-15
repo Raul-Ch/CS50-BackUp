@@ -337,7 +337,7 @@ def sell():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         symbol = symbol.strip()
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
 
         if not symbol:
             return apology("must provide symbol", 403)
