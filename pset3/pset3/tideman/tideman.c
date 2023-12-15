@@ -100,16 +100,14 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    printf("Enter vote Func");
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(name, candidates[i]) == 0)
+        if (strcasecmp(name, candidates[i]) == 0)
         {
             // Save the place of the candidate[] in order of preference
             ranks[rank] = i;
             return true;
-            printf("End vote Func");
         }
     }
     return false;
