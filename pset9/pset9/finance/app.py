@@ -81,7 +81,7 @@ def profile():
 
             # Ensure password was submitted
             if not password:
-                return apology("Must provide password", 403)
+                return apology("Must provide password", 400)
 
             else:
                 # Validate the password
@@ -91,7 +91,7 @@ def profile():
             if not password_valid:
                 return apology(
                     "Invalid password. Please make sure your password meets the criteria.",
-                    403,
+                    400,
                 )
 
             # Hash the password
@@ -111,7 +111,7 @@ def profile():
         elif form_name == "Update Money":
             cashAmount = request.form.get("cashAmount")
             if not cashAmount:
-                return apology("Must provide cash amount to increment", 403)
+                return apology("Must provide cash amount to increment", 400)
 
             else:
                 db.execute(
@@ -140,13 +140,13 @@ def buy():
         shares = int(request.form.get("shares"))
 
         if not symbol:
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol", 400)
         elif not shares:
-            return apology("must provide shares", 403)
+            return apology("must provide shares", 400)
         else:
             dic_symbol = lookup(symbol)
             if dic_symbol is None:
-                return apology("invalid symbol", 403)
+                return apology("invalid symbol", 400)
             else:
                 user_id = session["user_id"]
                 rows = db.execute(
@@ -236,11 +236,11 @@ def login():
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 403)
+            return apology("must provide username", 400)
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password", 403)
+            return apology("must provide password", 400)
 
         # Query database for username
         rows = db.execute(
@@ -251,7 +251,7 @@ def login():
         if len(rows) != 1 or not check_password_hash(
             rows[0]["hash"], request.form.get("password")
         ):
-            return apology("invalid username and/or password", 403)
+            return apology("invalid username and/or password", 400)
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -284,11 +284,11 @@ def quote():
         symbol = symbol.strip().upper()
         # Ensure username was submitted
         if not symbol:
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol", 400)
         else:
             dic_symbol = lookup(symbol)
             if dic_symbol is None:
-                return apology("invalid symbol", 403)
+                return apology("invalid symbol", 400)
             else:
                 return render_template("quoted.html", dic_symbol=dic_symbol)
     else:
@@ -305,13 +305,13 @@ def register():
         confirmation = request.form.get("confirmation")
 
         if not username:
-            return apology("must provide username", 403)
+            return apology("must provide username", 400)
 
         if not password:
-            return apology("must provide password", 403)
+            return apology("must provide password", 400)
 
         if not confirmation:
-            return apology("must provide password confirmation", 403)
+            return apology("must provide password confirmation", 400)
 
         # Validate the password
         password_valid = validate_password(password)
@@ -323,14 +323,14 @@ def register():
         if not password_valid or not passwords_match:
             return apology(
                 "Invalid password. Please make sure your password meets the criteria and confirmation matches.",
-                403,
+                400,
             )
 
         # Check if the username is available
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)
         if len(rows) > 0:
             return apology(
-                "Username already taken. Please choose a different username.", 403
+                "Username already taken. Please choose a different username.", 400
             )
 
         # Hash the password
@@ -407,13 +407,13 @@ def sell():
         shares = int(request.form.get("shares"))
 
         if not symbol:
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol", 400)
         elif not shares:
-            return apology("must provide shares", 403)
+            return apology("must provide shares", 400)
         else:
             dic_symbol = lookup(symbol)
             if dic_symbol is None:
-                return apology("invalid symbol", 403)
+                return apology("invalid symbol", 400)
             else:
                 user_id = session["user_id"]
                 rows = db.execute(
@@ -443,7 +443,7 @@ def sell():
                 user_shares = user_shares[0]["shares"] if user_shares else None
                 newshares = user_shares - shares
                 if newshares < 0:
-                    return apology("not enough shares to sell", 403)
+                    return apology("not enough shares to sell", 400)
                 else:
                     db.execute(
                         "UPDATE transactions SET shares = ? WHERE user_id = ? AND symbol = ?",
