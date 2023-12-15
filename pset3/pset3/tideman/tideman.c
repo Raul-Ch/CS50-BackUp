@@ -64,6 +64,7 @@ int main(int argc, string argv[])
     }
 
     pair_count = 0;
+    // Prompt to input the number of votes
     int voter_count = get_int("Number of voters: ");
 
     // Query for votes
@@ -74,18 +75,23 @@ int main(int argc, string argv[])
         int ranks[candidate_count];
 
         // Query for each rank
+        // Iterate over each candidate. The variable j represents the current candidate's rank.
         for (int j = 0; j < candidate_count; j++)
         {
+            // Prompt to input the name of the candidate
             string name = get_string("Rank %i: ", j + 1);
 
+            //  Call that attempts to record a vote for the candidate name at rank j.
             if (!vote(j, name, ranks))
             {
+                // If returns false the vote is invalid
                 printf("Invalid vote.\n");
                 return 3;
             }
 
         }
 
+        // Function call
         record_preferences(ranks);
         printf("\n");
     }
