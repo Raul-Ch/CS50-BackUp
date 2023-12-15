@@ -123,7 +123,7 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        symbol = symbol.strip()
+        symbol = symbol.strip().upper()
         shares = request.form.get("shares")
         shares = int(request.form.get("shares"))
 
@@ -238,7 +238,7 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        symbol = symbol.strip()
+        symbol = symbol.strip().upper()
         # Ensure username was submitted
         if not symbol:
             return apology("must provide symbol", 403)
@@ -343,7 +343,7 @@ def sell():
     """Sell shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        symbol = symbol.strip()
+        symbol = symbol.strip().upper()
         shares = int(request.form.get("shares"))
 
         if not symbol:
