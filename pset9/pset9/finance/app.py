@@ -292,6 +292,7 @@ def quote():
             if dic_symbol is None:
                 return apology("invalid symbol", 400)
             else:
+                dic_symbol['price'] = usd(dic_symbol['price'])
                 return render_template("quoted.html", dic_symbol=dic_symbol)
     else:
         return render_template("quote.html")
