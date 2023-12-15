@@ -137,7 +137,10 @@ def buy():
         symbol = request.form.get("symbol")
         symbol = symbol.strip().upper()
         shares = request.form.get("shares")
-        shares = int(request.form.get("shares"))
+        try:
+            shares = int(request.form.get("shares"))
+        except ValueError:
+            return apology("shares must be a valid number", 400)
 
         if not symbol:
             return apology("must provide symbol", 400)
