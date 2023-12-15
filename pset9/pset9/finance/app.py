@@ -361,6 +361,7 @@ def sell():
 
                 # (TODO) NEED TO UPDATE AMOUNT OF SHARES IN TRANSACTIONS WHERE SYMBOL AND USER:ID
                 user_shares = db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ?", user_id,symbol)
+                user_shares = user_shares[0]["shares"] if user_shares else None
                 newshares = user_shares - shares
                 if newshares < 0:
                     return apology("not enough shares to sell", 403)
