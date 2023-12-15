@@ -101,6 +101,7 @@ int main(int argc, string argv[])
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
+    // Check if the name is a match for the name of a valid candidate
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(name, candidates[i]) == 0)
