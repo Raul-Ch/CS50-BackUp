@@ -378,7 +378,7 @@ def sell():
                 else:
                     db.execute("UPDATE transactions SET shares = ? WHERE user_id = ? AND symbol = ?", newshares, user_id,symbol)
 
-                transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
+                transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?  GROUP BY symbol", user_id)
                 total_rows = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
                 overall_total = float(total_rows[0]['overall_total']) if total_rows and total_rows[0]['overall_total'] is not None else 0
                 total = overall_total + float(cash)
