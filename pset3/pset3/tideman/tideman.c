@@ -132,7 +132,7 @@ void record_preferences(int ranks[])
     // Iterate over each candidate.
     for (int row = 0; row < candidate_count; row++)
     {
-        // The inner loop (column) starts from the candidate next to the one selected by the outer loop. This way, it iterates over all candidates that are ranked lower than the current candidate in the ballot.
+        // It iterates over all candidates that are ranked lower than the current candidate in the ballot.
         for (int column = row + 1; column < candidate_count; column++)
         {
             preferences[ranks[row]][ranks[column]]++;
