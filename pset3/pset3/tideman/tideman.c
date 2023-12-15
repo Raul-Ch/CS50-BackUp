@@ -78,8 +78,7 @@ int main(int argc, string argv[])
         {
             string name = get_string("Rank %i: ", j + 1);
 
-            // The vote function is supposed to return true if the vote is valid
-            if (!vote(ranks[candidate_count], name, ranks))
+            if (!vote(j, name, ranks))
             {
                 printf("Invalid vote.\n");
                 return 3;
