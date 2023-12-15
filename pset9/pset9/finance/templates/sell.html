@@ -1,39 +1,37 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Sell
+    Sell
 {% endblock %}
 
 {% block main %}
-<div class="container">
-    <form action="/sell" method="post">
-        <div class="container">
-            <form action="/buy" method="post">
-                <div></div><b><label for="symbol" class="form-label">Symbol</label></b>
+    <div class="container">
+        <form action="/sell" method="post">
+            <div class="container">
+                <form action="/buy" method="post">
+                    <div></div><b><label for="symbol" class="form-label">Symbol</label></b>
+                </div>
+                <div name="symbolHelpBlock" id="symbolHelpBlock" class="form-text">
+                    Please select the "Symbol” of the stock you want to sell from your wallet.
+                </div>
+                <br>
+                <select id="symbol" class="form-select mx-auto w-auto" name="symbol">
+                    <option disabled="" selected="">Symbol</option>
+                    {% for symbol in symbols %}
+                        <option value="{{ symbol['symbol'] }}">{{ symbol['symbol'] }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <div class="container">
+                    <b><label for="shares" class="form-label">Shares</label></b>
+                </div>
+                <div name="sharesHelpBlock" id="sharesHelpBlock" class="form-text">
+                    Please input the amount of "Share(s) of the stock you want to sell from your wallet.
+                </div>
+                <div class="p-3">
+                    <input name="shares" type="number" min=1 autofocus id="shares" class="form-control form-control-sm mx-auto w-auto" style="width: 250px; height: 40px;" aria-describedby="sharesHelpBlock" placeholder="Ex: 10">
+                    <button for="shares" type="submit" class="btn btn-primary mt-3">Sell</button>
+                </div>
+            </form>
         </div>
-        <div name="symbolHelpBlock" id="symbolHelpBlock" class="form-text">
-            Please select the "Symbol” of the stock you want to sell from your wallet.
-        </div>
-        <br>
-        <select id="symbol" class="form-select mx-auto w-auto" name="symbol">
-            <option disabled="" selected="">Symbol</option>
-            {% for symbol in symbols %}
-            <option value="{{ symbol['symbol'] }}">{{ symbol['symbol'] }}</option>
-            {% endfor %}
-        </select>
-        <br>
-        <div class="container">
-            <b><label for="shares" class="form-label">Shares</label></b>
-        </div>
-        <div name="sharesHelpBlock" id="sharesHelpBlock" class="form-text">
-            Please input the amount of "Share(s) of the stock you want to sell from your wallet.
-        </div>
-        <div class="p-3">
-            <input name="shares" type="number" min=1 autofocus id="shares"
-                class="form-control form-control-sm mx-auto w-auto" style="width: 250px; height: 40px;"
-                aria-describedby="sharesHelpBlock" placeholder="Ex: 10">
-            <button for="shares" type="submit" class="btn btn-primary mt-3">Sell</button>
-        </div>
-    </form>
-</div>
 {% endblock %}

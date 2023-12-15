@@ -1,50 +1,45 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Profile
+    Profile
 {% endblock %}
 
 {% block main %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card text-white bg-dark border-light shadow">
-                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-                    class="card-img-top" alt="Default Image">
-                <div class="card-header">User: {{ username }}</div>
-                <div class="card-body">
-                    <div class="card-footer">Cash: {{ cash }}</div>
-                </div>
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button class="btn btn-primary mt-3" data-bs-toggle="modal"
-                                data-bs-target="#addCashModal">Add
-                                more cash</button>
-                        </div>
-                        <div class="col-md-6">
-                            <button class="btn btn-primary mt-3" data-bs-toggle="modal"
-                                data-bs-target="#changePasswordModal">Change Password</button>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card text-white bg-dark border-light shadow">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" class="card-img-top" alt="Default Image">
+                    <div class="card-header">User: {{ username }}</div>
+                    <div class="card-body">
+                        <div class="card-footer">Cash: {{ cash }}</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#addCashModal">Add
+                                    more cash</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Change Password</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <!-- Add more cash modal -->
-<form action="/profile" method="post">
-    <input type="hidden" name="form_name" value="Update Money">
-    <div class="modal fade" id="addCashModal" tabindex="-1" role="dialog" aria-labelledby="addCashModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addCashModalLabel">Add More Cash</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                    <span aria-hidden="true">&times;</span>
+    <form action="/profile" method="post">
+        <input type="hidden" name="form_name" value="Update Money">
+        <div class="modal fade" id="addCashModal" tabindex="-1" role="dialog" aria-labelledby="addCashModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addCashModalLabel">Add More Cash</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -65,35 +60,31 @@ Profile
             });
         </script>
     </div>
-</form>
+    </form>
 
 <!-- Change password modal -->
-<form action="/profile" method="post" value="Change Password">
-    <input type="hidden" name="form_name" value="Change Password">
-    <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog"
-        aria-labelledby="changePasswordModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                    <span aria-hidden="true">&times;</span>
+    <form action="/profile" method="post" value="Change Password">
+        <input type="hidden" name="form_name" value="Change Password">
+        <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <!-- Password input and labels -->
                     <label for="password">Please insert new password</label>
-                    <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="New password"
-                        type="password"></input>
+                    <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="New password" type="password"></input>
                     <label for="password" id="Consideration"></label> <label for="password" id="Note"></label>
                     <br>
                     <button for="password" class="btn btn-primary" id="togglePasswordBtn" type="button">Show
                         Password</button>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="cancel_password" class="btn btn-danger text-white"
-                        data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="cancel_password" class="btn btn-danger text-white" data-bs-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-primary">Change Password</button>
                 </div>
             </div>
@@ -112,5 +103,5 @@ Profile
             });
         </script>
     </div>
-</form>
+    </form>
 {% endblock %}

@@ -1,45 +1,45 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Home
+    Home
 {% endblock %}
 
 {% block main %}
-<div class="container">
-    <div class="table-responsive">
-        <table class="table Table-borderless table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th class="text-start">Symbol</th>
-                    <th class="text-start">Name</th>
-                    <th class="text-end">Shares</th>
-                    <th class="text-end">Price</th>
-                    <th class="text-end">TOTAL</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-                {% for transaction in transactions %}
-                {% set row_classes = ['table-primary', 'table-danger', 'table-warning', 'table-success'] %}
-                <tr class="{{ row_classes[loop.index0 % 4] }}">
-                    <td class="text-start">{{ transaction.symbol }}</td>
-                    <td class="text-start">{{ transaction.name }}</td>
-                    <td class="text-end">{{ transaction.shares }}</td>
-                    <td class="text-end">${{ transaction.price }}</td>
-                    <td class="text-end">${{ '%.2f'|format(transaction.total) }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
-                    <td class="border-0 text-end">{{ cash }}</td>
-                </tr>
-                <tr>
-                    <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
-                    <td class="table-dark table-active border-0 fw-bold text-end">{{ total }}</td>
-                </tr>
-            </tfoot>
-        </table>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table Table-borderless table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-start">Symbol</th>
+                        <th class="text-start">Name</th>
+                        <th class="text-end">Shares</th>
+                        <th class="text-end">Price</th>
+                        <th class="text-end">TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for transaction in transactions %}
+                        {% set row_classes = ['table-primary', 'table-danger', 'table-warning', 'table-success'] %}
+                        <tr class="{{ row_classes[loop.index0 % 4] }}">
+                            <td class="text-start">{{ transaction.symbol }}</td>
+                            <td class="text-start">{{ transaction.name }}</td>
+                            <td class="text-end">{{ transaction.shares }}</td>
+                            <td class="text-end">${{ transaction.price }}</td>
+                            <td class="text-end">${{ '%.2f'|format(transaction.total) }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                        <td class="border-0 text-end">{{ cash }}</td>
+                    </tr>
+                    <tr>
+                        <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                        <td class="table-dark table-active border-0 fw-bold text-end">{{ total }}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
-</div>
 {% endblock %}

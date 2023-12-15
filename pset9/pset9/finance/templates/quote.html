@@ -1,23 +1,22 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Quote
+    Quote
 {% endblock %}
 
 {% block main %}
-<div class="container">
-    <form action="/quote" method="post">
-        <div></div><b><label for="symbol" class="form-label">Symbol</label></b></div>
+    <div class="container">
+        <form action="/quote" method="post">
+            <div></div><b><label for="symbol" class="form-label">Symbol</label></b>
+        </div>
         <div name="symbolHelpBlock" id="symbolHelpBlock" class="form-text">
             Please insert “Ticker Symbol”, Symbol is a unique one to five letter code used by the stock exchanges to
             identify a company.
         </div>
         <div class="p-3">
-            <input name="symbol" type="text" autofocus id="symbol" class="form-control form-control-sm mx-auto w-auto"
-                style="width: 250px; height: 40px;" aria-describedby="symbolHelpBlock"
-                placeholder="Ex: AAPL for Apple Inc.">
+            <input name="symbol" type="text" autofocus id="symbol" class="form-control form-control-sm mx-auto w-auto" style="width: 250px; height: 40px;" aria-describedby="symbolHelpBlock" placeholder="Ex: AAPL for Apple Inc.">
             <button for="symbol" type="submit" class="btn btn-primary mt-3">Quote</button>
         </div>
     </form>
-</div>
+    </div>
 {% endblock %}

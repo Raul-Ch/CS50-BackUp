@@ -53,7 +53,7 @@ def login_required(f):
 
 def lookup(symbol):
     """Look up quote for symbol."""
-    api_key = 'YN7WHJ5TIIXRRI4M'
+    api_key = "YN7WHJ5TIIXRRI4M"
     company_name = get_company_name(symbol, api_key)
 
     # Prepare API request
