@@ -366,7 +366,7 @@ def sell():
                 db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, user_id)
                 db.execute(
                     "INSERT INTO transactions (user_id, symbol, shares, price, timestamp, name, type) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)",
-                    user_id, symbol, shares, dic_symbol["price"],dic_symbol["name"], 1
+                    user_id, symbol, shares, dic_symbol["price"],dic_symbol["name"], "s"
                 )
 
                 # (TODO) NEED TO UPDATE AMOUNT OF SHARES IN TRANSACTIONS WHERE SYMBOL AND USER:ID
