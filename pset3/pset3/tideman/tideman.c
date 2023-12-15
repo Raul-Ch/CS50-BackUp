@@ -87,7 +87,6 @@ int main(int argc, string argv[])
         }
 
         record_preferences(ranks);
-        print_preferences_matrix();
         printf("\n");
     }
 
@@ -101,7 +100,7 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    printf("Enter vote Func")
+    printf("Enter vote Func");
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
@@ -110,7 +109,7 @@ bool vote(int rank, string name, int ranks[])
             // Save the place of the candidate[] in order of preference
             ranks[rank] = i;
             return true;
-            printf("End vote Func")
+            printf("End vote Func");
         }
     }
     return false;
@@ -119,7 +118,7 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    printf("Enter record_preferences")
+    printf("Enter record_preferences");
     // TODO
     // Record over how many candidates are below
     for (int row = 0; row < candidate_count; row++)
@@ -129,7 +128,7 @@ void record_preferences(int ranks[])
             preferences[ranks[row]][ranks[column]]++;
         }
     }
-    printf("End record")
+    printf("End record");
     return;
 }
 
