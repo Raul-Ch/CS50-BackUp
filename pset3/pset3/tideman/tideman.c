@@ -104,6 +104,7 @@ int main(int argc, string argv[])
 }
 
 // Update ranks given a new vote
+// The ranks[] array holds the ranks of the candidates for a single voter's ballot
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
