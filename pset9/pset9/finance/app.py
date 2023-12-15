@@ -143,6 +143,8 @@ def buy():
             return apology("must provide symbol", 400)
         elif not shares:
             return apology("must provide shares", 400)
+        elif shares <= 0:
+            return apology("invalid number of shares", 400)
         else:
             dic_symbol = lookup(symbol)
             if dic_symbol is None:
