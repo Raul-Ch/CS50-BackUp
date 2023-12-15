@@ -230,6 +230,7 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         symbol = request.form.get("symbol")
+        symbol = symbol.strip()
         # Ensure username was submitted
         if not symbol:
             return apology("must provide symbol", 403)
