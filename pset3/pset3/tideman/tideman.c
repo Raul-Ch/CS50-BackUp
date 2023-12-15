@@ -69,7 +69,8 @@ int main(int argc, string argv[])
     // Query for votes
     for (int i = 0; i < voter_count; i++)
     {
-        // ranks[i] is voter's ith preference
+        // ranks[i] is voter's ith preference  This array will hold the voter's ranking of the candidates
+        // Each index i in the ranks array will hold the index of the candidate that the voter has ranked in the ith position
         int ranks[candidate_count];
 
         // Query for each rank
