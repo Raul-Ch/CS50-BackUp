@@ -14,6 +14,7 @@ History
                     <th class="text-start">Name</th>
                     <th class="text-end">Shares</th>
                     <th class="text-end">Price</th>
+                    <th class="text-end">Total</th>
                     <th class="text-end">Transaction Date</th>
                 </tr>
             </thead>
@@ -26,6 +27,7 @@ History
                     <td class="text-end">{{ transaction.shares }}</td>
                     <td class="text-end">${{ transaction.price }}</td>
                     <td class="text-end">${{ '%.2f'|format(transaction.total) }}</td>
+                    <td class="text-end">{{ transaction.timestamp }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
