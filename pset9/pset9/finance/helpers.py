@@ -58,6 +58,8 @@ def lookup(symbol):
 
     # Prepare API request
     symbol = symbol.upper()
+    end = datetime.datetime.now(pytz.timezone("US/Eastern"))
+    start = end - datetime.timedelta(days=7)
     if company_name is not None:
         end = datetime.datetime.now(pytz.timezone("US/Eastern"))
         start = end - datetime.timedelta(days=7)
