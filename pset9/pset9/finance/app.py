@@ -359,7 +359,7 @@ def sell():
                     user_id, symbol, shares, dic_symbol["price"],dic_symbol["name"], 1
                 )
 
-                # NEED TO UPDATE AMOUNT OF SHARES IN TRANSACTIONS WHERE SYMBOL AND USER:ID
+                # (TODO) NEED TO UPDATE AMOUNT OF SHARES IN TRANSACTIONS WHERE SYMBOL AND USER:ID
 
                 transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
                 total_rows = db.execute("SELECT SUM(shares * price) AS overall_total FROM transactions WHERE user_id = ?", user_id)
