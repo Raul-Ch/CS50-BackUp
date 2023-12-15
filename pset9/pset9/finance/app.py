@@ -365,7 +365,7 @@ def sell():
                 if newshares < 0:
                     return apology("not enough shares to sell", 403)
                 else:
-                    db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ?", user_id,symbol)
+                    db.execute("UPDATE shares SET  FROM transactions WHERE user_id = ? AND symbol = ?", user_id,symbol)
 
 
                 transactions = db.execute("SELECT symbol, name, shares, price, timestamp, shares * price AS total FROM transactions WHERE user_id = ?", user_id)
