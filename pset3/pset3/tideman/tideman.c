@@ -167,8 +167,7 @@ void add_pairs(void)
     {
         for (int j = i + 1; j < candidate_count; j++)
         {
-            //  If candidate i is preferred over candidate j (Matrix of columns and rows (columns = candidates and rows =
-            //  preferences over other candidates))
+            //  If candidate i is preferred over candidate j (Matrix of columns and rows)
             if (preferences[i][j] > preferences[j][i])
             {
                 // Candidate i (column) as the winner
@@ -178,8 +177,7 @@ void add_pairs(void)
                 // Pair count
                 pair_count++;
             }
-            //  Else If candidate j is preferred over candidate i (Matrix of columns and rows (columns = candidates and rows =
-            //  preferences over other candidates))
+            //  Else If candidate j is preferred over candidate i (Matrix of columns and rows)
             else if (preferences[i][j] < preferences[j][i])
             {
                 // Set candidate j as the winner
@@ -206,7 +204,8 @@ void sort_pairs(void)
         for (int j = 0; j < pair_count - i - 1; j++)
         {
             int margin_current = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j].loser][pairs[j].winner];
-            int margin_next = preferences[pairs[j + 1].winner][pairs[j + 1].loser] - preferences[pairs[j + 1].loser][pairs[j + 1].winner];
+            int margin_next =
+                preferences[pairs[j + 1].winner][pairs[j + 1].loser] - preferences[pairs[j + 1].loser][pairs[j + 1].winner];
 
             // Swap pairs if the strength of victory is less in the current pair
             if (margin_current < margin_next)
@@ -234,7 +233,6 @@ void print_winner(void)
     return;
 }
 
-
 // Print Prefeerences:
 void print_preferences(int ranks[])
 {
@@ -258,7 +256,6 @@ void print_preferences_matrix(void)
         printf("\n");
     }
 }
-
 
 // Print the preferences matrix
 void print_pairs(void)
