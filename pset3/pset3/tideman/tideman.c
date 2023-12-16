@@ -34,6 +34,7 @@ void lock_pairs(void);
 void print_winner(void);
 
 // Debug
+void print_preferences(void)
 void print_preferences_matrix(void);
 void print_pairs(void);
 
@@ -96,6 +97,7 @@ int main(int argc, string argv[])
 
         // Function call
         record_preferences(ranks);
+        // print_preferences();
         // print_preferences_matrix();
         print_pairs();
     }
@@ -111,7 +113,6 @@ int main(int argc, string argv[])
 // The ranks[] array holds the ranks of the candidates for a single voter's ballot
 bool vote(int rank, string name, int ranks[])
 {
-    printf("\n");
     // TODO
     // Check if the name is a match for the name of a valid candidate
     // The function iterates over all candidates.
@@ -133,10 +134,6 @@ bool vote(int rank, string name, int ranks[])
 // 2D array, preferences [i][j] is number of voters who prefer candidate i over candidate j
 void record_preferences(int ranks[])
 {
-    for (int i = 0; i < candidate_count; i++)
-    {
-        printf("%d ", ranks[i]);
-    }
     // TODO
     // Record over how many candidates are below
     // Iterate over each candidate.
@@ -234,6 +231,16 @@ void print_winner(void)
 {
     // TODO
     return;
+}
+
+
+// Print Prefeerences:
+void print_preferences(void)
+{
+    for (int i = 0; i < candidate_count; i++)
+    {
+        printf("%d ", ranks[i]);
+    }
 }
 
 // Print the preferences matrix
