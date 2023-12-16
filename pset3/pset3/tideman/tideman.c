@@ -89,7 +89,6 @@ int main(int argc, string argv[])
                 printf("Invalid vote.\n");
                 return 3;
             }
-
         }
 
         // Function call
@@ -109,7 +108,7 @@ int main(int argc, string argv[])
 // The ranks[] array holds the ranks of the candidates for a single voter's ballot
 bool vote(int rank, string name, int ranks[])
 {
-printf("\n");
+    printf("\n");
     // TODO
     // Check if the name is a match for the name of a valid candidate
     // The function iterates over all candidates.
@@ -131,10 +130,10 @@ printf("\n");
 // 2D array, preferences [i][j] is number of voters who prefer candidate i over candidate j
 void record_preferences(int ranks[])
 {
-        for (int i = 0; i < candidate_count; i++)
-{
-    printf("%d ", ranks[i]);
-}
+    for (int i = 0; i < candidate_count; i++)
+    {
+        printf("%d ", ranks[i]);
+    }
     // TODO
     // Record over how many candidates are below
     // Iterate over each candidate.
@@ -150,10 +149,11 @@ void record_preferences(int ranks[])
     }
     return;
 }
-// The record_preferences function knows where to increment based on the ranks array. The ranks array represents the order of candidates as ranked by a voter.
-// The index in the ranks array represents the rank and the value at that index represents the candidate.
-// There's no need for an if statement here because the loops are already set up to only compare each candidate (represented by row) with the candidates ranked lower than them (represented by column).
-// This 2d Array now contains all of the data we need about individual voter preferences to "pair" the candidates of each pair of the election
+// The record_preferences function knows where to increment based on the ranks array. The ranks array represents the order of
+// candidates as ranked by a voter. The index in the ranks array represents the rank and the value at that index represents the
+// candidate. There's no need for an if statement here because the loops are already set up to only compare each candidate
+// (represented by row) with the candidates ranked lower than them (represented by column). This 2d Array now contains all of the
+// data we need about individual voter preferences to "pair" the candidates of each pair of the election
 
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
@@ -166,7 +166,8 @@ void add_pairs(void)
     {
         for (int j = i + 1; j < candidate_count; j++)
         {
-            //  If candidate i is preferred over candidate j (Matrix of columns and rows (columns = candidates and rows = preferences over other candidates))
+            //  If candidate i is preferred over candidate j (Matrix of columns and rows (columns = candidates and rows =
+            //  preferences over other candidates))
             if (preferences[i][j] > preferences[j][i])
             {
                 // Candidate i (column) as the winner
@@ -176,7 +177,8 @@ void add_pairs(void)
                 // Pair count
                 pair_count++;
             }
-            //  Else If candidate j is preferred over candidate i (Matrix of columns and rows (columns = candidates and rows = preferences over other candidates))
+            //  Else If candidate j is preferred over candidate i (Matrix of columns and rows (columns = candidates and rows =
+            //  preferences over other candidates))
             else if (preferences[i][j] < preferences[j][i])
             {
                 // Set candidate j as the winner
@@ -192,9 +194,11 @@ void add_pairs(void)
 }
 
 // Sort pairs in decreasing order by strength of victory
+// The strength of victory is defined as the number of voters who prefer the preferred candidate.
 void sort_pairs(void)
 {
-    // TODO
+    // TODO - expected to implement a sorting algorithm.
+
     return;
 }
 
