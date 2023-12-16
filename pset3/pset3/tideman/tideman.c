@@ -176,6 +176,7 @@ void add_pairs(void)
                 pairs[pair_count].loser = j;
                 // Pair count
                 pair_count++;
+                printf("Pair %d: Winner = %s, Loser = %s\n", i, candidates[pairs[i].winner], candidates[pairs[i].loser]);
             }
             //  Else If candidate j is preferred over candidate i (Matrix of columns and rows)
             else if (preferences[i][j] < preferences[j][i])
@@ -186,6 +187,7 @@ void add_pairs(void)
                 pairs[pair_count].loser = i;
                 // Pair count
                 pair_count++;
+                printf("Pair %d: Winner = %s, Loser = %s\n", i, candidates[pairs[i].winner], candidates[pairs[i].loser]);
             }
         }
     }
