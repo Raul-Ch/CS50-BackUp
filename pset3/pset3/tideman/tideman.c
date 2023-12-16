@@ -147,7 +147,8 @@ void record_preferences(int ranks[])
 }
 // The record_preferences function knows where to increment based on the ranks array. The ranks array represents the order of candidates as ranked by a voter.
 // The index in the ranks array represents the rank and the value at that index represents the candidate.
-// There's no need for an if statement here because the loops are already set up to only compare each candidate (represented by row) with the candidates ranked lower than them (represented by column). 
+// There's no need for an if statement here because the loops are already set up to only compare each candidate (represented by row) with the candidates ranked lower than them (represented by column).
+// This 2d Array now contains all of the data we need about individual voter preferences to "pair" the candidates of each pair of the election
 
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
