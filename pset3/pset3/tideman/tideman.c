@@ -32,7 +32,10 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+
+// Debug
 void print_preferences_matrix(void);
+void print_pairs(void);
 
 int main(int argc, string argv[])
 {
@@ -93,8 +96,8 @@ int main(int argc, string argv[])
 
         // Function call
         record_preferences(ranks);
-        printf("\n");
         // print_preferences_matrix();
+        print_pairs();
     }
 
     add_pairs();
