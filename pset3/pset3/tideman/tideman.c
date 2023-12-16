@@ -109,6 +109,11 @@ int main(int argc, string argv[])
 // The ranks[] array holds the ranks of the candidates for a single voter's ballot
 bool vote(int rank, string name, int ranks[])
 {
+    for (int i = 0; i < candidate_count; i++)
+{
+    printf("%d ", ranks[i]);
+}
+printf("\n");
     // TODO
     // Check if the name is a match for the name of a valid candidate
     // The function iterates over all candidates.
