@@ -109,10 +109,6 @@ int main(int argc, string argv[])
 // The ranks[] array holds the ranks of the candidates for a single voter's ballot
 bool vote(int rank, string name, int ranks[])
 {
-    for (int i = 0; i < candidate_count; i++)
-{
-    printf("%d ", ranks[i]);
-}
 printf("\n");
     // TODO
     // Check if the name is a match for the name of a valid candidate
@@ -135,6 +131,10 @@ printf("\n");
 // 2D array, preferences [i][j] is number of voters who prefer candidate i over candidate j
 void record_preferences(int ranks[])
 {
+        for (int i = 0; i < candidate_count; i++)
+{
+    printf("%d ", ranks[i]);
+}
     // TODO
     // Record over how many candidates are below
     // Iterate over each candidate.
