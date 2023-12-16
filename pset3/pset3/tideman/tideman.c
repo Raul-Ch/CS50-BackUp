@@ -127,6 +127,7 @@ bool vote(int rank, string name, int ranks[])
 }
 
 // Update preferences given one voter's ranks
+// 2D array, preferences [i][j] is number of voters who prefer candidate i over candidate j
 void record_preferences(int ranks[])
 {
     // TODO
