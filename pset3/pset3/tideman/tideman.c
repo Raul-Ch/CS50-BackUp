@@ -138,7 +138,7 @@ void record_preferences(int ranks[])
         // It iterates over all candidates that are ranked lower than the current candidate in the ballot.
         for (int column = row + 1; column < candidate_count; column++)
         {
-            //  his line increments the count of preferences for each candidate over the candidates ranked lower than them.
+            //  this line increments the count of preferences for each candidate over the candidates ranked lower than them.
             preferences[ranks[row]][ranks[column]]++;
         }
     }
