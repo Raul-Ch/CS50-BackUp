@@ -140,10 +140,14 @@ void record_preferences(int ranks[])
         {
             //  this line increments the count of preferences for each candidate over the candidates ranked lower than them.
             preferences[ranks[row]][ranks[column]]++;
+            // "increase the preference count for the candidate at ranks[row] over the candidate at ranks[column]".
         }
     }
     return;
 }
+// The record_preferences function knows where to increment based on the ranks array. The ranks array represents the order of candidates as ranked by a voter.
+// The index in the ranks array represents the rank and the value at that index represents the candidate.
+// There's no need for an if statement here because the loops are already set up to only compare each candidate (represented by row) with the candidates ranked lower than them (represented by column). 
 
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
