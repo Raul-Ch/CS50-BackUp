@@ -34,7 +34,7 @@ void lock_pairs(void);
 void print_winner(void);
 
 // Debug
-void print_preferences(void)
+void print_preferences(int ranks[]);
 void print_preferences_matrix(void);
 void print_pairs(void);
 
@@ -94,15 +94,15 @@ int main(int argc, string argv[])
                 return 3;
             }
         }
-
+        printf("\n");
         // Function call
         record_preferences(ranks);
         // print_preferences();
         // print_preferences_matrix();
-        print_pairs();
     }
 
     add_pairs();
+    print_pairs();
     sort_pairs();
     lock_pairs();
     print_winner();
@@ -235,7 +235,7 @@ void print_winner(void)
 
 
 // Print Prefeerences:
-void print_preferences(void)
+void print_preferences(int ranks[])
 {
     for (int i = 0; i < candidate_count; i++)
     {
