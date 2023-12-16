@@ -197,23 +197,23 @@ void add_pairs(void)
 // The strength of victory is defined as the number of voters who prefer the preferred candidate.
 void sort_pairs(void)
 {
-    // TODO - expected to implement a sorting algorithm.
+    // TODO - expected to implement a sorting algorithm: Buuble Sort
     for (int i = 0; i < pair_count - 1; i++)
+    {
+        for (int j = 0; j < pair_count - i - 1; j++)
         {
-            for (int j = 0; j < pair_count - i - 1; j++)
-            {
-                int strength_j = preferences[pairs[j].winner][pairs[j].loser];
-                int strength_j1 = preferences[pairs[j + 1].winner][pairs[j + 1].loser];
+            int strength_j = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j].loser][pairs[j].winner];
+            int strength_j1 = preferences[pairs[j + 1].winner][pairs[j + 1].loser] - preferences[pairs[j + 1].loser][pairs[j + 1].winner];
 
-                // Swap pairs if the strength of victory is less in the current pair
-                if (strength_j < strength_j1)
-                {
-                    pair temp = pairs[j];
-                    pairs[j] = pairs[j + 1];
-                    pairs[j + 1] = temp;
-                }
+            // Swap pairs if the strength of victory is less in the current pair
+            if (strength_j < strength_j1)
+            {
+                pair temp = pairs[j];
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = temp;
             }
         }
+    }
     return;
 }
 
