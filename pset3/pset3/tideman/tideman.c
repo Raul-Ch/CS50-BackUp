@@ -198,15 +198,17 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO - expected to implement a sorting algorithm: Buuble Sort
+    // Loop over each pair in the array
     for (int i = 0; i < pair_count - 1; i++)
     {
+        // For each pair, compare it with the next pair
         for (int j = 0; j < pair_count - i - 1; j++)
         {
-            int strength_j = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j].loser][pairs[j].winner];
-            int strength_j1 = preferences[pairs[j + 1].winner][pairs[j + 1].loser] - preferences[pairs[j + 1].loser][pairs[j + 1].winner];
+            int margin_current = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j].loser][pairs[j].winner];
+            int margin_next = preferences[pairs[j + 1].winner][pairs[j + 1].loser] - preferences[pairs[j + 1].loser][pairs[j + 1].winner];
 
             // Swap pairs if the strength of victory is less in the current pair
-            if (strength_j < strength_j1)
+            if (margin_current < margin_next)
             {
                 pair temp = pairs[j];
                 pairs[j] = pairs[j + 1];
@@ -243,5 +245,16 @@ void print_preferences_matrix(void)
             printf("%2d ", preferences[i][j]);
         }
         printf("\n");
+    }
+}
+
+
+// Print the preferences matrix
+void print_pairs(void)
+{
+    printf("Pairs:\n");
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("Pair %d: Winner = %d, Loser = %d\n", i, pairs[i].winner, pairs[i].loser);
     }
 }
