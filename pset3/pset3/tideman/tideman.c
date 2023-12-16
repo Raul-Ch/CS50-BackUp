@@ -102,6 +102,7 @@ int main(int argc, string argv[])
     }
 
     add_pairs();
+    print_preferences_matrix();
     print_pairs();
     sort_pairs();
     lock_pairs();
