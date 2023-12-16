@@ -198,7 +198,22 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO - expected to implement a sorting algorithm.
+    for (int i = 0; i < pair_count - 1; i++)
+        {
+            for (int j = 0; j < pair_count - i - 1; j++)
+            {
+                int strength_j = preferences[pairs[j].winner][pairs[j].loser];
+                int strength_j1 = preferences[pairs[j + 1].winner][pairs[j + 1].loser];
 
+                // Swap pairs if the strength of victory is less in the current pair
+                if (strength_j < strength_j1)
+                {
+                    pair temp = pairs[j];
+                    pairs[j] = pairs[j + 1];
+                    pairs[j + 1] = temp;
+                }
+            }
+        }
     return;
 }
 
