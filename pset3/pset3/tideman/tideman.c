@@ -255,6 +255,6 @@ void print_pairs(void)
     printf("Pairs:\n");
     for (int i = 0; i < pair_count; i++)
     {
-        printf("Pair %d: Winner = %d, Loser = %d\n", i, pairs[i].winner, pairs[i].loser);
+        printf("Pair %d: Winner = %s, Loser = %s\n", i, candidates[pairs[i].winner], candidates[pairs[i].loser]);
     }
 }
