@@ -167,7 +167,7 @@ void add_pairs(void)
     {
         for (int j = i + 1; j < candidate_count; j++)
         {
-            //  If candidate i is preferred over candidate j (Matrix of columns and rows)
+            //  If candidate i is preferred over candidate j (Matrix of row = i and columns = j)
             if (preferences[i][j] > preferences[j][i])
             {
                 // Candidate i (column) as the winner
@@ -177,7 +177,7 @@ void add_pairs(void)
                 // Pair count
                 pair_count++;
             }
-            //  Else If candidate j is preferred over candidate i (Matrix of columns and rows)
+            //  Else If candidate j is preferred over candidate i (Matrix of row = i and jcolumns = j)
             else if (preferences[i][j] < preferences[j][i])
             {
                 // Set candidate j as the winner
