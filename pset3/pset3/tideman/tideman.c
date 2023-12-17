@@ -239,7 +239,7 @@ void lock_pairs(void) {
 }
 
 // Keep track of which nodes (candidates) have been visited bya boolean array
-bool visited[candidates] = {false};
+bool visited[MAX] = {false};
 bool helper_lockpairs(int winner, int loser, bool visited) {
     // if loser is the same as winner:  return true (since we found a cycle)
     if (loser == winner) {
