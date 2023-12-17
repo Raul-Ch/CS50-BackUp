@@ -258,7 +258,10 @@ bool helper_lockpairs(int winner, int loser, bool visited[])
     for (int i = 0; i < candidate_count; i++)
     {
         // if loser has an edge to candidate in locked graph and candidate is not visited:
+        // Locked[loser][i] is checking if there is a directed edge (or "lock") in the graph from the loser of the current pair to
+        // the candidate i. !visited[i] is checking if candidate i has not been visited yet in the current search.
         if (locked[loser][i] && !visited[i])
+        // "If there is a lock from the loser to candidate i and we have not visited candidate i yet, then do the following...".
         {
             // If there is an edge from 'loser' to 'i' in the locked graph (i.e., 'loser' has won over 'i')
             // and 'i' has not been visited yet, then we proceed with the following block of code.
