@@ -225,9 +225,9 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
-    for (int i = 0; i < candidate_count; i++){
-        if(pairs[i].winner){
-            
+    for (int i = 0; i < pair_count; i++){
+        if(pairs[i].loser){
+            locked[pairs] = false;
         }
     }
     return;
