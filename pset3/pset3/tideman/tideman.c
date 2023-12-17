@@ -225,6 +225,26 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (preferences[i][j] == 0){
+                locked[i][j] == false;
+            }
+            if else (pairs[i][j].winner) {
+                if (pairs[i][j+1].winner){
+                    locked[i][j] = false;
+                }
+                else if (pairs[i+1][j].winner){
+                    locked[i][j] = false;
+                }
+                else{
+                     locked[i][j] = true;
+                }
+            }
+        }
+    }
     return;
 }
 
