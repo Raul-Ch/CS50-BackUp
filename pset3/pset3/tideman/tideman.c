@@ -256,6 +256,10 @@ void helper_lockpairs(int winner, int loser) {
         }
 
         //If you encounter a node that's already been visited, there's a cycle.
+        if (visited[winner]) {
+        // Cycle detected
+            return true;
+        }
     }
 }
 
