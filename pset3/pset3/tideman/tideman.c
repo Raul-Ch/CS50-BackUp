@@ -103,7 +103,7 @@ int main(int argc, string argv[])
 
     add_pairs();
     print_preferences_matrix();
-    print_pairs();
+    // print_pairs();
     sort_pairs();
     print_pairs();
     lock_pairs();
