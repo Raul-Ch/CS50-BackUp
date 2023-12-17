@@ -35,7 +35,7 @@ void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
 
-bool helper_lockpairs(int winner, int loser, bool visited);
+bool helper_lockpairs(int winner, int loser, bool visited[]);
 
 // Debug
 void print_preferences(int ranks[]);
@@ -243,7 +243,7 @@ void lock_pairs(void) {
     }
 }
 
-bool helper_lockpairs(int winner, int loser, bool visited) {
+bool helper_lockpairs(int winner, int loser, bool visited[]) {
     // if loser is the same as winner:  return true (since we found a cycle)
     if (loser == winner) {
         return true;
