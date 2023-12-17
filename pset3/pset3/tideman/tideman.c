@@ -236,10 +236,9 @@ void lock_pairs(void) {
     }
 }
 
+// Keep track of which nodes (candidates) have been visited bya boolean array
+bool visited[candidates] = {false};
 void helper_lockpairs(int winner, int loser) {
-    // Keep track of which nodes (candidates) have been visited bya boolean array
-    bool visited[candidates] = {false};
-
     // Start at a node (in this case, a candidate).
     // CS50 note: Remember, it should start at the loser and try to find a path back to the winner.
     for (int i = 0; i < pair_count; i++) {
