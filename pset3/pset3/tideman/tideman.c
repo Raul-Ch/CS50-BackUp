@@ -226,20 +226,23 @@ void sort_pairs(void)
     return;
 }
 
+
+// Keep track of which nodes (candidates) have been visited bya boolean array
+bool visited[MAX] = {false};
+//
+
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void) {
     // Start at the winner of the pair you're trying to lock in, and see if you can get back to that candidate by following the edges in the locked graph.
     // If helper found a cycle, helper returns true; otherwise, it returns false.
     for(int i = 0; i < pair_count; i++){
-        if (!helper_lockpairs(pairs[i].winner, pairs[i].loser)) {
+        if (!helper_lockpairs(pairs[i].winner, pairs[i].loser, visited)) {
             // If adding the current pair doesn't create a cycle, lock the pair
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
     }
 }
 
-// Keep track of which nodes (candidates) have been visited bya boolean array
-bool visited[MAX] = {false};
 bool helper_lockpairs(int winner, int loser, bool visited) {
     // if loser is the same as winner:  return true (since we found a cycle)
     if (loser == winner) {
