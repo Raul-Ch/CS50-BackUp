@@ -108,10 +108,10 @@ int main(int argc, string argv[])
     }
 
     add_pairs();
-    //print_preferences_matrix();
-    // print_pairs();
+    // print_preferences_matrix();
+    //  print_pairs();
     sort_pairs();
-    //print_pairs();
+    // print_pairs();
     lock_pairs();
     print_locked();
     print_winner();
@@ -287,32 +287,36 @@ bool helper_lockpairs(int winner, int loser, bool visited[])
 void print_winner(void)
 {
     // TODO
-    for (int i = 0; i < candidate_count; i++){
-        for (int i = 0; i < candidate_count; i++){
-
+    // Iterate over each candidate
+    for (int i = 0; i < candidate_count; i++)
+    {
+        bool is_winner = true;
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (i == j)
+            {
+                continue;
+            }
+            else if (locked[j][i])
+            {
+                is_winner = false;
+                break;
+            }
+        }
+        if (is_winner)
+        {
+            printf("%s\n", candidates[i]);
         }
     }
-    return;
 }
 
 // Print Prefeerences:
 void print_preferences(int ranks[])
 {
-for (int i = 0; i < candidate_count; i++)
-{
-    for (int j = 0; j < candidate_count; j++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        // Skip the diagonal elements
-        if (i == j)
-        {
-            continue;
-        }
-            if (locked[i][j] == false){
-                
-            }
+        printf("%d ", ranks[i]);
     }
-    printf("\n");
-}
 }
 
 // Print the preferences matrix
