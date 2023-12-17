@@ -238,28 +238,26 @@ void lock_pairs(void) {
 
 // Keep track of which nodes (candidates) have been visited bya boolean array
 bool visited[candidates] = {false};
-void helper_lockpairs(int winner, int loser) {
-    // Start at a node (in this case, a candidate).
-    // CS50 note: Remember, it should start at the loser and try to find a path back to the winner.
-    for (int i = 0; i < pair_count; i++) {
-        int start_candidate = locked[i].loser; // Represent a candidate's index
+void helper_lockpairs(int winner, int loser, bool visited) {
+    // if loser is the same as winner:  return true (since we found a cycle)
+    if(visited[loser] = visited[winner]) {
+        return true;
+    }
+    // mark loser as visited
+    locked[loser] = visited;
 
-        //Mark the node as visited. (set the corresponding index in your visited array to true.)
-        visited[start_candidate] = true;
-
-        //For each node connected to the current node, if it's not visited, recursively visit that node.
-        for (int i = 0; i < pair_count; i++) {
-            if (pairs[i].loser == start_candidate && !visited[pairs[i].winner]) {
-                helper_lockpairs(winner, pairs[i].winner);
+    // for each candidate:
+        for(int i = 0; i < candidates; i++){
+            // if loser has an edge to candidate in locked graph and candidate is not visited:
+            if (locked[i].loser == loser && !visited[locked[i].winner]){
+                // if helper_lockpairs(winner, candidate, visited) is true:
+                if (helper_lockpairs(winner, locked[i].winner, visited)) {
+                    return true;
+                }
             }
         }
-
-        //If you encounter a node that's already been visited, there's a cycle.
-        if (visited[winner]) {
-        // Cycle detected
-            return true;
-        }
-    }
+    // (since no cycle found)
+    return false;
 }
 
 // Print the winner of the election
