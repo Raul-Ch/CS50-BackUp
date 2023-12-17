@@ -252,8 +252,15 @@ bool helper_lockpairs(int winner, int loser, bool visited) {
         for(int i = 0; i < candidates; i++){
             // if loser has an edge to candidate in locked graph and candidate is not visited:
             if (locked[loser][i] && !visited[i]){
+                // If there is an edge from 'loser' to 'i' in the locked graph (i.e., 'loser' has won over 'i')
+    // and 'i' has not been visited yet, then we proceed with the following block of code.
                 // if helper_lockpairs(winner, candidate, visited) is true:
                 if (helper_lockpairs(winner, i, visited)) {
+                    // Here, we make a recursive call to 'helper_lockpairs' with 'winner' and 'i'.
+        // This is like saying, "Starting from 'i' (who was defeated by 'loser'),
+        // can we find a path back to 'winner' in the locked graph?"
+        // If we can, that means adding the pair ('winner', 'loser') would create a cycle.
+        // So, if 'helper_lockpairs' returns true, we return true from the current function call as well.
                     return true;
                 }
             }
