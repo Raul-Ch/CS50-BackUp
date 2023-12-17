@@ -290,19 +290,24 @@ void print_winner(void)
     // Iterate over each candidate
     for (int i = 0; i < candidate_count; i++)
     {
+        // Assume the current candidate is the winner
         bool is_winner = true;
+        // Check each other candidate to see if they have an edge to the current candidate
         for (int j = 0; j < candidate_count; j++)
         {
+            // Skip the case where the candidate is compared with themselves
             if (i == j)
             {
                 continue;
             }
+            // If there is an edge from another candidate to the current candidate, the current candidate cannot be the winner
             else if (locked[j][i])
             {
                 is_winner = false;
                 break;
             }
         }
+        // If no edges were found pointing to the current candidate, they are the winner
         if (is_winner)
         {
             printf("%s\n", candidates[i]);
