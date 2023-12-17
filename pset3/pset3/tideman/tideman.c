@@ -204,9 +204,10 @@ void sort_pairs(void)
         // For each pair, compare it with the next pair
         for (int j = 0; j < pair_count - i - 1; j++)
         {
+            // Calculate the margin of victory for the current pair
             int margin_current = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j].loser][pairs[j].winner];
-            int margin_next =
-                preferences[pairs[j + 1].winner][pairs[j + 1].loser] - preferences[pairs[j + 1].loser][pairs[j + 1].winner];
+            // Calculate the margin of victory for the next pair
+            int margin_next = preferences[pairs[j + 1].winner][pairs[j + 1].loser] - preferences[pairs[j + 1].loser][pairs[j + 1].winner];
 
             // Swap pairs if the strength of victory is less in the current pair
             if (margin_current < margin_next)
