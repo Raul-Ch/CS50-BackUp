@@ -230,7 +230,7 @@ void sort_pairs(void)
 void lock_pairs(void) {
     // Start at the winner of the pair you're trying to lock in, and see if you can get back to that candidate by following the edges in the locked graph.
     // If helper found a cycle, helper returns true; otherwise, it returns false.
-    for(int i = 0; i < pairs; i++){
+    for(int i = 0; i < pair_count; i++){
         if (!helper_lockpairs(pairs[i].winner, pairs[i].loser)) {
             // If adding the current pair doesn't create a cycle, lock the pair
             locked[pairs[i].winner][pairs[i].loser] = true;
