@@ -35,7 +35,7 @@ void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
 
-bool helper_lockpairs(int winner, int loser);
+bool helper_lockpairs(int winner, int loser, bool visited);
 
 // Debug
 void print_preferences(int ranks[]);
