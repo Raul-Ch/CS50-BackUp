@@ -242,14 +242,20 @@ void helper_lockpairs(int winner, int loser) {
 
     // Start at a node (in this case, a candidate).
     // CS50 note: Remember, it should start at the loser and try to find a path back to the winner.
-  for (int i = 0; i < pair_count; i++) {
-    int start_candidate = pairs[i].loser; // Represent a candidate's index
+    for (int i = 0; i < pair_count; i++) {
+        int start_candidate = pairs[i].loser; // Represent a candidate's index
 
-    //Mark the node as visited.
+        //Mark the node as visited. (set the corresponding index in your visited array to true.)
+        visited[start_candidate] = true;
 
-    //For each node connected to the current node, if it's not visited, recursively visit that node.
+        //For each node connected to the current node, if it's not visited, recursively visit that node.
+        for (int i = 0; i < pair_count; i++) {
+            if (pairs[i].loser == start_candidate && !visited[pairs[i].winner]) {
+                helper_lockpairs(winner, pairs[i].winner);
+            }
+        }
 
-    //If you encounter a node that's already been visited, there's a cycle.
+        //If you encounter a node that's already been visited, there's a cycle.
     }
 }
 
