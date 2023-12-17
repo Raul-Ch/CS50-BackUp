@@ -230,6 +230,7 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void) {
     // Start at the winner of the pair you're trying to lock in, and see if you can get back to that candidate by following the edges in the locked graph.
+
 }
 
 void helper_lockpairs(void) {
