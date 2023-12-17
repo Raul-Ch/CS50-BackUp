@@ -228,9 +228,18 @@ void sort_pairs(void)
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
-void lock_pairs(void) {}
+void lock_pairs(void) {
+    // Start at the winner of the pair you're trying to lock in, and see if you can get back to that candidate by following the edges in the locked graph.
+}
 
 void helper_lockpairs(void) {
+    // Start at a node (in this case, a candidate).
+
+    //Mark the node as visited.
+
+    //For each node connected to the current node, if it's not visited, recursively visit that node.
+
+    //If you encounter a node that's already been visited, there's a cycle.
 
 }
 
