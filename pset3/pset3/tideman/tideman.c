@@ -35,7 +35,7 @@ void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
 
-void helper_lock_pairs(int winner, int loser);
+bool helper_lock_pairs(int winner, int loser);
 
 // Debug
 void print_preferences(int ranks[]);
@@ -238,20 +238,20 @@ void lock_pairs(void) {
 
 // Keep track of which nodes (candidates) have been visited bya boolean array
 bool visited[candidates] = {false};
-void helper_lockpairs(int winner, int loser, bool visited) {
+bool helper_lockpairs(int winner, int loser, bool visited) {
     // if loser is the same as winner:  return true (since we found a cycle)
-    if(visited[loser] = visited[winner]) {
+    if (loser == winner) {
         return true;
     }
     // mark loser as visited
-    locked[loser] = visited;
+    visited[loser] = true;
 
     // for each candidate:
         for(int i = 0; i < candidates; i++){
             // if loser has an edge to candidate in locked graph and candidate is not visited:
-            if (locked[i].loser == loser && !visited[locked[i].winner]){
+            if (locked[loser][i] && !visited[i]){
                 // if helper_lockpairs(winner, candidate, visited) is true:
-                if (helper_lockpairs(winner, locked[i].winner, visited)) {
+                if (helper_lockpairs(winner, i, visited)) {
                     return true;
                 }
             }
