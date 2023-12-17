@@ -18,7 +18,8 @@ typedef struct
     int loser;
 } pair;
 // Each pair structure represents a pair of candidates where one candidate is preferred over the other.
-// Each pair has two properties: winner and loser, which are both integers representing the INDICES of the winning and losing candidates, respectively. [0 = alice, 1 = charlie , etc]
+// Each pair has two properties: winner and loser, which are both integers representing the INDICES of the winning and losing
+// candidates, respectively. [0 = alice, 1 = charlie , etc]
 
 // Array of candidates
 string candidates[MAX];
@@ -226,48 +227,53 @@ void sort_pairs(void)
     return;
 }
 
-
-// Keep track of which nodes (candidates) have been visited bya boolean array
-bool visited[MAX] = {false};
-//
-
 // Lock pairs into the candidate graph in order, without creating cycles
-void lock_pairs(void) {
-    // Start at the winner of the pair you're trying to lock in, and see if you can get back to that candidate by following the edges in the locked graph.
-    // If helper found a cycle, helper returns true; otherwise, it returns false.
-    for(int i = 0; i < pair_count; i++){
-        if (!helper_lockpairs(pairs[i].winner, pairs[i].loser, visited)) {
+void lock_pairs(void)
+{
+    // Keep track of which nodes (candidates) have been visited bya boolean array
+    for (int i = 0; i < pair_count; i++)
+    {
+        bool visited[MAX] = {false};
+        // Start at the winner of the pair you're trying to lock in, and see if you can get back to that candidate by following the
+        // edges in the locked graph. If helper found a cycle, helper returns true; otherwise, it returns false.
+        if (!helper_lockpairs(pairs[i].winner, pairs[i].loser, visited))
+        {
             // If adding the current pair doesn't create a cycle, lock the pair
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
     }
 }
 
-bool helper_lockpairs(int winner, int loser, bool visited[]) {
+bool helper_lockpairs(int winner, int loser, bool visited[])
+{
     // if loser is the same as winner:  return true (since we found a cycle)
-    if (loser == winner) {
+    if (loser == winner)
+    {
         return true;
     }
     // mark loser as visited
     visited[loser] = true;
 
     // for each candidate:
-        for(int i = 0; i < candidates; i++){
-            // if loser has an edge to candidate in locked graph and candidate is not visited:
-            if (locked[loser][i] && !visited[i]){
-                // If there is an edge from 'loser' to 'i' in the locked graph (i.e., 'loser' has won over 'i')
-    // and 'i' has not been visited yet, then we proceed with the following block of code.
-                // if helper_lockpairs(winner, candidate, visited) is true:
-                if (helper_lockpairs(winner, i, visited)) {
-                    // Here, we make a recursive call to 'helper_lockpairs' with 'winner' and 'i'.
-        // This is like saying, "Starting from 'i' (who was defeated by 'loser'),
-        // can we find a path back to 'winner' in the locked graph?"
-        // If we can, that means adding the pair ('winner', 'loser') would create a cycle.
-        // So, if 'helper_lockpairs' returns true, we return true from the current function call as well.
-                    return true;
-                }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        // if loser has an edge to candidate in locked graph and candidate is not visited:
+        if (locked[loser][i] && !visited[i])
+        {
+            // If there is an edge from 'loser' to 'i' in the locked graph (i.e., 'loser' has won over 'i')
+            // and 'i' has not been visited yet, then we proceed with the following block of code.
+            // if helper_lockpairs(winner, candidate, visited) is true:
+            if (helper_lockpairs(winner, i, visited))
+            {
+                // Here, we make a recursive call to 'helper_lockpairs' with 'winner' and 'i'.
+                // This is like saying, "Starting from 'i' (who was defeated by 'loser'),
+                // can we find a path back to 'winner' in the locked graph?"
+                // If we can, that means adding the pair ('winner', 'loser') would create a cycle.
+                // So, if 'helper_lockpairs' returns true, we return true from the current function call as well.
+                return true;
             }
         }
+    }
     // (since no cycle found)
     return false;
 }
