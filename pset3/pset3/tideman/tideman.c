@@ -18,8 +18,7 @@ typedef struct
     int loser;
 } pair;
 // Each pair structure represents a pair of candidates where one candidate is preferred over the other.
-// The pair structure has two fields: winner and loser, which are the indices of the winning and losing candidates, respectively, in
-// the candidates array.
+// Each pair has two properties: winner and loser, which are both integers representing the INDICES of the winning and losing candidates, respectively. [0 = alice, 1 = charlie , etc]
 
 // Array of candidates
 string candidates[MAX];
