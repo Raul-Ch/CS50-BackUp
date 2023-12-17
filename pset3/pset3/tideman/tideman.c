@@ -18,9 +18,8 @@ typedef struct
     int loser;
 } pair;
 // Each pair structure represents a pair of candidates where one candidate is preferred over the other.
-// The pair structure has two fields: winner and loser, which are the indices of the winning and losing candidates, respectively, in the candidates array.
-
-
+// The pair structure has two fields: winner and loser, which are the indices of the winning and losing candidates, respectively, in
+// the candidates array.
 
 // Array of candidates
 string candidates[MAX];
@@ -36,6 +35,8 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+
+void helper_lock_pairs(void);
 
 // Debug
 void print_preferences(int ranks[]);
@@ -211,7 +212,8 @@ void sort_pairs(void)
             // Calculate the margin of victory for the current pair
             int margin_current = preferences[pairs[j].winner][pairs[j].loser] - preferences[pairs[j].loser][pairs[j].winner];
             // Calculate the margin of victory for the next pair
-            int margin_next = preferences[pairs[j + 1].winner][pairs[j + 1].loser] - preferences[pairs[j + 1].loser][pairs[j + 1].winner];
+            int margin_next =
+                preferences[pairs[j + 1].winner][pairs[j + 1].loser] - preferences[pairs[j + 1].loser][pairs[j + 1].winner];
 
             // Swap pairs if the strength of victory is less in the current pair
             if (margin_current < margin_next)
@@ -226,8 +228,11 @@ void sort_pairs(void)
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
-void lock_pairs(void)
-{
+void lock_pairs(void) {
+    
+}
+
+void helper_lockpairs(void) {
 
 }
 
