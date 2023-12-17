@@ -239,13 +239,15 @@ void lock_pairs(void) {
 
 void helper_lockpairs(void) {
     // Start at a node (in this case, a candidate).
-
+    // CS50 note: Remember, it should start at the loser and try to find a path back to the winner.
+  for (int i = 0; i < pair_count; i++) {
+        start_candidate = pairs[i].loser;
     //Mark the node as visited.
 
     //For each node connected to the current node, if it's not visited, recursively visit that node.
 
     //If you encounter a node that's already been visited, there's a cycle.
-
+    }
 }
 
 // Print the winner of the election
