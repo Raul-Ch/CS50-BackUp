@@ -1,0 +1,17 @@
+.list-group-item{
+    font-size: calc(15px + 1vw) !important;
+    font-family: 'Bunny' !important;
+    color: #000000;
+}
+
+.org-item-title{
+    font-size: calc(15px + 2vw) !important;
+    font-family: 'Bunny' !important;
+    color: #000000;
+}
+
+.Organizationsp {
+    font-size: calc(10px + 0.5vw) !important;
+    font-family: 'Urbanist' !important;
+    color: #000000;
+}

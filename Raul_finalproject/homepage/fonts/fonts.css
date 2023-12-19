@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Slackside One Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Slackside One Regular'), url('SlacksideOne-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'QuickAsABunny';
+    font-style: normal;
+    font-weight: normal;
+    src: local('QuickAsABunny'), url('QuickAsABunny.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BunnyStory';
+    font-style: normal;
+    font-weight: normal;
+    src: local('BunnyStory'), url('BunnyStory.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Bunny';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bunny'), url('Bunny.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'BunnyHopper';
+    font-style: normal;
+    font-weight: normal;
+    src: local('BunnyHopper'), url('BunnyHopper.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BunnyHopperEar';
+    font-style: normal;
+    font-weight: normal;
+    src: local('BunnyHopperEar'), url('BunnyHopperEar.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HannieBunny';
+    font-style: normal;
+    font-weight: normal;
+    src: local('HannieBunny'), url('HannieBunny.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Urbanist'), url('Urbanist.ttf') format('truetype');
+}

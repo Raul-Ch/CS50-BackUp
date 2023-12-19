@@ -1,0 +1,89 @@
+#TitleDB {
+    font-size: calc(18px + 2.5vw) !important;
+    font-family: 'HannieBunny' !important;
+    color: #000000;
+}
+
+.card-title{
+    font-size: calc(18px + 2.5vw) !important;
+    font-family: 'Bunny' !important;
+    color: #000000;
+}
+
+/* For small screens (phones) */
+@media (max-width: 767px) {
+    #TitleDB {
+        font-size: calc(20px + 4vw) !important;  /* Adjust font size for smaller screens */
+    }
+}
+
+.divider {
+    border-top: 1px solid #000; /* Change color as needed */
+    width: 100%;
+}
+
+.card {
+    text-align: center;
+    opacity: 0.8;
+    padding-top: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition properties */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+    margin-bottom: 15px;
+    font-family: 'Urbanist' !important;
+    color: #000000;
+}
+
+
+/* For small screens (phones) */
+@media (max-width: 767px) {
+    .card-body {
+        font-size: calc(8px + 1.5vw)  /* Adjust font size for smaller screens */
+    }
+}
+
+/* For medium and large screens (tablets and desktops) */
+@media (min-width: 768px) {
+    .card-body {
+        font-size: calc(8px + 1vw)  /* Default font size for medium and large screens */
+    }
+}
+
+.card-body hr {
+    margin: 15px 0;
+}
+
+.btn-link {
+    color: #007bff;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+.card-footer {
+    text-align: rigth;
+    font-size: calc(8px + 1vw) !important;
+    font-family: 'Bunny' !important;
+    color: #000000;
+}
+
+.card-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the parent's color (usually black) */
+    cursor: pointer; /* Change cursor to pointer on hover for better UX */
+  }
+
+  .card-link:hover {
+    color: inherit; /* Maintain the same color on hover */
+  }
