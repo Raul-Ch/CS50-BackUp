@@ -1,0 +1,71 @@
+.blockquote {
+/*     position: absolute;
+    padding: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0.70;
+/*     box-sizing: border-box;
+    overflow: hidden;
+    max-width: 90%;
+    margin: auto; */
+}
+
+#quote {
+    font-family: 'BunnyHopper';
+    color: #000000;
+/*     margin: 0;
+    box-sizing: border-box; */
+}
+
+.blockquote-footer {
+    font-size: calc(10px + 2vw) !important;
+    font-family: 'BunnyHopper';
+    color: #000000 !important;
+/*     margin: 0;
+    box-sizing: border-box; */
+}
+
+/* For small screens (phones) */
+@media (max-width: 767px) {
+    #quote, .blockquote-footer {
+        font-size: calc(12px + 2vw)  /* Adjust font size for smaller screens */
+    }
+}
+
+/* For medium and large screens (tablets and desktops) */
+@media (min-width: 768px) {
+    #quote, .blockquote-footer {
+        font-size: calc(10px + 2vw)  /* Default font size for medium and large screens */
+    }
+}
+
+.CapitalTitle {
+    font-size: calc(18px + 2vw) !important;
+    font-family: 'BunnyHopperEar' !important;
+    color: #000000;
+}
+
+#TitleDB {
+    font-size: calc(18px + 2vw) !important;
+    font-family: 'BunnyHopper'!important;
+    color: #000000;
+}
+
+.CapitalAuthor {
+    font-size: calc(12px + 2vw) !important;
+    font-family: 'BunnyHopperEar' !important;
+    color: #000000;
+}
+
+#author {
+    font-size: calc(12px + 2vw) !important;
+    font-family: 'BunnyHopper';
+    color: #000000;
+/*     margin: 0;
+    box-sizing: border-box; */
+}

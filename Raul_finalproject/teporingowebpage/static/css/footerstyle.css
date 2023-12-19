@@ -1,0 +1,41 @@
+footer {
+    margin-top: auto;
+}
+
+#imgFooter {
+    width: 10%;
+    height: auto;
+    padding: 5px;
+}
+
+#row-container{
+    padding: 7px;
+}
+
+#Footer {
+    font-family: 'HannieBunny' !important;
+    font-weight: 150%;
+    color: #FFFFFF;
+    font-size: 150% !important;
+    margin: 0;
+}
+
+#Author {
+    font-family: 'QuickAsABunny' !important;
+    font-weight: 150%;
+    color: #000000;
+    font-size: 80% !important;
+    text-align: center;
+    margin: 0;
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+    #Author a {
+        color: #FFFFFF;
+    }
+
+.social_media img{
+    width: 20px; /* adjust as needed */
+    height: auto;
+    margin-right: 15px;
+}
